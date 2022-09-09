@@ -12,7 +12,7 @@ public class KIM_PlayerController : MonoBehaviour
     public float speed = 5f;
 
     bool isLadder = false;
-
+    bool isModule = false;
     bool canModule = false;
     // Start is called before the first frame update
     void Start()
@@ -27,14 +27,21 @@ public class KIM_PlayerController : MonoBehaviour
         {
             yVelocity = -1f;
 
-            if (Input.GetKey(KeyCode.A))
+            if (Input.GetKey(KeyCode.LeftArrow))
                 cc.Move(-Vector3.right * speed * Time.deltaTime);
-            else if (Input.GetKey(KeyCode.D))
+            else if (Input.GetKey(KeyCode.RightArrow))
                 cc.Move(Vector3.right * speed * Time.deltaTime);
-            else if (Input.GetKey(KeyCode.W))
+            else if (Input.GetKey(KeyCode.UpArrow))
                 cc.Move(Vector3.up * speed * Time.deltaTime);
-            else if (Input.GetKey(KeyCode.S))
+            else if (Input.GetKey(KeyCode.DownArrow))
                 cc.Move(Vector3.down * speed * Time.deltaTime);
+        }
+        else if (isModule)
+        {
+            if (Input.GetKeyDown(KeyCode.B))
+            {
+                isModule = false;
+            }
         }
         else
         {
@@ -47,13 +54,21 @@ public class KIM_PlayerController : MonoBehaviour
                 yVelocity = jumpPower;
 
 
-            if (Input.GetKey(KeyCode.A))
+            if (Input.GetKey(KeyCode.LeftArrow))
                 cc.Move(-Vector3.right * speed * Time.deltaTime);
-            else if (Input.GetKey(KeyCode.D))
+            else if (Input.GetKey(KeyCode.RightArrow))
                 cc.Move(Vector3.right * speed * Time.deltaTime);
             
             cc.Move(yVelocity * Vector3.up * Time.deltaTime);
         }
+
+        if (!isModule && canModule && (Input.GetKeyUp(KeyCode.UpArrow) || Input.GetKeyUp(KeyCode.LeftArrow) ||
+            Input.GetKeyUp(KeyCode.DownArrow) || Input.GetKeyUp(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.M)))
+        {
+            isModule = true;
+        }
+
+        Debug.Log(isModule);
     }
 
     private void OnTriggerEnter(Collider other)
