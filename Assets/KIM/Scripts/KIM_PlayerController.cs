@@ -59,7 +59,7 @@ public class KIM_PlayerController : MonoBehaviour
             else if (Input.GetKey(KeyCode.RightArrow))
                 cc.Move(Vector3.right * speed * Time.deltaTime);
             
-            cc.Move(yVelocity * Vector3.up * Time.deltaTime);
+            //cc.Move(yVelocity * Vector3.up * Time.deltaTime);
         }
 
         if (!isModule && canModule && (Input.GetKeyUp(KeyCode.UpArrow) || Input.GetKeyUp(KeyCode.LeftArrow) ||
