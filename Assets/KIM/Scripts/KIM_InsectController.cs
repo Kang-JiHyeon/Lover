@@ -41,14 +41,14 @@ public class KIM_InsectController : MonoBehaviour
     }
 
     protected Vector3 moveDir = Vector3.zero;
-    protected float currentTime = 0;
+    protected float currentTime_base = 0;
     protected virtual void Attack()
     {
-        currentTime += Time.deltaTime;
-        if (currentTime > 2.0f)
+        currentTime_base += Time.deltaTime;
+        if (currentTime_base > 2.0f)
         {
             moveDir = (Vector3)Random.insideUnitCircle * 3 + transform.position;
-            currentTime = 0;
+            currentTime_base = 0;
         }
 
         if (moveDir != Vector3.zero && Vector3.Distance(moveDir, ship.transform.position) > 5.5f)

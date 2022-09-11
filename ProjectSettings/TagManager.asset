@@ -32,9 +32,9 @@ TagManager:
   - 
   - 
   - 
-  - 
-  - 
-  - 
+  - Ship
+  - EnemyBullet
+  - Enemy
   - Module
   - Ladder
   m_SortingLayers:
