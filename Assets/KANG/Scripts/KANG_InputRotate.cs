@@ -47,14 +47,7 @@ public class KANG_InputRotate : KANG_AutoRotate
 
             float theta = Mathf.Abs(angle);
 
-            if(theta > 0f && theta <= 90f)
-            {
-                rotDir = -1;
-            }
-            else if(theta > 90f && theta <= 180)
-            {
-                rotDir = 1;
-            }
+            rotDir = theta > 0f && theta <= 90f ? -1 : 1;
         }
 
         // Right 키를 눌렀을 때
@@ -66,14 +59,9 @@ public class KANG_InputRotate : KANG_AutoRotate
                 return;
             }
 
-            if (angle > 0f)
-            {
-                rotDir = 1;
-            }
-            else {
-                rotDir = -1;
-            }
+            rotDir = angle > 0f ? 1 : -1;
         }
+
         // Down 키를 눌렀을 때
         if (v < 0)
         {
@@ -85,14 +73,7 @@ public class KANG_InputRotate : KANG_AutoRotate
 
             float theta = Mathf.Abs(angle);
 
-            if (theta > 0f && theta <= 90f)
-            {
-                rotDir = 1;
-            }
-            else if (theta > 90f && theta <= 180)
-            {
-                rotDir = -1;
-            }
+            rotDir = theta > 0f && theta <= 90f ? 1 : -1;
         }
 
         // Left 키를 눌렀을 때
@@ -104,16 +85,10 @@ public class KANG_InputRotate : KANG_AutoRotate
                 return;
             }
 
-            if (angle > 0f)
-            {
-                rotDir = -1;
-            }
-            else
-            {
-                rotDir = 1;
-            }
+            rotDir = angle > 0f ? -1 : 1;
         }
     }
+    // 각도 구하는 함수
     public static float GetAngle(Vector3 vStart, Vector3 vEnd)
     {
         Vector3 v = vEnd - vStart;
@@ -121,7 +96,4 @@ public class KANG_InputRotate : KANG_AutoRotate
         return Mathf.Atan2(v.y, v.x) * Mathf.Rad2Deg;
     }
 }
-
-// rotation 값으로는 실패
-// 각도로 계산해서 사분면을 나눠보자!
 
