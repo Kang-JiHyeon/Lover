@@ -586,7 +586,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spaceShip: {fileID: 1384757785}
-  rotSpeed: 20
+  rotSpeed: 50
   rotDir: 1
   up: 0
   right: -0.7
