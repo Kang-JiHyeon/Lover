@@ -10,7 +10,6 @@ public class KANG_InputRotate : KANG_AutoRotate
     float down = -90f;
     float left = -180f;
 
-
     // Start is called before the first frame update
     void Start()
     {
@@ -26,16 +25,21 @@ public class KANG_InputRotate : KANG_AutoRotate
 
     void Move()
     {
+        if (!spaceship) return;
+
         // 좌우
         float h = Input.GetAxisRaw("Horizontal");
         // 수직
         float v = Input.GetAxisRaw("Vertical");
         // 각도
-        float angle = GetAngle(spaceShip.position, transform.position);
+        float angle = GetAngle(spaceship.position, transform.position);
 
 
-        if (h == 0 && v == 0) rotDir = 0f;
-
+        if (h == 0 && v == 0)
+        {
+            rotDir = 0f;
+            return;
+        }
         // UP키를 눌렀을 때
         if(v > 0)
         {
