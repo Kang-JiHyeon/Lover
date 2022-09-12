@@ -5,6 +5,7 @@ using UnityEngine;
 public class KIM_PlayerController : MonoBehaviour
 {
     CharacterController cc;
+    GameObject ship;
 
     float yVelocity;
     public float gravity = -9.81f;
@@ -17,6 +18,7 @@ public class KIM_PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        ship = GameObject.Find("Ship");
         cc = GetComponent<CharacterController>();   
     }
 
@@ -28,13 +30,21 @@ public class KIM_PlayerController : MonoBehaviour
             yVelocity = -1f;
 
             if (Input.GetKey(KeyCode.LeftArrow))
+            {
                 cc.Move(-Vector3.right * speed * Time.deltaTime);
+            }
             else if (Input.GetKey(KeyCode.RightArrow))
+            {
                 cc.Move(Vector3.right * speed * Time.deltaTime);
+            }
             else if (Input.GetKey(KeyCode.UpArrow))
+            {
                 cc.Move(Vector3.up * speed * Time.deltaTime);
+            }
             else if (Input.GetKey(KeyCode.DownArrow))
+            {
                 cc.Move(Vector3.down * speed * Time.deltaTime);
+            }
         }
         else if (isModule)
         {
@@ -48,7 +58,7 @@ public class KIM_PlayerController : MonoBehaviour
             if (!cc.isGrounded)
                 yVelocity += gravity * Time.deltaTime;
             else
-                yVelocity = -1f;
+                yVelocity = 0f;
 
             if (Input.GetKeyDown(KeyCode.Space) && cc.isGrounded)
                 yVelocity = jumpPower;
@@ -58,8 +68,8 @@ public class KIM_PlayerController : MonoBehaviour
                 cc.Move(-Vector3.right * speed * Time.deltaTime);
             else if (Input.GetKey(KeyCode.RightArrow))
                 cc.Move(Vector3.right * speed * Time.deltaTime);
-            
-            //cc.Move(yVelocity * Vector3.up * Time.deltaTime);
+
+            cc.Move(yVelocity * Vector3.up * Time.deltaTime);
         }
 
         if (!isModule && canModule && (Input.GetKeyUp(KeyCode.UpArrow) || Input.GetKeyUp(KeyCode.LeftArrow) ||
@@ -73,6 +83,7 @@ public class KIM_PlayerController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        Debug.Log(other.gameObject.name);
         if (other.gameObject.layer == LayerMask.NameToLayer("Ladder"))
         {
             isLadder = true;

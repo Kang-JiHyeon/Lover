@@ -4,21 +4,18 @@ using UnityEngine;
 
 public class KIM_InsectMissile : MonoBehaviour
 {
-    GameObject ship;
     public float speed = 5;
+    public Vector3 dir;
     // Start is called before the first frame update
     void Start()
     {
-        ship = GameObject.Find("Ship");
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        Vector3 dir = ship.transform.position - transform.position;
-        dir.Normalize();
-
-        transform.position += dir * speed * Time.deltaTime;
+        transform.position += dir.normalized * speed * Time.deltaTime;
     }
 
     private void OnTriggerEnter(Collider other)

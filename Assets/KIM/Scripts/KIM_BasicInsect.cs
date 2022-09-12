@@ -20,7 +20,6 @@ public class KIM_BasicInsect : KIM_InsectController
     }
 
     float currentTime = 0;
-    float attackTime = 0;
     protected override void Attack()
     {
         base.Attack();
@@ -43,6 +42,7 @@ public class KIM_BasicInsect : KIM_InsectController
         yield return new WaitForSeconds(0.5f);
         GameObject bullet = Instantiate(bulletFactory);
         bullet.transform.position = bulletDispen.transform.position + transform.forward;
+        bullet.GetComponent<KIM_InsectMissile>().dir = -transform.right;
     }
 
     private void OnTriggerEnter(Collider other)
