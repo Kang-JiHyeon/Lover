@@ -1,0 +1,1090 @@
+fileFormatVersion: 2
+guid: 51b6d7a3073f99e49a9d9268d6a45c39
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: InsectSergeant_Tex_0
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 961
+        width: 37
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 758cf1e98e8d7da4aae1806ef44a959f
+      internalID: -645585818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InsectSergeant_Tex_1
+      rect:
+        serializedVersion: 2
+        x: 235
+        y: 869
+        width: 73
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a138f3ce02f674e4fb0bd2ed3eeb3234
+      internalID: -588403822
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InsectSergeant_Tex_2
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 851
+        width: 145
+        height: 153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3beb6d25fc03c545b7bfeae048caca4
+      internalID: 1422907125
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InsectSergeant_Tex_3
+      rect:
+        serializedVersion: 2
+        x: 655
+        y: 961
+        width: 37
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bee9f582de87805429acd6f18ebaa795
+      internalID: -691883392
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InsectSergeant_Tex_4
+      rect:
+        serializedVersion: 2
+        x: 747
+        y: 869
+        width: 73
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65bb8bef88f51e44fbda2f0da1ea82c6
+      internalID: 1041440631
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InsectSergeant_Tex_5
+      rect:
+        serializedVersion: 2
+        x: 824
+        y: 851
+        width: 145
+        height: 153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c9993fdc3b079f40829671dcf25212d
+      internalID: 1119843360
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InsectSergeant_Tex_6
+      rect:
+        serializedVersion: 2
+        x: 153
+        y: 920
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82262535a4318a843888fcd360eb94e3
+      internalID: -836798589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InsectSergeant_Tex_7
+      rect:
+        serializedVersion: 2
+        x: 665
+        y: 920
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd0be194619659c49ab78af14f75fac6
+      internalID: -1252133653
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InsectSergeant_Tex_8
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 716
+        width: 56
+        height: 111
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 280c5cb086cfb6542a2ab87104584371
+      internalID: -1426477944
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InsectSergeant_Tex_9
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 716
+        width: 56
+        height: 111
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef13955a76682164a9a7417935eb95c7
+      internalID: -33469832
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InsectSergeant_Tex_10
+      rect:
+        serializedVersion: 2
+        x: 284
+        y: 716
+        width: 56
+        height: 111
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9361066aef0221740ae3d3937829c7d7
+      internalID: -1209882124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InsectSergeant_Tex_11
+      rect:
+        serializedVersion: 2
+        x: 556
+        y: 716
+        width: 56
+        height: 111
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9aabf8aed50c7e7438887abca0aad6e1
+      internalID: -680759387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InsectSergeant_Tex_12
+      rect:
+        serializedVersion: 2
+        x: 676
+        y: 716
+        width: 56
+        height: 111
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d65a12c0b6f1d04bb3d8bfdd0e74538
+      internalID: 2067573714
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InsectSergeant_Tex_13
+      rect:
+        serializedVersion: 2
+        x: 796
+        y: 716
+        width: 56
+        height: 111
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7cad69232c7e0844be0d6e2a46017b7
+      internalID: -1103592654
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InsectSergeant_Tex_14
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 555
+        width: 56
+        height: 111
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8a0f7bc851637e4ea9f6c8f10ece653
+      internalID: 330421948
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InsectSergeant_Tex_15
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 555
+        width: 56
+        height: 111
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 265cf036675448e4a9d856c2e14ba576
+      internalID: 301782736
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InsectSergeant_Tex_16
+      rect:
+        serializedVersion: 2
+        x: 284
+        y: 555
+        width: 56
+        height: 111
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a5036e16eb1ad944b0dc0df6352f20e
+      internalID: 619410453
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InsectSergeant_Tex_17
+      rect:
+        serializedVersion: 2
+        x: 426
+        y: 539
+        width: 25
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4fd13704507632e40be6a8e92ada570d
+      internalID: 1394808603
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InsectSergeant_Tex_18
+      rect:
+        serializedVersion: 2
+        x: 556
+        y: 555
+        width: 56
+        height: 111
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72964651638a8b946b4e3c41473d9d93
+      internalID: 2048025255
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InsectSergeant_Tex_19
+      rect:
+        serializedVersion: 2
+        x: 676
+        y: 555
+        width: 56
+        height: 111
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d32f8b8d5ff65f44ad8d29064c59f0d
+      internalID: 1186151239
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InsectSergeant_Tex_20
+      rect:
+        serializedVersion: 2
+        x: 796
+        y: 555
+        width: 56
+        height: 111
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9bcefde8d4036d448999846890fa6ba6
+      internalID: -1477909287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InsectSergeant_Tex_21
+      rect:
+        serializedVersion: 2
+        x: 938
+        y: 539
+        width: 25
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e4a9d2d593439043b7033f29a12138c
+      internalID: -240625265
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InsectSergeant_Tex_22
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 449
+        width: 37
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a885031963651ef41ab36d916d6435f0
+      internalID: -1275602921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InsectSergeant_Tex_23
+      rect:
+        serializedVersion: 2
+        x: 235
+        y: 357
+        width: 73
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 728bf6648b9557b448c944b66ef0f182
+      internalID: -1318854431
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InsectSergeant_Tex_24
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 339
+        width: 145
+        height: 153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75957d2b96798704196b98c7e81296b9
+      internalID: 790501761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InsectSergeant_Tex_25
+      rect:
+        serializedVersion: 2
+        x: 655
+        y: 449
+        width: 37
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3348bb11bbba4d4bb328e926b55d2dd
+      internalID: 1599409503
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InsectSergeant_Tex_26
+      rect:
+        serializedVersion: 2
+        x: 747
+        y: 357
+        width: 73
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38d3696fafe397847be5293828f69206
+      internalID: 116210740
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InsectSergeant_Tex_27
+      rect:
+        serializedVersion: 2
+        x: 824
+        y: 339
+        width: 145
+        height: 153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e353879bc27dc0545b841bbf2a1f3158
+      internalID: 401233897
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InsectSergeant_Tex_28
+      rect:
+        serializedVersion: 2
+        x: 153
+        y: 408
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b79401d54cd1e5f49bed08e37b7eb798
+      internalID: -2093454087
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InsectSergeant_Tex_29
+      rect:
+        serializedVersion: 2
+        x: 665
+        y: 408
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aeb947e9c0358154d981490f657d45cd
+      internalID: -1734204967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InsectSergeant_Tex_30
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 204
+        width: 56
+        height: 111
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac5cbb434f683e14a89e13101f2be00c
+      internalID: 715761877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InsectSergeant_Tex_31
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 204
+        width: 56
+        height: 111
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4baade65e83dd2a47ab2fb60a0ba3cf4
+      internalID: 1834994379
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InsectSergeant_Tex_32
+      rect:
+        serializedVersion: 2
+        x: 284
+        y: 204
+        width: 56
+        height: 111
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ba30f7766ed9b8488770327cedddfb4
+      internalID: 499150406
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InsectSergeant_Tex_33
+      rect:
+        serializedVersion: 2
+        x: 556
+        y: 204
+        width: 56
+        height: 111
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87e7815465da787488b9f831df83d8ca
+      internalID: 2017398171
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InsectSergeant_Tex_34
+      rect:
+        serializedVersion: 2
+        x: 676
+        y: 204
+        width: 56
+        height: 111
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 140b1bfd099737048a9995c8e36a245d
+      internalID: -1283848477
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InsectSergeant_Tex_35
+      rect:
+        serializedVersion: 2
+        x: 796
+        y: 204
+        width: 56
+        height: 111
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e851c22e5a00524995065a5dd6af4f2
+      internalID: 740708613
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InsectSergeant_Tex_36
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 43
+        width: 56
+        height: 111
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5726e06200574b443a1f7e34710b1029
+      internalID: -1135356655
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InsectSergeant_Tex_37
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 43
+        width: 56
+        height: 111
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b139ffc4e120a3c4b819ab2445927e0b
+      internalID: 814628442
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InsectSergeant_Tex_38
+      rect:
+        serializedVersion: 2
+        x: 284
+        y: 43
+        width: 56
+        height: 111
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90659dc411d98dd47aba682cf5ab9293
+      internalID: 379816264
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InsectSergeant_Tex_39
+      rect:
+        serializedVersion: 2
+        x: 426
+        y: 27
+        width: 25
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3cb93721dbab5747b1a529d25c08cc4
+      internalID: 1116746303
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InsectSergeant_Tex_40
+      rect:
+        serializedVersion: 2
+        x: 556
+        y: 43
+        width: 56
+        height: 111
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 965f84fb3d914c048a2b1ec7a69b4d2f
+      internalID: -1738542908
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InsectSergeant_Tex_41
+      rect:
+        serializedVersion: 2
+        x: 676
+        y: 43
+        width: 56
+        height: 111
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36c1054bcaf7d7146a5bd2ab778bada5
+      internalID: -1761811838
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InsectSergeant_Tex_42
+      rect:
+        serializedVersion: 2
+        x: 796
+        y: 43
+        width: 56
+        height: 111
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44b1c33613d3c8444a7afd85899847bd
+      internalID: -1658636423
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InsectSergeant_Tex_43
+      rect:
+        serializedVersion: 2
+        x: 938
+        y: 27
+        width: 25
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4bc84ca6ac39cc41bed1ada8bae850a
+      internalID: 676416345
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: ee931d83897263945a99a193705615dc
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      InsectSergeant_Tex_12: 2067573714
+      InsectSergeant_Tex_16: 619410453
+      InsectSergeant_Tex_7: -1252133653
+      InsectSergeant_Tex_22: -1275602921
+      InsectSergeant_Tex_18: 2048025255
+      InsectSergeant_Tex_39: 1116746303
+      InsectSergeant_Tex_9: -33469832
+      InsectSergeant_Tex_13: -1103592654
+      InsectSergeant_Tex_43: 676416345
+      InsectSergeant_Tex_34: -1283848477
+      InsectSergeant_Tex_5: 1119843360
+      InsectSergeant_Tex_28: -2093454087
+      InsectSergeant_Tex_30: 715761877
+      InsectSergeant_Tex_37: 814628442
+      InsectSergeant_Tex_38: 379816264
+      InsectSergeant_Tex_3: -691883392
+      InsectSergeant_Tex_40: -1738542908
+      InsectSergeant_Tex_17: 1394808603
+      InsectSergeant_Tex_32: 499150406
+      InsectSergeant_Tex_29: -1734204967
+      InsectSergeant_Tex_36: -1135356655
+      InsectSergeant_Tex_1: -588403822
+      InsectSergeant_Tex_20: -1477909287
+      InsectSergeant_Tex_6: -836798589
+      InsectSergeant_Tex_8: -1426477944
+      InsectSergeant_Tex_33: 2017398171
+      InsectSergeant_Tex_35: 740708613
+      InsectSergeant_Tex_41: -1761811838
+      InsectSergeant_Tex_19: 1186151239
+      InsectSergeant_Tex_14: 330421948
+      InsectSergeant_Tex_2: 1422907125
+      InsectSergeant_Tex_25: 1599409503
+      InsectSergeant_Tex_26: 116210740
+      InsectSergeant_Tex_42: -1658636423
+      InsectSergeant_Tex_24: 790501761
+      InsectSergeant_Tex_31: 1834994379
+      InsectSergeant_Tex_4: 1041440631
+      InsectSergeant_Tex_11: -680759387
+      InsectSergeant_Tex_15: 301782736
+      InsectSergeant_Tex_23: -1318854431
+      InsectSergeant_Tex_0: -645585818
+      InsectSergeant_Tex_27: 401233897
+      InsectSergeant_Tex_10: -1209882124
+      InsectSergeant_Tex_21: -240625265
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -31,12 +31,12 @@ TagManager:
   - 
   - 
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Player
+  - Ship
+  - EnemyBullet
+  - Enemy
+  - Module
+  - Ladder
   m_SortingLayers:
   - name: Default
     uniqueID: 0
