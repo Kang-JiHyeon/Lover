@@ -41,7 +41,7 @@ public class KIM_BasicInsect : KIM_InsectController
     {
         yield return new WaitForSeconds(0.5f);
         GameObject bullet = Instantiate(bulletFactory);
-        bullet.transform.position = bulletDispen.transform.position + transform.forward;
+        bullet.transform.position = bulletDispen.transform.position;
         bullet.GetComponent<KIM_InsectMissile>().dir = -transform.right;
     }
 

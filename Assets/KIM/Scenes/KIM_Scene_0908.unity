@@ -133,7 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 71617917}
   - component: {fileID: 71617918}
-  m_Layer: 0
+  m_Layer: 29
   m_Name: FireInsectSmall_Tex_14
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -304,7 +304,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 415087729}
-  m_Layer: 0
+  - component: {fileID: 415087730}
+  - component: {fileID: 415087731}
+  m_Layer: 29
   m_Name: FireInsect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -319,15 +321,51 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 415087728}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -6.49}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
   m_LocalScale: {x: 0.7, y: 0.7, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5168309245014586909}
   - {fileID: 71617917}
+  - {fileID: 1804925974}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &415087730
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 415087728}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92f5819cf1dbe8b4cb453484ebb39fb1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 0.5
+  stomach: {fileID: 71617916}
+  bulletFactory: {fileID: 944974692166594653, guid: 3db0ad5015072cf43baaebb28b78ab8d, type: 3}
+  bulletDispen: {fileID: 1804925973}
+  dieExplosion: {fileID: 1134129239631916, guid: 7e48ba6b1b968764490bbc70b66e3fe1, type: 3}
+--- !u!143 &415087731
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 415087728}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Height: 0
+  m_Radius: 0.84
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0.21, y: 0, z: 0}
 --- !u!1 &762535039
 GameObject:
   m_ObjectHideFlags: 0
@@ -511,6 +549,7 @@ GameObject:
   - component: {fileID: 1384757789}
   - component: {fileID: 1384757788}
   - component: {fileID: 1384757790}
+  - component: {fileID: 1384757791}
   m_Layer: 27
   m_Name: Spaceship
   m_TagString: Untagged
@@ -642,11 +681,24 @@ CharacterController:
   m_Enabled: 1
   serializedVersion: 2
   m_Height: 1
-  m_Radius: 3.97
+  m_Radius: 3.46
   m_SlopeLimit: 45
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!135 &1384757791
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1384757781}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 4.02
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1460372902
 GameObject:
@@ -746,6 +798,37 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1804925973
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1804925974}
+  m_Layer: 29
+  m_Name: BulletDispen
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1804925974
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1804925973}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.04, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 415087729}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1819910732
 GameObject:
   m_ObjectHideFlags: 0
@@ -1275,7 +1358,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4546824452942535217}
   - component: {fileID: 7299035909883548039}
-  m_Layer: 0
+  m_Layer: 29
   m_Name: Insect_Tex_7 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1358,7 +1441,7 @@ Transform:
   m_GameObject: {fileID: 5544587878379973799}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.41, y: 0, z: 0}
-  m_LocalScale: {x: 76, y: 35.1, z: 35.1}
+  m_LocalScale: {x: 76.55, y: 40, z: 40}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5678023134594414788}
@@ -1429,7 +1512,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5168309245014586909}
   - component: {fileID: 842822055348165794}
-  m_Layer: 0
+  m_Layer: 29
   m_Name: armyInsectWings
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1446,7 +1529,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5678023134594414788}
   - component: {fileID: 5146507293092988630}
-  m_Layer: 0
+  m_Layer: 29
   m_Name: Insect_Tex_9 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1530,7 +1613,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2580217645577643164}
   - component: {fileID: 5412877877206244011}
-  m_Layer: 0
+  m_Layer: 29
   m_Name: Insect_Tex_7 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

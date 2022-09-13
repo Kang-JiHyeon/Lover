@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 1614563544384954971}
   - component: {fileID: 1614563544384954970}
   - component: {fileID: 1614563544384954968}
-  - component: {fileID: 2386273767398170869}
-  m_Layer: 0
+  - component: {fileID: 2458136717874721473}
+  m_Layer: 28
   m_Name: SergentInsectMissile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -100,16 +100,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 2
   dir: {x: 0, y: 0, z: 0}
---- !u!135 &2386273767398170869
-SphereCollider:
+--- !u!143 &2458136717874721473
+CharacterController:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1614563544384954973}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.32
+  m_Height: 0
+  m_Radius: 0.3
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
