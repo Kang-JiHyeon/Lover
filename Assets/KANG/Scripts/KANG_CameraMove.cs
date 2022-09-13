@@ -7,6 +7,7 @@ using UnityEngine;
 public class KANG_CameraMove : MonoBehaviour
 {
     public GameObject spaceship;
+    public Vector3 offset;
 
     // Start is called before the first frame update
     void Start()
@@ -17,6 +18,6 @@ public class KANG_CameraMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position = spaceship.transform.position + new Vector3(0, 0, -10);
+        transform.position = spaceship.transform.position + offset;
     }
 }
