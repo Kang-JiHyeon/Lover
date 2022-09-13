@@ -23,7 +23,7 @@ public class KIM_InsectController : MonoBehaviour
     {
         ir = GetComponentInChildren<KIM_InsectRotate>();
         cc = GetComponent<CharacterController>();   
-        ship = GameObject.Find("Ship");
+        ship = GameObject.Find("Spaceship");
         estate = EnemyState.Idle;
     }
     // Update is called once per frame

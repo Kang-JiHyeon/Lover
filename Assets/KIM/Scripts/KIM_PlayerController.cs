@@ -14,11 +14,15 @@ public class KIM_PlayerController : MonoBehaviour
 
     bool isLadder = false;
     bool isModule = false;
+    public bool IsModule
+    {
+        get { return isModule; }
+    }
     bool canModule = false;
     // Start is called before the first frame update
     void Start()
     {
-        ship = GameObject.Find("Ship");
+        ship = GameObject.Find("Spaceship");
         cc = GetComponent<CharacterController>();   
     }
 
@@ -65,11 +69,14 @@ public class KIM_PlayerController : MonoBehaviour
 
 
             if (Input.GetKey(KeyCode.LeftArrow))
-                cc.Move(-Vector3.right * speed * Time.deltaTime);
+                //cc.Move(-Vector3.right * speed * Time.deltaTime);
+                transform.localPosition += -Vector3.right * speed * Time.deltaTime;
             else if (Input.GetKey(KeyCode.RightArrow))
-                cc.Move(Vector3.right * speed * Time.deltaTime);
+                //cc.Move(Vector3.right * speed * Time.deltaTime);
+                transform.localPosition += Vector3.right * speed * Time.deltaTime;
 
-            cc.Move(yVelocity * Vector3.up * Time.deltaTime);
+            //cc.Move(yVelocity * Vector3.up * Time.deltaTime);
+            //transform.localPosition += yVelocity * Vector3.up * Time.deltaTime;
         }
 
         if (!isModule && canModule && (Input.GetKeyUp(KeyCode.UpArrow) || Input.GetKeyUp(KeyCode.LeftArrow) ||
@@ -81,9 +88,14 @@ public class KIM_PlayerController : MonoBehaviour
         Debug.Log(isModule);
     }
 
+    private void OnCollisionEnter(Collision collision)
+    {
+
+        Debug.Log(collision.gameObject.name);
+    }
+
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log(other.gameObject.name);
         if (other.gameObject.layer == LayerMask.NameToLayer("Ladder"))
         {
             isLadder = true;
