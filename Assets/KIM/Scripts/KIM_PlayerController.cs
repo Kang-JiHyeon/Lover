@@ -6,6 +6,7 @@ public class KIM_PlayerController : MonoBehaviour
 {
     CharacterController cc;
     GameObject ship;
+    KANG_Move mv;
 
     float yVelocity;
     public float gravity = -9.81f;
@@ -24,14 +25,18 @@ public class KIM_PlayerController : MonoBehaviour
     {
         ship = GameObject.Find("Spaceship");
         cc = GetComponent<CharacterController>();   
+        mv = ship.GetComponent<KANG_Move>();
     }
 
     // Update is called once per frame
-    void Update()
+    void LateUpdate()
     {
+        // 로컬로 움직이기 위해 우주선이 이동하는 방향으로 우선 이동
+        cc.Move(mv.moveDir.normalized * mv.moveSpeed * Time.deltaTime);
+        // 사다리에 탔을 때 움직임
         if (isLadder)
         {
-            yVelocity = -1f;
+            yVelocity = 0f;
 
             if (Input.GetKey(KeyCode.LeftArrow))
             {
@@ -50,6 +55,7 @@ public class KIM_PlayerController : MonoBehaviour
                 cc.Move(Vector3.down * speed * Time.deltaTime);
             }
         }
+        // 모듈에 착석했을 때 움직임
         else if (isModule)
         {
             if (Input.GetKeyDown(KeyCode.B))
@@ -57,26 +63,25 @@ public class KIM_PlayerController : MonoBehaviour
                 isModule = false;
             }
         }
+        // 그외 상황에서의 움직임
         else
         {
-            if (!cc.isGrounded)
+            Debug.DrawRay(transform.position + Vector3.down * 0.45f, Vector3.down * 0.1f, Color.red);
+            if (!Physics.Raycast(transform.position + Vector3.down * 0.45f, Vector3.down, 0.1f, LayerMask.GetMask("Ship")))
                 yVelocity += gravity * Time.deltaTime;
             else
+            {
                 yVelocity = 0f;
-
-            if (Input.GetKeyDown(KeyCode.Space) && cc.isGrounded)
-                yVelocity = jumpPower;
-
+                if (Input.GetKeyDown(KeyCode.Space))
+                    yVelocity = jumpPower;
+            }
 
             if (Input.GetKey(KeyCode.LeftArrow))
-                //cc.Move(-Vector3.right * speed * Time.deltaTime);
-                transform.localPosition += -Vector3.right * speed * Time.deltaTime;
+                cc.Move(-Vector3.right * speed * Time.deltaTime);
             else if (Input.GetKey(KeyCode.RightArrow))
-                //cc.Move(Vector3.right * speed * Time.deltaTime);
-                transform.localPosition += Vector3.right * speed * Time.deltaTime;
+                cc.Move(Vector3.right * speed * Time.deltaTime);
 
-            //cc.Move(yVelocity * Vector3.up * Time.deltaTime);
-            //transform.localPosition += yVelocity * Vector3.up * Time.deltaTime;
+            cc.Move(yVelocity * Vector3.up * Time.deltaTime);
         }
 
         if (!isModule && canModule && (Input.GetKeyUp(KeyCode.UpArrow) || Input.GetKeyUp(KeyCode.LeftArrow) ||
@@ -85,14 +90,9 @@ public class KIM_PlayerController : MonoBehaviour
             isModule = true;
         }
 
-        Debug.Log(isModule);
+        //Debug.Log(isModule);
     }
 
-    private void OnCollisionEnter(Collision collision)
-    {
-
-        Debug.Log(collision.gameObject.name);
-    }
 
     private void OnTriggerEnter(Collider other)
     {
