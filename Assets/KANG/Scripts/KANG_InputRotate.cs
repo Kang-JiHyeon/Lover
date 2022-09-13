@@ -19,12 +19,13 @@ public class KANG_InputRotate : KANG_AutoRotate
     // Update is called once per frame
     public override void Update()
     {
-        base.Rotate();
         Move();
     }
 
     void Move()
     {
+        base.Rotate();
+
         if (!spaceship) return;
 
         // аб©Л

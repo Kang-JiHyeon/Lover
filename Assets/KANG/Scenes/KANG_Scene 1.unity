@@ -232,7 +232,7 @@ GameObject:
   - component: {fileID: 1027163745}
   - component: {fileID: 1027163746}
   m_Layer: 0
-  m_Name: TriggerManager
+  m_Name: RotationManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -262,9 +262,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1027163744}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67acb3b4ff7131d4c8ecd893920571d0, type: 3}
+  m_Script: {fileID: 11500000, guid: 919f5cafdc4bdb243bb6b68b07120839, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isShieldControll: 0
+  isEngineControll: 0
+  Shield: {fileID: 1852328329}
+  Engine: {fileID: 2032700974}
 --- !u!1 &1107969334
 GameObject:
   m_ObjectHideFlags: 0
@@ -673,7 +677,6 @@ GameObject:
   - component: {fileID: 1852328330}
   - component: {fileID: 1852328331}
   - component: {fileID: 1852328332}
-  - component: {fileID: 1852328333}
   m_Layer: 0
   m_Name: Shield
   m_TagString: Untagged
@@ -755,7 +758,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1852328329}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 055ad9dbe4798484fb0f570bd2700369, type: 3}
   m_Name: 
@@ -763,18 +766,6 @@ MonoBehaviour:
   spaceship: {fileID: 1384757785}
   rotSpeed: 50
   rotDir: 1
---- !u!114 &1852328333
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1852328329}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a1f4535e865e26d429a96a4b3f051400, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1993602827
 GameObject:
   m_ObjectHideFlags: 0
@@ -967,7 +958,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2032700974}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 055ad9dbe4798484fb0f570bd2700369, type: 3}
   m_Name: 
