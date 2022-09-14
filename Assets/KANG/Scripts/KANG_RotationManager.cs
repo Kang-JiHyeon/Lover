@@ -52,14 +52,14 @@ public class KANG_RotationManager : MonoBehaviour
             Engine.GetComponent<KANG_InputRotate>().enabled = false;
         }
 
-        // 공격 오브젝트가 있고 조종할 수 있을 때
-        if (Turret && isTurretControll)
-        {
-            Turret.GetComponent<KANG_TurretRotate>().enabled = true;
-        }
-        else
-        {
-            Turret.GetComponent<KANG_TurretRotate>().enabled = false;
-        }
+        //// 공격 오브젝트가 있고 조종할 수 있을 때
+        //if (Turret && isTurretControll)
+        //{
+        //    Turret.GetComponent<KANG_TurretRotate>().enabled = true;
+        //}
+        //else
+        //{
+        //    Turret.GetComponent<KANG_TurretRotate>().enabled = false;
+        //}
     }
 }

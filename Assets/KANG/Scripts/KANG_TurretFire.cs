@@ -4,7 +4,7 @@ using UnityEngine;
 
 // ÃÑ¾ËÀ» ½î°í ½Í´Ù.
 
-public class KANG_Turret : MonoBehaviour
+public class KANG_TurretFire : MonoBehaviour
 {
     public GameObject bulletFactory;
     public float createTime = 0.5f;
