@@ -10,9 +10,11 @@ public class KANG_RotationManager : MonoBehaviour
 
     public bool isShieldControll = false;
     public bool isEngineControll = false;
+    public bool isTurretControll = false;
 
     public GameObject Shield;
     public GameObject Engine;
+    public GameObject Turret;
 
 
     private void Awake()
@@ -48,6 +50,16 @@ public class KANG_RotationManager : MonoBehaviour
         else
         {
             Engine.GetComponent<KANG_InputRotate>().enabled = false;
+        }
+
+        // 공격 오브젝트가 있고 조종할 수 있을 때
+        if (Turret && isTurretControll)
+        {
+            Turret.GetComponent<KANG_TurretRotate>().enabled = true;
+        }
+        else
+        {
+            Turret.GetComponent<KANG_TurretRotate>().enabled = false;
         }
     }
 }
