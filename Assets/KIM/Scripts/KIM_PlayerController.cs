@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -32,7 +33,7 @@ public class KIM_PlayerController : MonoBehaviour
     void LateUpdate()
     {
         // 로컬로 움직이기 위해 우주선이 이동하는 방향으로 우선 이동
-        cc.Move(mv.moveDir.normalized * mv.moveSpeed * Time.deltaTime);
+        LocalMove(mv.moveDir.normalized * mv.moveSpeed);
         // 사다리에 탔을 때 움직임
         if (isLadder)
         {
@@ -93,6 +94,10 @@ public class KIM_PlayerController : MonoBehaviour
         //Debug.Log(isModule);
     }
 
+    public void LocalMove(Vector3 dir)
+    {
+        cc.Move(dir * Time.deltaTime);
+    }
 
     private void OnTriggerEnter(Collider other)
     {

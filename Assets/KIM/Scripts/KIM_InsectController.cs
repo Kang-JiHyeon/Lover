@@ -16,6 +16,8 @@ public class KIM_InsectController : MonoBehaviour
     protected CharacterController cc;
     protected KIM_InsectRotate ir;
 
+    protected int hp;
+
     public float moveSpeed = 0.4f;
 
     // Start is called before the first frame update

@@ -4,19 +4,39 @@ using UnityEngine;
 
 public class KIM_SergentInsect : KIM_InsectController
 {
+    public GameObject head;
     public GameObject stomach;
     public GameObject bulletFactory;
     public GameObject bulletDispen;
+    public GameObject dieExplo;
+
+    public Sprite damaged;
+    public Sprite damaged2;
+    public Sprite heavyDamaged;
+    public Sprite heavyDamaged2;
     // Start is called before the first frame update
     protected override void Start()
     {
         base.Start();
+        hp = 5;
     }
 
     // Update is called once per frame
     protected override void Update()
     {
         base.Update();
+        if (hp <= 0)
+            Destroy(gameObject);
+        else if (hp <= 2)
+        {
+            head.GetComponent<SpriteRenderer>().sprite = heavyDamaged;
+            stomach.GetComponent<SpriteRenderer>().sprite = heavyDamaged2;
+        }
+        else if (hp <= 4)
+        {
+            head.GetComponent<SpriteRenderer>().sprite = damaged;
+            stomach.GetComponent<SpriteRenderer>().sprite = damaged2;
+        }
     }
 
     float currentTime = 0;
@@ -74,6 +94,10 @@ public class KIM_SergentInsect : KIM_InsectController
             // ship.hp--;
             StartCoroutine("Collide");
         }
+        else if (other.gameObject.layer == LayerMask.NameToLayer("PlayerBullet"))
+        {
+            hp -= 1;
+        }
     }
 
     IEnumerator Collide()
@@ -86,5 +110,11 @@ public class KIM_SergentInsect : KIM_InsectController
             transform.position = Vector3.Lerp(transform.position, transform.position - dir.normalized, Time.deltaTime * 10);
             yield return null;
         }
+    }
+
+    private void OnDestroy()
+    {
+        GameObject explo = Instantiate(dieExplo);
+        explo.transform.position = transform.position;  
     }
 }
