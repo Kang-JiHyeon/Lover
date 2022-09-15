@@ -53,7 +53,7 @@ MonoBehaviour:
   moveSpeed: 0.3
   head: {fileID: 3125598819104505845}
   stomach: {fileID: 3125598818947163272}
-  bulletFactory: {fileID: 1614563544384954973, guid: b022a040f07023040b9144fb0a0136e2, type: 3}
+  bulletFactory: {fileID: 3092434345792297919, guid: 9e046b30691162c499f54eb173e03400, type: 3}
   bulletDispen: {fileID: 3125598819104505845}
   dieExplo: {fileID: 1995403933065894, guid: 4961a16ba01e09547be3e1c9d16d5ad0, type: 3}
   damaged: {fileID: -588403822, guid: 51b6d7a3073f99e49a9d9268d6a45c39, type: 3}
