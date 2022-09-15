@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,6 +7,7 @@ public class KIM_PlayerController : MonoBehaviour
 {
     CharacterController cc;
     GameObject ship;
+    KANG_Move mv;
 
     float yVelocity;
     public float gravity = -9.81f;
@@ -14,20 +16,28 @@ public class KIM_PlayerController : MonoBehaviour
 
     bool isLadder = false;
     bool isModule = false;
+    public bool IsModule
+    {
+        get { return isModule; }
+    }
     bool canModule = false;
     // Start is called before the first frame update
     void Start()
     {
-        ship = GameObject.Find("Ship");
+        ship = GameObject.Find("Spaceship");
         cc = GetComponent<CharacterController>();   
+        mv = ship.GetComponent<KANG_Move>();
     }
 
     // Update is called once per frame
-    void Update()
+    void LateUpdate()
     {
+        // 로컬로 움직이기 위해 우주선이 이동하는 방향으로 우선 이동
+        LocalMove(mv.moveDir.normalized * mv.moveSpeed);
+        // 사다리에 탔을 때 움직임
         if (isLadder)
         {
-            yVelocity = -1f;
+            yVelocity = 0f;
 
             if (Input.GetKey(KeyCode.LeftArrow))
             {
@@ -46,6 +56,7 @@ public class KIM_PlayerController : MonoBehaviour
                 cc.Move(Vector3.down * speed * Time.deltaTime);
             }
         }
+        // 모듈에 착석했을 때 움직임
         else if (isModule)
         {
             if (Input.GetKeyDown(KeyCode.B))
@@ -53,16 +64,18 @@ public class KIM_PlayerController : MonoBehaviour
                 isModule = false;
             }
         }
+        // 그외 상황에서의 움직임
         else
         {
-            if (!cc.isGrounded)
+            Debug.DrawRay(transform.position + Vector3.down * 0.45f, Vector3.down * 0.1f, Color.red);
+            if (!Physics.Raycast(transform.position + Vector3.down * 0.45f, Vector3.down, 0.1f, LayerMask.GetMask("Ship")))
                 yVelocity += gravity * Time.deltaTime;
             else
+            {
                 yVelocity = 0f;
-
-            if (Input.GetKeyDown(KeyCode.Space) && cc.isGrounded)
-                yVelocity = jumpPower;
-
+                if (Input.GetKeyDown(KeyCode.Space))
+                    yVelocity = jumpPower;
+            }
 
             if (Input.GetKey(KeyCode.LeftArrow))
                 cc.Move(-Vector3.right * speed * Time.deltaTime);
@@ -78,12 +91,16 @@ public class KIM_PlayerController : MonoBehaviour
             isModule = true;
         }
 
-        Debug.Log(isModule);
+        //Debug.Log(isModule);
+    }
+
+    public void LocalMove(Vector3 dir)
+    {
+        cc.Move(dir * Time.deltaTime);
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log(other.gameObject.name);
         if (other.gameObject.layer == LayerMask.NameToLayer("Ladder"))
         {
             isLadder = true;

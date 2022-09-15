@@ -16,6 +16,8 @@ public class KIM_InsectController : MonoBehaviour
     protected CharacterController cc;
     protected KIM_InsectRotate ir;
 
+    protected int hp;
+
     public float moveSpeed = 0.4f;
 
     // Start is called before the first frame update
@@ -23,7 +25,7 @@ public class KIM_InsectController : MonoBehaviour
     {
         ir = GetComponentInChildren<KIM_InsectRotate>();
         cc = GetComponent<CharacterController>();   
-        ship = GameObject.Find("Ship");
+        ship = GameObject.Find("Spaceship");
         estate = EnemyState.Idle;
     }
     // Update is called once per frame

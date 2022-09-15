@@ -4,19 +4,39 @@ using UnityEngine;
 
 public class KIM_SergentInsect : KIM_InsectController
 {
+    public GameObject head;
     public GameObject stomach;
     public GameObject bulletFactory;
     public GameObject bulletDispen;
+    public GameObject dieExplo;
+
+    public Sprite damaged;
+    public Sprite damaged2;
+    public Sprite heavyDamaged;
+    public Sprite heavyDamaged2;
     // Start is called before the first frame update
     protected override void Start()
     {
         base.Start();
+        hp = 5;
     }
 
     // Update is called once per frame
     protected override void Update()
     {
         base.Update();
+        if (hp <= 0)
+            Destroy(gameObject);
+        else if (hp <= 2)
+        {
+            head.GetComponent<SpriteRenderer>().sprite = heavyDamaged;
+            stomach.GetComponent<SpriteRenderer>().sprite = heavyDamaged2;
+        }
+        else if (hp <= 4)
+        {
+            head.GetComponent<SpriteRenderer>().sprite = damaged;
+            stomach.GetComponent<SpriteRenderer>().sprite = damaged2;
+        }
     }
 
     float currentTime = 0;
@@ -41,26 +61,26 @@ public class KIM_SergentInsect : KIM_InsectController
     {
         yield return new WaitForSeconds(0.5f);
         GameObject bullet = Instantiate(bulletFactory);
-        bullet.transform.position = bulletDispen.transform.position + transform.forward;
+        bullet.transform.position = bulletDispen.transform.position;
         bullet.GetComponent<KIM_InsectMissile>().dir = -transform.right;
         bullet.transform.up = -transform.right;
         GameObject bullet2 = Instantiate(bulletFactory);
-        bullet2.transform.position = bulletDispen.transform.position + transform.forward;
+        bullet2.transform.position = bulletDispen.transform.position;
         bullet2.GetComponent<KIM_InsectMissile>().dir = -transform.right;
         bullet2.GetComponent<KIM_InsectMissile>().dir = Quaternion.AngleAxis(-30, Vector3.forward) * dir;
         bullet2.transform.up = bullet2.GetComponent<KIM_InsectMissile>().dir;
         GameObject bullet3 = Instantiate(bulletFactory);
-        bullet3.transform.position = bulletDispen.transform.position + transform.forward;
+        bullet3.transform.position = bulletDispen.transform.position;
         bullet3.GetComponent<KIM_InsectMissile>().dir = -transform.right;
         bullet3.GetComponent<KIM_InsectMissile>().dir = Quaternion.AngleAxis(-15, Vector3.forward) * dir;
         bullet3.transform.up = bullet3.GetComponent<KIM_InsectMissile>().dir;
         GameObject bullet4 = Instantiate(bulletFactory);
-        bullet4.transform.position = bulletDispen.transform.position + transform.forward;
+        bullet4.transform.position = bulletDispen.transform.position;
         bullet4.GetComponent<KIM_InsectMissile>().dir = -transform.right;
         bullet4.GetComponent<KIM_InsectMissile>().dir = Quaternion.AngleAxis(15, Vector3.forward) * dir;
         bullet4.transform.up = bullet4.GetComponent<KIM_InsectMissile>().dir;
         GameObject bullet5 = Instantiate(bulletFactory);
-        bullet5.transform.position = bulletDispen.transform.position + transform.forward;
+        bullet5.transform.position = bulletDispen.transform.position;
         bullet5.GetComponent<KIM_InsectMissile>().dir = -transform.right;
         bullet5.GetComponent<KIM_InsectMissile>().dir = Quaternion.AngleAxis(30, Vector3.forward) * dir;
         bullet5.transform.up = bullet5.GetComponent<KIM_InsectMissile>().dir;
@@ -74,6 +94,10 @@ public class KIM_SergentInsect : KIM_InsectController
             // ship.hp--;
             StartCoroutine("Collide");
         }
+        else if (other.gameObject.layer == LayerMask.NameToLayer("PlayerBullet"))
+        {
+            hp -= 1;
+        }
     }
 
     IEnumerator Collide()
@@ -86,5 +110,11 @@ public class KIM_SergentInsect : KIM_InsectController
             transform.position = Vector3.Lerp(transform.position, transform.position - dir.normalized, Time.deltaTime * 10);
             yield return null;
         }
+    }
+
+    private void OnDestroy()
+    {
+        GameObject explo = Instantiate(dieExplo);
+        explo.transform.position = transform.position;  
     }
 }

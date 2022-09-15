@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3125598817988394145}
   - component: {fileID: 3125598817988394142}
   - component: {fileID: 3125598817988394143}
-  m_Layer: 0
+  m_Layer: 29
   m_Name: InsectSergent
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -51,9 +51,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 0.3
+  head: {fileID: 3125598819104505845}
   stomach: {fileID: 3125598818947163272}
-  bulletFactory: {fileID: 1614563544384954973, guid: b022a040f07023040b9144fb0a0136e2, type: 3}
+  bulletFactory: {fileID: 3092434345792297919, guid: 9e046b30691162c499f54eb173e03400, type: 3}
   bulletDispen: {fileID: 3125598819104505845}
+  dieExplo: {fileID: 1995403933065894, guid: 4961a16ba01e09547be3e1c9d16d5ad0, type: 3}
+  damaged: {fileID: -588403822, guid: 51b6d7a3073f99e49a9d9268d6a45c39, type: 3}
+  damaged2: {fileID: 401233897, guid: 51b6d7a3073f99e49a9d9268d6a45c39, type: 3}
+  heavyDamaged: {fileID: 1041440631, guid: 51b6d7a3073f99e49a9d9268d6a45c39, type: 3}
+  heavyDamaged2: {fileID: 1119843360, guid: 51b6d7a3073f99e49a9d9268d6a45c39, type: 3}
 --- !u!143 &3125598817988394143
 CharacterController:
   m_ObjectHideFlags: 0
@@ -82,7 +88,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3125598818022760830}
   - component: {fileID: 3125598818022760831}
-  m_Layer: 0
+  m_Layer: 29
   m_Name: InsectSergeant_Tex_22
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -167,7 +173,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3125598818342947012}
   - component: {fileID: 3125598818342947013}
-  m_Layer: 0
+  m_Layer: 29
   m_Name: InsectSergeant_Tex_28
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -251,7 +257,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3125598818947163273}
   - component: {fileID: 3125598818947163270}
-  m_Layer: 0
+  m_Layer: 29
   m_Name: InsectSergeant_Tex_24
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -335,7 +341,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3125598819104505842}
   - component: {fileID: 3125598819104505843}
-  m_Layer: 0
+  m_Layer: 29
   m_Name: InsectSergeant_Tex_23
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -419,7 +425,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3125598819194566655}
   - component: {fileID: 3125598819194566652}
-  m_Layer: 0
+  m_Layer: 29
   m_Name: InsectSergeant_Tex_21
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -500,6 +506,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3125598817988394145}
     m_Modifications:
+    - target: {fileID: 3473256024467418411, guid: 86efa2ed9b715fd4f84fd9c9b43c8a49, type: 3}
+      propertyPath: m_Layer
+      value: 29
+      objectReference: {fileID: 0}
     - target: {fileID: 5168309245129087121, guid: 86efa2ed9b715fd4f84fd9c9b43c8a49, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -551,6 +561,18 @@ PrefabInstance:
     - target: {fileID: 5544587879373144619, guid: 86efa2ed9b715fd4f84fd9c9b43c8a49, type: 3}
       propertyPath: m_Name
       value: armyInsectWings
+      objectReference: {fileID: 0}
+    - target: {fileID: 5544587879373144619, guid: 86efa2ed9b715fd4f84fd9c9b43c8a49, type: 3}
+      propertyPath: m_Layer
+      value: 29
+      objectReference: {fileID: 0}
+    - target: {fileID: 5576938789834431481, guid: 86efa2ed9b715fd4f84fd9c9b43c8a49, type: 3}
+      propertyPath: m_Layer
+      value: 29
+      objectReference: {fileID: 0}
+    - target: {fileID: 8567298140948554326, guid: 86efa2ed9b715fd4f84fd9c9b43c8a49, type: 3}
+      propertyPath: m_Layer
+      value: 29
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 86efa2ed9b715fd4f84fd9c9b43c8a49, type: 3}

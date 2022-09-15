@@ -7,16 +7,21 @@ public class KIM_BasicInsect : KIM_InsectController
     public GameObject stomach;
     public GameObject bulletFactory;
     public GameObject bulletDispen;
+
+    public GameObject dieExplo;
     // Start is called before the first frame update
     protected override void Start()
     {
         base.Start();
+        hp = 2;
     }
 
     // Update is called once per frame
     protected override void Update()
     {
         base.Update();
+        if (hp <= 0)
+            Destroy(gameObject);
     }
 
     float currentTime = 0;
@@ -41,7 +46,7 @@ public class KIM_BasicInsect : KIM_InsectController
     {
         yield return new WaitForSeconds(0.5f);
         GameObject bullet = Instantiate(bulletFactory);
-        bullet.transform.position = bulletDispen.transform.position + transform.forward;
+        bullet.transform.position = bulletDispen.transform.position;
         bullet.GetComponent<KIM_InsectMissile>().dir = -transform.right;
     }
 
@@ -52,6 +57,10 @@ public class KIM_BasicInsect : KIM_InsectController
         {
             // ship.hp--;
             StartCoroutine("Collide");
+        }
+        else if (other.gameObject.layer == LayerMask.NameToLayer("PlayerBullet"))
+        {
+            hp -= 1;
         }
     }
 
@@ -65,5 +74,11 @@ public class KIM_BasicInsect : KIM_InsectController
             transform.position = Vector3.Lerp(transform.position, transform.position - dir.normalized, Time.deltaTime * 10);
             yield return null;
         }
+    }
+
+    private void OnDestroy()
+    {
+        GameObject explo = Instantiate(dieExplo);
+        explo.transform.position = transform.position;
     }
 }

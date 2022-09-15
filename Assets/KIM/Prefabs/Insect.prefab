@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4986933110971685632}
   - component: {fileID: 1421744220213493791}
-  m_Layer: 0
+  m_Layer: 29
   m_Name: Insect_Tex_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2064779493119539173}
   - component: {fileID: 7736621660554201661}
-  m_Layer: 0
+  m_Layer: 29
   m_Name: Insect_Tex_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -179,7 +179,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5841767514770642629}
   - component: {fileID: 5841767514770642628}
-  m_Layer: 0
+  m_Layer: 29
   m_Name: Insect_Tex_11
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -263,7 +263,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5841767514832639387}
   - component: {fileID: 5841767514832639386}
-  m_Layer: 0
+  m_Layer: 29
   m_Name: Insect_Tex_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -347,7 +347,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5841767515677798418}
   - component: {fileID: 5841767515677798421}
-  m_Layer: 0
+  m_Layer: 29
   m_Name: Insect_Tex_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -432,7 +432,7 @@ GameObject:
   - component: {fileID: 5841767516298938976}
   - component: {fileID: 2003452285}
   - component: {fileID: 2003452286}
-  m_Layer: 0
+  m_Layer: 29
   m_Name: Insect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -494,6 +494,7 @@ MonoBehaviour:
   stomach: {fileID: 5841767515677798419}
   bulletFactory: {fileID: 3092434345792297919, guid: 291d1850f3e09cc4a919e908bdcc0101, type: 3}
   bulletDispen: {fileID: 5841767516569362910}
+  dieExplo: {fileID: 1995403933065894, guid: 4961a16ba01e09547be3e1c9d16d5ad0, type: 3}
 --- !u!1 &5841767516569362910
 GameObject:
   m_ObjectHideFlags: 0
@@ -504,7 +505,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5841767516569362897}
   - component: {fileID: 5841767516569362896}
-  m_Layer: 0
+  m_Layer: 29
   m_Name: Insect_Tex_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -585,6 +586,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5841767516298938976}
     m_Modifications:
+    - target: {fileID: 3473256024467418411, guid: 86efa2ed9b715fd4f84fd9c9b43c8a49, type: 3}
+      propertyPath: m_Layer
+      value: 29
+      objectReference: {fileID: 0}
     - target: {fileID: 5168309245129087121, guid: 86efa2ed9b715fd4f84fd9c9b43c8a49, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -632,6 +637,18 @@ PrefabInstance:
     - target: {fileID: 5544587879373144619, guid: 86efa2ed9b715fd4f84fd9c9b43c8a49, type: 3}
       propertyPath: m_Name
       value: armyInsectWings
+      objectReference: {fileID: 0}
+    - target: {fileID: 5544587879373144619, guid: 86efa2ed9b715fd4f84fd9c9b43c8a49, type: 3}
+      propertyPath: m_Layer
+      value: 29
+      objectReference: {fileID: 0}
+    - target: {fileID: 5576938789834431481, guid: 86efa2ed9b715fd4f84fd9c9b43c8a49, type: 3}
+      propertyPath: m_Layer
+      value: 29
+      objectReference: {fileID: 0}
+    - target: {fileID: 8567298140948554326, guid: 86efa2ed9b715fd4f84fd9c9b43c8a49, type: 3}
+      propertyPath: m_Layer
+      value: 29
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 86efa2ed9b715fd4f84fd9c9b43c8a49, type: 3}

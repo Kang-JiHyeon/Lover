@@ -21,6 +21,7 @@ public class KIM_InsectMissile : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         // ship.hp--;
+        Debug.Log(other.gameObject.name);
         Destroy(gameObject);
     }
 }

@@ -12,9 +12,9 @@ public class KANG_Move : MonoBehaviour
     // 엔진
     GameObject engine;
     // 이동 방향
-    Vector3 moveDir;
+    public Vector3 moveDir;
     // 이동속도
-    public float moveSpeed = 0.01f;
+    public float moveSpeed = 1f;
 
     // Start is called before the first frame update
     void Start()
@@ -32,7 +32,6 @@ public class KANG_Move : MonoBehaviour
         // 엔진에서 우주선 중심을 향하는 벡터
         moveDir = transform.position - engine.transform.position;
 
-        cc.Move(moveDir.normalized * moveSpeed);
-
+        cc.Move(moveDir.normalized * moveSpeed * Time.deltaTime);
     }
 }
