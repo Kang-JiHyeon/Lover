@@ -27,7 +27,8 @@ public class KANG_InputRotate : KANG_AutoRotate
     // Update is called once per frame
     public override void Update()
     {
-        Move(spaceship.position, transform.position);
+            Move(spaceship.position, transform.position);
+
     }
 
     public void Move(Vector3 vStart, Vector3 vEnd)
@@ -39,12 +40,13 @@ public class KANG_InputRotate : KANG_AutoRotate
         // 좌우
         float h = Input.GetAxisRaw("Horizontal");
         // 수직
+
         float v = Input.GetAxisRaw("Vertical");
         // 각도
         float angle = GetAngle(vStart, vEnd);
 
 
-        if (h == 0 && v == 0)
+        if ((h == 0 && v == 0))
         {
             rotDir = 0f;
             return;

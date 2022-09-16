@@ -14,7 +14,7 @@ public class KANG_RotationManager : MonoBehaviour
 
     public GameObject Shield;
     public GameObject Engine;
-    public GameObject Turret;
+    //public GameObject Turret;
 
 
     private void Awake()
@@ -61,5 +61,6 @@ public class KANG_RotationManager : MonoBehaviour
         //{
         //    Turret.GetComponent<KANG_TurretRotate>().enabled = false;
         //}
+
     }
 }

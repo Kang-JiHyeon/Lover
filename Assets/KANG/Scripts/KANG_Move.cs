@@ -27,7 +27,9 @@ public class KANG_Move : MonoBehaviour
     void Update()
     {
         // 엔진이 없을 경우 반환
-        if (!engine) return;
+
+        if (!engine || !KANG_RotationManager.instance.isEngineControll)
+            return;
 
         // 엔진에서 우주선 중심을 향하는 벡터
         moveDir = transform.position - engine.transform.position;
