@@ -68,8 +68,8 @@ public class KIM_Walker : MonoBehaviour
         }
 
         transform.right = Vector3.Cross(transform.forward, planet.transform.position - transform.position);
-        if (Vector3.Distance(planet.transform.position, transform.position) > 7.7f)
-            transform.position += (planet.transform.position - transform.position) * Time.deltaTime;
+        if (Vector3.Distance(planet.transform.position, transform.position) > planet.GetComponent<KIM_Planet>().Radius)
+            transform.position += (planet.transform.position - transform.position).normalized * Time.deltaTime;
     }
 
     void SetState()

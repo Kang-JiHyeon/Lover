@@ -40,6 +40,7 @@ public class KIM_Jail : MonoBehaviour
     {
         if (hp <= 0)
         {
+            hostage.transform.up = Vector3.up;
             notDestroyed.SetActive(false);
             destroyed.SetActive(true);
             hostage.GetComponent<SpriteRenderer>().sprite = rescued;

@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class KIM_Planet : MonoBehaviour
 {
+    float radius;
+    public float Radius { get { return radius; } }
+
     GameObject ship;
     float distance;
     Color col;
@@ -14,6 +17,7 @@ public class KIM_Planet : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        radius = transform.localScale.x / 1.92f * 10;
         ship = GameObject.Find("Spaceship");
         cc = ship.GetComponent<CharacterController>();
         orbit = transform.Find("Orbit").GetComponent<SpriteRenderer>();
