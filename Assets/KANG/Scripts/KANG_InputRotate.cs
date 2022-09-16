@@ -27,7 +27,7 @@ public class KANG_InputRotate : KANG_AutoRotate
     // Update is called once per frame
     public override void Update()
     {
-            Move(spaceship.position, transform.position);
+        //Move(spaceship.position, transform.position);
 
     }
 
@@ -35,7 +35,7 @@ public class KANG_InputRotate : KANG_AutoRotate
     {
         base.Rotate();
 
-        if (!spaceship) return;
+        //if (!spaceship) return;
 
         // аб©Л
         float h = Input.GetAxisRaw("Horizontal");

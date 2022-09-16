@@ -8,7 +8,7 @@ using UnityEngine;
 public class KANG_AutoRotate : MonoBehaviour
 {
     // 회전중심
-    public Transform spaceship;
+    //public Transform spaceship;
     // 회전속도
     public float rotSpeed = 20f;
     // 회전방향
@@ -18,7 +18,7 @@ public class KANG_AutoRotate : MonoBehaviour
     void Start()
     {
         // 회전 중심 = 우주선의 중심
-        spaceship = GameObject.Find("Spaceship").transform;
+        //spaceship = GameObject.Find("Spaceship").transform;
     }
 
     // Update is called once per frame
@@ -29,9 +29,10 @@ public class KANG_AutoRotate : MonoBehaviour
 
     public virtual void Rotate()
     {
-        if (!spaceship) return;
+        //if (!spaceship) return;
 
         // 우주선 중심을 기준으로 회전하고 싶다.
-        transform.RotateAround(spaceship.position, -spaceship.forward, rotDir * rotSpeed * Time.deltaTime);
+        //transform.RotateAround(spaceship.position, -spaceship.forward, rotDir * rotSpeed * Time.deltaTime);
+        transform.Rotate(0, 0, rotDir * rotSpeed * Time.deltaTime);
     }
 }

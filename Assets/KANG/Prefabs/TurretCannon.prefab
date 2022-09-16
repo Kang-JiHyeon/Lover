@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletFactory: {fileID: 4353396649654612325, guid: d23a01019795d2e4aae47af914b0a385, type: 3}
-  createTime: 0.2
+  createTime: 0.1
   isShoot: 0
 --- !u!1 &7086185449351559825
 GameObject:
