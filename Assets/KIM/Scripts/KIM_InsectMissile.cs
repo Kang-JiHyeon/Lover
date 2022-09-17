@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class KIM_InsectMissile : MonoBehaviour
 {
+    public GameObject effect;
     public float speed = 5;
     public Vector3 dir;
     // Start is called before the first frame update
@@ -23,5 +24,11 @@ public class KIM_InsectMissile : MonoBehaviour
         // ship.hp--;
         Debug.Log(other.gameObject.name);
         Destroy(gameObject);
+    }
+
+    private void OnDestroy()
+    {
+        GameObject explo = Instantiate(effect);
+        explo.transform.position = transform.position;
     }
 }

@@ -47,7 +47,7 @@ public class KIM_FireInsect : KIM_InsectController
     private void OnTriggerEnter(Collider other)
     {
         // ºÎµúÈú ¶§ Æ¨°Ü³ª°¡±â ±¸Çö
-        if (other.gameObject.layer == LayerMask.NameToLayer("Ship"))
+        if (other.gameObject.layer == LayerMask.NameToLayer("Ship") || other.gameObject.layer == LayerMask.NameToLayer("PlayerBullet"))
         {
             // ship.hp--;
             GameObject explo = Instantiate(dieExplosion);

@@ -100,6 +100,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1de78e61fbc39694491f7a0a40a80a49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  effect: {fileID: 100000, guid: 3156817f64ec68948ad6bb26569b9ef5, type: 3}
   speed: 8
   dir: {x: 0, y: 0, z: 0}
 --- !u!143 &5041941166820073560
