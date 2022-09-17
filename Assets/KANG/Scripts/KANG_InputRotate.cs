@@ -112,4 +112,3 @@ public class KANG_InputRotate : KANG_AutoRotate
         return Mathf.Atan2(v.y, v.x) * Mathf.Rad2Deg;
     }
 }
-

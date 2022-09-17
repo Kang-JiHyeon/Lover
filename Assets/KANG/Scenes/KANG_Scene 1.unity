@@ -649,7 +649,7 @@ Transform:
   m_Children:
   - {fileID: 160876996}
   m_Father: {fileID: 1384757785}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &656201545
 GameObject:
@@ -776,7 +776,7 @@ Transform:
   - {fileID: 656201546}
   - {fileID: 992463484}
   m_Father: {fileID: 1384757785}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &964430086
 GameObject:
@@ -878,7 +878,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &972976837
 Transform:
   m_ObjectHideFlags: 0
@@ -955,6 +955,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 992463484}
+  - component: {fileID: 992463485}
   m_Layer: 27
   m_Name: ControlsYamato
   m_TagString: Untagged
@@ -969,16 +970,29 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 992463483}
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: -2.47, y: 1.89, z: -0.1}
+  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
+  m_LocalPosition: {x: -2.4699998, y: 1.8899993, z: -0.099999964}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1898558312}
   - {fileID: 972976837}
   m_Father: {fileID: 873139670}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!65 &992463485
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 992463483}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &997638549
 GameObject:
   m_ObjectHideFlags: 0
@@ -1265,7 +1279,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1096341692
 Transform:
   m_ObjectHideFlags: 0
@@ -1579,8 +1593,8 @@ Transform:
   - {fileID: 1518497108}
   - {fileID: 1096341692}
   - {fileID: 2147099474}
-  - {fileID: 873139670}
   - {fileID: 588291292}
+  - {fileID: 873139670}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1631,7 +1645,7 @@ MonoBehaviour:
   isEngineControll: 0
   isTurretControll: 0
   Shield: {fileID: 1852328329}
-  Engine: {fileID: 0}
+  Engine: {fileID: 1518497107}
 --- !u!4 &1418404594 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5472744900921152431, guid: 2c039426867cbf54ab1413edb20fa8b3, type: 3}
@@ -1682,8 +1696,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 055ad9dbe4798484fb0f570bd2700369, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spaceship: {fileID: 0}
   rotSpeed: 30
   rotDir: 1
+  yamatos: []
 --- !u!1 &1595947272
 GameObject:
   m_ObjectHideFlags: 0
@@ -1932,8 +1948,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 055ad9dbe4798484fb0f570bd2700369, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spaceship: {fileID: 0}
   rotSpeed: 50
   rotDir: 1
+  yamatos: []
 --- !u!1 &1865007548
 GameObject:
   m_ObjectHideFlags: 0
@@ -1950,7 +1968,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1865007549
 Transform:
   m_ObjectHideFlags: 0
@@ -1959,9 +1977,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1865007548}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 4.4, z: 0}
-  m_LocalScale: {x: 1.4, y: 1.4285713, z: 1.4285713}
-  m_ConstrainProportionsScale: 0
+  m_LocalPosition: {x: 2.475, y: 2.7, z: 0}
+  m_LocalScale: {x: 1.4, y: 1.4, z: 1.4}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 2147099474}
   m_RootOrder: 1
@@ -2270,6 +2288,37 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1938255862
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1938255863}
+  m_Layer: 27
+  m_Name: YamatoFirePos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1938255863
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1938255862}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.5499997, y: 2.89, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2147099474}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2027885298
 GameObject:
   m_ObjectHideFlags: 0
@@ -2483,7 +2532,7 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2049279007}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -2536,7 +2585,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2049279007}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.07, y: 4.4, z: 0}
+  m_LocalPosition: {x: 2.5499997, y: 2.7, z: 0}
   m_LocalScale: {x: 1.4, y: 1.4, z: 1.4}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -2552,7 +2601,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2147099474}
-  - component: {fileID: 2147099475}
+  - component: {fileID: 2147099476}
+  - component: {fileID: 2147099477}
+  - component: {fileID: 2147099478}
   m_Layer: 27
   m_Name: Yamato
   m_TagString: Untagged
@@ -2568,16 +2619,30 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2147099473}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -2.47, y: 1.73, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2049279010}
   - {fileID: 1865007549}
+  - {fileID: 1938255863}
   m_Father: {fileID: 1384757785}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2147099475
+--- !u!65 &2147099476
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2147099473}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &2147099477
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2589,5 +2654,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 279ab1a154e3ec640a5b06792d532824, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spaceship: {fileID: 0}
   rotSpeed: 20
   rotDir: 1
+  yamatos: []
+--- !u!114 &2147099478
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2147099473}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07d422240d4ab0643827daff001d2bb2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  yamatoBulletFactory: {fileID: 4993557486822331358, guid: 741cdd5278cf5b642b6014fe6341c955, type: 3}
+  firePos: {fileID: 1938255863}
+  isYamatoControll: 0
+  attackTime: 5
+  createTime: 0.2
+  coolTime: 5
+  yamatoTextures: []
+  yState: 2
