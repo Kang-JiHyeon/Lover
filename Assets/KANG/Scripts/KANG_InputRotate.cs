@@ -3,111 +3,125 @@ using System.Collections.Generic;
 using UnityEngine;
 
 // 입력값 
-public class KANG_InputRotate : KANG_AutoRotate
+public class KANG_InputRotate : MonoBehaviour
 {
-    float up = 90f;
-    float right = 0f;
-    float down = -90f;
-    float left = -180f;
+    public Transform target;
+    public float rotSpeed = 30f;
+    public float rotDir = 0f;
+    Vector3 localAngle;
 
-    public static KANG_InputRotate instance;
-
-    private void Awake()
-    {
-        if (instance == false)
-            instance = this;
-    }
+    public bool isControl = false;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        localAngle = target.localEulerAngles;
     }
+
 
     // Update is called once per frame
-    public override void Update()
+    void Update()
     {
-        Move(spaceship.position, transform.position);
-    }
-
-    public void Move(Vector3 vStart, Vector3 vEnd)
-    {
-        base.Rotate();
-
-        if (!spaceship) return;
-
-        // 좌우
+        // 키입력
         float h = Input.GetAxisRaw("Horizontal");
-        // 수직
         float v = Input.GetAxisRaw("Vertical");
-        // 각도
-        float angle = GetAngle(vStart, vEnd);
 
 
-        if (h == 0 && v == 0)
+        Vector3 dir = Vector3.right * h + Vector3.up * v;
+        dir.Normalize();
+
+
+        print(target.eulerAngles.z);
+
+        float worldZ = target.eulerAngles.z;
+        // 각도에 따라 움직임을 제한하고 싶다.
+
+        if (v > 0)
         {
-            rotDir = 0f;
-            return;
-        }
-
-        // UP키를 눌렀을 때
-        if(v > 0)
-        {
-            if (Mathf.Abs(angle - up) < 0.1f)
+            // 왼쪽에 있으면 시계
+            if (worldZ > 0f && worldZ < 180f)
             {
-                rotDir = 0;
-                return;
+                rotDir = -1;
             }
-
-            float theta = Mathf.Abs(angle);
-
-            rotDir = theta > 0f && theta <= 90f ? -1 : 1;
-        }
-
-        // Right 키를 눌렀을 때
-        if (h > 0)
-        {
-            if (Mathf.Abs(angle) < 0.1f)
+            // 오른쪽에 있으면 반시계
+            else
             {
-                rotDir = 0;
-                return;
+                rotDir = 1;
             }
-
-            rotDir = angle > 0f ? 1 : -1;
         }
 
-        // Down 키를 눌렀을 때
+        // Down
         if (v < 0)
         {
-            if (Mathf.Abs(angle - down) < 0.1f)
+            // 왼쪽에 있으면 반시계
+            if (worldZ >= 0f && worldZ < 180f)
             {
-                rotDir = 0;
-                return;
+                rotDir = 1;
             }
-
-            float theta = Mathf.Abs(angle);
-
-            rotDir = theta > 0f && theta <= 90f ? 1 : -1;
+            // 오른쪽에 있으면 시계
+            else
+            {
+                rotDir = -1;
+            }
         }
 
-        // Left 키를 눌렀을 때
+        // Right
+        if (h > 0)
+        {
+            // 위쪽에 있으면 시계
+            if ((worldZ >= 0f && worldZ < 90f) || (worldZ >= 270f && worldZ < 360f))
+            {
+                rotDir = -1;
+            }
+            // 아래쪽에 있으면 반시계
+            else
+            {
+                rotDir = 1;
+            }
+        }
+
+        // Left
         if (h < 0)
         {
-            if (Mathf.Abs(angle - left) < 0.1f || Mathf.Abs(angle + left) < 0.1f)
+            // 위쪽에 있으면 반시계
+            if ((worldZ >= 0f && worldZ < 90f) || (worldZ >= 270f && worldZ < 360f))
             {
-                rotDir = 0;
-                return;
+                rotDir = 1;
             }
+            // 아래쪽에 있으면 시계
+            else
+            {
+                rotDir = -1;
+            }
+        }
 
-            rotDir = angle > 0f ? -1 : 1;
+        if ((h != 0 || v != 0) && isControl)
+            Rotate();
+
+    }
+
+    void Rotate()
+    {
+        localAngle.z += rotDir * rotSpeed * Time.deltaTime;
+        localAngle.z = localAngle.z > 180 ? localAngle.z - 360 : localAngle.z;
+        //localAngle.z = Mathf.Clamp(localAngle.z, -90, 90);
+        target.localRotation = Quaternion.Euler(0, 0, localAngle.z);
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            isControl = true;
         }
     }
-    // 각도 구하는 함수
-    public float GetAngle(Vector3 vStart, Vector3 vEnd)
+
+    private void OnTriggerExit(Collider other)
     {
-        Vector3 v = vEnd - vStart;
-
-        return Mathf.Atan2(v.y, v.x) * Mathf.Rad2Deg;
+        if (other.gameObject.CompareTag("Player"))
+        {
+            isControl = false;
+        }
     }
-}
 
+}
