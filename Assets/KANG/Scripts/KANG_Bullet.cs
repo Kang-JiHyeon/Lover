@@ -8,6 +8,7 @@ using UnityEngine;
 public class KANG_Bullet : MonoBehaviour
 {
     public float bulletSpeed = 10f;
+    public float destroyTime = 10f;
 
     // Start is called before the first frame update
     void Start()
@@ -20,6 +21,8 @@ public class KANG_Bullet : MonoBehaviour
     {
         // P = P0 + vt
         transform.position += transform.up * bulletSpeed * Time.deltaTime;
+
+        Destroy(gameObject, destroyTime);
     }
 
     private void OnTriggerEnter(Collider other)

@@ -15,7 +15,7 @@ public class KANG_AutoRotate : MonoBehaviour
     public float rotDir = 1f;
 
     // yamato texture
-    public List<Transform> yamatos;
+    public List<Transform> rotObjects;
 
 
     // Start is called before the first frame update
@@ -26,7 +26,7 @@ public class KANG_AutoRotate : MonoBehaviour
 
         for(int i = 0; i<transform.childCount; i++)
         {
-            yamatos.Add(transform.GetChild(i));
+            rotObjects.Add(transform.GetChild(i));
         }
     }
 
@@ -41,9 +41,9 @@ public class KANG_AutoRotate : MonoBehaviour
     public virtual void Rotate()
     {
         // yamato texture들을 우주선 중심을 기준으로 회전하고 싶다.
-        for (int i = 0; i< yamatos.Count; i++)
+        for (int i = 0; i< rotObjects.Count; i++)
         {
-            yamatos[i].RotateAround(spaceship.position, -spaceship.forward, rotDir * rotSpeed * Time.deltaTime);
+            rotObjects[i].RotateAround(spaceship.position, -spaceship.forward, rotDir * rotSpeed * Time.deltaTime);
         }
     }
 }

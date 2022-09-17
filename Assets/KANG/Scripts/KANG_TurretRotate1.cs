@@ -45,8 +45,8 @@ public class KANG_TurretRotate1 : MonoBehaviour
     {
         if (isControl == false) return;
 
-         angle = KANG_InputRotate.instance.GetAngle(transform.parent.position, transform.GetChild(0).position);
-        print(angle);
+        //angle = KANG_InputRotate.instance.GetAngle(transform.parent.position, transform.GetChild(0).position);
+        //print(angle);
 
         // аб©Л
          h = Input.GetAxisRaw("Horizontal");

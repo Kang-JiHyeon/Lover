@@ -9,7 +9,7 @@ public class KANG_Yamato : MonoBehaviour
 {
     public GameObject yamatoBulletFactory;
     public Transform firePos;
-    public bool isYamatoControll = false;
+    public bool isYamatoControl = false;
 
     // 공격시간
     public float attackTime = 3f;
@@ -25,7 +25,8 @@ public class KANG_Yamato : MonoBehaviour
     
 
     // Texture
-    public List<SpriteRenderer> yamatoTextures;
+    public List<GameObject> machines;
+    public List<GameObject> controls;
 
 
     public enum YamatoState
@@ -43,14 +44,22 @@ public class KANG_Yamato : MonoBehaviour
     {
         curCreateTime = createTime;
 
-        for(int i=0; i<transform.childCount; i++)
+        for (int i = 0; i < transform.childCount; i++)
         {
-            SpriteRenderer texture = transform.GetChild(i).GetComponent<SpriteRenderer>();
-
-            if (texture)
+            Transform child = transform.GetChild(i);
+            for(int j = 0; j< child.childCount; j++)
             {
-                yamatoTextures.Add(texture);
+                GameObject texture = child.GetChild(j).gameObject;
+
+                if (texture)
+                {
+                    if (i == 0)
+                        machines.Add(texture);
+                    else if(i==1)
+                        controls.Add(texture);
+                }
             }
+
         }
         SetEnableTexture(false);
     }
@@ -76,7 +85,7 @@ public class KANG_Yamato : MonoBehaviour
     // - 조작이 가능하고, 공격키 입력이 들어오면 공격 상태로 전환한다.
     private void Enable()
     {
-       if(isYamatoControll && Input.GetKeyDown(KeyCode.M))
+       if(isYamatoControl && Input.GetKeyDown(KeyCode.M))
        {
             yState = YamatoState.Attack;
        }
@@ -136,8 +145,11 @@ public class KANG_Yamato : MonoBehaviour
     // 텍스쳐 변경 함수
     void SetEnableTexture(bool isEnable)
     {
-        yamatoTextures[0].enabled = isEnable;
-        yamatoTextures[1].enabled = !isEnable;
+        machines[0].SetActive(isEnable);
+        machines[1].SetActive(!isEnable);
+
+        controls[0].SetActive(isEnable);
+        controls[1].SetActive(!isEnable);
     }
 
 
@@ -146,7 +158,7 @@ public class KANG_Yamato : MonoBehaviour
         // Player가 감지되는 동안 Yamato를 조작할 수 있다.
         if (other.gameObject.CompareTag("Player"))
         {
-            isYamatoControll = true;
+            isYamatoControl = true;
         }
     }
     private void OnTriggerExit(Collider other)
@@ -154,7 +166,7 @@ public class KANG_Yamato : MonoBehaviour
         // Player가 감지 범위를 벗어나면 Yamato를 조작할 수 있다.
         if (other.gameObject.CompareTag("Player"))
         {
-            isYamatoControll = false;
+            isYamatoControl = false;
         }
     }
 

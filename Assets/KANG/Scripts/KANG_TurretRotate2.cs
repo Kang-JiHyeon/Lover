@@ -41,16 +41,6 @@ public class KANG_TurretRotate2 : MonoBehaviour
         float worldZ = transform.eulerAngles.z;
         // 각도에 따라 움직임을 제한하고 싶다.
 
-        ////Up
-        //if (worldZ >= 0f && worldZ < 180f)
-        //{
-        //    rotDir = v > 0 ? -1 : 1;
-        //}
-        //else
-        //{
-        //    rotDir = v < 0 ? -1 : 1;
-        //}
-        // Up
         if (v > 0)
         {
             // 왼쪽에 있으면 시계
@@ -79,7 +69,6 @@ public class KANG_TurretRotate2 : MonoBehaviour
                 rotDir = -1;
             }
         }
-
 
         // Right
         if (h > 0)

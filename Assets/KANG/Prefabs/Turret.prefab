@@ -148,7 +148,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   turretCannons: []
-  isControll: 0
+  isFire: 0
 --- !u!1001 &5473458367793699367
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -174,7 +174,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4384549708487190996, guid: 51884b89a12efad4eb4108d141f13270, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 4384549708487190996, guid: 51884b89a12efad4eb4108d141f13270, type: 3}
       propertyPath: m_LocalRotation.w
@@ -236,7 +236,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4384549708487190996, guid: 51884b89a12efad4eb4108d141f13270, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 4384549708487190996, guid: 51884b89a12efad4eb4108d141f13270, type: 3}
       propertyPath: m_LocalRotation.w
