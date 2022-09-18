@@ -184,6 +184,4 @@ public class KANG_ShipMove : MonoBehaviour
             //Destroy(other.gameObject);
         }
     }
-
-
 }
