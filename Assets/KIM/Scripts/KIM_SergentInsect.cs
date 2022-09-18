@@ -64,11 +64,11 @@ public class KIM_SergentInsect : KIM_InsectController
         bullet.transform.position = bulletDispen.transform.position;
         bullet.GetComponent<KIM_InsectMissile>().dir = -transform.right;
         bullet.transform.up = -transform.right;
-        GameObject bullet2 = Instantiate(bulletFactory);
-        bullet2.transform.position = bulletDispen.transform.position;
-        bullet2.GetComponent<KIM_InsectMissile>().dir = -transform.right;
-        bullet2.GetComponent<KIM_InsectMissile>().dir = Quaternion.AngleAxis(-30, Vector3.forward) * dir;
-        bullet2.transform.up = bullet2.GetComponent<KIM_InsectMissile>().dir;
+        //GameObject bullet2 = Instantiate(bulletFactory);
+        //bullet2.transform.position = bulletDispen.transform.position;
+        //bullet2.GetComponent<KIM_InsectMissile>().dir = -transform.right;
+        //bullet2.GetComponent<KIM_InsectMissile>().dir = Quaternion.AngleAxis(-30, Vector3.forward) * dir;
+        //bullet2.transform.up = bullet2.GetComponent<KIM_InsectMissile>().dir;
         GameObject bullet3 = Instantiate(bulletFactory);
         bullet3.transform.position = bulletDispen.transform.position;
         bullet3.GetComponent<KIM_InsectMissile>().dir = -transform.right;
@@ -79,11 +79,11 @@ public class KIM_SergentInsect : KIM_InsectController
         bullet4.GetComponent<KIM_InsectMissile>().dir = -transform.right;
         bullet4.GetComponent<KIM_InsectMissile>().dir = Quaternion.AngleAxis(15, Vector3.forward) * dir;
         bullet4.transform.up = bullet4.GetComponent<KIM_InsectMissile>().dir;
-        GameObject bullet5 = Instantiate(bulletFactory);
-        bullet5.transform.position = bulletDispen.transform.position;
-        bullet5.GetComponent<KIM_InsectMissile>().dir = -transform.right;
-        bullet5.GetComponent<KIM_InsectMissile>().dir = Quaternion.AngleAxis(30, Vector3.forward) * dir;
-        bullet5.transform.up = bullet5.GetComponent<KIM_InsectMissile>().dir;
+        //GameObject bullet5 = Instantiate(bulletFactory);
+        //bullet5.transform.position = bulletDispen.transform.position;
+        //bullet5.GetComponent<KIM_InsectMissile>().dir = -transform.right;
+        //bullet5.GetComponent<KIM_InsectMissile>().dir = Quaternion.AngleAxis(30, Vector3.forward) * dir;
+        //bullet5.transform.up = bullet5.GetComponent<KIM_InsectMissile>().dir;
     }
 
     private void OnTriggerEnter(Collider other)

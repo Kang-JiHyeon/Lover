@@ -74,11 +74,11 @@ public class KIM_Walker : MonoBehaviour
 
     void SetState()
     {
-        if (dir.magnitude > 30f)
+        if (dir.magnitude > 15f)
             estate = EnemyState.Idle;
-        else if (dir.magnitude < 30f && dir.magnitude > 15f)
+        else if (dir.magnitude < 15f && dir.magnitude > 8f)
             estate = EnemyState.Move;
-        else if (dir.magnitude < 15f && Vector3.Angle(dir, transform.up) < 90)
+        else if (dir.magnitude < 8f && Vector3.Angle(dir, transform.up) < 90)
             estate = EnemyState.Attack;
         else
             estate = EnemyState.Move;
