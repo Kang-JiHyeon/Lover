@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 
 // 우주선의 체력을 관리하고 싶다.
-// 
+// 우주선의 체력이 깎일 때마다 매쉬 변경하고 싶다.
 public class KANG_ShipHP : MonoBehaviour
 {
-    public static KANG_ShipHP instance;
+    public GameObject DeathSprite;
 
+
+    public static KANG_ShipHP instance;
     public int maxHP = 10;
     int hp;
 
@@ -21,7 +23,6 @@ public class KANG_ShipHP : MonoBehaviour
         set
         {
             hp = value;
-
             print("ShipHP : "+hp);
             
             if(hp <= 0)
