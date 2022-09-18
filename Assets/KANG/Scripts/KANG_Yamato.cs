@@ -87,10 +87,14 @@ public class KANG_Yamato : MonoBehaviour
     // - 조작이 가능하고, 공격키 입력이 들어오면 공격 상태로 전환한다.
     private void Enable()
     {
-       if(isYamatoControl && Input.GetKeyDown(KeyCode.M))
-       {
-            yState = YamatoState.Attack;
-       }
+        if (isYamatoControl)
+        {
+            // 1P / 2P
+            if((!pc.is2P && Input.GetKeyDown(KeyCode.M)) || (pc.is2P && Input.GetKeyDown(KeyCode.X)))
+            {
+                    yState = YamatoState.Attack;
+            }
+        }
     }
 
     // 공격 상태

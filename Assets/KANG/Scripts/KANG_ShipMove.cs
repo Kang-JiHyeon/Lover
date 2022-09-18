@@ -52,11 +52,24 @@ public class KANG_ShipMove : MonoBehaviour
 
         if (engine.isControl)
         {
-            if (Input.GetKeyDown(KeyCode.M))
-                isMove = true;
+            //1P
+            if(engine.GetComponent<KANG_InputRotate>().is2P == false)
+            {
+                if (Input.GetKeyDown(KeyCode.M))
+                    isMove = true;
 
-            if (Input.GetKeyUp(KeyCode.M))
-                isMove = false;
+                if (Input.GetKeyUp(KeyCode.M))
+                    isMove = false;
+            }
+            // 2P
+            else
+            {
+                if (Input.GetKeyDown(KeyCode.X))
+                    isMove = true;
+
+                if (Input.GetKeyUp(KeyCode.X))
+                    isMove = false;
+            }
         }
         else
         {
@@ -110,51 +123,8 @@ public class KANG_ShipMove : MonoBehaviour
         }
     }
 
-
-    //private void OnControllerColliderHit(ControllerColliderHit hit)
-    //{
-
-    //    print(hit.gameObject.name);
-
-
-    //    if (isBounce) return;
-
-    //    if (hit.gameObject.CompareTag("Map"))
-    //    {
-    //        bounceDir = transform.position - hit.transform.position;
-    //        bounceDir.z = 0f;
-    //        bounceDir.Normalize();
-    //        isBounce = true;
-
-    //        KANG_ShipHP.instance.HP--;
-
-    //        print("Map Bounce, HP--");
-    //    }
-
-
-    //    // Enemy
-    //    if (hit.gameObject.layer == LayerMask.NameToLayer("Enemy"))
-    //    {
-    //        KANG_ShipHP.instance.HP--;
-    //        print("Enemy, HP--");
-    //    }
-
-    //    // EnemyBullet
-    //    if (hit.gameObject.layer == LayerMask.NameToLayer("EnemyBullet"))
-    //    {
-    //        KANG_ShipHP.instance.HP--;
-    //        //Destroy(hit.gameObject);
-    //    }
-    //}
-
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.GetComponent<CharacterController>())
-        {
-            print("cc get : " + other.gameObject.name);
-        }
-
-        //if (isBounce) return;
 
         if (other.gameObject.CompareTag("Map"))
         {
