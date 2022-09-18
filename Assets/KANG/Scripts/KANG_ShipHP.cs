@@ -5,10 +5,12 @@ using UnityEngine.UI;
 
 // 우주선의 체력을 관리하고 싶다.
 // 우주선의 체력이 깎일 때마다 매쉬 변경하고 싶다.
+// 우주선 체력이 깎일 때마다 Slider의 값을 변경하고 싶다.
 public class KANG_ShipHP : MonoBehaviour
 {
     public GameObject DeathSprite;
-
+    public Slider HPBar;
+    public GameObject fillArea;
 
     public static KANG_ShipHP instance;
     public int maxHP = 10;
@@ -28,7 +30,8 @@ public class KANG_ShipHP : MonoBehaviour
         set
         {
             hp = value;
-            //print("ShipHP : "+hp);
+
+            HPBar.value--;
 
             if(hp <= 0)
             {
@@ -36,6 +39,11 @@ public class KANG_ShipHP : MonoBehaviour
                 hp = 0;
                 DeathSprite.SetActive(true);
                 isDie = true;
+
+                HPBar.value = 0f;
+                fillArea.SetActive(false);
+
+
             }
             else if(hp > warningHP)
             {
@@ -59,6 +67,9 @@ public class KANG_ShipHP : MonoBehaviour
     void Start()
     {
         hp = maxHP;
+        HPBar.maxValue = maxHP;
+        HPBar.value = maxHP;
+
         curTime = intervalTime;
     }
 
@@ -79,24 +90,27 @@ public class KANG_ShipHP : MonoBehaviour
     {
         curTime += Time.deltaTime;
 
-        if(curTime > intervalTime * 2f)
+        if(curTime > intervalTime + 0.1f)
         {
-            DeathSprite.SetActive(true);
+            DeathSprite.SetActive(false);
             curTime = 0f;
         }
         else if(curTime > intervalTime)
         {
-            DeathSprite.SetActive(false);
+            DeathSprite.SetActive(true);
         }
     }
 
 
-    IEnumerator IeDeath()
+    IEnumerator IeDeath()   
     {
+        DeathSprite.SetActive(false);
+        yield return null;
+
         DeathSprite.SetActive(true);
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(0.1f);
 
         DeathSprite.SetActive(false);
-        yield return new WaitForSeconds(0.2f);
+        yield return null;
     }
 }
