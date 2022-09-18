@@ -34,11 +34,11 @@ public class KIM_PlayerController : MonoBehaviour
     {
         if (!is2P)
         {
-            // 로컬로 움직이기 위해 우주선이 이동하는 방향으로 우선 이동
-            LocalMove(KANG_ShipMove.instance.moveDir * KANG_ShipMove.instance.curMoveSpeed);
             // 사다리에 탔을 때 움직임
             if (isLadder)
             {
+                // 로컬로 움직이기 위해 우주선이 이동하는 방향으로 우선 이동
+                LocalMove(KANG_ShipMove.instance.moveDir * KANG_ShipMove.instance.curMoveSpeed);
                 yVelocity = 0f;
 
                 if (Input.GetKey(KeyCode.LeftArrow))
@@ -69,6 +69,8 @@ public class KIM_PlayerController : MonoBehaviour
             // 그외 상황에서의 움직임
             else
             {
+                // 로컬로 움직이기 위해 우주선이 이동하는 방향으로 우선 이동
+                LocalMove(KANG_ShipMove.instance.moveDir * KANG_ShipMove.instance.curMoveSpeed);
                 Debug.DrawRay(transform.position, Vector3.down * 0.3f, Color.red);
                 if (!Physics.Raycast(transform.position, Vector3.down, 0.37f, LayerMask.GetMask("ShipFloor")))
                 {
@@ -97,11 +99,11 @@ public class KIM_PlayerController : MonoBehaviour
         }
         else
         {
-            // 로컬로 움직이기 위해 우주선이 이동하는 방향으로 우선 이동
-            LocalMove(KANG_ShipMove.instance.moveDir * KANG_ShipMove.instance.curMoveSpeed);
             // 사다리에 탔을 때 움직임
             if (isLadder)
             {
+                // 로컬로 움직이기 위해 우주선이 이동하는 방향으로 우선 이동
+                LocalMove(KANG_ShipMove.instance.moveDir * KANG_ShipMove.instance.curMoveSpeed);
                 yVelocity = 0f;
 
                 if (Input.GetKey(KeyCode.A))
@@ -132,6 +134,8 @@ public class KIM_PlayerController : MonoBehaviour
             // 그외 상황에서의 움직임
             else
             {
+                // 로컬로 움직이기 위해 우주선이 이동하는 방향으로 우선 이동
+                LocalMove(KANG_ShipMove.instance.moveDir * KANG_ShipMove.instance.curMoveSpeed);
                 Debug.DrawRay(transform.position, Vector3.down * 0.3f, Color.red);
                 if (!Physics.Raycast(transform.position, Vector3.down, 0.37f, LayerMask.GetMask("ShipFloor")))
                 {
@@ -175,6 +179,14 @@ public class KIM_PlayerController : MonoBehaviour
         if (other.gameObject.layer == LayerMask.NameToLayer("Module"))
         {
             canModule = true;
+        }
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.gameObject.layer == LayerMask.NameToLayer("Module") && isModule)
+        {
+            transform.localPosition = Vector3.Lerp(transform.localPosition, other.transform.localPosition, Time.deltaTime * 10);
         }
     }
 

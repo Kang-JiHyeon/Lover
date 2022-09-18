@@ -12,8 +12,9 @@ public class KIM_Planet : MonoBehaviour
     Color col;
     SpriteRenderer orbit;
     CharacterController cc;
-    KIM_PlayerController pc;
-    
+    KIM_PlayerController pc1;
+    KIM_PlayerController pc2;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,7 +22,8 @@ public class KIM_Planet : MonoBehaviour
         ship = GameObject.Find("Spaceship");
         cc = ship.GetComponent<CharacterController>();
         orbit = transform.Find("Orbit").GetComponent<SpriteRenderer>();
-        pc = GameObject.Find("Player").GetComponent<KIM_PlayerController>();    
+        pc1 = GameObject.Find("Player").GetComponent<KIM_PlayerController>();
+        pc2 = GameObject.Find("Player (1)").GetComponent<KIM_PlayerController>();
     }
 
     // Update is called once per frame
@@ -35,7 +37,8 @@ public class KIM_Planet : MonoBehaviour
             dir.Normalize();
 
             cc.Move(((transform.position + dir * 13.5f) - ship.transform.position) * Time.deltaTime / 3);
-            pc.LocalMove(((transform.position + dir * 13.5f) - ship.transform.position) / 3);
+            pc1.LocalMove(((transform.position + dir * 13.5f) - ship.transform.position) / 3);
+            pc2.LocalMove(((transform.position + dir * 13.5f) - ship.transform.position) / 3);
         }
     }
 
