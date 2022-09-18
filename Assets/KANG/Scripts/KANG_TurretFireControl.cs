@@ -26,16 +26,34 @@ public class KANG_TurretFireControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         if (turret.isControl)
         {
-            if (Input.GetKeyDown(KeyCode.M))
+            // 1P
+            if (!turret.is2P)
             {
-                isFire = true;
-            }
+                if (Input.GetKeyDown(KeyCode.M))
+                {
+                    isFire = true;
+                }
 
-            if (Input.GetKeyUp(KeyCode.M))
+                if (Input.GetKeyUp(KeyCode.M))
+                {
+                    isFire = false;
+                }
+            }
+            // 2P
+            else
             {
-                isFire = false;
+                if (Input.GetKeyDown(KeyCode.X))
+                {
+                    isFire = true;
+                }
+
+                if (Input.GetKeyUp(KeyCode.X))
+                {
+                    isFire = false;
+                }
             }
         }
         else
