@@ -166,7 +166,7 @@ public class KANG_Yamato : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         // Player가 감지 범위를 벗어나면 Yamato를 조작할 수 있다.
-        if (other.gameObject.TryGetComponent<KIM_PlayerController>(out pc) && !pc.IsModule)
+        if (other.gameObject.TryGetComponent<KIM_PlayerController>(out pc))
         {
             isYamatoControl = false;
         }

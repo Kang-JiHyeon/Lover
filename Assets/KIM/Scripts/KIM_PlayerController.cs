@@ -87,7 +87,6 @@ public class KIM_PlayerController : MonoBehaviour
                     cc.Move(-Vector3.right * speed * Time.deltaTime);
                 else if (Input.GetKey(KeyCode.RightArrow))
                     cc.Move(Vector3.right * speed * Time.deltaTime);
-
                 cc.Move(yVelocity * Vector3.up * Time.deltaTime);
             }
 
@@ -167,6 +166,7 @@ public class KIM_PlayerController : MonoBehaviour
     public void LocalMove(Vector3 dir)
     {
         cc.Move(dir * Time.deltaTime);
+
     }
 
     private void OnTriggerEnter(Collider other)
@@ -186,7 +186,7 @@ public class KIM_PlayerController : MonoBehaviour
     {
         if (other.gameObject.layer == LayerMask.NameToLayer("Module") && isModule)
         {
-            transform.localPosition = Vector3.Lerp(transform.localPosition, other.transform.localPosition, Time.deltaTime * 10);
+            transform.position = Vector3.Lerp(transform.position, other.transform.position, Time.deltaTime * 10);
         }
     }
 

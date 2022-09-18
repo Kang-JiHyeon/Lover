@@ -34,7 +34,7 @@ public class KANG_ShipHP : MonoBehaviour
             else
             {
                 StopAllCoroutines();
-                StartCoroutine(IeDeath());
+                //StartCoroutine(IeDeath());
             }
         }
     }

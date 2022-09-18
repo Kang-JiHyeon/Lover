@@ -37,8 +37,14 @@ public class KIM_Planet : MonoBehaviour
             dir.Normalize();
 
             cc.Move(((transform.position + dir * 13.5f) - ship.transform.position) * Time.deltaTime / 3);
-            pc1.LocalMove(((transform.position + dir * 13.5f) - ship.transform.position) / 3);
-            pc2.LocalMove(((transform.position + dir * 13.5f) - ship.transform.position) / 3);
+            if (!pc1.IsModule)
+            {
+                pc1.LocalMove(((transform.position + dir * 13.5f) - ship.transform.position) / 3);
+            }
+            if (!pc2.IsModule)
+            {
+                pc2.LocalMove(((transform.position + dir * 13.5f) - ship.transform.position) / 3);
+            }
         }
     }
 
