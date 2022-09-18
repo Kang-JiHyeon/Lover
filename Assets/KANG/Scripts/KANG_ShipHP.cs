@@ -24,16 +24,19 @@ public class KANG_ShipHP : MonoBehaviour
         {
             hp = value;
             print("ShipHP : "+hp);
-            
+
             if(hp <= 0)
             {
                 print("Ship Die");
-
-                //Destroy(gameObject);
+                hp = 0;
+                DeathSprite.SetActive(true);
+            }
+            else
+            {
+                StopAllCoroutines();
+                StartCoroutine(IeDeath());
             }
         }
-
-
     }
 
     private void Awake()
@@ -52,5 +55,14 @@ public class KANG_ShipHP : MonoBehaviour
     void Update()
     {
 
+    }
+
+    IEnumerator IeDeath()
+    {
+        DeathSprite.SetActive(true);
+        yield return new WaitForSeconds(0.2f);
+
+        DeathSprite.SetActive(false);
+        yield return new WaitForSeconds(0.2f);
     }
 }

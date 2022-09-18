@@ -181,7 +181,6 @@ public class KANG_ShipMove : MonoBehaviour
         {
             print("trigger Object : " + other.gameObject.name);
             KANG_ShipHP.instance.HP--;
-            //Destroy(other.gameObject);
         }
     }
 }
