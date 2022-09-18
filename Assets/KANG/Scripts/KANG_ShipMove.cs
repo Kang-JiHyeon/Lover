@@ -47,9 +47,6 @@ public class KANG_ShipMove : MonoBehaviour
     void Update()
     {
         // 엔진이 없을 경우 반환
-        if (engine.isControl == false)
-            return;
-
         if (engine.isControl)
         {
             if (Input.GetKeyDown(KeyCode.M))
