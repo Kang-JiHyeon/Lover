@@ -18,6 +18,7 @@ public class KANG_CameraMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position = spaceship.transform.position + offset;
+        if(spaceship)
+            transform.position = spaceship.transform.position + offset;
     }
 }

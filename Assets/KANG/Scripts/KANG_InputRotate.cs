@@ -31,7 +31,7 @@ public class KANG_InputRotate : MonoBehaviour
         dir.Normalize();
 
 
-        print(target.eulerAngles.z);
+        //print(target.eulerAngles.z);
 
         float worldZ = target.eulerAngles.z;
         // 각도에 따라 움직임을 제한하고 싶다.

@@ -5,6 +5,9 @@ using UnityEngine;
 // 엔진 방향의 반대방향으로 이동하고 싶다.
 // Charater Controller 를 이용해 움직이고 싶다.
 
+// 맵, 운석에 닿일 경우
+// 부딪힌 방향의 반대방향으로 힘을 가하고 싶다.
+
 public class KANG_ShipMove : MonoBehaviour
 {
     CharacterController cc;
@@ -15,16 +18,29 @@ public class KANG_ShipMove : MonoBehaviour
     // 이동 방향
     Vector3 moveDir;
     // 이동속도
-    public float moveSpeed = 0.01f;
-
+    public float moveSpeed = 3f;
+    float curMoveSpeed = 0f;
     public bool isMove = false;
+
+    public Vector3 bounceDir;
+    public bool isBounce = false;
+
+    public float bounceTime = 0.2f;
+    float curTime = 0f;
+
+    public static KANG_ShipMove instance;
+
+    private void Awake()
+    {
+        if (instance == null)
+            instance = this;
+    }
 
     // Start is called before the first frame update
     void Start()
     {
         cc = GetComponent<CharacterController>();
         machine = engine.transform.GetChild(0);
-
     }
 
     // Update is called once per frame
@@ -37,27 +53,137 @@ public class KANG_ShipMove : MonoBehaviour
         if (engine.isControl)
         {
             if (Input.GetKeyDown(KeyCode.M))
-            {
                 isMove = true;
-            }
 
             if (Input.GetKeyUp(KeyCode.M))
-            {
                 isMove = false;
-            }
         }
         else
         {
             isMove = false;
         }
 
+        // 움직임 속도 
         if (isMove)
+        {
+            LerpMoveSpeed(moveSpeed);
+        }
+        // 멈춤 속도
+        else
+        {
+            LerpMoveSpeed(0f);
+        }
+
+        // 움직임 방향
+        if (isMove && moveSpeed > 0 && !isBounce)
         {
             // 엔진에서 우주선 중심을 향하는 벡터
             moveDir = transform.forward - machine.up;
+            moveDir.z = 0;
+            moveDir.Normalize();
+        }
 
-            cc.Move(moveDir.normalized * moveSpeed);
+        if (isBounce)
+        {
+            LerpMoveSpeed(0f, 2f);
+            // 일정시간동안 튕기는 방향으로 이동하고 싶다.
+            curTime += Time.deltaTime;
 
+            if (curTime > bounceTime)
+            {
+                curTime = 0f;
+                isBounce = false;
+            }
+            moveDir = bounceDir;
+        }
+
+        cc.Move(moveDir * curMoveSpeed * Time.deltaTime);
+
+    }
+
+    void LerpMoveSpeed(float targetSpeed, float changeSpeed = 1f)
+    {
+        curMoveSpeed = Mathf.Lerp(curMoveSpeed, targetSpeed, Time.deltaTime * changeSpeed);
+        if (Mathf.Abs(targetSpeed - curMoveSpeed) < 0.1f)
+        {
+            curMoveSpeed = targetSpeed;
         }
     }
+
+
+    //private void OnControllerColliderHit(ControllerColliderHit hit)
+    //{
+
+    //    print(hit.gameObject.name);
+
+
+    //    if (isBounce) return;
+
+    //    if (hit.gameObject.CompareTag("Map"))
+    //    {
+    //        bounceDir = transform.position - hit.transform.position;
+    //        bounceDir.z = 0f;
+    //        bounceDir.Normalize();
+    //        isBounce = true;
+
+    //        KANG_ShipHP.instance.HP--;
+
+    //        print("Map Bounce, HP--");
+    //    }
+
+
+    //    // Enemy
+    //    if (hit.gameObject.layer == LayerMask.NameToLayer("Enemy"))
+    //    {
+    //        KANG_ShipHP.instance.HP--;
+    //        print("Enemy, HP--");
+    //    }
+
+    //    // EnemyBullet
+    //    if (hit.gameObject.layer == LayerMask.NameToLayer("EnemyBullet"))
+    //    {
+    //        KANG_ShipHP.instance.HP--;
+    //        //Destroy(hit.gameObject);
+    //    }
+    //}
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.GetComponent<CharacterController>())
+        {
+            print("cc get : " + other.gameObject.name);
+        }
+
+        if (isBounce) return;
+
+        if (other.gameObject.CompareTag("Map"))
+        {
+            bounceDir = transform.position - other.transform.position;
+            bounceDir.z = 0f;
+            bounceDir.Normalize();
+            isBounce = true;
+
+            KANG_ShipHP.instance.HP--;
+
+            print("Map Bounce, HP--");
+        }
+
+
+        // Enemy
+        if (other.gameObject.layer == LayerMask.NameToLayer("Enemy"))
+        {
+            KANG_ShipHP.instance.HP--;
+            print("Enemy, HP--");
+        }
+
+        // EnemyBullet
+        if (other.gameObject.layer == LayerMask.NameToLayer("EnemyBullet"))
+        {
+            print("trigger Object : " + other.gameObject.name);
+            KANG_ShipHP.instance.HP--;
+            //Destroy(other.gameObject);
+        }
+    }
+
+
 }

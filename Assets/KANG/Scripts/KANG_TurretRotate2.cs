@@ -36,7 +36,7 @@ public class KANG_TurretRotate2 : MonoBehaviour
         dir.Normalize();
 
 
-        print(transform.eulerAngles.z);
+        //print(transform.eulerAngles.z);
 
         float worldZ = transform.eulerAngles.z;
         // 각도에 따라 움직임을 제한하고 싶다.

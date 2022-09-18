@@ -7,9 +7,6 @@ using UnityEngine;
 
 public class KANG_Shield : MonoBehaviour
 {
-    public bool isBounce = false;
-    Vector3 bounceDir;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -19,9 +16,6 @@ public class KANG_Shield : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-
-
         // 부딪힌 방향의 반대 방향으로 이동시키고 싶다.
         // 부딪혔을 때 진행 방향을 알고 싶다.
 
@@ -29,16 +23,21 @@ public class KANG_Shield : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Enemy"))
+        if (other.gameObject.layer == LayerMask.NameToLayer("EnemyBullet"))
         {
             Destroy(other.gameObject);
         }
 
+        // 에너미라면 밀쳐내고 싶다.
+
         if (other.gameObject.CompareTag("Map"))
         {
-            bounceDir = transform.position - other.transform.position;
+            KANG_ShipMove.instance.bounceDir = transform.position - other.transform.position;
+            KANG_ShipMove.instance.bounceDir.z = 0f;
+            KANG_ShipMove.instance.bounceDir.Normalize();
+            KANG_ShipMove.instance.isBounce = true;
 
-            isBounce = true;
+            print("Shield Wave Bounce");
 
         }
     }
