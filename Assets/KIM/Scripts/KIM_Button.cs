@@ -8,6 +8,8 @@ public class KIM_Button : MonoBehaviour
 
     public float enableTime = 3.0f;
 
+    public KIM_Button button;
+
     public Sprite clickedSprite;
     public Sprite disableSprite;
     public Sprite enableSprite;
@@ -22,7 +24,11 @@ public class KIM_Button : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (button.clicked && clicked)
+        {
+            StopAllCoroutines();
+            render.sprite = enableSprite;
+        }
     }
 
     IEnumerator OnClicked()
