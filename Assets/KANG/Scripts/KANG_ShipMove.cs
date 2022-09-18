@@ -143,7 +143,7 @@ public class KANG_ShipMove : MonoBehaviour
         if (other.gameObject.layer == LayerMask.NameToLayer("Enemy"))
         {
             KANG_ShipHP.instance.HP--;
-            print("Enemy, HP--");
+            print("Enemy, HP--" + other.gameObject.name);
         }
 
         // EnemyBullet
