@@ -13,7 +13,7 @@ public class KANG_InputRotate : MonoBehaviour
     Vector3 localAngle;
 
     public bool isControl = false;
-
+    public bool isShieldMove = false;
     public bool is2P = false;
 
     // Start is called before the first frame update
@@ -36,7 +36,7 @@ public class KANG_InputRotate : MonoBehaviour
         if (!is2P)
         {
             // Up
-            if (Input.GetKeyDown(KeyCode.UpArrow))
+            if (Input.GetKey(KeyCode.UpArrow))
             {
                 // 왼쪽에 있으면 시계
                 if (worldZ > 0f && worldZ < 180f)
@@ -51,7 +51,7 @@ public class KANG_InputRotate : MonoBehaviour
             }
 
             // Down
-            if (Input.GetKeyDown(KeyCode.DownArrow))
+            if (Input.GetKey(KeyCode.DownArrow))
             {
                 // 왼쪽에 있으면 반시계
                 if (worldZ >= 0f && worldZ < 180f)
@@ -66,7 +66,7 @@ public class KANG_InputRotate : MonoBehaviour
             }
 
             // Right
-            if (Input.GetKeyDown(KeyCode.RightArrow))
+            if (Input.GetKey(KeyCode.RightArrow))
             {
                 // 위쪽에 있으면 시계
                 if ((worldZ >= 0f && worldZ < 90f) || (worldZ >= 270f && worldZ < 360f))
@@ -81,7 +81,7 @@ public class KANG_InputRotate : MonoBehaviour
             }
 
             // Left
-            if (Input.GetKeyDown(KeyCode.LeftArrow))
+            if (Input.GetKey(KeyCode.LeftArrow))
             {
                 // 위쪽에 있으면 반시계
                 if ((worldZ >= 0f && worldZ < 90f) || (worldZ >= 270f && worldZ < 360f))
@@ -96,13 +96,20 @@ public class KANG_InputRotate : MonoBehaviour
             }
 
             if ((Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.RightArrow)) && isControl)
+            { 
                 Rotate();
+                isShieldMove = true;
+            }
+            else
+            {
+                isShieldMove = false;
+            }
         }
         // 2P
         else
         {
             // Up
-            if (Input.GetKeyDown(KeyCode.W))
+            if (Input.GetKey(KeyCode.W))
             {
                 // 왼쪽에 있으면 시계
                 if (worldZ > 0f && worldZ < 180f)
@@ -117,7 +124,7 @@ public class KANG_InputRotate : MonoBehaviour
             }
 
             // Down
-            if (Input.GetKeyDown(KeyCode.S))
+            if (Input.GetKey(KeyCode.S))
             {
                 // 왼쪽에 있으면 반시계
                 if (worldZ >= 0f && worldZ < 180f)
@@ -132,7 +139,7 @@ public class KANG_InputRotate : MonoBehaviour
             }
 
             // Right
-            if (Input.GetKeyDown(KeyCode.D))
+            if (Input.GetKey(KeyCode.D))
             {
                 // 위쪽에 있으면 시계
                 if ((worldZ >= 0f && worldZ < 90f) || (worldZ >= 270f && worldZ < 360f))
@@ -147,7 +154,7 @@ public class KANG_InputRotate : MonoBehaviour
             }
 
             // Left
-            if (Input.GetKeyDown(KeyCode.A))
+            if (Input.GetKey(KeyCode.A))
             {
                 // 위쪽에 있으면 반시계
                 if ((worldZ >= 0f && worldZ < 90f) || (worldZ >= 270f && worldZ < 360f))
@@ -162,7 +169,14 @@ public class KANG_InputRotate : MonoBehaviour
             }
 
             if ((Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D)) && isControl)
+            {
                 Rotate();
+                isShieldMove = true;
+            }
+            else
+            {
+                isShieldMove = false;
+            }
         }
         #region GetAxis 입력
         /*
@@ -256,6 +270,7 @@ public class KANG_InputRotate : MonoBehaviour
         if (other.gameObject.TryGetComponent<KIM_PlayerController>(out pc) && !pc.IsModule)
         {
             isControl = false;
+            is2P = false;
         }
     }
 }
