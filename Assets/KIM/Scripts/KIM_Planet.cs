@@ -25,7 +25,7 @@ public class KIM_Planet : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void LateUpdate()
     {
         FadeOrbit();
 

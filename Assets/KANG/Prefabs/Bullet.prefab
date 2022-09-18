@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4353396649654612324}
   - component: {fileID: 4353396649654612320}
   - component: {fileID: 4353396649654603423}
-  m_Layer: 6
+  m_Layer: 25
   m_Name: Bullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -113,6 +113,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletSpeed: 10
+  destroyTime: 10
 --- !u!54 &4353396649654603423
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -139,7 +140,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2270059615689273439}
   - component: {fileID: 2926194596083786655}
-  m_Layer: 0
+  m_Layer: 25
   m_Name: TurretBullet_Tex
   m_TagString: Untagged
   m_Icon: {fileID: 0}

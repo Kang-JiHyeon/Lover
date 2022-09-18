@@ -7,6 +7,8 @@ using UnityEngine;
 
 public class KANG_Yamato : MonoBehaviour
 {
+    KIM_PlayerController pc;
+
     public GameObject yamatoBulletFactory;
     public Transform firePos;
     public bool isYamatoControl = false;
@@ -156,7 +158,7 @@ public class KANG_Yamato : MonoBehaviour
     private void OnTriggerStay(Collider other)
     {
         // Player가 감지되는 동안 Yamato를 조작할 수 있다.
-        if (other.gameObject.CompareTag("Player"))
+        if (other.gameObject.TryGetComponent<KIM_PlayerController>(out pc) && pc.IsModule)
         {
             isYamatoControl = true;
         }
@@ -164,7 +166,7 @@ public class KANG_Yamato : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         // Player가 감지 범위를 벗어나면 Yamato를 조작할 수 있다.
-        if (other.gameObject.CompareTag("Player"))
+        if (other.gameObject.TryGetComponent<KIM_PlayerController>(out pc) && !pc.IsModule)
         {
             isYamatoControl = false;
         }

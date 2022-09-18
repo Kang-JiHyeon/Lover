@@ -33,7 +33,7 @@ public class KIM_PlayerController : MonoBehaviour
     void LateUpdate()
     {
         // 로컬로 움직이기 위해 우주선이 이동하는 방향으로 우선 이동
-        LocalMove(mv.moveDir.normalized * mv.moveSpeed);
+        LocalMove(KANG_ShipMove.instance.moveDir * KANG_ShipMove.instance.curMoveSpeed);
         // 사다리에 탔을 때 움직임
         if (isLadder)
         {
@@ -67,9 +67,13 @@ public class KIM_PlayerController : MonoBehaviour
         // 그외 상황에서의 움직임
         else
         {
-            Debug.DrawRay(transform.position + Vector3.down * 0.45f, Vector3.down * 0.1f, Color.red);
-            if (!Physics.Raycast(transform.position + Vector3.down * 0.45f, Vector3.down, 0.1f, LayerMask.GetMask("Ship")))
+            RaycastHit hit;
+            Debug.DrawRay(transform.position, Vector3.down * 0.4f, Color.red);
+            if (!Physics.Raycast(transform.position, Vector3.down, out hit, 0.4f, LayerMask.GetMask("Ship")))
+            {
+                Debug.Log(hit);
                 yVelocity += gravity * Time.deltaTime;
+            }
             else
             {
                 yVelocity = 0f;

@@ -5,6 +5,8 @@ using UnityEngine;
 // ÀÔ·Â°ª 
 public class KANG_InputRotate : MonoBehaviour
 {
+    KIM_PlayerController pc;
+
     public Transform target;
     public float rotSpeed = 30f;
     public float rotDir = 0f;
@@ -110,7 +112,7 @@ public class KANG_InputRotate : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.gameObject.CompareTag("Player"))
+        if (other.gameObject.TryGetComponent<KIM_PlayerController>(out pc) && pc.IsModule)
         {
             isControl = true;
         }
@@ -118,10 +120,9 @@ public class KANG_InputRotate : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.CompareTag("Player"))
+        if (other.gameObject.TryGetComponent<KIM_PlayerController>(out pc) && !pc.IsModule)
         {
             isControl = false;
         }
     }
-
 }

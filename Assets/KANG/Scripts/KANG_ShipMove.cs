@@ -16,10 +16,10 @@ public class KANG_ShipMove : MonoBehaviour
     public KANG_InputRotate engine;
     Transform machine;
     // 이동 방향
-    Vector3 moveDir;
+    public Vector3 moveDir;
     // 이동속도
     public float moveSpeed = 3f;
-    float curMoveSpeed = 0f;
+    public float curMoveSpeed = 0f;
     public bool isMove = false;
 
     public Vector3 bounceDir;
@@ -47,8 +47,8 @@ public class KANG_ShipMove : MonoBehaviour
     void Update()
     {
         // 엔진이 없을 경우 반환
-        if (engine.isControl == false)
-            return;
+        //if (engine.isControl == false)
+            //return;
 
         if (engine.isControl)
         {
@@ -85,7 +85,7 @@ public class KANG_ShipMove : MonoBehaviour
 
         if (isBounce)
         {
-            LerpMoveSpeed(0f, 2f);
+            LerpMoveSpeed(0f);
             // 일정시간동안 튕기는 방향으로 이동하고 싶다.
             curTime += Time.deltaTime;
 
@@ -154,7 +154,7 @@ public class KANG_ShipMove : MonoBehaviour
             print("cc get : " + other.gameObject.name);
         }
 
-        if (isBounce) return;
+        //if (isBounce) return;
 
         if (other.gameObject.CompareTag("Map"))
         {

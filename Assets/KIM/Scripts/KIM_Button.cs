@@ -38,7 +38,10 @@ public class KIM_Button : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        StopCoroutine("OnClicked");
-        StartCoroutine("OnClicked");
+        if (other.gameObject.layer == LayerMask.NameToLayer("PlayerBullet"))
+        {
+            StopCoroutine("OnClicked");
+            StartCoroutine("OnClicked");
+        }
     }
 }

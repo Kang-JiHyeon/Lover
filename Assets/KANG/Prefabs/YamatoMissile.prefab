@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4993557486822331357}
   - component: {fileID: 4993557486822331356}
   - component: {fileID: 4993557486822331359}
-  m_Layer: 0
+  m_Layer: 25
   m_Name: YamatoMissile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -60,6 +60,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletSpeed: 10
+  destroyTime: 10
 --- !u!1 &4993557486950017739
 GameObject:
   m_ObjectHideFlags: 0
@@ -70,7 +71,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4993557486950017737}
   - component: {fileID: 4993557486950017736}
-  m_Layer: 0
+  m_Layer: 25
   m_Name: YamatoMissile_Tex
   m_TagString: Untagged
   m_Icon: {fileID: 0}
