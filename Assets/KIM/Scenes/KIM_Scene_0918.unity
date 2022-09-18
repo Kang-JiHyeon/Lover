@@ -319,6 +319,67 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1001 &16774826
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5084053229780459540, guid: 49f21bf5e93840d459f17a977ebb4d82, type: 3}
+      propertyPath: m_RootOrder
+      value: 22
+      objectReference: {fileID: 0}
+    - target: {fileID: 5084053229780459540, guid: 49f21bf5e93840d459f17a977ebb4d82, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 36.78
+      objectReference: {fileID: 0}
+    - target: {fileID: 5084053229780459540, guid: 49f21bf5e93840d459f17a977ebb4d82, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 18.76
+      objectReference: {fileID: 0}
+    - target: {fileID: 5084053229780459540, guid: 49f21bf5e93840d459f17a977ebb4d82, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5084053229780459540, guid: 49f21bf5e93840d459f17a977ebb4d82, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5084053229780459540, guid: 49f21bf5e93840d459f17a977ebb4d82, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5084053229780459540, guid: 49f21bf5e93840d459f17a977ebb4d82, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5084053229780459540, guid: 49f21bf5e93840d459f17a977ebb4d82, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5084053229780459540, guid: 49f21bf5e93840d459f17a977ebb4d82, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5084053229780459540, guid: 49f21bf5e93840d459f17a977ebb4d82, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5084053229780459540, guid: 49f21bf5e93840d459f17a977ebb4d82, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5084053229780459541, guid: 49f21bf5e93840d459f17a977ebb4d82, type: 3}
+      propertyPath: m_Name
+      value: FireInsect (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5084053229780459541, guid: 49f21bf5e93840d459f17a977ebb4d82, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 49f21bf5e93840d459f17a977ebb4d82, type: 3}
 --- !u!1 &22623679
 GameObject:
   m_ObjectHideFlags: 0
@@ -435,7 +496,7 @@ GameObject:
   - component: {fileID: 48003603}
   m_Layer: 0
   m_Name: BoulderHubRectangular_Tex (33)
-  m_TagString: Map
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -715,7 +776,7 @@ GameObject:
   - component: {fileID: 54432559}
   m_Layer: 0
   m_Name: BoulderHubRectangular_Tex (18)
-  m_TagString: Map
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1118,7 +1179,7 @@ GameObject:
   - component: {fileID: 96650168}
   m_Layer: 0
   m_Name: BoulderHubRectangular_Tex (71)
-  m_TagString: Map
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1278,7 +1339,7 @@ GameObject:
   - component: {fileID: 108132129}
   m_Layer: 0
   m_Name: BoulderHubRectangular_Tex (18)
-  m_TagString: Map
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1362,7 +1423,7 @@ GameObject:
   - component: {fileID: 113214731}
   m_Layer: 0
   m_Name: BoulderHubRectangular_Tex (73)
-  m_TagString: Map
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1434,6 +1495,67 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1001 &118847666
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5841767516298938976, guid: 366f3d8d72950304c81573ce134a2529, type: 3}
+      propertyPath: m_RootOrder
+      value: 27
+      objectReference: {fileID: 0}
+    - target: {fileID: 5841767516298938976, guid: 366f3d8d72950304c81573ce134a2529, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -14.22
+      objectReference: {fileID: 0}
+    - target: {fileID: 5841767516298938976, guid: 366f3d8d72950304c81573ce134a2529, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.23
+      objectReference: {fileID: 0}
+    - target: {fileID: 5841767516298938976, guid: 366f3d8d72950304c81573ce134a2529, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5841767516298938976, guid: 366f3d8d72950304c81573ce134a2529, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5841767516298938976, guid: 366f3d8d72950304c81573ce134a2529, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5841767516298938976, guid: 366f3d8d72950304c81573ce134a2529, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5841767516298938976, guid: 366f3d8d72950304c81573ce134a2529, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5841767516298938976, guid: 366f3d8d72950304c81573ce134a2529, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5841767516298938976, guid: 366f3d8d72950304c81573ce134a2529, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5841767516298938976, guid: 366f3d8d72950304c81573ce134a2529, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5841767516298938977, guid: 366f3d8d72950304c81573ce134a2529, type: 3}
+      propertyPath: m_Name
+      value: Insect (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5841767516298938977, guid: 366f3d8d72950304c81573ce134a2529, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 366f3d8d72950304c81573ce134a2529, type: 3}
 --- !u!1 &122521047
 GameObject:
   m_ObjectHideFlags: 0
@@ -1517,6 +1639,67 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 122521047}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1001 &124609624
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5841767516298938976, guid: 366f3d8d72950304c81573ce134a2529, type: 3}
+      propertyPath: m_RootOrder
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 5841767516298938976, guid: 366f3d8d72950304c81573ce134a2529, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 27.199999
+      objectReference: {fileID: 0}
+    - target: {fileID: 5841767516298938976, guid: 366f3d8d72950304c81573ce134a2529, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.8999996
+      objectReference: {fileID: 0}
+    - target: {fileID: 5841767516298938976, guid: 366f3d8d72950304c81573ce134a2529, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5841767516298938976, guid: 366f3d8d72950304c81573ce134a2529, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5841767516298938976, guid: 366f3d8d72950304c81573ce134a2529, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5841767516298938976, guid: 366f3d8d72950304c81573ce134a2529, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5841767516298938976, guid: 366f3d8d72950304c81573ce134a2529, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5841767516298938976, guid: 366f3d8d72950304c81573ce134a2529, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5841767516298938976, guid: 366f3d8d72950304c81573ce134a2529, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5841767516298938976, guid: 366f3d8d72950304c81573ce134a2529, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5841767516298938977, guid: 366f3d8d72950304c81573ce134a2529, type: 3}
+      propertyPath: m_Name
+      value: Insect (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5841767516298938977, guid: 366f3d8d72950304c81573ce134a2529, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 366f3d8d72950304c81573ce134a2529, type: 3}
 --- !u!1 &132436918
 GameObject:
   m_ObjectHideFlags: 0
@@ -1648,7 +1831,7 @@ GameObject:
   - component: {fileID: 146691567}
   m_Layer: 0
   m_Name: BoulderHubRectangular_Tex (59)
-  m_TagString: Map
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1732,7 +1915,7 @@ GameObject:
   - component: {fileID: 147277929}
   m_Layer: 0
   m_Name: BoulderHubRectangular_Tex (68)
-  m_TagString: Map
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2012,7 +2195,7 @@ GameObject:
   - component: {fileID: 160149991}
   m_Layer: 0
   m_Name: BoulderHubRectangular_Tex (37)
-  m_TagString: Map
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2180,7 +2363,7 @@ GameObject:
   - component: {fileID: 189743465}
   m_Layer: 0
   m_Name: BoulderHubRectangular_Tex (65)
-  m_TagString: Map
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2264,7 +2447,7 @@ GameObject:
   - component: {fileID: 191524744}
   m_Layer: 0
   m_Name: BoulderHubRectangular_Tex (38)
-  m_TagString: Map
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2643,7 +2826,7 @@ GameObject:
   - component: {fileID: 209729927}
   m_Layer: 0
   m_Name: BoulderHubRectangular_Tex (43)
-  m_TagString: Map
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2820,7 +3003,7 @@ GameObject:
   - component: {fileID: 247637441}
   m_Layer: 0
   m_Name: BoulderHubRectangular_Tex (35)
-  m_TagString: Map
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3334,7 +3517,7 @@ GameObject:
   - component: {fileID: 327298083}
   m_Layer: 0
   m_Name: BoulderHubRectangular_Tex (41)
-  m_TagString: Map
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3418,7 +3601,7 @@ GameObject:
   - component: {fileID: 344194187}
   m_Layer: 0
   m_Name: BoulderHubRectangular_Tex (27)
-  m_TagString: Map
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3966,6 +4149,67 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 4.15, y: 5.88, z: 0.2}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1001 &397948435
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5084053229780459540, guid: 49f21bf5e93840d459f17a977ebb4d82, type: 3}
+      propertyPath: m_RootOrder
+      value: 23
+      objectReference: {fileID: 0}
+    - target: {fileID: 5084053229780459540, guid: 49f21bf5e93840d459f17a977ebb4d82, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 37.23
+      objectReference: {fileID: 0}
+    - target: {fileID: 5084053229780459540, guid: 49f21bf5e93840d459f17a977ebb4d82, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 22.44
+      objectReference: {fileID: 0}
+    - target: {fileID: 5084053229780459540, guid: 49f21bf5e93840d459f17a977ebb4d82, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5084053229780459540, guid: 49f21bf5e93840d459f17a977ebb4d82, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5084053229780459540, guid: 49f21bf5e93840d459f17a977ebb4d82, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5084053229780459540, guid: 49f21bf5e93840d459f17a977ebb4d82, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5084053229780459540, guid: 49f21bf5e93840d459f17a977ebb4d82, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5084053229780459540, guid: 49f21bf5e93840d459f17a977ebb4d82, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5084053229780459540, guid: 49f21bf5e93840d459f17a977ebb4d82, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5084053229780459540, guid: 49f21bf5e93840d459f17a977ebb4d82, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5084053229780459541, guid: 49f21bf5e93840d459f17a977ebb4d82, type: 3}
+      propertyPath: m_Name
+      value: FireInsect (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5084053229780459541, guid: 49f21bf5e93840d459f17a977ebb4d82, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 49f21bf5e93840d459f17a977ebb4d82, type: 3}
 --- !u!1 &408243617
 GameObject:
   m_ObjectHideFlags: 0
@@ -4159,7 +4403,7 @@ GameObject:
   - component: {fileID: 438061318}
   m_Layer: 0
   m_Name: BoulderHubRectangular_Tex (25)
-  m_TagString: Map
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4416,7 +4660,7 @@ GameObject:
   - component: {fileID: 462155171}
   m_Layer: 0
   m_Name: BoulderHubRectangular_Tex (67)
-  m_TagString: Map
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4500,7 +4744,7 @@ GameObject:
   - component: {fileID: 463157826}
   m_Layer: 0
   m_Name: BoulderHubRectangular_Tex (50)
-  m_TagString: Map
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5094,6 +5338,67 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 533117859}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1001 &541516492
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5084053229780459540, guid: 49f21bf5e93840d459f17a977ebb4d82, type: 3}
+      propertyPath: m_RootOrder
+      value: 26
+      objectReference: {fileID: 0}
+    - target: {fileID: 5084053229780459540, guid: 49f21bf5e93840d459f17a977ebb4d82, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 39.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5084053229780459540, guid: 49f21bf5e93840d459f17a977ebb4d82, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 24.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5084053229780459540, guid: 49f21bf5e93840d459f17a977ebb4d82, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5084053229780459540, guid: 49f21bf5e93840d459f17a977ebb4d82, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5084053229780459540, guid: 49f21bf5e93840d459f17a977ebb4d82, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5084053229780459540, guid: 49f21bf5e93840d459f17a977ebb4d82, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5084053229780459540, guid: 49f21bf5e93840d459f17a977ebb4d82, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5084053229780459540, guid: 49f21bf5e93840d459f17a977ebb4d82, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5084053229780459540, guid: 49f21bf5e93840d459f17a977ebb4d82, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5084053229780459540, guid: 49f21bf5e93840d459f17a977ebb4d82, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5084053229780459541, guid: 49f21bf5e93840d459f17a977ebb4d82, type: 3}
+      propertyPath: m_Name
+      value: FireInsect (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5084053229780459541, guid: 49f21bf5e93840d459f17a977ebb4d82, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 49f21bf5e93840d459f17a977ebb4d82, type: 3}
 --- !u!1 &547439210
 GameObject:
   m_ObjectHideFlags: 0
@@ -5106,7 +5411,7 @@ GameObject:
   - component: {fileID: 547439213}
   m_Layer: 0
   m_Name: BoulderHubRectangular_Tex (74)
-  m_TagString: Map
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5645,7 +5950,7 @@ GameObject:
   - component: {fileID: 594484518}
   m_Layer: 0
   m_Name: BoulderHubRectangular_Tex (40)
-  m_TagString: Map
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6322,7 +6627,7 @@ GameObject:
   - component: {fileID: 628267765}
   m_Layer: 0
   m_Name: BoulderHubRectangular_Tex (24)
-  m_TagString: Map
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6406,7 +6711,7 @@ GameObject:
   - component: {fileID: 639636240}
   m_Layer: 0
   m_Name: BoulderHubRectangular_Tex (77)
-  m_TagString: Map
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6490,7 +6795,7 @@ GameObject:
   - component: {fileID: 641101723}
   m_Layer: 0
   m_Name: BoulderHubRectangular_Tex (78)
-  m_TagString: Map
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6659,7 +6964,7 @@ GameObject:
   - component: {fileID: 658301815}
   m_Layer: 0
   m_Name: BoulderHubRectangular_Tex (17)
-  m_TagString: Map
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6743,7 +7048,7 @@ GameObject:
   - component: {fileID: 675721394}
   m_Layer: 0
   m_Name: BoulderHubRectangular_Tex (60)
-  m_TagString: Map
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6827,7 +7132,7 @@ GameObject:
   - component: {fileID: 676437740}
   m_Layer: 0
   m_Name: BoulderHubRectangular_Tex (21)
-  m_TagString: Map
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6899,6 +7204,67 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1001 &683510342
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5841767516298938976, guid: 366f3d8d72950304c81573ce134a2529, type: 3}
+      propertyPath: m_RootOrder
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 5841767516298938976, guid: 366f3d8d72950304c81573ce134a2529, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 29.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5841767516298938976, guid: 366f3d8d72950304c81573ce134a2529, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5841767516298938976, guid: 366f3d8d72950304c81573ce134a2529, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5841767516298938976, guid: 366f3d8d72950304c81573ce134a2529, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5841767516298938976, guid: 366f3d8d72950304c81573ce134a2529, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5841767516298938976, guid: 366f3d8d72950304c81573ce134a2529, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5841767516298938976, guid: 366f3d8d72950304c81573ce134a2529, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5841767516298938976, guid: 366f3d8d72950304c81573ce134a2529, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5841767516298938976, guid: 366f3d8d72950304c81573ce134a2529, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5841767516298938976, guid: 366f3d8d72950304c81573ce134a2529, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5841767516298938977, guid: 366f3d8d72950304c81573ce134a2529, type: 3}
+      propertyPath: m_Name
+      value: Insect (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5841767516298938977, guid: 366f3d8d72950304c81573ce134a2529, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 366f3d8d72950304c81573ce134a2529, type: 3}
 --- !u!1 &690476581 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6613735104801276803, guid: 2c039426867cbf54ab1413edb20fa8b3, type: 3}
@@ -7245,7 +7611,7 @@ GameObject:
   - component: {fileID: 721369714}
   m_Layer: 0
   m_Name: BoulderHubRectangular_Tex (29)
-  m_TagString: Map
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7329,7 +7695,7 @@ GameObject:
   - component: {fileID: 733737315}
   m_Layer: 0
   m_Name: BoulderHubRectangular_Tex (54)
-  m_TagString: Map
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7435,52 +7801,6 @@ Transform:
   m_Father: {fileID: 194977203}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
---- !u!1 &740991998
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 740992000}
-  - component: {fileID: 740991999}
-  m_Layer: 0
-  m_Name: InsectSpawn
-  m_TagString: Untagged
-  m_Icon: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &740991999
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 740991998}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a32058fe36c79641b46aa18eebd83e8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spawn: {fileID: 5841767516298938977, guid: 366f3d8d72950304c81573ce134a2529, type: 3}
-  spawnTime: 8
---- !u!4 &740992000
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 740991998}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 26.24, y: 7.41, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 15
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &745313497
 GameObject:
   m_ObjectHideFlags: 0
@@ -7693,7 +8013,7 @@ GameObject:
   - component: {fileID: 765339326}
   m_Layer: 0
   m_Name: BoulderHubRectangular_Tex (62)
-  m_TagString: Map
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7875,7 +8195,7 @@ GameObject:
   - component: {fileID: 773739883}
   m_Layer: 0
   m_Name: BoulderHubRectangular_Tex (20)
-  m_TagString: Map
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7964,7 +8284,7 @@ GameObject:
   - component: {fileID: 783178966}
   m_Layer: 0
   m_Name: BoulderHubRectangular_Tex (39)
-  m_TagString: Map
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8048,7 +8368,7 @@ GameObject:
   - component: {fileID: 794456952}
   m_Layer: 0
   m_Name: BoulderHubRectangular_Tex (70)
-  m_TagString: Map
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9079,7 +9399,7 @@ GameObject:
   - component: {fileID: 897495541}
   m_Layer: 0
   m_Name: BoulderHubRectangular_Tex (75)
-  m_TagString: Map
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9461,7 +9781,7 @@ GameObject:
   - component: {fileID: 924807988}
   m_Layer: 0
   m_Name: BoulderHubRectangular_Tex (49)
-  m_TagString: Map
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9545,7 +9865,7 @@ GameObject:
   - component: {fileID: 937673430}
   m_Layer: 0
   m_Name: BoulderHubRectangular_Tex (55)
-  m_TagString: Map
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9629,7 +9949,7 @@ GameObject:
   - component: {fileID: 937777195}
   m_Layer: 0
   m_Name: BoulderHubRectangular_Tex (17)
-  m_TagString: Map
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9857,7 +10177,7 @@ GameObject:
   - component: {fileID: 960413968}
   m_Layer: 0
   m_Name: BoulderHubRectangular_Tex (79)
-  m_TagString: Map
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9941,7 +10261,7 @@ GameObject:
   - component: {fileID: 964279316}
   m_Layer: 0
   m_Name: BoulderHubRectangular_Tex (64)
-  m_TagString: Map
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10137,7 +10457,7 @@ GameObject:
   - component: {fileID: 968746649}
   m_Layer: 0
   m_Name: BoulderHubRectangular_Tex (46)
-  m_TagString: Map
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10917,6 +11237,67 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1005700611}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1001 &1014223438
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3125598817988394144, guid: a5c12707635c65544a604a370ad23cee, type: 3}
+      propertyPath: m_Name
+      value: InsectSergent (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3125598817988394144, guid: a5c12707635c65544a604a370ad23cee, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3125598817988394145, guid: a5c12707635c65544a604a370ad23cee, type: 3}
+      propertyPath: m_RootOrder
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 3125598817988394145, guid: a5c12707635c65544a604a370ad23cee, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 27.84
+      objectReference: {fileID: 0}
+    - target: {fileID: 3125598817988394145, guid: a5c12707635c65544a604a370ad23cee, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -12.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3125598817988394145, guid: a5c12707635c65544a604a370ad23cee, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3125598817988394145, guid: a5c12707635c65544a604a370ad23cee, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3125598817988394145, guid: a5c12707635c65544a604a370ad23cee, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3125598817988394145, guid: a5c12707635c65544a604a370ad23cee, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3125598817988394145, guid: a5c12707635c65544a604a370ad23cee, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3125598817988394145, guid: a5c12707635c65544a604a370ad23cee, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3125598817988394145, guid: a5c12707635c65544a604a370ad23cee, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3125598817988394145, guid: a5c12707635c65544a604a370ad23cee, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a5c12707635c65544a604a370ad23cee, type: 3}
 --- !u!1 &1028326261
 GameObject:
   m_ObjectHideFlags: 0
@@ -11354,52 +11735,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aca26abc1f34bb24cae80d79b9ace9bd, type: 3}
---- !u!1 &1060313922
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1060313924}
-  - component: {fileID: 1060313923}
-  m_Layer: 0
-  m_Name: FireInsectSpawn
-  m_TagString: Untagged
-  m_Icon: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1060313923
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1060313922}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a32058fe36c79641b46aa18eebd83e8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spawn: {fileID: 5084053229780459541, guid: 49f21bf5e93840d459f17a977ebb4d82, type: 3}
-  spawnTime: 12
---- !u!4 &1060313924
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1060313922}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 28.52, y: -0.92, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 17
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1074925460
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11485,7 +11820,7 @@ GameObject:
   - component: {fileID: 1081067296}
   m_Layer: 0
   m_Name: BoulderHubRectangular_Tex (19)
-  m_TagString: Map
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11999,7 +12334,7 @@ GameObject:
   - component: {fileID: 1165167563}
   m_Layer: 0
   m_Name: BoulderHubRectangular_Tex (72)
-  m_TagString: Map
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12083,7 +12418,7 @@ GameObject:
   - component: {fileID: 1174622495}
   m_Layer: 0
   m_Name: BoulderHubRectangular_Tex (52)
-  m_TagString: Map
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12155,6 +12490,67 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1001 &1227140257
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3125598817988394144, guid: a5c12707635c65544a604a370ad23cee, type: 3}
+      propertyPath: m_Name
+      value: InsectSergent
+      objectReference: {fileID: 0}
+    - target: {fileID: 3125598817988394144, guid: a5c12707635c65544a604a370ad23cee, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3125598817988394145, guid: a5c12707635c65544a604a370ad23cee, type: 3}
+      propertyPath: m_RootOrder
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 3125598817988394145, guid: a5c12707635c65544a604a370ad23cee, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 24.94
+      objectReference: {fileID: 0}
+    - target: {fileID: 3125598817988394145, guid: a5c12707635c65544a604a370ad23cee, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -14.900001
+      objectReference: {fileID: 0}
+    - target: {fileID: 3125598817988394145, guid: a5c12707635c65544a604a370ad23cee, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3125598817988394145, guid: a5c12707635c65544a604a370ad23cee, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3125598817988394145, guid: a5c12707635c65544a604a370ad23cee, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3125598817988394145, guid: a5c12707635c65544a604a370ad23cee, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3125598817988394145, guid: a5c12707635c65544a604a370ad23cee, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3125598817988394145, guid: a5c12707635c65544a604a370ad23cee, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3125598817988394145, guid: a5c12707635c65544a604a370ad23cee, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3125598817988394145, guid: a5c12707635c65544a604a370ad23cee, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a5c12707635c65544a604a370ad23cee, type: 3}
 --- !u!1 &1231240706
 GameObject:
   m_ObjectHideFlags: 0
@@ -12167,7 +12563,7 @@ GameObject:
   - component: {fileID: 1231240709}
   m_Layer: 0
   m_Name: BoulderHubRectangular_Tex (26)
-  m_TagString: Map
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12502,7 +12898,7 @@ GameObject:
   - component: {fileID: 1259521514}
   m_Layer: 0
   m_Name: BoulderHubRectangular_Tex (30)
-  m_TagString: Map
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12586,7 +12982,7 @@ GameObject:
   - component: {fileID: 1268834158}
   m_Layer: 0
   m_Name: BoulderHubRectangular_Tex (20)
-  m_TagString: Map
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12658,6 +13054,67 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1001 &1276639876
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5841767516298938976, guid: 366f3d8d72950304c81573ce134a2529, type: 3}
+      propertyPath: m_RootOrder
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 5841767516298938976, guid: 366f3d8d72950304c81573ce134a2529, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 28.199999
+      objectReference: {fileID: 0}
+    - target: {fileID: 5841767516298938976, guid: 366f3d8d72950304c81573ce134a2529, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 6.699999
+      objectReference: {fileID: 0}
+    - target: {fileID: 5841767516298938976, guid: 366f3d8d72950304c81573ce134a2529, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5841767516298938976, guid: 366f3d8d72950304c81573ce134a2529, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5841767516298938976, guid: 366f3d8d72950304c81573ce134a2529, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5841767516298938976, guid: 366f3d8d72950304c81573ce134a2529, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5841767516298938976, guid: 366f3d8d72950304c81573ce134a2529, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5841767516298938976, guid: 366f3d8d72950304c81573ce134a2529, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5841767516298938976, guid: 366f3d8d72950304c81573ce134a2529, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5841767516298938976, guid: 366f3d8d72950304c81573ce134a2529, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5841767516298938977, guid: 366f3d8d72950304c81573ce134a2529, type: 3}
+      propertyPath: m_Name
+      value: Insect
+      objectReference: {fileID: 0}
+    - target: {fileID: 5841767516298938977, guid: 366f3d8d72950304c81573ce134a2529, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 366f3d8d72950304c81573ce134a2529, type: 3}
 --- !u!1 &1276845636
 GameObject:
   m_ObjectHideFlags: 0
@@ -12841,7 +13298,7 @@ GameObject:
   - component: {fileID: 1283201698}
   m_Layer: 0
   m_Name: BoulderHubRectangular_Tex (53)
-  m_TagString: Map
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12913,6 +13370,67 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1001 &1291231266
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5084053229780459540, guid: 49f21bf5e93840d459f17a977ebb4d82, type: 3}
+      propertyPath: m_RootOrder
+      value: 24
+      objectReference: {fileID: 0}
+    - target: {fileID: 5084053229780459540, guid: 49f21bf5e93840d459f17a977ebb4d82, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 34.579998
+      objectReference: {fileID: 0}
+    - target: {fileID: 5084053229780459540, guid: 49f21bf5e93840d459f17a977ebb4d82, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 21.659998
+      objectReference: {fileID: 0}
+    - target: {fileID: 5084053229780459540, guid: 49f21bf5e93840d459f17a977ebb4d82, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5084053229780459540, guid: 49f21bf5e93840d459f17a977ebb4d82, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5084053229780459540, guid: 49f21bf5e93840d459f17a977ebb4d82, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5084053229780459540, guid: 49f21bf5e93840d459f17a977ebb4d82, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5084053229780459540, guid: 49f21bf5e93840d459f17a977ebb4d82, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5084053229780459540, guid: 49f21bf5e93840d459f17a977ebb4d82, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5084053229780459540, guid: 49f21bf5e93840d459f17a977ebb4d82, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5084053229780459540, guid: 49f21bf5e93840d459f17a977ebb4d82, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5084053229780459541, guid: 49f21bf5e93840d459f17a977ebb4d82, type: 3}
+      propertyPath: m_Name
+      value: FireInsect (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5084053229780459541, guid: 49f21bf5e93840d459f17a977ebb4d82, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 49f21bf5e93840d459f17a977ebb4d82, type: 3}
 --- !u!1 &1292435371
 GameObject:
   m_ObjectHideFlags: 0
@@ -12925,7 +13443,7 @@ GameObject:
   - component: {fileID: 1292435374}
   m_Layer: 0
   m_Name: BoulderHubRectangular_Tex (56)
-  m_TagString: Map
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13289,7 +13807,7 @@ GameObject:
   - component: {fileID: 1356263129}
   m_Layer: 0
   m_Name: BoulderHubRectangular_Tex (57)
-  m_TagString: Map
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13401,6 +13919,67 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5472744900921152431, guid: 2c039426867cbf54ab1413edb20fa8b3, type: 3}
   m_PrefabInstance: {fileID: 579039905}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1362348227
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5841767516298938976, guid: 366f3d8d72950304c81573ce134a2529, type: 3}
+      propertyPath: m_RootOrder
+      value: 19
+      objectReference: {fileID: 0}
+    - target: {fileID: 5841767516298938976, guid: 366f3d8d72950304c81573ce134a2529, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 22.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5841767516298938976, guid: 366f3d8d72950304c81573ce134a2529, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3.6999989
+      objectReference: {fileID: 0}
+    - target: {fileID: 5841767516298938976, guid: 366f3d8d72950304c81573ce134a2529, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5841767516298938976, guid: 366f3d8d72950304c81573ce134a2529, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5841767516298938976, guid: 366f3d8d72950304c81573ce134a2529, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5841767516298938976, guid: 366f3d8d72950304c81573ce134a2529, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5841767516298938976, guid: 366f3d8d72950304c81573ce134a2529, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5841767516298938976, guid: 366f3d8d72950304c81573ce134a2529, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5841767516298938976, guid: 366f3d8d72950304c81573ce134a2529, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5841767516298938976, guid: 366f3d8d72950304c81573ce134a2529, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5841767516298938977, guid: 366f3d8d72950304c81573ce134a2529, type: 3}
+      propertyPath: m_Name
+      value: Insect (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5841767516298938977, guid: 366f3d8d72950304c81573ce134a2529, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 366f3d8d72950304c81573ce134a2529, type: 3}
 --- !u!1 &1371842405
 GameObject:
   m_ObjectHideFlags: 0
@@ -13840,7 +14419,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1384757781}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -22.5, y: 0, z: 0}
+  m_LocalPosition: {x: -19.88, y: 0, z: 0}
   m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -13888,10 +14467,10 @@ CharacterController:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Height: 1
-  m_Radius: 3.63
+  m_Height: 0
+  m_Radius: 0
   m_SlopeLimit: 45
-  m_StepOffset: 0.3
+  m_StepOffset: 0
   m_SkinWidth: 0.4
   m_MinMoveDistance: 0
   m_Center: {x: 0, y: 0, z: 0}
@@ -13936,7 +14515,7 @@ GameObject:
   - component: {fileID: 1389765622}
   m_Layer: 0
   m_Name: BoulderHubRectangular_Tex (36)
-  m_TagString: Map
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14108,7 +14687,7 @@ GameObject:
   - component: {fileID: 1422085643}
   m_Layer: 0
   m_Name: BoulderHubRectangular_Tex (15)
-  m_TagString: Map
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14192,7 +14771,7 @@ GameObject:
   - component: {fileID: 1422459329}
   m_Layer: 0
   m_Name: BoulderHubRectangular_Tex (58)
-  m_TagString: Map
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14457,7 +15036,7 @@ GameObject:
   - component: {fileID: 1438069846}
   m_Layer: 0
   m_Name: BoulderHubRectangular_Tex (69)
-  m_TagString: Map
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14541,7 +15120,7 @@ GameObject:
   - component: {fileID: 1443689895}
   m_Layer: 0
   m_Name: BoulderHubRectangular_Tex (34)
-  m_TagString: Map
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -15684,7 +16263,7 @@ GameObject:
   - component: {fileID: 1524627415}
   m_Layer: 0
   m_Name: BoulderHubRectangular_Tex (42)
-  m_TagString: Map
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -15852,7 +16431,7 @@ GameObject:
   - component: {fileID: 1550681632}
   m_Layer: 0
   m_Name: BoulderHubRectangular_Tex (44)
-  m_TagString: Map
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -15936,7 +16515,7 @@ GameObject:
   - component: {fileID: 1554716194}
   m_Layer: 0
   m_Name: BoulderHubRectangular_Tex (61)
-  m_TagString: Map
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -16699,6 +17278,67 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1001 &1637428853
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5084053229780459540, guid: 49f21bf5e93840d459f17a977ebb4d82, type: 3}
+      propertyPath: m_RootOrder
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 5084053229780459540, guid: 49f21bf5e93840d459f17a977ebb4d82, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 39.149998
+      objectReference: {fileID: 0}
+    - target: {fileID: 5084053229780459540, guid: 49f21bf5e93840d459f17a977ebb4d82, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 21.119999
+      objectReference: {fileID: 0}
+    - target: {fileID: 5084053229780459540, guid: 49f21bf5e93840d459f17a977ebb4d82, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5084053229780459540, guid: 49f21bf5e93840d459f17a977ebb4d82, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5084053229780459540, guid: 49f21bf5e93840d459f17a977ebb4d82, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5084053229780459540, guid: 49f21bf5e93840d459f17a977ebb4d82, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5084053229780459540, guid: 49f21bf5e93840d459f17a977ebb4d82, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5084053229780459540, guid: 49f21bf5e93840d459f17a977ebb4d82, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5084053229780459540, guid: 49f21bf5e93840d459f17a977ebb4d82, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5084053229780459540, guid: 49f21bf5e93840d459f17a977ebb4d82, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5084053229780459541, guid: 49f21bf5e93840d459f17a977ebb4d82, type: 3}
+      propertyPath: m_Name
+      value: FireInsect (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5084053229780459541, guid: 49f21bf5e93840d459f17a977ebb4d82, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 49f21bf5e93840d459f17a977ebb4d82, type: 3}
 --- !u!1 &1643513859
 GameObject:
   m_ObjectHideFlags: 0
@@ -16711,7 +17351,7 @@ GameObject:
   - component: {fileID: 1643513862}
   m_Layer: 0
   m_Name: BoulderHubRectangular_Tex (32)
-  m_TagString: Map
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -16878,7 +17518,7 @@ GameObject:
   - component: {fileID: 1654662753}
   m_Layer: 0
   m_Name: BoulderHubRectangular_Tex (12)
-  m_TagString: Map
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -17409,7 +18049,7 @@ GameObject:
   - component: {fileID: 1731654786}
   m_Layer: 0
   m_Name: BoulderHubRectangular_Tex (66)
-  m_TagString: Map
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -17579,6 +18219,67 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1001 &1738137139
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5084053229780459540, guid: 49f21bf5e93840d459f17a977ebb4d82, type: 3}
+      propertyPath: m_RootOrder
+      value: 21
+      objectReference: {fileID: 0}
+    - target: {fileID: 5084053229780459540, guid: 49f21bf5e93840d459f17a977ebb4d82, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 32.21
+      objectReference: {fileID: 0}
+    - target: {fileID: 5084053229780459540, guid: 49f21bf5e93840d459f17a977ebb4d82, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 19.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5084053229780459540, guid: 49f21bf5e93840d459f17a977ebb4d82, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5084053229780459540, guid: 49f21bf5e93840d459f17a977ebb4d82, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5084053229780459540, guid: 49f21bf5e93840d459f17a977ebb4d82, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5084053229780459540, guid: 49f21bf5e93840d459f17a977ebb4d82, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5084053229780459540, guid: 49f21bf5e93840d459f17a977ebb4d82, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5084053229780459540, guid: 49f21bf5e93840d459f17a977ebb4d82, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5084053229780459540, guid: 49f21bf5e93840d459f17a977ebb4d82, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5084053229780459540, guid: 49f21bf5e93840d459f17a977ebb4d82, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5084053229780459541, guid: 49f21bf5e93840d459f17a977ebb4d82, type: 3}
+      propertyPath: m_Name
+      value: FireInsect
+      objectReference: {fileID: 0}
+    - target: {fileID: 5084053229780459541, guid: 49f21bf5e93840d459f17a977ebb4d82, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 49f21bf5e93840d459f17a977ebb4d82, type: 3}
 --- !u!1 &1738287240
 GameObject:
   m_ObjectHideFlags: 0
@@ -17938,7 +18639,7 @@ GameObject:
   - component: {fileID: 1781148546}
   m_Layer: 0
   m_Name: BoulderHubRectangular_Tex (16)
-  m_TagString: Map
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -18022,7 +18723,7 @@ GameObject:
   - component: {fileID: 1796013740}
   m_Layer: 0
   m_Name: BoulderHubRectangular_Tex (16)
-  m_TagString: Map
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -18189,7 +18890,7 @@ GameObject:
   - component: {fileID: 1808289666}
   m_Layer: 0
   m_Name: BoulderHubRectangular_Tex (48)
-  m_TagString: Map
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -18273,7 +18974,7 @@ GameObject:
   - component: {fileID: 1843777253}
   m_Layer: 0
   m_Name: BoulderHubRectangular_Tex (22)
-  m_TagString: Map
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -18357,7 +19058,7 @@ GameObject:
   - component: {fileID: 1851090062}
   m_Layer: 0
   m_Name: BoulderHubRectangular_Tex (13)
-  m_TagString: Map
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -18683,7 +19384,7 @@ GameObject:
   - component: {fileID: 1876948568}
   m_Layer: 0
   m_Name: BoulderHubRectangular_Tex (51)
-  m_TagString: Map
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -19682,7 +20383,7 @@ GameObject:
   - component: {fileID: 1936479961}
   m_Layer: 0
   m_Name: BoulderHubRectangular_Tex (14)
-  m_TagString: Map
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -19831,7 +20532,7 @@ GameObject:
   - component: {fileID: 1979161710}
   m_Layer: 0
   m_Name: BoulderHubRectangular_Tex (45)
-  m_TagString: Map
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -20333,7 +21034,7 @@ GameObject:
   - component: {fileID: 2046996185}
   m_Layer: 0
   m_Name: BoulderHubRectangular_Tex (31)
-  m_TagString: Map
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -20522,7 +21223,7 @@ GameObject:
   - component: {fileID: 2049738637}
   m_Layer: 0
   m_Name: BoulderHubRectangular_Tex (15)
-  m_TagString: Map
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -20606,7 +21307,7 @@ GameObject:
   - component: {fileID: 2055676169}
   m_Layer: 0
   m_Name: BoulderHubRectangular_Tex (76)
-  m_TagString: Map
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -20690,7 +21391,7 @@ GameObject:
   - component: {fileID: 2065205542}
   m_Layer: 0
   m_Name: BoulderHubRectangular_Tex (28)
-  m_TagString: Map
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -20774,7 +21475,7 @@ GameObject:
   - component: {fileID: 2067099920}
   m_Layer: 0
   m_Name: BoulderHubRectangular_Tex (47)
-  m_TagString: Map
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -20929,52 +21630,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2071354604}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &2072866873
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2072866875}
-  - component: {fileID: 2072866874}
-  m_Layer: 0
-  m_Name: SergentInsectSpawn
-  m_TagString: Untagged
-  m_Icon: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &2072866874
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2072866873}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a32058fe36c79641b46aa18eebd83e8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spawn: {fileID: 3125598817988394144, guid: a5c12707635c65544a604a370ad23cee, type: 3}
-  spawnTime: 15
---- !u!4 &2072866875
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2072866873}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 26.26, y: -5.55, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 16
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2082150878 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4761547424503382944, guid: 344e6e7cb74ad1a498c095a98d377664, type: 3}
@@ -21008,7 +21663,7 @@ GameObject:
   - component: {fileID: 2083450202}
   m_Layer: 0
   m_Name: BoulderHubRectangular_Tex (23)
-  m_TagString: Map
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -21175,7 +21830,7 @@ GameObject:
   - component: {fileID: 2111545462}
   m_Layer: 0
   m_Name: BoulderHubRectangular_Tex (63)
-  m_TagString: Map
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -21348,7 +22003,7 @@ GameObject:
   - component: {fileID: 2120088970}
   m_Layer: 0
   m_Name: BoulderHubRectangular_Tex (19)
-  m_TagString: Map
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

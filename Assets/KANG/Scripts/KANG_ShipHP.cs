@@ -28,7 +28,7 @@ public class KANG_ShipHP : MonoBehaviour
         set
         {
             hp = value;
-            print("ShipHP : "+hp);
+            //print("ShipHP : "+hp);
 
             if(hp <= 0)
             {

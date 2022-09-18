@@ -92,7 +92,7 @@ public class KIM_SergentInsect : KIM_InsectController
         if (other.gameObject.layer == LayerMask.NameToLayer("Ship") || other.gameObject.CompareTag("Map"))
         {
             // ship.hp--;
-            StartCoroutine("Collide");
+            StartCoroutine(Collide(other.transform));
         }
         else if (other.gameObject.layer == LayerMask.NameToLayer("PlayerBullet"))
         {
@@ -100,14 +100,14 @@ public class KIM_SergentInsect : KIM_InsectController
         }
     }
 
-    IEnumerator Collide()
+    IEnumerator Collide(Transform other)
     {
         float collideTime = 0;
 
         while (collideTime < 0.5f)
         {
             collideTime += Time.deltaTime;
-            transform.position = Vector3.Lerp(transform.position, transform.position - dir.normalized, Time.deltaTime * 10);
+            transform.position = Vector3.Lerp(transform.position, transform.position + (transform.position - other.position).normalized, Time.deltaTime * 10);
             yield return null;
         }
     }
