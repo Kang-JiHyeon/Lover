@@ -263,6 +263,11 @@ public class KANG_InputRotate : MonoBehaviour
             isControl = true;
             is2P = pc.is2P;
         }
+        else if (other.gameObject.TryGetComponent<KIM_PlayerController>(out pc) && !pc.IsModule)
+        {
+            isControl = false;
+            is2P = pc.is2P;
+        }
     }
 
     private void OnTriggerExit(Collider other)
