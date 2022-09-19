@@ -4610,7 +4610,7 @@ GameObject:
   - component: {fileID: 458497156}
   - component: {fileID: 458497159}
   - component: {fileID: 458497160}
-  m_Layer: 30
+  m_Layer: 27
   m_Name: Shield_Tex1_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5745,7 +5745,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 562237106}
-  m_Layer: 30
+  m_Layer: 27
   m_Name: Control
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16634,7 +16634,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1527142396}
   - component: {fileID: 1527142397}
-  m_Layer: 30
+  m_Layer: 27
   m_Name: ShieldGeneratorPlain_Tex
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19632,7 +19632,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1852328330}
   - component: {fileID: 1852328331}
-  m_Layer: 30
+  m_Layer: 27
   m_Name: ShieldMachine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22391,7 +22391,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2112811822}
   - component: {fileID: 2112811823}
-  m_Layer: 30
+  m_Layer: 27
   m_Name: ControlsShieldSingle_Tex
   m_TagString: Untagged
   m_Icon: {fileID: 0}
