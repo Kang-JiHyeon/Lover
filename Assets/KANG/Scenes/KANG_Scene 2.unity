@@ -692,6 +692,7 @@ GameObject:
   - component: {fileID: 51131080}
   - component: {fileID: 51131079}
   - component: {fileID: 51131078}
+  - component: {fileID: 51131081}
   m_Layer: 0
   m_Name: BoulderHubRectangular_Tex (3)
   m_TagString: Map
@@ -710,7 +711,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 4.15, y: 5.88, z: 0.2}
+  m_Size: {x: 4.93, y: 5.88, z: 0.2}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!212 &51131079
 SpriteRenderer:
@@ -779,6 +780,22 @@ Transform:
   m_Father: {fileID: 570928910}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &51131081
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 51131077}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &54432556
 GameObject:
   m_ObjectHideFlags: 0
@@ -4116,6 +4133,7 @@ GameObject:
   - component: {fileID: 383986512}
   - component: {fileID: 383986511}
   - component: {fileID: 383986513}
+  - component: {fileID: 383986514}
   m_Layer: 0
   m_Name: BoulderHubRectangular_Tex (1)
   m_TagString: Map
@@ -4201,8 +4219,24 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 4.15, y: 5.88, z: 0.2}
+  m_Size: {x: 5.19, y: 5.8, z: 0.2}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!54 &383986514
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 383986510}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1001 &397948435
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9740,6 +9774,7 @@ GameObject:
   - component: {fileID: 922198869}
   - component: {fileID: 922198868}
   - component: {fileID: 922198867}
+  - component: {fileID: 922198870}
   m_Layer: 0
   m_Name: BoulderHubRectangular_Tex (2)
   m_TagString: Map
@@ -9758,7 +9793,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 4.15, y: 5.88, z: 0.2}
+  m_Size: {x: 4.93, y: 5.88, z: 0.2}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!212 &922198868
 SpriteRenderer:
@@ -9827,6 +9862,22 @@ Transform:
   m_Father: {fileID: 570928910}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &922198870
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 922198866}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &924807985
 GameObject:
   m_ObjectHideFlags: 0
@@ -10750,6 +10801,7 @@ GameObject:
   - component: {fileID: 982187711}
   - component: {fileID: 982187710}
   - component: {fileID: 982187712}
+  - component: {fileID: 982187713}
   m_Layer: 0
   m_Name: BoulderHubRectangular_Tex
   m_TagString: Map
@@ -10835,8 +10887,24 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 4.15, y: 5.88, z: 0.2}
+  m_Size: {x: 4.93, y: 5.88, z: 0.2}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!54 &982187713
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 982187709}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &988182183
 GameObject:
   m_ObjectHideFlags: 0
@@ -14705,7 +14773,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1384757781}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -19.88, y: 0, z: 0}
+  m_LocalPosition: {x: -0.56, y: 0, z: 0}
   m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -14790,7 +14858,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 4.29
+  m_Radius: 4.2
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1389765619
 GameObject:
@@ -16059,6 +16127,7 @@ GameObject:
   - component: {fileID: 1490695585}
   - component: {fileID: 1490695584}
   - component: {fileID: 1490695583}
+  - component: {fileID: 1490695586}
   m_Layer: 0
   m_Name: BoulderHubRectangular_Tex (5)
   m_TagString: Map
@@ -16077,7 +16146,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 4.15, y: 5.88, z: 0.2}
+  m_Size: {x: 5.19, y: 5.8, z: 0.2}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!212 &1490695584
 SpriteRenderer:
@@ -16146,6 +16215,22 @@ Transform:
   m_Father: {fileID: 597599365}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
+--- !u!54 &1490695586
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1490695582}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1496618165
 GameObject:
   m_ObjectHideFlags: 0
@@ -19631,7 +19716,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1852328330}
-  - component: {fileID: 1852328331}
   m_Layer: 27
   m_Name: ShieldMachine
   m_TagString: Untagged
@@ -19656,19 +19740,6 @@ Transform:
   m_Father: {fileID: 22623680}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
---- !u!135 &1852328331
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1852328329}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 0
-  serializedVersion: 2
-  m_Radius: 2.4
-  m_Center: {x: 0, y: 2.4, z: 0}
 --- !u!1 &1861106290
 GameObject:
   m_ObjectHideFlags: 0
@@ -19946,6 +20017,7 @@ GameObject:
   - component: {fileID: 1893987030}
   - component: {fileID: 1893987029}
   - component: {fileID: 1893987028}
+  - component: {fileID: 1893987031}
   m_Layer: 0
   m_Name: BoulderHubRectangular_Tex (4)
   m_TagString: Map
@@ -19964,7 +20036,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 4.15, y: 5.88, z: 0.2}
+  m_Size: {x: 5.19, y: 5.8, z: 0.2}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!212 &1893987029
 SpriteRenderer:
@@ -20033,6 +20105,22 @@ Transform:
   m_Father: {fileID: 597599365}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
+--- !u!54 &1893987031
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1893987027}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1898558311
 GameObject:
   m_ObjectHideFlags: 0

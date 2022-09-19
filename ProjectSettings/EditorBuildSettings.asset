@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/KANG/Scenes/KANG_Scene 2.unity
+    guid: fdf4cb3c3a2e47248829e55c9a9dad10
   m_configObjects: {}

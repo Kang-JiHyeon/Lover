@@ -28,6 +28,11 @@ public class KANG_TurretControl : MonoBehaviour
             target.GetComponent<KANG_TurretRotate2>().is2P = pc.is2P;
 
         }
+        else if (other.gameObject.TryGetComponent<KIM_PlayerController>(out pc) && !pc.IsModule)
+        {
+            target.GetComponent<KANG_TurretRotate2>().isControl = true;
+            target.GetComponent<KANG_TurretRotate2>().is2P = pc.is2P;
+        }
     }
 
     private void OnTriggerExit(Collider other)

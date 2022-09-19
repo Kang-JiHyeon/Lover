@@ -166,6 +166,10 @@ public class KANG_Yamato : MonoBehaviour
         {
             isYamatoControl = true;
         }
+        else if (other.gameObject.TryGetComponent<KIM_PlayerController>(out pc) && !pc.IsModule)
+        {
+            isYamatoControl = true;
+        }
     }
     private void OnTriggerExit(Collider other)
     {
