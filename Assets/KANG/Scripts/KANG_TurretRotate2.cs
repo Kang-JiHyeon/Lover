@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
 
 // 포탑의 총구를 변경시키고 싶다.
@@ -10,7 +11,7 @@ using UnityEngine;
 // 3. localeulerAngles
 
 
-public class KANG_TurretRotate2 : MonoBehaviour
+public class KANG_TurretRotate2 : MonoBehaviourPun
 {
     public float rotSpeed = 30f;
     public float rotDir = 0f;
@@ -106,7 +107,7 @@ public class KANG_TurretRotate2 : MonoBehaviour
             }
 
             if ((Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.RightArrow)) && isControl)
-                TurretRotate();
+                photonView.RPC("TurretRotate", RpcTarget.All);
         }
         // 2P
         else
@@ -172,7 +173,7 @@ public class KANG_TurretRotate2 : MonoBehaviour
             }
 
             if ((Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D)) && isControl)
-                TurretRotate();
+                photonView.RPC("TurretRotate", RpcTarget.All);
         }
 
         #region GetAxis 입력
@@ -242,6 +243,7 @@ public class KANG_TurretRotate2 : MonoBehaviour
         #endregion
     }
 
+    [PunRPC]
     void TurretRotate()
     {
         localAngle.z += rotDir * rotSpeed * Time.deltaTime;

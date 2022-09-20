@@ -23,7 +23,6 @@ public class KIM_Planet : MonoBehaviour
         cc = ship.GetComponent<CharacterController>();
         orbit = transform.Find("Orbit").GetComponent<SpriteRenderer>();
         pc1 = GameObject.Find("Player").GetComponent<KIM_PlayerController>();
-        pc2 = GameObject.Find("Player (1)").GetComponent<KIM_PlayerController>();
     }
 
     // Update is called once per frame
@@ -40,10 +39,6 @@ public class KIM_Planet : MonoBehaviour
             if (!pc1.IsModule)
             {
                 pc1.LocalMove(((transform.position + dir * 13.5f) - ship.transform.position) / 3);
-            }
-            if (!pc2.IsModule)
-            {
-                pc2.LocalMove(((transform.position + dir * 13.5f) - ship.transform.position) / 3);
             }
         }
     }

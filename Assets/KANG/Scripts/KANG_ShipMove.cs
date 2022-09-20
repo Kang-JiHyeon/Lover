@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
 // 엔진 방향의 반대방향으로 이동하고 싶다.
 // Charater Controller 를 이용해 움직이고 싶다.
@@ -8,7 +9,7 @@ using UnityEngine;
 // 맵, 운석에 닿일 경우
 // 부딪힌 방향의 반대방향으로 힘을 가하고 싶다.
 
-public class KANG_ShipMove : MonoBehaviour
+public class KANG_ShipMove : MonoBehaviourPun
 {
     CharacterController cc;
 
@@ -53,7 +54,7 @@ public class KANG_ShipMove : MonoBehaviour
         if (engine.isControl)
         {
             //1P
-            if(engine.GetComponent<KANG_InputRotate>().is2P == false)
+            if (engine.GetComponent<KANG_InputRotate>().is2P == false)
             {
                 if (Input.GetKeyDown(KeyCode.M))
                     isMove = true;
@@ -110,8 +111,13 @@ public class KANG_ShipMove : MonoBehaviour
             moveDir = bounceDir;
         }
 
-        cc.Move(moveDir * curMoveSpeed * Time.deltaTime);
+        photonView.RPC("RPCMove", RpcTarget.All, moveDir * curMoveSpeed * Time.deltaTime);
+    }
 
+    [PunRPC]
+    void RPCMove(Vector3 motion)
+    {
+        cc.Move(motion);
     }
 
     void LerpMoveSpeed(float targetSpeed, float changeSpeed = 1f)

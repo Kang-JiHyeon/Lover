@@ -1,10 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
 // 총알을 쏘고 싶다.
 // TurretCannon의 총구 위치에서 총알을 발사하고 싶다.
-public class KANG_TurretFire : MonoBehaviour
+public class KANG_TurretFire : MonoBehaviourPun
 {
     public GameObject bulletFactory;
     public float createTime = 0.5f;
@@ -24,10 +25,16 @@ public class KANG_TurretFire : MonoBehaviour
 
         if(currentTime > createTime)
         {
-            GameObject bullet = Instantiate(bulletFactory);
-            bullet.transform.position = transform.position;
-            bullet.transform.up = transform.up;
-            currentTime = 0f;
+            photonView.RPC("RPCFire", RpcTarget.All);
         }
+    }
+
+    [PunRPC]
+    void RPCFire()
+    {
+        GameObject bullet = Instantiate(bulletFactory);
+        bullet.transform.position = transform.position;
+        bullet.transform.up = transform.up;
+        currentTime = 0f;
     }
 }
