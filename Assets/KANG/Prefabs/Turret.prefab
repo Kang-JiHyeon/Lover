@@ -73,7 +73,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: ff1647a5d6c65cb4ea74520609a08679, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -135,6 +135,7 @@ MonoBehaviour:
   rotSpeed: 60
   rotDir: 0
   isControl: 0
+  is2P: 0
 --- !u!114 &1405260686
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -174,7 +175,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4384549708487190996, guid: 51884b89a12efad4eb4108d141f13270, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4384549708487190996, guid: 51884b89a12efad4eb4108d141f13270, type: 3}
       propertyPath: m_LocalRotation.w
@@ -236,7 +237,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4384549708487190996, guid: 51884b89a12efad4eb4108d141f13270, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4384549708487190996, guid: 51884b89a12efad4eb4108d141f13270, type: 3}
       propertyPath: m_LocalRotation.w
