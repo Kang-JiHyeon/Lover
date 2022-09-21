@@ -45,73 +45,27 @@ public class KANG_Turret : KANG_Machine
         worldZ = transform.eulerAngles.z;
 
         rotDir = (worldZ > 0f && worldZ < 180f) ? -1 : 1;
-
-        //TurretRotate();
-        //if (worldZ > 0f && worldZ < 180f)
-        //{
-        //    rotDir = -1;
-        //}
-        //// 오른쪽에 있으면 반시계
-        //else
-        //{
-        //    rotDir = 1;
-        //}
     }
 
     public override void DownKey()
     {
         worldZ = transform.eulerAngles.z;
 
-        rotDir = (worldZ >= 0f && worldZ < 180f) ? 1 : -1;
-
-        //TurretRotate();
-
-        //// 왼쪽에 있으면 반시계 
-        //if (worldZ >= 0f && worldZ < 180f)
-        //{
-        //    rotDir = 1;
-        //}
-        //// 오른쪽에 있으면 시계
-        //else
-        //{
-        //    rotDir = -1;
-        //}
+        rotDir = (worldZ >= 0f && worldZ <= 180f) ? 1 : -1;
     }
 
     public override void LeftKey()
     {
         worldZ = transform.eulerAngles.z;
 
-        // 위쪽에 있으면 반시계
-        if ((worldZ >= 0f && worldZ < 90f) || (worldZ >= 270f && worldZ < 360f))
-        {
-            rotDir = 1;
-        }
-        // 아래쪽에 있으면 시계
-        else
-        {
-            rotDir = 1;
-        }
-
-        //TurretRotate();
+        rotDir = (worldZ >= 0f && worldZ < 90f) || (worldZ >= 270f && worldZ < 360f) ? 1 : -1;
     }
 
     public override void RightKey()
     {
         worldZ = transform.eulerAngles.z;
 
-        // 위쪽에 있으면 시계
-        if ((worldZ >= 0f && worldZ < 90f) || (worldZ >= 270f && worldZ < 360f))
-        {
-            rotDir = -1;
-        }
-        // 아래쪽에 있으면 반시계
-        else
-        {
-            rotDir = 1;
-        }
-
-        //TurretRotate();
+        rotDir = (worldZ >= 0f && worldZ < 90f) || (worldZ >= 270f && worldZ < 360f) ? -1 : 1;
     }
 
     public override void ArrowKey()
@@ -139,10 +93,7 @@ public class KANG_Turret : KANG_Machine
     {
         localAngle.z += rotDir * rotSpeed * Time.deltaTime;
         localAngle.z = localAngle.z > 180 ? localAngle.z - 360 : localAngle.z;
-        localAngle.z = Mathf.Clamp(localAngle.z, -90, 90);
+        localAngle.z = Mathf.Clamp(localAngle.z, -100, 100);
         transform.localRotation = Quaternion.Euler(0, 0, localAngle.z);
     }
-
-    // 방향키 입력이 중복될 경우 함수가 중복된 만큼 실행됨
-    // - 함수를 호출하는 구간을 나누자..?
 }

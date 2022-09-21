@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4384549708487190996}
   - component: {fileID: 6904988010395825516}
-  - component: {fileID: 4063240444070354259}
   m_Layer: 0
   m_Name: TurretCannon
   m_TagString: Untagged
@@ -86,21 +85,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &4063240444070354259
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1497962239067882032}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 833ae3cebb8d9f64ca78c039fe4bf7c6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bulletFactory: {fileID: 4353396649654612325, guid: d23a01019795d2e4aae47af914b0a385, type: 3}
-  createTime: 0.1
-  isShoot: 0
 --- !u!1 &7086185449351559825
 GameObject:
   m_ObjectHideFlags: 0

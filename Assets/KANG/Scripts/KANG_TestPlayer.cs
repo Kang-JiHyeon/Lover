@@ -65,8 +65,11 @@ public class KANG_TestPlayer : MonoBehaviour
 
         if (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.RightArrow))
         {
-            machine = target.GetComponent<KANG_Machine>();
-            machine.ArrowKey();
+            if (target)
+            {
+                machine = target.GetComponent<KANG_Machine>();
+                machine.ArrowKey();
+            }
         }
     }
 
