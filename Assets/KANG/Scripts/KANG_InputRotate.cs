@@ -249,6 +249,7 @@ public class KANG_InputRotate : MonoBehaviour
 
     }
 
+
     void Rotate()
     {
         localAngle.z += rotDir * rotSpeed * Time.deltaTime;

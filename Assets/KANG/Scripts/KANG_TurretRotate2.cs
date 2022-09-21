@@ -64,7 +64,7 @@ public class KANG_TurretRotate2 : MonoBehaviourPun
             // Down
             if (Input.GetKeyDown(KeyCode.DownArrow))
             {
-                // 왼쪽에 있으면 반시계
+                // 왼쪽에 있으면 반시계66
                 if (worldZ >= 0f && worldZ < 180f)
                 {
                     rotDir = 1;
