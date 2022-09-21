@@ -14,26 +14,19 @@ public class KANG_Turret : KANG_Machine
     int index = 0;
 
     // Rotate
-    public float rotSpeed = 30f;
-    public float rotDir = 0f;
-    Vector3 localAngle;
-    float worldZ;
-    public Transform axis;
+    //public float rotSpeed = 30f;
 
     // Start is called before the first frame update
     void Start()
     {
-        // 회전 기준축
-        axis = transform.GetChild(0);
-
         // 총구 입구
-        for (int i = 0; i < axis.childCount; i++)
+        for (int i = 0; i < rotAxis.childCount; i++)
         {
-            turretCannons.Add(axis.GetChild(i));
+            turretCannons.Add(rotAxis.GetChild(i));
         }
 
         // 현재 회전값
-        localAngle = axis.localEulerAngles;
+        localAngle = rotAxis.localEulerAngles;
 
     }
 
@@ -43,39 +36,10 @@ public class KANG_Turret : KANG_Machine
         
     }
 
-    public override void UpKey()
-    {
-        worldZ = axis.eulerAngles.z;
-
-        rotDir = (worldZ > 0f && worldZ < 180f) ? -1 : 1;
-    }
-
-    public override void DownKey()
-    {
-        worldZ = axis.eulerAngles.z;
-
-        rotDir = (worldZ >= 0f && worldZ <= 180f) ? 1 : -1;
-    }
-
-    public override void LeftKey()
-    {
-        worldZ = axis.eulerAngles.z;
-
-        rotDir = (worldZ >= 0f && worldZ < 90f) || (worldZ >= 270f && worldZ < 360f) ? 1 : -1;
-    }
-
-    public override void RightKey()
-    {
-        worldZ = axis.eulerAngles.z;
-
-        rotDir = (worldZ >= 0f && worldZ < 90f) || (worldZ >= 270f && worldZ < 360f) ? -1 : 1;
-    }
-
     public override void ArrowKey()
     {
         TurretRotate();
     }
-
 
     override public void ActionKey()
     {
@@ -85,10 +49,10 @@ public class KANG_Turret : KANG_Machine
         {
             GameObject bullet = Instantiate(bulletFactory);
             bullet.transform.position = turretCannons[index].position;
-            bullet.transform.up = axis.up;
+            bullet.transform.up = rotAxis.up;
             currentTime = 0f;
             index++;
-            index %= axis.childCount;
+            index %= rotAxis.childCount;
         }
     }
 
@@ -97,6 +61,6 @@ public class KANG_Turret : KANG_Machine
         localAngle.z += rotDir * rotSpeed * Time.deltaTime;
         localAngle.z = localAngle.z > 180 ? localAngle.z - 360 : localAngle.z;
         localAngle.z = Mathf.Clamp(localAngle.z, -100, 100);
-        axis.localRotation = Quaternion.Euler(0, 0, localAngle.z);
+        rotAxis.localRotation = Quaternion.Euler(0, 0, localAngle.z);
     }
 }

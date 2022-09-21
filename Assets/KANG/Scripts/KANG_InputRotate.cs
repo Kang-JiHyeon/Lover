@@ -249,6 +249,8 @@ public class KANG_InputRotate : MonoBehaviour
 
     }
 
+    
+
 
     void Rotate()
     {
