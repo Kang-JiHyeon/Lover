@@ -8,7 +8,7 @@ public class KIM_ConnectionManager : MonoBehaviourPunCallbacks
 {
     void Start()
     {
-        OnClickConnect();
+        
     }
     public void OnClickConnect()
     {
@@ -48,6 +48,7 @@ public class KIM_ConnectionManager : MonoBehaviourPunCallbacks
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.anyKeyDown)
+            OnClickConnect();
     }
 }
