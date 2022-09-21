@@ -111,7 +111,8 @@ public class KANG_ShipMove : MonoBehaviourPun
             moveDir = bounceDir;
         }
 
-        photonView.RPC("RPCMove", RpcTarget.All, moveDir * curMoveSpeed * Time.deltaTime);
+        cc.Move(moveDir * curMoveSpeed * Time.deltaTime);
+        //photonView.RPC("RPCMove", RpcTarget.All, moveDir * curMoveSpeed * Time.deltaTime);
     }
 
     [PunRPC]

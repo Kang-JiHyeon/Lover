@@ -1,8 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class KIM_InsectController : MonoBehaviour
+using Photon.Pun;
+public class KIM_InsectController : MonoBehaviourPun
 {
     protected enum EnemyState
     {

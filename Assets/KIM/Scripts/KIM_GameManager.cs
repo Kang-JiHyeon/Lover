@@ -21,10 +21,10 @@ public class KIM_GameManager : MonoBehaviourPunCallbacks
         //OnPhotonSerializeView »£√‚ ∫Ûµµ
         PhotonNetwork.SerializationRate = 60;
         //Rpc »£√‚ ∫Ûµµ
-        PhotonNetwork.SendRate = 140;
+        PhotonNetwork.SendRate = 60;
 
         ship = GameObject.Find("Spaceship");
-        GameObject player = PhotonNetwork.Instantiate("Player", Vector3.zero, Quaternion.identity);
+        GameObject player = PhotonNetwork.Instantiate("Player", ship.transform.position, Quaternion.identity);
         player.transform.SetParent(ship.transform);
         player.gameObject.name = "Player";
     }

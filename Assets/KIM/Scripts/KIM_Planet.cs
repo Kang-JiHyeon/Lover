@@ -12,8 +12,6 @@ public class KIM_Planet : MonoBehaviour
     Color col;
     SpriteRenderer orbit;
     CharacterController cc;
-    KIM_PlayerController pc1;
-    KIM_PlayerController pc2;
 
     // Start is called before the first frame update
     void Start()
@@ -22,7 +20,6 @@ public class KIM_Planet : MonoBehaviour
         ship = GameObject.Find("Spaceship");
         cc = ship.GetComponent<CharacterController>();
         orbit = transform.Find("Orbit").GetComponent<SpriteRenderer>();
-        pc1 = GameObject.Find("Player").GetComponent<KIM_PlayerController>();
     }
 
     // Update is called once per frame
@@ -30,22 +27,22 @@ public class KIM_Planet : MonoBehaviour
     {
         FadeOrbit();
 
-        if (distance <= 18)
+        orbit.transform.Rotate(0, 0, -5f * Time.deltaTime);
+
+        if (distance <= 25)
         {
             Vector3 dir = ship.transform.position - transform.position;
             dir.Normalize();
 
-            cc.Move(((transform.position + dir * 13.5f) - ship.transform.position) * Time.deltaTime / 3);
-            if (!pc1.IsModule)
-            {
-                pc1.LocalMove(((transform.position + dir * 13.5f) - ship.transform.position) / 3);
-            }
+            cc.Move(((transform.position + dir * 13.5f) - ship.transform.position).normalized  * Time.deltaTime);
         }
     }
 
     void FadeOrbit()
     {
         distance = Vector3.Distance(transform.position, ship.transform.position);
+
+        orbit.transform.localScale = distance / 7.1f * Vector3.one;
 
         col = orbit.color;
         col.a = 30 / distance - 1;

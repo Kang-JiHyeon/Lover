@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
 public class KIM_FireInsect : KIM_InsectController
 {
@@ -26,14 +27,25 @@ public class KIM_FireInsect : KIM_InsectController
         base.Attack();
 
         // 공격 및 애니메이션 구현
-        currentTime += Time.deltaTime;
+        if (photonView.IsMine)
+            currentTime += Time.deltaTime;
         if (currentTime > 4.0f)
         {
-            iTween.ScaleTo(stomach, iTween.Hash("x", 0.5f, "y", 1.1f, "time", 0.3f, "easetype", iTween.EaseType.easeInOutBack));
-            iTween.ScaleTo(stomach, iTween.Hash("x", 1, "y", 1, "time", 0.3f, "easetype", iTween.EaseType.easeInOutBack, "delay", 0.31f));
-            StartCoroutine("Fire");
-            currentTime = 0;
+            //iTween.ScaleTo(stomach, iTween.Hash("x", 0.5f, "y", 1.1f, "time", 0.3f, "easetype", iTween.EaseType.easeInOutBack));
+            //iTween.ScaleTo(stomach, iTween.Hash("x", 1, "y", 1, "time", 0.3f, "easetype", iTween.EaseType.easeInOutBack, "delay", 0.31f));
+            //StartCoroutine("Fire");
+            photonView.RPC("RPCAttack", RpcTarget.All);
+            if (photonView.IsMine)
+                currentTime = 0;
         }
+    }
+
+    [PunRPC]
+    void RPCAttack()
+    {
+        iTween.ScaleTo(stomach, iTween.Hash("x", 0.5f, "y", 1.1f, "time", 0.3f, "easetype", iTween.EaseType.easeInOutBack));
+        iTween.ScaleTo(stomach, iTween.Hash("x", 1, "y", 1, "time", 0.3f, "easetype", iTween.EaseType.easeInOutBack, "delay", 0.31f));
+        StartCoroutine("Fire");
     }
 
     IEnumerator Fire()

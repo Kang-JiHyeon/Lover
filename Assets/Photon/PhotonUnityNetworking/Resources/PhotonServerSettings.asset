@@ -43,6 +43,12 @@ MonoBehaviour:
   - TurretRotate
   - <Update>g__enable|4_0
   - RPCFire
+  - RPCGravity
+  - SetClicked
+  - SetSprite
+  - RPCCoroutine
+  - move
+  - RPCAttack
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1
