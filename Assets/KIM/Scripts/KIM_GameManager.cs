@@ -24,9 +24,18 @@ public class KIM_GameManager : MonoBehaviourPunCallbacks
         PhotonNetwork.SendRate = 60;
 
         ship = GameObject.Find("Spaceship");
-        GameObject player = PhotonNetwork.Instantiate("Player", ship.transform.position, Quaternion.identity);
-        player.transform.SetParent(ship.transform);
-        player.gameObject.name = "Player";
+        if (PhotonNetwork.IsMasterClient)
+        {
+            GameObject player = PhotonNetwork.Instantiate("Player", ship.transform.position, Quaternion.identity);
+            player.transform.SetParent(ship.transform);
+            player.gameObject.name = "Player";
+        }
+        else
+        {
+            GameObject player = PhotonNetwork.Instantiate("Player2", ship.transform.position, Quaternion.identity);
+            player.transform.SetParent(ship.transform);
+            player.gameObject.name = "Player";
+        } 
     }
 
     // Update is called once per frame

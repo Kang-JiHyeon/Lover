@@ -1102,6 +1102,7 @@ GameObject:
   - component: {fileID: 1905301355}
   - component: {fileID: 1905301357}
   - component: {fileID: 1905301356}
+  - component: {fileID: 1905301358}
   m_Layer: 5
   m_Name: PressAnyKey
   m_TagString: Untagged
@@ -1171,6 +1172,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1905301354}
   m_CullTransparentMesh: 1
+--- !u!114 &1905301358
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1905301354}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb13325b22045b344bf240e25bc343f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fadeTime: 1.5
 --- !u!1 &1940999841
 GameObject:
   m_ObjectHideFlags: 0

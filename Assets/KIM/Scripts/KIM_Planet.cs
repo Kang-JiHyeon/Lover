@@ -29,7 +29,7 @@ public class KIM_Planet : MonoBehaviour
 
         orbit.transform.Rotate(0, 0, -5f * Time.deltaTime);
 
-        if (distance <= 25)
+        if (distance <= 25 && distance >= 0.1f)
         {
             Vector3 dir = ship.transform.position - transform.position;
             dir.Normalize();

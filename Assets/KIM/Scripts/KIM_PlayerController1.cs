@@ -20,7 +20,7 @@ public class KIM_PlayerController1 : MonoBehaviourPun, IPunObservable
     [SerializeField]
     float speed = 5;
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         rb = GetComponent<Rigidbody>(); 
     }

@@ -49,6 +49,10 @@ MonoBehaviour:
   - RPCCoroutine
   - move
   - RPCAttack
+  - RPCSetActive
+  - RPCLoadScene
+  - RPCSetCount
+  - RPCSecCount
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1

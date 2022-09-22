@@ -6,10 +6,52 @@ using UnityEngine.UI;
 
 public class KIM_LobbyManager : MonoBehaviourPunCallbacks
 {
-    void Start()
+    public GameObject text;
+    public GameObject countText;
+
+    void Awake()
     {
         CreateRoom();
     }
+
+    private void Update()
+    {
+        if (PhotonNetwork.PlayerList.Length >= 2 && !text.activeSelf)
+            photonView.RPC("RPCSetActive", RpcTarget.All, true);
+        else if (PhotonNetwork.PlayerList.Length < 2 && text.activeSelf)
+            photonView.RPC("RPCSetActive", RpcTarget.All, false);
+
+        if (text.activeSelf == true && Input.GetKeyDown(KeyCode.Return) && PhotonNetwork.IsMasterClient)
+        {
+            photonView.RPC("RPCLoadScene", RpcTarget.All);
+        }
+
+        countText.GetComponent<Text>().text = "PlayerCount: " + PhotonNetwork.PlayerList.Length.ToString();
+    }
+
+    [PunRPC]
+    void RPCSetActive(bool boolean)
+    {
+        text.SetActive(boolean);
+
+
+        if (PhotonNetwork.IsMasterClient)
+        {
+            text.GetComponent<Text>().text = "Press Enter To Start";
+        }
+        else
+        {
+            text.GetComponent<Text>().text = "Waiting For Start...";
+        }
+        
+    }
+
+    [PunRPC]
+    void RPCLoadScene()
+    {
+        PhotonNetwork.LoadLevel("KIM_Scene_Game");
+    }
+
     //방 생성
     public void CreateRoom()
     {
@@ -50,7 +92,6 @@ public class KIM_LobbyManager : MonoBehaviourPunCallbacks
     {
         base.OnJoinedRoom();
         print("OnJoinedRoom");
-        PhotonNetwork.LoadLevel("KIM_Scene_Game");
     }
 
     //방 참가가 실패 되었을 때 호출 되는 함수
