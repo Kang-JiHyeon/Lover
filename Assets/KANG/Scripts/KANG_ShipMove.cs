@@ -132,7 +132,6 @@ public class KANG_ShipMove : MonoBehaviourPun
 
     private void OnTriggerEnter(Collider other)
     {
-
         if (other.gameObject.CompareTag("Map"))
         {
             bounceDir = transform.position - other.transform.position;
@@ -144,7 +143,6 @@ public class KANG_ShipMove : MonoBehaviourPun
 
             print("Map Bounce, HP--");
         }
-
 
         // Enemy
         if (other.gameObject.layer == LayerMask.NameToLayer("Enemy"))

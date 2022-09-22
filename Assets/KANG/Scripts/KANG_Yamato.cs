@@ -5,7 +5,7 @@ using UnityEngine;
 
 // yamato를 조작할 수 있고, 공격 키를 누르면 공격을 발사하고 싶다.
 
-public class KANG_Yamato : MonoBehaviour
+public class KANG_Yamato : KANG_Machine
 {
     KIM_PlayerController pc;
 
@@ -46,7 +46,7 @@ public class KANG_Yamato : MonoBehaviour
     {
         curCreateTime = createTime;
 
-        for (int i = 0; i < transform.childCount; i++)
+        for (int i = 0; i < transform.childCount-1; i++)
         {
             Transform child = transform.GetChild(i);
             for(int j = 0; j< child.childCount; j++)
@@ -82,19 +82,19 @@ public class KANG_Yamato : MonoBehaviour
                 break;
         }
     }
+    public override void ActionKey()
+    {
+        if (yState == YamatoState.Enable)
+        {
+            yState = YamatoState.Attack;
+        }
+    }
 
     // 활성화 상태
     // - 조작이 가능하고, 공격키 입력이 들어오면 공격 상태로 전환한다.
     private void Enable()
     {
-        if (isYamatoControl)
-        {
-            // 1P / 2P
-            if((!pc.is2P && Input.GetKeyDown(KeyCode.M)) || (pc.is2P && Input.GetKeyDown(KeyCode.X)))
-            {
-                    yState = YamatoState.Attack;
-            }
-        }
+
     }
 
     // 공격 상태
@@ -159,25 +159,25 @@ public class KANG_Yamato : MonoBehaviour
     }
 
 
-    private void OnTriggerStay(Collider other)
-    {
-        // Player가 감지되는 동안 Yamato를 조작할 수 있다.
-        if (other.gameObject.TryGetComponent<KIM_PlayerController>(out pc) && pc.IsModule)
-        {
-            isYamatoControl = true;
-        }
-        else if (other.gameObject.TryGetComponent<KIM_PlayerController>(out pc) && !pc.IsModule)
-        {
-            isYamatoControl = true;
-        }
-    }
-    private void OnTriggerExit(Collider other)
-    {
-        // Player가 감지 범위를 벗어나면 Yamato를 조작할 수 있다.
-        if (other.gameObject.TryGetComponent<KIM_PlayerController>(out pc))
-        {
-            isYamatoControl = false;
-        }
-    }
+    //private void OnTriggerStay(Collider other)
+    //{
+    //    // Player가 감지되는 동안 Yamato를 조작할 수 있다.
+    //    if (other.gameObject.TryGetComponent<KIM_PlayerController>(out pc) && pc.IsModule)
+    //    {
+    //        isYamatoControl = true;
+    //    }
+    //    else if (other.gameObject.TryGetComponent<KIM_PlayerController>(out pc) && !pc.IsModule)
+    //    {
+    //        isYamatoControl = true;
+    //    }
+    //}
+    //private void OnTriggerExit(Collider other)
+    //{
+    //    // Player가 감지 범위를 벗어나면 Yamato를 조작할 수 있다.
+    //    if (other.gameObject.TryGetComponent<KIM_PlayerController>(out pc))
+    //    {
+    //        isYamatoControl = false;
+    //    }
+    //}
 
 }

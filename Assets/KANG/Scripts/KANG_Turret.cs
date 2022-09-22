@@ -14,23 +14,19 @@ public class KANG_Turret : KANG_Machine
     int index = 0;
 
     // Rotate
-    public float rotSpeed = 30f;
-    public float rotDir = 0f;
-    Vector3 localAngle;
-    float worldZ;
-
+    //public float rotSpeed = 30f;
 
     // Start is called before the first frame update
     void Start()
     {
         // 총구 입구
-        for (int i = 0; i < transform.childCount; i++)
+        for (int i = 0; i < rotAxis.childCount; i++)
         {
-            turretCannons.Add(transform.GetChild(i));
+            turretCannons.Add(rotAxis.GetChild(i));
         }
 
         // 현재 회전값
-        localAngle = transform.localEulerAngles;
+        localAngle = rotAxis.localEulerAngles;
 
     }
 
@@ -40,85 +36,10 @@ public class KANG_Turret : KANG_Machine
         
     }
 
-    public override void UpKey()
-    {
-        worldZ = transform.eulerAngles.z;
-
-        rotDir = (worldZ > 0f && worldZ < 180f) ? -1 : 1;
-
-        //TurretRotate();
-        //if (worldZ > 0f && worldZ < 180f)
-        //{
-        //    rotDir = -1;
-        //}
-        //// 오른쪽에 있으면 반시계
-        //else
-        //{
-        //    rotDir = 1;
-        //}
-    }
-
-    public override void DownKey()
-    {
-        worldZ = transform.eulerAngles.z;
-
-        rotDir = (worldZ >= 0f && worldZ < 180f) ? 1 : -1;
-
-        //TurretRotate();
-
-        //// 왼쪽에 있으면 반시계 
-        //if (worldZ >= 0f && worldZ < 180f)
-        //{
-        //    rotDir = 1;
-        //}
-        //// 오른쪽에 있으면 시계
-        //else
-        //{
-        //    rotDir = -1;
-        //}
-    }
-
-    public override void LeftKey()
-    {
-        worldZ = transform.eulerAngles.z;
-
-        // 위쪽에 있으면 반시계
-        if ((worldZ >= 0f && worldZ < 90f) || (worldZ >= 270f && worldZ < 360f))
-        {
-            rotDir = 1;
-        }
-        // 아래쪽에 있으면 시계
-        else
-        {
-            rotDir = 1;
-        }
-
-        //TurretRotate();
-    }
-
-    public override void RightKey()
-    {
-        worldZ = transform.eulerAngles.z;
-
-        // 위쪽에 있으면 시계
-        if ((worldZ >= 0f && worldZ < 90f) || (worldZ >= 270f && worldZ < 360f))
-        {
-            rotDir = -1;
-        }
-        // 아래쪽에 있으면 반시계
-        else
-        {
-            rotDir = 1;
-        }
-
-        //TurretRotate();
-    }
-
     public override void ArrowKey()
     {
         TurretRotate();
     }
-
 
     override public void ActionKey()
     {
@@ -128,10 +49,10 @@ public class KANG_Turret : KANG_Machine
         {
             GameObject bullet = Instantiate(bulletFactory);
             bullet.transform.position = turretCannons[index].position;
-            bullet.transform.up = transform.up;
+            bullet.transform.up = rotAxis.up;
             currentTime = 0f;
             index++;
-            index %= transform.childCount;
+            index %= rotAxis.childCount;
         }
     }
 
@@ -139,10 +60,7 @@ public class KANG_Turret : KANG_Machine
     {
         localAngle.z += rotDir * rotSpeed * Time.deltaTime;
         localAngle.z = localAngle.z > 180 ? localAngle.z - 360 : localAngle.z;
-        localAngle.z = Mathf.Clamp(localAngle.z, -90, 90);
-        transform.localRotation = Quaternion.Euler(0, 0, localAngle.z);
+        localAngle.z = Mathf.Clamp(localAngle.z, -100, 100);
+        rotAxis.localRotation = Quaternion.Euler(0, 0, localAngle.z);
     }
-
-    // 방향키 입력이 중복될 경우 함수가 중복된 만큼 실행됨
-    // - 함수를 호출하는 구간을 나누자..?
 }
