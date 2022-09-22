@@ -17,10 +17,18 @@ public class KIM_GameManager : MonoBehaviourPunCallbacks
         set { rescueCount = value; }
     }
 
+    float gameTime;
+    public float GameTime
+    {
+        get { return gameTime; }
+    }
+
     // Start is called before the first frame update
     void Awake()
     {
         Instance = this;
+
+        DontDestroyOnLoad(gameObject);
     }
 
     private void Start()
@@ -48,6 +56,6 @@ public class KIM_GameManager : MonoBehaviourPunCallbacks
     // Update is called once per frame
     void Update()
     {
-        
+        gameTime += Time.deltaTime;
     }
 }
