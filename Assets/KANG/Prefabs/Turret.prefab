@@ -12,7 +12,7 @@ GameObject:
   m_Layer: 30
   m_Name: SeatPos
   m_TagString: Untagged
-  m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -144,12 +144,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a43bf1019d891d74e83ef69446023100, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rotAxis: {fileID: 2681972259073438597}
+  localAngle: {x: 0, y: 0, z: 0}
+  worldZ: 0
+  rotDir: 0
+  rotSpeed: 50
   turretCannons: []
   bulletFactory: {fileID: 4353396649654612325, guid: d23a01019795d2e4aae47af914b0a385, type: 3}
   createTime: 0.1
-  rotSpeed: 50
-  rotDir: 0
-  axis: {fileID: 0}
 --- !u!1 &6613735104801276803
 GameObject:
   m_ObjectHideFlags: 0

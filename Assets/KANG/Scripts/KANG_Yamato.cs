@@ -7,8 +7,6 @@ using UnityEngine;
 
 public class KANG_Yamato : KANG_Machine
 {
-    KIM_PlayerController pc;
-
     public GameObject yamatoBulletFactory;
     public Transform firePos;
     public bool isYamatoControl = false;

@@ -1,3 +1,4 @@
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,6 +9,8 @@ public class KANG_Shield : KANG_Machine
     public float upDownValue = 0.4f;
 
     //public Transform shieldAxis;
+    public KANG_Engine engine;
+
     public Transform shieldWave;
 
     Vector3 downPos;
@@ -61,27 +64,6 @@ public class KANG_Shield : KANG_Machine
         if (Mathf.Abs((shieldWave.localPosition - pos).magnitude) < 0.1f)
         {
             shieldWave.localPosition = pos;
-        }
-    }
-
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.layer == LayerMask.NameToLayer("EnemyBullet"))
-        {
-            Destroy(other.gameObject);
-        }
-
-
-        if (other.gameObject.CompareTag("Map"))
-        {
-            KANG_ShipMove.instance.bounceDir = transform.position - other.transform.position;
-            KANG_ShipMove.instance.bounceDir.z = 0f;
-            KANG_ShipMove.instance.bounceDir.Normalize();
-            KANG_ShipMove.instance.isBounce = true;
-
-            print("Shield Wave Bounce");
-
         }
     }
 }
