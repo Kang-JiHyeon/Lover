@@ -38,7 +38,7 @@ public class KANG_YamatoRotate : MonoBehaviour
         Rotate();
     }
 
-    public virtual void Rotate()
+    public void Rotate()
     {
         // yamato texture들을 우주선 중심을 기준으로 회전하고 싶다.
         for (int i = 0; i< rotObjects.Count; i++)
