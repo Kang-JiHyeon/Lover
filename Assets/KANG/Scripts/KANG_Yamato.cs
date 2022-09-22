@@ -157,27 +157,4 @@ public class KANG_Yamato : KANG_Machine
         controls[0].SetActive(isEnable);
         controls[1].SetActive(!isEnable);
     }
-
-
-    //private void OnTriggerStay(Collider other)
-    //{
-    //    // Player가 감지되는 동안 Yamato를 조작할 수 있다.
-    //    if (other.gameObject.TryGetComponent<KIM_PlayerController>(out pc) && pc.IsModule)
-    //    {
-    //        isYamatoControl = true;
-    //    }
-    //    else if (other.gameObject.TryGetComponent<KIM_PlayerController>(out pc) && !pc.IsModule)
-    //    {
-    //        isYamatoControl = true;
-    //    }
-    //}
-    //private void OnTriggerExit(Collider other)
-    //{
-    //    // Player가 감지 범위를 벗어나면 Yamato를 조작할 수 있다.
-    //    if (other.gameObject.TryGetComponent<KIM_PlayerController>(out pc))
-    //    {
-    //        isYamatoControl = false;
-    //    }
-    //}
-
 }
