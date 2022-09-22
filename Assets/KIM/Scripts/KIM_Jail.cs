@@ -78,6 +78,7 @@ public class KIM_Jail : MonoBehaviour
 
     IEnumerator Rescue()
     {
+        KIM_GameManager.Instance.RescueCount++;
         GameObject effect = Instantiate(rescueEffect);
         effect.transform.position = ship.transform.position;
         effect.transform.SetParent(ship.transform);

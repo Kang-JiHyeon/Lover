@@ -6,14 +6,21 @@ using Photon.Realtime;
 
 public class KIM_GameManager : MonoBehaviourPunCallbacks
 {
-    public static KIM_GameManager instance;
+    public static KIM_GameManager Instance;
 
     GameObject ship;
-    
+
+    int rescueCount;
+    public int RescueCount
+    {
+        get { return rescueCount; }
+        set { rescueCount = value; }
+    }
+
     // Start is called before the first frame update
     void Awake()
     {
-        instance = this;
+        Instance = this;
     }
 
     private void Start()
