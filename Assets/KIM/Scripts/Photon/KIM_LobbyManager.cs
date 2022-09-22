@@ -58,7 +58,7 @@ public class KIM_LobbyManager : MonoBehaviourPunCallbacks
         // 방 옵션을 설정
         RoomOptions roomOptions = new RoomOptions();
         // 최대 인원 (0이면 최대인원)
-        roomOptions.MaxPlayers = 4;
+        roomOptions.MaxPlayers = 2;
         // 룸 리스트에 보이지 않게? 보이게?
         roomOptions.IsVisible = true;
 

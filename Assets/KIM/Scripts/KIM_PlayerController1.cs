@@ -187,8 +187,8 @@ public class KIM_PlayerController1 : MonoBehaviourPun, IPunObservable
 
         if (other.gameObject.layer == LayerMask.NameToLayer("Module") && isModule)
         {
-            transform.position = Vector3.Lerp(transform.position, other.transform.position, Time.deltaTime * 10);
-            //transform.position = Vector3.Lerp(transform.position, other.transform.Find("SeatPos").position, Time.deltaTime * 10);
+            //transform.position = Vector3.Lerp(transform.position, other.transform.position, Time.deltaTime * 10);
+            transform.position = Vector3.Lerp(transform.position, other.transform.Find("SeatPos").position, Time.deltaTime * 10);
         }
     }
 
