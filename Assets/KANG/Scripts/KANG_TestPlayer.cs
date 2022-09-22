@@ -6,7 +6,6 @@ public class KANG_TestPlayer : MonoBehaviour
 {
     GameObject target;
     KANG_Machine machine;
-    bool isArrowDown = false;
     // Start is called before the first frame update
     void Start()
     {
