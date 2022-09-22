@@ -7,13 +7,18 @@ public class KIM_Warp : MonoBehaviourPun
 {
     [SerializeField]
     int unlockCount;
-
+    GameObject ship;
+    CharacterController cc;
     public GameObject seal;
     public GameObject unSeal;
+
+    bool isEnd;
     // Start is called before the first frame update
     void Start()
     {
         unSeal.SetActive(false);
+        ship = GameObject.Find("Spaceship");
+        cc = ship.GetComponent<CharacterController>();
     }
 
     // Update is called once per frame
@@ -26,11 +31,24 @@ public class KIM_Warp : MonoBehaviourPun
         }
     }
 
+    IEnumerator OnCollide()
+    {
+        float currentTime = 0;
+        isEnd = true;
+        while (currentTime < 3.0f)
+        {
+            currentTime += Time.deltaTime;
+            cc.Move((transform.position - ship.transform.position) * Time.deltaTime);
+            yield return null;
+        }
+        PhotonNetwork.LoadLevel("KIM_Ending");
+    }
+
     private void OnTriggerEnter(Collider other)
     {
-        if (unSeal.activeSelf && other.gameObject.layer == LayerMask.NameToLayer("Ship"))
+        if (unSeal.activeSelf && other.gameObject.layer == LayerMask.NameToLayer("Ship") && !isEnd)
         {
-            PhotonNetwork.LoadLevel("KIM_Ending");
+            StartCoroutine("OnCollide");
         }
     }
 }

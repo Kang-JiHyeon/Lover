@@ -44,6 +44,15 @@ public class KIM_PlayerController1 : MonoBehaviourPun, IPunObservable
                     machine.ActionKey();
                 }
             }
+            else if (Input.GetKeyUp(KeyCode.M))
+            {
+
+                if (isModule)
+                {
+                    machine = target.GetComponent<KANG_Machine>();
+                    machine.ActionKeyUp();
+                }
+            }
 
             if (Input.GetKey(KeyCode.UpArrow))
             {
@@ -108,6 +117,19 @@ public class KIM_PlayerController1 : MonoBehaviourPun, IPunObservable
                 {
                     machine = target.GetComponent<KANG_Machine>();
                     machine.ArrowKey();
+                }
+            }
+
+            if ((Input.GetKeyUp(KeyCode.UpArrow) && !(Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.RightArrow)))
+            || (Input.GetKeyUp(KeyCode.DownArrow) && !(Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.RightArrow)))
+            || (Input.GetKeyUp(KeyCode.LeftArrow) && !(Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.RightArrow)))
+            || (Input.GetKeyUp(KeyCode.RightArrow) && !(Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.LeftArrow))))
+            {
+                if (isModule)
+                {
+                    machine = target.GetComponent<KANG_Machine>();
+                    machine.ArrowKeyUp();
+                    print("machine ArrowKeyUp: " + target.name);
                 }
             }
 
