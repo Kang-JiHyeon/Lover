@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
 // 엔진을 회전시키고, 가동하고 싶다.
 public class KANG_Engine : KANG_Machine
@@ -66,7 +67,14 @@ public class KANG_Engine : KANG_Machine
             moveDir.Normalize();
         }
 
-        cc.Move(moveDir * curMoveSpeed * Time.deltaTime);
+        //cc.Move(moveDir * curMoveSpeed * Time.deltaTime);
+        photonView.RPC("RPCMove", RpcTarget.All, moveDir * curMoveSpeed * Time.deltaTime);
+    }
+
+    [PunRPC]
+    void RPCMove(Vector3 dir)
+    {
+        cc.Move(dir);
     }
 
     // 우주선 멈춤
@@ -81,7 +89,8 @@ public class KANG_Engine : KANG_Machine
         while(Mathf.Abs(targetSpeed - curMoveSpeed) > 0.1f)
         {
             curMoveSpeed = Mathf.Lerp(curMoveSpeed, targetSpeed, Time.deltaTime * changeSpeed);
-            cc.Move(moveDir * curMoveSpeed * Time.deltaTime);
+            //cc.Move(moveDir * curMoveSpeed * Time.deltaTime);
+            photonView.RPC("RPCMove", RpcTarget.All, moveDir * curMoveSpeed * Time.deltaTime);
             yield return null;
         }
         curMoveSpeed = targetSpeed;
