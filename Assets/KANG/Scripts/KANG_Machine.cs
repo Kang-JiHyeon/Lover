@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
 // 머신들을 기능을 정의
 // - Arrow Key Down
@@ -9,7 +10,7 @@ using UnityEngine;
 // - M키 Up
 
 
-public class KANG_Machine : MonoBehaviour
+public class KANG_Machine : MonoBehaviourPun
 {
     public Transform rotAxis;
     public Vector3 localAngle;
