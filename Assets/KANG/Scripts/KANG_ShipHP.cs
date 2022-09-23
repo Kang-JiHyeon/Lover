@@ -9,8 +9,8 @@ using UnityEngine.UI;
 public class KANG_ShipHP : MonoBehaviour
 {
     public GameObject DeathSprite;
-    public Slider HPBar;
-    public GameObject fillArea;
+    Slider HPBar;
+    GameObject fillArea;
 
     public static KANG_ShipHP instance;
     public int maxHP = 10;
@@ -66,6 +66,9 @@ public class KANG_ShipHP : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        HPBar = GameObject.Find("Slider").GetComponent<Slider>();
+        fillArea = HPBar.gameObject.transform.GetChild(1).gameObject;
+
         hp = maxHP;
         HPBar.maxValue = maxHP;
         HPBar.value = maxHP;

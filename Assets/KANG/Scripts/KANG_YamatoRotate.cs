@@ -22,7 +22,7 @@ public class KANG_YamatoRotate : MonoBehaviour
     void Start()
     {
         // 회전 중심 = 우주선의 중심
-        spaceship = GameObject.Find("Spaceship").transform;
+        spaceship = transform.parent.parent;
 
         for(int i = 0; i<transform.childCount; i++)
         {

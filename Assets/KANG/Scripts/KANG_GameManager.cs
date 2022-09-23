@@ -4,9 +4,9 @@ using UnityEngine;
 using Photon.Pun;
 using Photon.Realtime;
 
-public class KIM_GameManager : MonoBehaviourPunCallbacks
+public class KANG_GameManager : MonoBehaviourPunCallbacks
 {
-    public static KIM_GameManager Instance;
+    public static KANG_GameManager Instance;
 
     GameObject ship;
 
@@ -17,18 +17,10 @@ public class KIM_GameManager : MonoBehaviourPunCallbacks
         set { rescueCount = value; }
     }
 
-    float gameTime;
-    public float GameTime
-    {
-        get { return gameTime; }
-    }
-
     // Start is called before the first frame update
     void Awake()
     {
         Instance = this;
-
-        DontDestroyOnLoad(gameObject);
     }
 
     private void Start()
@@ -37,18 +29,10 @@ public class KIM_GameManager : MonoBehaviourPunCallbacks
         PhotonNetwork.SerializationRate = 60;
         //Rpc »£√‚ ∫Ûµµ
         PhotonNetwork.SendRate = 60;
-
-
+        GameObject ship = PhotonNetwork.Instantiate("Spaceship", new Vector3(0, 2, 0), Quaternion.identity);
         //ship = GameObject.Find("Spaceship");
-
-        //GameObject ship = PhotonNetwork.Instantiate("Spaceship", new Vector3(0, 2, 0), Quaternion.identity);
-
         if (PhotonNetwork.IsMasterClient)
         {
-           ship = PhotonNetwork.Instantiate("Spaceship", new Vector3(0, 2, 0), Quaternion.identity);
-        }
-
-        if (photonView.IsMine) { 
             GameObject player = PhotonNetwork.Instantiate("Player", ship.transform.position, Quaternion.identity);
             player.transform.SetParent(ship.transform);
             player.gameObject.name = "Player";
@@ -64,6 +48,6 @@ public class KIM_GameManager : MonoBehaviourPunCallbacks
     // Update is called once per frame
     void Update()
     {
-        gameTime += Time.deltaTime;
+        
     }
 }
