@@ -29,12 +29,12 @@ public class KIM_Planet : MonoBehaviour
 
         orbit.transform.Rotate(0, 0, -5f * Time.deltaTime);
 
-        if (distance <= 25 && distance >= 0.1f)
+        if (distance <= transform.localScale.x * 18 && distance >= 0.1f)
         {
             Vector3 dir = ship.transform.position - transform.position;
             dir.Normalize();
 
-            cc.Move(((transform.position + dir * 13.5f) - ship.transform.position).normalized  * Time.deltaTime);
+            cc.Move(((transform.position + dir * transform.localScale.x * 9.14f) - ship.transform.position).normalized * 2 * Time.deltaTime);
         }
     }
 
@@ -42,10 +42,10 @@ public class KIM_Planet : MonoBehaviour
     {
         distance = Vector3.Distance(transform.position, ship.transform.position);
 
-        orbit.transform.localScale = distance / 7.1f * Vector3.one;
+        orbit.transform.localScale = (distance / transform.localScale.x / 4.9f) * Vector3.one;
 
         col = orbit.color;
-        col.a = 30 / distance - 1;
+        col.a = transform.localScale.x * 21f / distance - 1;
         orbit.color = col;
     }
 }

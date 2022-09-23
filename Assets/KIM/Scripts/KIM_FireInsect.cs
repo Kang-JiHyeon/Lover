@@ -62,6 +62,7 @@ public class KIM_FireInsect : KIM_InsectController
         if (other.gameObject.layer == LayerMask.NameToLayer("Ship") || other.gameObject.layer == LayerMask.NameToLayer("PlayerBullet") || other.gameObject.CompareTag("Map"))
         {
             // ship.hp--;
+            Debug.Log(other.gameObject.name);
             GameObject explo = Instantiate(dieExplosion);
             explo.transform.position = transform.position;
             Destroy(gameObject);
