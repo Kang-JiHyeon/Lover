@@ -32,30 +32,31 @@ public class KANG_Machine : MonoBehaviourPun
 
     public virtual void UpKey()
     {
-        worldZ = rotAxis.eulerAngles.z;
+        //worldZ = rotAxis.eulerAngles.z;
 
-        rotDir = (worldZ > 0f && worldZ < 180f) ? -1 : 1;
+        //rotDir = (worldZ > 0f && worldZ < 180f) ? -1 : 1;
+        ////photonView.RPC("RpcUpKey", RpcTarget.All, (worldZ > 0f && worldZ < 180f) ? -1 : 1);
     }
 
     public virtual void DownKey()
     {
-        worldZ = rotAxis.eulerAngles.z;
+        //worldZ = rotAxis.eulerAngles.z;
 
-        rotDir = (worldZ >= 0f && worldZ <= 180f) ? 1 : -1;
+        //rotDir = (worldZ >= 0f && worldZ <= 180f) ? 1 : -1;
     }
 
     public virtual void LeftKey()
     {
-        worldZ = rotAxis.eulerAngles.z;
+        //worldZ = rotAxis.eulerAngles.z;
 
-        rotDir = (worldZ >= 0f && worldZ < 90f) || (worldZ >= 270f && worldZ < 360f) ? 1 : -1;
+        //rotDir = (worldZ >= 0f && worldZ < 90f) || (worldZ >= 270f && worldZ < 360f) ? 1 : -1;
     }
 
     public virtual void RightKey()
     {
-        worldZ = rotAxis.eulerAngles.z;
+        //worldZ = rotAxis.eulerAngles.z;
 
-        rotDir = (worldZ >= 0f && worldZ < 90f) || (worldZ >= 270f && worldZ < 360f) ? -1 : 1;
+        //rotDir = (worldZ >= 0f && worldZ < 90f) || (worldZ >= 270f && worldZ < 360f) ? -1 : 1;
     }
 
     public virtual void ArrowKey()
@@ -80,8 +81,9 @@ public class KANG_Machine : MonoBehaviourPun
 
     public virtual void Rotate()
     {
-        localAngle.z += rotDir * rotSpeed * Time.deltaTime;
-        localAngle.z = localAngle.z > 180 ? localAngle.z - 360 : localAngle.z;
-        rotAxis.localRotation = Quaternion.Euler(0, 0, localAngle.z);
+        //localAngle.z += rotDir * rotSpeed * deltaTime;
+        //localAngle.z = localAngle.z > 180 ? localAngle.z - 360 : localAngle.z;
+        //rotAxis.localRotation = Quaternion.Euler(0, 0, localAngle.z);
+
     }
 }

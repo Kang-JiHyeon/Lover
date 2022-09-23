@@ -1,3 +1,4 @@
+using Photon.Pun;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -22,7 +23,7 @@ public class KANG_Yamato : KANG_Machine
     // texture 변경 시간
     public float coolTime = 5f;
     float curCoolTime = 0f;
-    
+
 
     // Texture
     public List<GameObject> machines;
@@ -44,10 +45,10 @@ public class KANG_Yamato : KANG_Machine
     {
         curCreateTime = createTime;
 
-        for (int i = 0; i < transform.childCount-1; i++)
+        for (int i = 0; i < transform.childCount - 1; i++)
         {
             Transform child = transform.GetChild(i);
-            for(int j = 0; j< child.childCount; j++)
+            for (int j = 0; j < child.childCount; j++)
             {
                 GameObject texture = child.GetChild(j).gameObject;
 
@@ -55,7 +56,7 @@ public class KANG_Yamato : KANG_Machine
                 {
                     if (i == 0)
                         machines.Add(texture);
-                    else if(i==1)
+                    else if (i == 1)
                         controls.Add(texture);
                 }
             }
@@ -80,12 +81,22 @@ public class KANG_Yamato : KANG_Machine
                 break;
         }
     }
+
     public override void ActionKey()
     {
         if (yState == YamatoState.Enable)
         {
-            yState = YamatoState.Attack;
+            //yState = YamatoState.Attack;
+            
+            photonView.RPC("RpcChangeState", RpcTarget.All, YamatoState.Attack);
         }
+    }
+
+    [PunRPC]
+    void RpcChangeState(YamatoState state)
+    {
+        yState = state;
+        print("RPC : " + yState);
     }
 
     // 활성화 상태
@@ -100,8 +111,6 @@ public class KANG_Yamato : KANG_Machine
     // - 비활성화 상태로 넘어갈 때 비활성화 텍스쳐로 변경한다.
     private void Attack()
     {
-        Fire();
-
         curAttackTime += Time.deltaTime;
 
         if (curAttackTime > attackTime)
@@ -111,21 +120,32 @@ public class KANG_Yamato : KANG_Machine
 
             SetEnableTexture(false);
 
-            yState = YamatoState.Disable;
+            //yState = YamatoState.Disable;
+            if (photonView.IsMine)
+            {
+                photonView.RPC("RpcChangeState", RpcTarget.All, YamatoState.Disable);
+            }
         }
+
+        Fire();
     }
 
     // 일정 시간 간격으로 총알을 발사하고 싶다.
     void Fire()
     {
+        if (photonView.IsMine == false) return;
+
         curCreateTime += Time.deltaTime;
 
         if (curCreateTime > createTime)
         {
             curCreateTime = 0f;
-            GameObject yamatoBullet = Instantiate(yamatoBulletFactory);
-            yamatoBullet.transform.position = firePos.position;
-            yamatoBullet.transform.up = firePos.transform.up;
+            PhotonNetwork.Instantiate("YamatoMissile", firePos.position, firePos.rotation);
+
+
+            //GameObject yamatoBullet = Instantiate(yamatoBulletFactory);
+            //yamatoBullet.transform.position = firePos.position;
+            //yamatoBullet.transform.up = firePos.transform.up;
         }
     }
 
@@ -136,18 +156,39 @@ public class KANG_Yamato : KANG_Machine
     {
         curCoolTime += Time.deltaTime;
 
-        if(curCoolTime > coolTime)
+        if (curCoolTime > coolTime)
         {
             curCoolTime = 0f;
 
             SetEnableTexture(true);
 
-            yState = YamatoState.Enable;
+            //yState = YamatoState.Enable;
+
+            if (photonView.IsMine)
+            {
+                photonView.RPC("RpcChangeState", RpcTarget.All, YamatoState.Enable);
+
+            }
         }
     }
 
     // 텍스쳐 변경 함수
     void SetEnableTexture(bool isEnable)
+    {
+        //machines[0].SetActive(isEnable);
+        //machines[1].SetActive(!isEnable);
+
+        //controls[0].SetActive(isEnable);
+        //controls[1].SetActive(!isEnable);
+
+        if (photonView.IsMine)
+        {
+            photonView.RPC("RpcSetEnableTexture", RpcTarget.All, isEnable);
+        }
+    }
+
+    [PunRPC]
+    void RpcSetEnableTexture(bool isEnable)
     {
         machines[0].SetActive(isEnable);
         machines[1].SetActive(!isEnable);

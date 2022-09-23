@@ -1,3 +1,4 @@
+using Photon.Pun;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,10 +6,10 @@ using UnityEngine;
 // 앞으로 이동하고 싶다.
 // 부딪히면 없어지고 싶다.
 
-public class KANG_Bullet : MonoBehaviour
+public class KANG_Bullet : MonoBehaviourPun
 {
     public float bulletSpeed = 10f;
-    public float destroyTime = 10f;
+    public float destroyTime = 5f;
 
     // Start is called before the first frame update
     void Start()

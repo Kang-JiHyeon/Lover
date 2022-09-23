@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: PhotonServerSettings
   m_EditorClassIdentifier: 
   AppSettings:
-    AppIdRealtime: 01da506f-a29f-40b0-8ff7-60904fccc6d8
+    AppIdRealtime: 9922be5d-6a7f-4273-8dc2-d775d4117600
     AppIdFusion: 
     AppIdChat: 
     AppIdVoice: 
@@ -54,6 +54,21 @@ MonoBehaviour:
   - RPCSetCount
   - RPCSecCount
   - RPCKeyUp
+  - RPCArrowKey
+  - RPCLerpUpDownPos
+  - RpcUpKey
+  - ActionKey
+  - RpcDownKey
+  - RpcLeftKey
+  - RpcRightKey
+  - RpcArrowKey
+  - RpcActionKey
+  - RpcChangeState
+  - RpcSetEnableTexture
+  - RpcAttack
+  - RpcFire
+  - RpcDisable
+  - RpcOnHit
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1

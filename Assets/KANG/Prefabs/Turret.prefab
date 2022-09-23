@@ -43,6 +43,7 @@ GameObject:
   - component: {fileID: 5472744900921152429}
   - component: {fileID: 1279915885}
   - component: {fileID: 1279915884}
+  - component: {fileID: 4258312601589728045}
   m_Layer: 30
   m_Name: Turret
   m_TagString: Untagged
@@ -152,6 +153,28 @@ MonoBehaviour:
   turretCannons: []
   bulletFactory: {fileID: 4353396649654612325, guid: d23a01019795d2e4aae47af914b0a385, type: 3}
   createTime: 0.1
+--- !u!114 &4258312601589728045
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5472744900921152416}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents: []
+  sceneViewId: 0
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!1 &6613735104801276803
 GameObject:
   m_ObjectHideFlags: 0

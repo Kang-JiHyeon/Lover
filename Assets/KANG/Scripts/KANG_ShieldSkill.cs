@@ -15,8 +15,7 @@ public class KANG_ShieldSkill : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
-        
+        //engine = GameObject.Find("Engine").GetComponent<KANG_Engine>();
     }
 
     // Update is called once per frame
