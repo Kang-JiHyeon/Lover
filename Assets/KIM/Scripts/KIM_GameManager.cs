@@ -1,4 +1,4 @@
-using System.Collections;
+Ôªøusing System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
@@ -33,22 +33,14 @@ public class KIM_GameManager : MonoBehaviourPunCallbacks
 
     private void Start()
     {
-        //OnPhotonSerializeView »£√‚ ∫Ûµµ
+        //OnPhotonSerializeView Ìò∏Ï∂ú ÎπàÎèÑ
         PhotonNetwork.SerializationRate = 60;
-        //Rpc »£√‚ ∫Ûµµ
+        //Rpc Ìò∏Ï∂ú ÎπàÎèÑ
         PhotonNetwork.SendRate = 60;
 
-
-        //ship = GameObject.Find("Spaceship");
-
-        //GameObject ship = PhotonNetwork.Instantiate("Spaceship", new Vector3(0, 2, 0), Quaternion.identity);
-
+        ship = GameObject.Find("Spaceship");
         if (PhotonNetwork.IsMasterClient)
         {
-           ship = PhotonNetwork.Instantiate("Spaceship", new Vector3(0, 2, 0), Quaternion.identity);
-        }
-
-        if (photonView.IsMine) { 
             GameObject player = PhotonNetwork.Instantiate("Player", ship.transform.position, Quaternion.identity);
             player.transform.SetParent(ship.transform);
             player.gameObject.name = "Player";
@@ -58,7 +50,7 @@ public class KIM_GameManager : MonoBehaviourPunCallbacks
             GameObject player = PhotonNetwork.Instantiate("Player2", ship.transform.position, Quaternion.identity);
             player.transform.SetParent(ship.transform);
             player.gameObject.name = "Player";
-        } 
+        }
     }
 
     // Update is called once per frame
