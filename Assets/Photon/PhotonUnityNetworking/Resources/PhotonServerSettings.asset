@@ -54,6 +54,7 @@ MonoBehaviour:
   - RPCSetCount
   - RPCSecCount
   - RPCKeyUp
+  - RPCTime
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1
