@@ -57102,7 +57102,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1107969334}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -16.7, y: -12, z: -10}
+  m_LocalPosition: {x: -14.3, y: -12, z: -10}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -87354,6 +87354,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1763531143}
   - component: {fileID: 1763531144}
+  - component: {fileID: 1763531145}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -87388,6 +87389,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f8ac03e163629a4689754fd5ff7c37a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1763531145
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1763531142}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents: []
+  sceneViewId: 44
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!1 &1767711978
 GameObject:
   m_ObjectHideFlags: 0
@@ -106431,7 +106454,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8739974985624255682, guid: 48ed635f9ce610847916fac4c0d1d763, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -14.4
+      value: -14.3
       objectReference: {fileID: 0}
     - target: {fileID: 8739974985624255682, guid: 48ed635f9ce610847916fac4c0d1d763, type: 3}
       propertyPath: m_LocalPosition.y

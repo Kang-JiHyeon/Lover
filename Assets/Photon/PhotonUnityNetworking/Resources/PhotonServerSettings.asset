@@ -55,6 +55,9 @@ MonoBehaviour:
   - RPCSecCount
   - RPCKeyUp
   - RPCTime
+  - RPCSprite
+  - RPCSetInt
+  - RPCSetSpriteInGame
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1

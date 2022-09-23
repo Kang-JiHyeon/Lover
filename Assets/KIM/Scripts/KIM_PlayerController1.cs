@@ -133,8 +133,8 @@ public class KIM_PlayerController1 : MonoBehaviourPun, IPunObservable
                 }
             }
 
-            Debug.DrawRay(transform.position, Vector3.down * 0.37f, Color.red);
-            if (Physics.Raycast(transform.position, Vector3.down, 0.37f, LayerMask.GetMask("ShipFloor")))
+            Debug.DrawRay(transform.position, Vector3.down * 0.4f, Color.red);
+            if (Physics.Raycast(transform.position, Vector3.down, 0.4f, LayerMask.GetMask("ShipFloor")))
             {
                 if (Input.GetKeyDown(KeyCode.Space))
                     rb.AddForce(Vector3.up * 150f);
