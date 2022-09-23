@@ -39,19 +39,63 @@ public class KIM_GameManager : MonoBehaviourPunCallbacks
         PhotonNetwork.SendRate = 60;
 
         ship = GameObject.Find("Spaceship");
+
         if (PhotonNetwork.IsMasterClient)
         {
-            GameObject player = PhotonNetwork.Instantiate("Player", ship.transform.position, Quaternion.identity);
-            player.transform.SetParent(ship.transform);
-            player.gameObject.name = "Player";
+            if (KIM_PlayerTransit.Instance.idx1 == 0)
+            {
+                GameObject player = PhotonNetwork.Instantiate("Player", ship.transform.position, Quaternion.identity);
+                player.transform.SetParent(ship.transform);
+                player.gameObject.name = "Player";
+            }
+            if (KIM_PlayerTransit.Instance.idx1 == 1)
+            {
+                GameObject player = PhotonNetwork.Instantiate("Player2", ship.transform.position, Quaternion.identity);
+                player.transform.SetParent(ship.transform);
+                player.gameObject.name = "Player";
+            }
+            if (KIM_PlayerTransit.Instance.idx1 == 2)
+            {
+                GameObject player = PhotonNetwork.Instantiate("Player3", ship.transform.position, Quaternion.identity);
+                player.transform.SetParent(ship.transform);
+                player.gameObject.name = "Player";
+            }
+            if (KIM_PlayerTransit.Instance.idx1 == 3)
+            {
+                GameObject player = PhotonNetwork.Instantiate("Player4", ship.transform.position, Quaternion.identity);
+                player.transform.SetParent(ship.transform);
+                player.gameObject.name = "Player";
+            }
         }
         else
         {
-            GameObject player = PhotonNetwork.Instantiate("Player2", ship.transform.position, Quaternion.identity);
-            player.transform.SetParent(ship.transform);
-            player.gameObject.name = "Player";
+            if (KIM_PlayerTransit.Instance.idx2 == 0)
+            {
+                GameObject player = PhotonNetwork.Instantiate("Player", ship.transform.position, Quaternion.identity);
+                player.transform.SetParent(ship.transform);
+                player.gameObject.name = "Player";
+            }
+            if (KIM_PlayerTransit.Instance.idx2 == 1)
+            {
+                GameObject player = PhotonNetwork.Instantiate("Player2", ship.transform.position, Quaternion.identity);
+                player.transform.SetParent(ship.transform);
+                player.gameObject.name = "Player";
+            }
+            if (KIM_PlayerTransit.Instance.idx2 == 2)
+            {
+                GameObject player = PhotonNetwork.Instantiate("Player3", ship.transform.position, Quaternion.identity);
+                player.transform.SetParent(ship.transform);
+                player.gameObject.name = "Player";
+            }
+            if (KIM_PlayerTransit.Instance.idx2 == 3)
+            {
+                GameObject player = PhotonNetwork.Instantiate("Player4", ship.transform.position, Quaternion.identity);
+                player.transform.SetParent(ship.transform);
+                player.gameObject.name = "Player";
+            }
         }
     }
+
 
     // Update is called once per frame
     void Update()

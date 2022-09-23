@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3376057831642530137}
   - component: {fileID: 7532484898477277755}
   m_Layer: 26
-  m_Name: BunnyGreen_Tex_0
+  m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

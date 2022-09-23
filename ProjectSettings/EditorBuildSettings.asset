@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/KIM/Scenes/KIM_Ending.unity
     guid: 63a180a15cc24574ca4dbeb8210816f8
+  - enabled: 1
+    path: Assets/KIM/Scenes/KIM_BadEnding.unity
+    guid: 091b01812fc4ff14a936d4c43911e415
   m_configObjects: {}
