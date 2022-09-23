@@ -58,6 +58,15 @@ MonoBehaviour:
   - RPCSprite
   - RPCSetInt
   - RPCSetSpriteInGame
+  - RpcArrowKey
+  - RpcChangeState
+  - RpcDownKey
+  - RpcLeftKey
+  - RPCLerpUpDownPos
+  - RpcOnHit
+  - RpcRightKey
+  - RpcSetEnableTexture
+  - RpcUpKey
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1
