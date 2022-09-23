@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
-public class KANG_ShipHit : MonoBehaviour
+public class KANG_ShipHit : MonoBehaviourPun
 {
     KANG_Engine engine;
 
@@ -19,6 +20,23 @@ public class KANG_ShipHit : MonoBehaviour
     }
 
 
+    void OnHit()
+    {
+        if (photonView.IsMine)
+        {
+            photonView.RPC("RpcOnHit", RpcTarget.All);
+        }
+    }
+
+    [PunRPC]
+    void RpcOnHit()
+    {
+        KANG_ShipHP.instance.HP--;
+
+        print(KANG_ShipHP.instance.HP);
+    }
+
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Map"))
@@ -28,7 +46,7 @@ public class KANG_ShipHit : MonoBehaviour
             engine.bounceDir.Normalize();
             engine.isBounce = true;
 
-            KANG_ShipHP.instance.HP--;
+            OnHit();
 
             print("Map Bounce, HP--");
         }
@@ -36,15 +54,15 @@ public class KANG_ShipHit : MonoBehaviour
         // Enemy
         if (other.gameObject.layer == LayerMask.NameToLayer("Enemy"))
         {
-            KANG_ShipHP.instance.HP--;
+            OnHit();
             print("Enemy, HP--" + other.gameObject.name);
         }
 
         // EnemyBullet
         if (other.gameObject.layer == LayerMask.NameToLayer("EnemyBullet"))
         {
+            OnHit();
             print("trigger Object : " + other.gameObject.name);
-            KANG_ShipHP.instance.HP--;
         }
     }
 }

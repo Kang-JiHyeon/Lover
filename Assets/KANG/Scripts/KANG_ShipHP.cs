@@ -57,6 +57,8 @@ public class KANG_ShipHP : MonoBehaviour
         }
     }
 
+
+
     private void Awake()
     {
         if (instance == null)
@@ -87,8 +89,6 @@ public class KANG_ShipHP : MonoBehaviour
     }
 
     // 일정 시간 간격으로 게임오브젝트를 껐다 켰다 하고 싶다.
-
-
     void Warning()
     {
         curTime += Time.deltaTime;

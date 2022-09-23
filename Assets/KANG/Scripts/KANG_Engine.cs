@@ -46,11 +46,68 @@ public class KANG_Engine : KANG_Machine
         }
     }
 
+    public override void UpKey()
+    {
+        photonView.RPC("RpcUpKey", RpcTarget.All);
+    }
+
+    [PunRPC]
+    void RpcUpKey()
+    {
+        worldZ = rotAxis.eulerAngles.z;
+        rotDir = (worldZ > 0f && worldZ < 180f) ? -1 : 1;
+    }
+
+    public override void DownKey()
+    {
+        photonView.RPC("RpcDownKey", RpcTarget.All);
+    }
+
+    [PunRPC]
+    void RpcDownKey()
+    {
+        worldZ = rotAxis.eulerAngles.z;
+        rotDir = (worldZ >= 0f && worldZ <= 180f) ? 1 : -1;
+    }
+
+    public override void LeftKey()
+    {
+        photonView.RPC("RpcLeftKey", RpcTarget.All);
+    }
+
+    [PunRPC]
+    void RpcLeftKey()
+    {
+        worldZ = rotAxis.eulerAngles.z;
+        rotDir = (worldZ >= 0f && worldZ < 90f) || (worldZ >= 270f && worldZ < 360f) ? 1 : -1;
+    }
+
+    public override void RightKey()
+    {
+        photonView.RPC("RpcRightKey", RpcTarget.All);
+    }
+
+    [PunRPC]
+    void RpcRightKey()
+    {
+        worldZ = rotAxis.eulerAngles.z;
+        rotDir = (worldZ >= 0f && worldZ < 90f) || (worldZ >= 270f && worldZ < 360f) ? -1 : 1;
+    }
+
     // 엔진 회전
     public override void ArrowKey()
     {
-        base.Rotate();
+        photonView.RPC("RpcArrowKey", RpcTarget.All, Time.deltaTime);
     }
+
+    [PunRPC]
+    void RpcArrowKey(float deltaTime)
+    {
+        localAngle.z += rotDir * rotSpeed * deltaTime;
+        localAngle.z = localAngle.z > 180 ? localAngle.z - 360 : localAngle.z;
+        rotAxis.localRotation = Quaternion.Euler(0, 0, localAngle.z);
+    }
+
 
     // 우주선 이동
     public override void ActionKey()

@@ -24,14 +24,14 @@ public class KANG_YamatoRotate : MonoBehaviour
         // 회전 중심 = 우주선의 중심
         spaceship = transform.parent.parent;
 
-        for(int i = 0; i<transform.childCount; i++)
+        for(int i = 0; i< transform.childCount; i++)
         {
             rotObjects.Add(transform.GetChild(i));
         }
     }
 
     // Update is called once per frame
-    public virtual void Update()
+    void Update()
     {
         if (!spaceship) return;
 
