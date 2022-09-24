@@ -40,8 +40,6 @@ public class KANG_CameraMove : MonoBehaviour
     {
         if (spaceship && !unLock && !shake)
             transform.position = spaceship.transform.position + offset;
-
-        Debug.Log(UnLock);
     }
 
     public void CamShake()
