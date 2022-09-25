@@ -7,6 +7,7 @@ TagManager:
   - FxTemporaire
   - Map
   - Enemy
+  - Bullet
   layers:
   - Default
   - TransparentFX
@@ -31,7 +32,7 @@ TagManager:
   - 
   - 
   - 
-  - 
+  - Map
   - ShipFloor
   - PlayerBullet
   - Player

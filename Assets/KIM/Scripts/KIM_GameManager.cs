@@ -10,7 +10,7 @@ public class KIM_GameManager : MonoBehaviourPunCallbacks
 
     GameObject ship;
 
-    int rescueCount;
+    int rescueCount = 0;
     public int RescueCount
     {
         get { return rescueCount; }
@@ -34,7 +34,7 @@ public class KIM_GameManager : MonoBehaviourPunCallbacks
     private void Start()
     {
         //OnPhotonSerializeView 호출 빈도
-        PhotonNetwork.SerializationRate = 60;
+        PhotonNetwork.SerializationRate = 120;
         //Rpc 호출 빈도
         PhotonNetwork.SendRate = 60;
 
@@ -100,6 +100,7 @@ public class KIM_GameManager : MonoBehaviourPunCallbacks
     // Update is called once per frame
     void Update()
     {
-        gameTime += Time.deltaTime;
+        if (PhotonNetwork.IsMasterClient)
+            gameTime += Time.deltaTime;
     }
 }

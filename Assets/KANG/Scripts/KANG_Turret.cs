@@ -10,6 +10,7 @@ public class KANG_Turret : KANG_Machine
     // Fire
     public List<Transform> turretCannons;
     public GameObject bulletFactory;
+    public GameObject turretEffect;
     public float createTime = 0.5f;
     float currentTime = 0f;
     int index = 0;
@@ -28,7 +29,6 @@ public class KANG_Turret : KANG_Machine
 
         // 현재 회전값
         localAngle = rotAxis.localEulerAngles;
-
     }
 
     public override void UpKey()
@@ -105,7 +105,8 @@ public class KANG_Turret : KANG_Machine
         if (currentTime > createTime)
         {
             PhotonNetwork.Instantiate("Bullet", turretCannons[index].position, turretCannons[index].rotation);
-
+            photonView.RPC("RPCAnim", RpcTarget.All, index);
+            photonView.RPC("RPCTurretEffect", RpcTarget.All, index);
 
             //GameObject bullet = Instantiate(bulletFactory);
             //bullet.transform.position = turretCannons[index].position;
@@ -114,6 +115,24 @@ public class KANG_Turret : KANG_Machine
             index++;
             index %= rotAxis.childCount;
         }
+    }
+
+    [PunRPC]
+    void RPCTurretEffect(int idx)
+    {
+        GameObject effect = Instantiate(turretEffect);
+        effect.transform.position = turretCannons[idx].position + turretCannons[idx].up * 0.5f;
+        effect.transform.up = turretCannons[idx].up;
+        Destroy(effect, 1.0f);
+    }
+
+    [PunRPC]
+    void RPCAnim(int idx)
+    {
+        iTween.ScaleTo(turretCannons[idx].gameObject, iTween.Hash("y", 0.7f, "time", 0.05f, "easetype", iTween.EaseType.easeInOutBack));
+        iTween.ScaleTo(turretCannons[idx].gameObject, iTween.Hash("y", 1f, "time", 0.05f, "delay", 0.06f, "easetype", iTween.EaseType.easeInOutBack));
+        iTween.MoveTo(turretCannons[idx].gameObject, iTween.Hash("islocal", true, "y", 0.55f, "time", 0.05f, "easetype", iTween.EaseType.easeInOutBack));
+        iTween.MoveTo(turretCannons[idx].gameObject, iTween.Hash("islocal", true, "y", 0.7f, "time", 0.05f, "delay", 0.06f, "easetype", iTween.EaseType.easeInOutBack));
     }
 
     void TurretRotate(float deltaTime)

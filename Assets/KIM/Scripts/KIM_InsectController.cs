@@ -20,6 +20,35 @@ public class KIM_InsectController : MonoBehaviourPun
 
     public float moveSpeed = 0.4f;
 
+    protected bool isCollide = false;
+    protected bool IsCollide
+    {
+        get { return isCollide; }
+        set
+        {
+            if (value != isCollide && value == true)
+            {
+                iTween.ScaleTo(gameObject, iTween.Hash("x", 0.7f, "y", 0.7f, "time", 0.1f, "easetype", iTween.EaseType.easeOutBounce));
+                iTween.ScaleTo(gameObject, iTween.Hash("x", 1, "y", 1, "time", 0.1f, "easetype", iTween.EaseType.easeOutBounce, "delay", 0.16f));
+            }
+            isCollide = value;
+        }
+    }
+
+    protected int Hitted
+    {
+        get { return hp; }
+        set
+        {
+            if (value != hp && value <= hp)
+            {
+                iTween.ScaleTo(gameObject, iTween.Hash("x", 0.7f, "y", 0.7f, "time", 0.1f, "easetype", iTween.EaseType.easeOutBounce));
+                iTween.ScaleTo(gameObject, iTween.Hash("x", 1, "y", 1, "time", 0.1f, "easetype", iTween.EaseType.easeOutBounce, "delay", 0.16f));
+            }
+            hp = value;
+        }
+    }
+
     // Start is called before the first frame update
     protected virtual void Start()
     {
@@ -41,6 +70,7 @@ public class KIM_InsectController : MonoBehaviourPun
         else if (estate == EnemyState.Attack)
             Attack();
     }
+
 
     protected Vector3 moveDir = Vector3.zero;
     protected float currentTime_base = 0;
@@ -68,7 +98,9 @@ public class KIM_InsectController : MonoBehaviourPun
 
     protected virtual void SetState()
     {
-        if (dir.magnitude > 15f)
+        if (isCollide)
+            estate = EnemyState.Idle;
+        else if (dir.magnitude > 15f)
             estate = EnemyState.Idle;
         else if (dir.magnitude < 15f && dir.magnitude > 8f)
             estate = EnemyState.Move;
