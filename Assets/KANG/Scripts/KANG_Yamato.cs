@@ -24,10 +24,12 @@ public class KANG_Yamato : KANG_Machine
     public float coolTime = 5f;
     float curCoolTime = 0f;
 
-
     // Texture
     public List<GameObject> machines;
     public List<GameObject> controls;
+
+    // Laser
+    public GameObject Laser;
 
 
     public enum YamatoState
@@ -38,6 +40,7 @@ public class KANG_Yamato : KANG_Machine
     }
 
     public YamatoState yState = YamatoState.Disable;
+    public MachineState mState = MachineState.Idle;
 
 
     // Start is called before the first frame update
@@ -88,15 +91,22 @@ public class KANG_Yamato : KANG_Machine
         {
             //yState = YamatoState.Attack;
             
-            photonView.RPC("RpcChangeState", RpcTarget.All, YamatoState.Attack);
+            photonView.RPC("RpcChangeYState", RpcTarget.All, YamatoState.Attack);
         }
+
     }
 
     [PunRPC]
-    void RpcChangeState(YamatoState state)
+    void RpcChangeYState(YamatoState state)
     {
         yState = state;
         print("RPC : " + yState);
+    }
+    [PunRPC]
+    void RpcChangeMState(MachineState state)
+    {
+        mState = state;
+        print("RPC mState : " + mState);
     }
 
     // 활성화 상태
@@ -111,6 +121,18 @@ public class KANG_Yamato : KANG_Machine
     // - 비활성화 상태로 넘어갈 때 비활성화 텍스쳐로 변경한다.
     private void Attack()
     {
+        switch (mState)
+        {
+            case MachineState.Idle:
+                IdleAttack();
+                break;
+            case MachineState.Beam:
+                BeamAttack();
+                break;
+        }
+    }
+    void IdleAttack()
+    {
         curAttackTime += Time.deltaTime;
 
         if (curAttackTime > attackTime)
@@ -120,13 +142,11 @@ public class KANG_Yamato : KANG_Machine
 
             SetEnableTexture(false);
 
-            //yState = YamatoState.Disable;
             if (photonView.IsMine)
             {
-                photonView.RPC("RpcChangeState", RpcTarget.All, YamatoState.Disable);
+                photonView.RPC("RpcChangeYState", RpcTarget.All, YamatoState.Disable);
             }
         }
-
         Fire();
     }
 
@@ -141,11 +161,6 @@ public class KANG_Yamato : KANG_Machine
         {
             curCreateTime = 0f;
             PhotonNetwork.Instantiate("YamatoMissile", firePos.position, firePos.rotation);
-
-
-            //GameObject yamatoBullet = Instantiate(yamatoBulletFactory);
-            //yamatoBullet.transform.position = firePos.position;
-            //yamatoBullet.transform.up = firePos.transform.up;
         }
     }
 
@@ -154,6 +169,11 @@ public class KANG_Yamato : KANG_Machine
     // - 쿨 타임이 다 차면 활성화 텍스쳐로 바꾼다.
     private void Disable()
     {
+        if (Laser.activeSelf == true)
+        {
+            Laser.SetActive(false);
+        }
+        
         curCoolTime += Time.deltaTime;
 
         if (curCoolTime > coolTime)
@@ -162,11 +182,9 @@ public class KANG_Yamato : KANG_Machine
 
             SetEnableTexture(true);
 
-            //yState = YamatoState.Enable;
-
             if (photonView.IsMine)
             {
-                photonView.RPC("RpcChangeState", RpcTarget.All, YamatoState.Enable);
+                photonView.RPC("RpcChangeYState", RpcTarget.All, YamatoState.Enable);
 
             }
         }
@@ -195,5 +213,43 @@ public class KANG_Yamato : KANG_Machine
 
         controls[0].SetActive(isEnable);
         controls[1].SetActive(!isEnable);
+    }
+
+    // * 빔 상태 공격
+    // up 방향으로 Ray를 쏜다.
+    // 닿인 대상이 enemy라면
+    // 없앤다.
+    // 
+    void BeamAttack()
+    {
+        if(Laser.activeSelf == false)
+        {
+            Laser.SetActive(true);
+        }
+
+        curAttackTime += Time.deltaTime;
+
+        if (curAttackTime > attackTime)
+        {
+            curAttackTime = 0f;
+
+            if (photonView.IsMine)
+            {
+                photonView.RPC("RpcChangeYState", RpcTarget.All, YamatoState.Disable);
+            }
+        }
+    }
+
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.name.Contains("Beam"))
+        {
+            if (photonView.IsMine)
+            {
+                photonView.RPC("RpcChangeMState", RpcTarget.All, MachineState.Beam);
+            }
+            
+        }
     }
 }

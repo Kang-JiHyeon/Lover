@@ -18,6 +18,16 @@ public class KANG_Machine : MonoBehaviourPun
     public float rotDir = 0f;
     public float rotSpeed = 30f;
 
+
+    public enum MachineState
+    {
+        Idle,
+        Power,
+        Beam,
+        Steel
+    }
+
+
     // Start is called before the first frame update
     void Start()
     {

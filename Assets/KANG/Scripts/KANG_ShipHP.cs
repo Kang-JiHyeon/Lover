@@ -3,14 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-// 우주선의 체력을 관리하고 싶다.
+// * 우주선의 체력을 관리하고 싶다.
 // 우주선의 체력이 깎일 때마다 매쉬 변경하고 싶다.
 // 우주선 체력이 깎일 때마다 Slider의 값을 변경하고 싶다.
+// 피격당했을 때 Red Image의 alpha 값을 변경하고 싶다.
+
+
 public class KANG_ShipHP : MonoBehaviour
 {
     public GameObject DeathSprite;
     Slider HPBar;
     GameObject fillArea;
+    public Image hitImage;
+    Color hitColor;
+
 
     public static KANG_ShipHP instance;
     public int maxHP = 10;
@@ -19,6 +25,11 @@ public class KANG_ShipHP : MonoBehaviour
 
     public float intervalTime = 0.5f;
     float curTime = 0f;
+
+    //public float hitTime = 0.2f;
+    //float curHitTime = 0f;
+
+    bool isDamage = false;
     bool isDie = false;
     public int HP
     {
@@ -32,6 +43,9 @@ public class KANG_ShipHP : MonoBehaviour
             hp = value;
 
             HPBar.value--;
+            hitColor.a = 0.1f;
+            isDamage = true;
+
 
             if(hp <= 0)
             {
@@ -76,6 +90,8 @@ public class KANG_ShipHP : MonoBehaviour
         HPBar.value = maxHP;
 
         curTime = intervalTime;
+
+        hitColor = hitImage.color;
     }
 
     // Update is called once per frame
@@ -84,6 +100,11 @@ public class KANG_ShipHP : MonoBehaviour
         if (hp <= warningHP)
         {
             Warning();
+        }
+
+        if (isDamage)
+        {
+            Damage();
         }
 
     }
@@ -102,6 +123,21 @@ public class KANG_ShipHP : MonoBehaviour
         {
             DeathSprite.SetActive(true);
         }
+    }
+
+    
+
+    void Damage()
+    {
+        hitColor.a = Mathf.Lerp(hitColor.a, 0, Time.deltaTime);
+
+        if (hitColor.a < 0.001f)
+        {
+            hitColor.a = 0f;
+            isDamage = false;
+        }
+
+        hitImage.color = hitColor;
     }
 
 

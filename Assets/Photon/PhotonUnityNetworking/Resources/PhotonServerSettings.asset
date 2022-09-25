@@ -72,6 +72,8 @@ MonoBehaviour:
   - RPCAnim
   - RPCTurretEffect
   - RpcMapSetActive
+  - RpcChangeYState
+  - RpcChangeMState
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1

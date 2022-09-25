@@ -17,7 +17,7 @@ public class KANG_Shield : KANG_Machine
     Vector3 downPos;
     Vector3 upPos;
 
-    //public float rotSpeed = 30f;
+    public MachineState mState = MachineState.Idle;
 
     // Start is called before the first frame update
     void Start()
@@ -135,4 +135,16 @@ public class KANG_Shield : KANG_Machine
     {
         shieldWave.localPosition = position;
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.name.Contains("Beam"))
+        {
+            mState = MachineState.Beam;
+            print("shieldState : " + mState);
+        }
+    }
+
+
+
 }

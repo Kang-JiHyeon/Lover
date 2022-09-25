@@ -24,7 +24,7 @@ public class KANG_ShipHit : MonoBehaviourPun
     {
         if (photonView.IsMine)
         {
-            photonView.RPC("RpcOnHit", RpcTarget.All);
+            photonView.RPC("RpcOnHit", RpcTarget.AllBuffered);
         }
     }
 
@@ -32,8 +32,6 @@ public class KANG_ShipHit : MonoBehaviourPun
     void RpcOnHit()
     {
         KANG_ShipHP.instance.HP--;
-
-        print(KANG_ShipHP.instance.HP);
     }
 
 
