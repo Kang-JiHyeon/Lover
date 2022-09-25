@@ -7,6 +7,8 @@ using UnityEngine.UI;
 public class KIM_LobbyManager : MonoBehaviourPunCallbacks
 {
     public GameObject text;
+    public GameObject readyText1;
+    public GameObject readyText2;
     public GameObject countText;
 
     public Sprite charactor1;
@@ -19,6 +21,11 @@ public class KIM_LobbyManager : MonoBehaviourPunCallbacks
     public GameObject player1;
     public GameObject player2;
 
+    bool player1Ready = false;
+    bool player2Ready = false;
+
+    int playerIndex = 1;
+
     public int idx1 = 0;
     public int Idx1
     {
@@ -29,8 +36,8 @@ public class KIM_LobbyManager : MonoBehaviourPunCallbacks
             {
                 if (PhotonNetwork.IsMasterClient)
                 {
-                    photonView.RPC("RPCSprite", RpcTarget.All, value, 1);
-                    photonView.RPC("RPCSetInt", RpcTarget.All, value, 1);
+                    photonView.RPC("RPCSprite", RpcTarget.AllBuffered, value, 1);
+                    photonView.RPC("RPCSetInt", RpcTarget.AllBuffered, value, 1);
                 }
             }
             idx1 = value;
@@ -46,11 +53,45 @@ public class KIM_LobbyManager : MonoBehaviourPunCallbacks
             {
                 if (!PhotonNetwork.IsMasterClient)
                 {
-                    photonView.RPC("RPCSprite", RpcTarget.All, value, 2);
-                    photonView.RPC("RPCSetInt", RpcTarget.All, value, 2);
+                    photonView.RPC("RPCSprite", RpcTarget.AllBuffered, value, 2);
+                    photonView.RPC("RPCSetInt", RpcTarget.AllBuffered, value, 2);
                 }
             }
             idx2 = value;
+        }
+    }
+    public int idx3 = 0;
+    public int Idx3
+    {
+        get { return idx3; }
+        set
+        {
+            if (idx3 != value)
+            {
+                if (!PhotonNetwork.IsMasterClient)
+                {
+                    photonView.RPC("RPCSprite", RpcTarget.AllBuffered, value, 3);
+                    photonView.RPC("RPCSetInt", RpcTarget.AllBuffered, value, 3);
+                }
+            }
+            idx3 = value;
+        }
+    }
+    public int idx4 = 0;
+    public int Idx4
+    {
+        get { return idx4; }
+        set
+        {
+            if (idx4 != value)
+            {
+                if (!PhotonNetwork.IsMasterClient)
+                {
+                    photonView.RPC("RPCSprite", RpcTarget.AllBuffered, value, 4);
+                    photonView.RPC("RPCSetInt", RpcTarget.AllBuffered, value, 4);
+                }
+            }
+            idx4 = value;
         }
     }
 
@@ -65,28 +106,82 @@ public class KIM_LobbyManager : MonoBehaviourPunCallbacks
 
     private void Update()
     {
-        if (PhotonNetwork.PlayerList.Length >= 2 && !text.activeSelf)
-            photonView.RPC("RPCSetActive", RpcTarget.All, true);
-        else if (PhotonNetwork.PlayerList.Length < 2 && text.activeSelf)
-            photonView.RPC("RPCSetActive", RpcTarget.All, false);
+        playerIndex = PhotonNetwork.LocalPlayer.ActorNumber;
 
-        if (text.activeSelf == true && Input.GetKeyDown(KeyCode.Return) && PhotonNetwork.IsMasterClient)
+        if (PhotonNetwork.PlayerList.Length >= 2)
+        {
+            text.SetActive(true);
+
+            if (PhotonNetwork.IsMasterClient && player1Ready && player2Ready)
+            {
+                text.GetComponent<Text>().text = "Press Enter To Start!";
+            }
+            else if (PhotonNetwork.IsMasterClient && !player1Ready)
+            {
+                text.GetComponent<Text>().text = "Press Enter To Ready!";
+            }
+            else if (PhotonNetwork.IsMasterClient && !player2Ready)
+            {
+                text.GetComponent<Text>().text = "Wating Player2 Ready...";
+            }
+            else if (!PhotonNetwork.IsMasterClient && player1Ready && player2Ready)
+            {
+                text.GetComponent<Text>().text = "Wating For Start...";
+            }
+            else if (!PhotonNetwork.IsMasterClient && !player2Ready)
+            {
+                text.GetComponent<Text>().text = "Press Enter To Ready!";
+            }
+            else if (!PhotonNetwork.IsMasterClient && !player1Ready)
+            {
+                text.GetComponent<Text>().text = "Wating Player1 Ready...";
+            }
+        }
+        else if (PhotonNetwork.PlayerList.Length < 2)
+        {
+            text.SetActive(false);
+            photonView.RPC("RPCReady", RpcTarget.AllBuffered, false, 1);
+            photonView.RPC("RPCReady", RpcTarget.AllBuffered, false, 2);
+        }
+
+        if (text.activeSelf == true && Input.GetKeyDown(KeyCode.Return) && PhotonNetwork.IsMasterClient && (!player1Ready || !player2Ready))
+        {
+            //player1Ready = true;
+            photonView.RPC("RPCReady", RpcTarget.AllBuffered, true, 1);
+        }
+        else if (text.activeSelf == true && Input.GetKeyDown(KeyCode.Return) && PhotonNetwork.IsMasterClient && player1Ready && player2Ready)
         {
             photonView.RPC("RPCLoadScene", RpcTarget.All);
+        }
+        else if (text.activeSelf == true && Input.GetKeyDown(KeyCode.Escape) && PhotonNetwork.IsMasterClient)
+        {
+            //player1Ready = false;
+            photonView.RPC("RPCReady", RpcTarget.AllBuffered, false, 1);
+        }
+
+        if (text.activeSelf == true && Input.GetKeyDown(KeyCode.Return) && !PhotonNetwork.IsMasterClient && (!player1Ready || !player2Ready))
+        {
+            //player2Ready = true;
+            photonView.RPC("RPCReady", RpcTarget.AllBuffered, true, 2);
+        }
+        else if (text.activeSelf == true && Input.GetKeyDown(KeyCode.Escape) && !PhotonNetwork.IsMasterClient)
+        {
+            //player2Ready = false;
+            photonView.RPC("RPCReady", RpcTarget.AllBuffered, false, 2);
         }
 
         countText.GetComponent<Text>().text = "PlayerCount: " + PhotonNetwork.PlayerList.Length.ToString();
 
         if (Input.GetKeyDown(KeyCode.RightArrow))
         {
-            if (PhotonNetwork.IsMasterClient)
+            if (PhotonNetwork.IsMasterClient && !player1Ready)
             {
                 if (idx1 == 3)
                     Idx1 = 0;
                 else
                     Idx1++;
             }
-            else
+            else if (!PhotonNetwork.IsMasterClient && !player2Ready)
             {
                 if (idx2 == 3)
                     Idx2 = 0;
@@ -96,14 +191,14 @@ public class KIM_LobbyManager : MonoBehaviourPunCallbacks
         }
         else if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
-            if (PhotonNetwork.IsMasterClient)
+            if (PhotonNetwork.IsMasterClient && !player1Ready)
             {
                 if (idx1 == 0)
                     Idx1 = 3;
                 else
                     Idx1--;
             }
-            else
+            else if (!PhotonNetwork.IsMasterClient && !player2Ready)
             {
                 if (idx2 == 0)
                     Idx2 = 3;
@@ -114,6 +209,21 @@ public class KIM_LobbyManager : MonoBehaviourPunCallbacks
 
         //player1.GetComponent<SpriteRenderer>().sprite = arr[idx1];
         //player2.GetComponent<SpriteRenderer>().sprite = arr[idx2];
+    }
+
+    [PunRPC]
+    void RPCReady(bool ready, int player)
+    {
+        if (player == 1)
+        {
+            player1Ready = ready;
+            readyText1.SetActive(ready);
+        }
+        else if (player == 2)
+        {
+            player2Ready = ready;
+            readyText2.SetActive(ready);
+        }
     }
 
     [PunRPC]
@@ -139,22 +249,6 @@ public class KIM_LobbyManager : MonoBehaviourPunCallbacks
         else
         {
             KIM_PlayerTransit.Instance.idx2 = idx;
-        }
-    }
-
-    [PunRPC]
-    void RPCSetActive(bool boolean)
-    {
-        text.SetActive(boolean);
-
-
-        if (PhotonNetwork.IsMasterClient)
-        {
-            text.GetComponent<Text>().text = "Press Enter To Start";
-        }
-        else
-        {
-            text.GetComponent<Text>().text = "Waiting For Start...";
         }
     }
 
