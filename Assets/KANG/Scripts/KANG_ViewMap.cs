@@ -1,16 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
-// 맵 지도에 인질, 우주선, 엔딩 포인트를 표시하고 싶다.
-
-
-public class KANG_ViewMap : MonoBehaviour
+public class KANG_ViewMap : KANG_Machine
 {
+    public GameObject mapTV;
+    
     // Start is called before the first frame update
     void Start()
     {
-        
+        mapTV.SetActive(false);
     }
 
     // Update is called once per frame
@@ -18,4 +18,23 @@ public class KANG_ViewMap : MonoBehaviour
     {
         
     }
+
+    // M키를 누르고 있으면 맵 지도를 띄우고 싶다.
+    public override void ActionKey()
+    {
+        photonView.RPC("RpcMapSetActive", RpcTarget.All, true);
+    }
+
+    // M키를 떼면 맵 지도를 끄고 싶다.
+    public override void ActionKeyUp()
+    {
+        photonView.RPC("RpcMapSetActive", RpcTarget.All, false);
+    }
+
+    [PunRPC]
+    void RpcMapSetActive(bool valse)
+    {
+        mapTV.SetActive(valse);
+    }
+
 }
