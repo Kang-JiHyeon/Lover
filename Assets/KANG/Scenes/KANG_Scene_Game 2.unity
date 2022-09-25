@@ -614,7 +614,7 @@ GameObject:
   - component: {fileID: 12653101}
   - component: {fileID: 12653100}
   - component: {fileID: 12653099}
-  m_Layer: 0
+  m_Layer: 23
   m_Name: BoulderHubRectangular_Tex (4)
   m_TagString: Map
   m_Icon: {fileID: 0}
@@ -1627,6 +1627,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BoulderHubCapsuleWrecked_Tex (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 6858353182194773690, guid: dcd8aac7c53affe499a58cb25b0b02ef, type: 3}
+      propertyPath: m_Layer
+      value: 23
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dcd8aac7c53affe499a58cb25b0b02ef, type: 3}
 --- !u!4 &28736060 stripped
@@ -1893,13 +1897,29 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 194977203}
     m_Modifications:
+    - target: {fileID: 2233673778500226726, guid: 471e7baae58e73e4ca0a0e4a03e2d673, type: 3}
+      propertyPath: m_Layer
+      value: 23
+      objectReference: {fileID: 0}
+    - target: {fileID: 2233673779587919196, guid: 471e7baae58e73e4ca0a0e4a03e2d673, type: 3}
+      propertyPath: m_Layer
+      value: 23
+      objectReference: {fileID: 0}
+    - target: {fileID: 2233673780090925425, guid: 471e7baae58e73e4ca0a0e4a03e2d673, type: 3}
+      propertyPath: m_Layer
+      value: 23
+      objectReference: {fileID: 0}
     - target: {fileID: 2233673780310377481, guid: 471e7baae58e73e4ca0a0e4a03e2d673, type: 3}
       propertyPath: m_Name
       value: GameObject (47)
       objectReference: {fileID: 0}
+    - target: {fileID: 2233673780310377481, guid: 471e7baae58e73e4ca0a0e4a03e2d673, type: 3}
+      propertyPath: m_Layer
+      value: 23
+      objectReference: {fileID: 0}
     - target: {fileID: 2233673780310377486, guid: 471e7baae58e73e4ca0a0e4a03e2d673, type: 3}
       propertyPath: m_RootOrder
-      value: 67
+      value: 66
       objectReference: {fileID: 0}
     - target: {fileID: 2233673780310377486, guid: 471e7baae58e73e4ca0a0e4a03e2d673, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2469,7 +2489,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6772210288568877323, guid: dcd8aac7c53affe499a58cb25b0b02ef, type: 3}
       propertyPath: m_RootOrder
-      value: 71
+      value: 70
       objectReference: {fileID: 0}
     - target: {fileID: 6772210288568877323, guid: dcd8aac7c53affe499a58cb25b0b02ef, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2613,7 +2633,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 47218963}
-  m_Layer: 0
+  m_Layer: 23
   m_Name: GameObject (10)
   m_TagString: Map
   m_Icon: {fileID: 0}
@@ -2899,9 +2919,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameObject (18)
       objectReference: {fileID: 0}
+    - target: {fileID: 4020318268126944638, guid: 57413785e618c1e4ab598645d751f9a1, type: 3}
+      propertyPath: m_Layer
+      value: 23
+      objectReference: {fileID: 0}
     - target: {fileID: 4020318268126944639, guid: 57413785e618c1e4ab598645d751f9a1, type: 3}
       propertyPath: m_RootOrder
-      value: 63
+      value: 62
       objectReference: {fileID: 0}
     - target: {fileID: 4020318268126944639, guid: 57413785e618c1e4ab598645d751f9a1, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2942,6 +2966,18 @@ PrefabInstance:
     - target: {fileID: 4020318268126944639, guid: 57413785e618c1e4ab598645d751f9a1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4020318269265352333, guid: 57413785e618c1e4ab598645d751f9a1, type: 3}
+      propertyPath: m_Layer
+      value: 23
+      objectReference: {fileID: 0}
+    - target: {fileID: 4020318269429184788, guid: 57413785e618c1e4ab598645d751f9a1, type: 3}
+      propertyPath: m_Layer
+      value: 23
+      objectReference: {fileID: 0}
+    - target: {fileID: 4020318269997988838, guid: 57413785e618c1e4ab598645d751f9a1, type: 3}
+      propertyPath: m_Layer
+      value: 23
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 57413785e618c1e4ab598645d751f9a1, type: 3}
@@ -3563,7 +3599,7 @@ GameObject:
   - component: {fileID: 63803178}
   - component: {fileID: 63803177}
   - component: {fileID: 63803176}
-  m_Layer: 0
+  m_Layer: 23
   m_Name: BoulderHubRectangular_Tex (5)
   m_TagString: Map
   m_Icon: {fileID: 0}
@@ -5717,6 +5753,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Button (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1839285944889265399, guid: bbfd7c67daf236a48a2085972547489b, type: 3}
+      propertyPath: m_Layer
+      value: 23
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bbfd7c67daf236a48a2085972547489b, type: 3}
 --- !u!114 &99336077 stripped
@@ -6116,7 +6156,7 @@ GameObject:
   - component: {fileID: 113744001}
   - component: {fileID: 113744000}
   - component: {fileID: 113743999}
-  m_Layer: 0
+  m_Layer: 23
   m_Name: BoulderHubRectangular_Tex (5)
   m_TagString: Map
   m_Icon: {fileID: 0}
@@ -8130,7 +8170,7 @@ GameObject:
   - component: {fileID: 150520990}
   - component: {fileID: 150520989}
   - component: {fileID: 150520988}
-  m_Layer: 0
+  m_Layer: 23
   m_Name: BoulderHubRectangular_Tex (4)
   m_TagString: Map
   m_Icon: {fileID: 0}
@@ -8417,7 +8457,7 @@ GameObject:
   - component: {fileID: 157964098}
   - component: {fileID: 157964097}
   - component: {fileID: 157964096}
-  m_Layer: 0
+  m_Layer: 23
   m_Name: BoulderHubRectangular_Tex (4)
   m_TagString: Map
   m_Icon: {fileID: 0}
@@ -9193,9 +9233,25 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 194977203}
     m_Modifications:
+    - target: {fileID: 2233673778500226726, guid: 471e7baae58e73e4ca0a0e4a03e2d673, type: 3}
+      propertyPath: m_Layer
+      value: 23
+      objectReference: {fileID: 0}
+    - target: {fileID: 2233673779587919196, guid: 471e7baae58e73e4ca0a0e4a03e2d673, type: 3}
+      propertyPath: m_Layer
+      value: 23
+      objectReference: {fileID: 0}
+    - target: {fileID: 2233673780090925425, guid: 471e7baae58e73e4ca0a0e4a03e2d673, type: 3}
+      propertyPath: m_Layer
+      value: 23
+      objectReference: {fileID: 0}
     - target: {fileID: 2233673780310377481, guid: 471e7baae58e73e4ca0a0e4a03e2d673, type: 3}
       propertyPath: m_Name
       value: GameObject (38)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2233673780310377481, guid: 471e7baae58e73e4ca0a0e4a03e2d673, type: 3}
+      propertyPath: m_Layer
+      value: 23
       objectReference: {fileID: 0}
     - target: {fileID: 2233673780310377486, guid: 471e7baae58e73e4ca0a0e4a03e2d673, type: 3}
       propertyPath: m_RootOrder
@@ -9343,7 +9399,7 @@ GameObject:
   - component: {fileID: 169151479}
   - component: {fileID: 169151478}
   - component: {fileID: 169151477}
-  m_Layer: 0
+  m_Layer: 23
   m_Name: BoulderHubRectangular_Tex (4)
   m_TagString: Map
   m_Icon: {fileID: 0}
@@ -9625,7 +9681,7 @@ GameObject:
   - component: {fileID: 174522062}
   - component: {fileID: 174522061}
   - component: {fileID: 174522060}
-  m_Layer: 0
+  m_Layer: 23
   m_Name: BoulderHubRectangular_Tex (4)
   m_TagString: Map
   m_Icon: {fileID: 0}
@@ -9858,7 +9914,7 @@ GameObject:
   - component: {fileID: 186132811}
   - component: {fileID: 186132810}
   - component: {fileID: 186132809}
-  m_Layer: 0
+  m_Layer: 23
   m_Name: BoulderHubRectangular_Tex (5)
   m_TagString: Map
   m_Icon: {fileID: 0}
@@ -9973,7 +10029,7 @@ GameObject:
   - component: {fileID: 186747003}
   - component: {fileID: 186747002}
   - component: {fileID: 186747001}
-  m_Layer: 0
+  m_Layer: 23
   m_Name: BoulderHubRectangular_Tex (1)
   m_TagString: Map
   m_Icon: {fileID: 0}
@@ -10587,7 +10643,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 194977203}
-  m_Layer: 0
+  m_Layer: 23
   m_Name: Map
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10666,15 +10722,12 @@ Transform:
   - {fileID: 896628879}
   - {fileID: 1421545014}
   - {fileID: 856449103}
-  - {fileID: 1986817835}
-  - {fileID: 1104416764}
   - {fileID: 1982959185}
   - {fileID: 52089476}
   - {fileID: 1518099173}
   - {fileID: 2036337633}
   - {fileID: 223285811}
   - {fileID: 31136917}
-  - {fileID: 696775121}
   - {fileID: 684143710}
   - {fileID: 374760638}
   - {fileID: 1360978641}
@@ -12379,13 +12432,29 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 194977203}
     m_Modifications:
+    - target: {fileID: 2233673778500226726, guid: 471e7baae58e73e4ca0a0e4a03e2d673, type: 3}
+      propertyPath: m_Layer
+      value: 23
+      objectReference: {fileID: 0}
+    - target: {fileID: 2233673779587919196, guid: 471e7baae58e73e4ca0a0e4a03e2d673, type: 3}
+      propertyPath: m_Layer
+      value: 23
+      objectReference: {fileID: 0}
+    - target: {fileID: 2233673780090925425, guid: 471e7baae58e73e4ca0a0e4a03e2d673, type: 3}
+      propertyPath: m_Layer
+      value: 23
+      objectReference: {fileID: 0}
     - target: {fileID: 2233673780310377481, guid: 471e7baae58e73e4ca0a0e4a03e2d673, type: 3}
       propertyPath: m_Name
       value: GameObject (46)
       objectReference: {fileID: 0}
+    - target: {fileID: 2233673780310377481, guid: 471e7baae58e73e4ca0a0e4a03e2d673, type: 3}
+      propertyPath: m_Layer
+      value: 23
+      objectReference: {fileID: 0}
     - target: {fileID: 2233673780310377486, guid: 471e7baae58e73e4ca0a0e4a03e2d673, type: 3}
       propertyPath: m_RootOrder
-      value: 66
+      value: 65
       objectReference: {fileID: 0}
     - target: {fileID: 2233673780310377486, guid: 471e7baae58e73e4ca0a0e4a03e2d673, type: 3}
       propertyPath: m_LocalPosition.x
@@ -12612,7 +12681,7 @@ GameObject:
   - component: {fileID: 227232708}
   - component: {fileID: 227232707}
   - component: {fileID: 227232706}
-  m_Layer: 0
+  m_Layer: 23
   m_Name: BoulderHubRectangular_Tex (1)
   m_TagString: Map
   m_Icon: {fileID: 0}
@@ -13347,7 +13416,7 @@ GameObject:
   - component: {fileID: 244245148}
   - component: {fileID: 244245147}
   - component: {fileID: 244245146}
-  m_Layer: 0
+  m_Layer: 23
   m_Name: BoulderHubRectangular_Tex (4)
   m_TagString: Map
   m_Icon: {fileID: 0}
@@ -13835,6 +13904,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Button (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 1839285944889265399, guid: bbfd7c67daf236a48a2085972547489b, type: 3}
+      propertyPath: m_Layer
+      value: 23
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bbfd7c67daf236a48a2085972547489b, type: 3}
 --- !u!114 &254381651 stripped
@@ -14080,7 +14153,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 260982093}
-  m_Layer: 0
+  m_Layer: 23
   m_Name: GameObject (15)
   m_TagString: Map
   m_Icon: {fileID: 0}
@@ -14467,7 +14540,7 @@ GameObject:
   - component: {fileID: 267823944}
   - component: {fileID: 267823943}
   - component: {fileID: 267823942}
-  m_Layer: 0
+  m_Layer: 23
   m_Name: BoulderHubRectangular_Tex (5)
   m_TagString: Map
   m_Icon: {fileID: 0}
@@ -15197,9 +15270,25 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 194977203}
     m_Modifications:
+    - target: {fileID: 2233673778500226726, guid: 471e7baae58e73e4ca0a0e4a03e2d673, type: 3}
+      propertyPath: m_Layer
+      value: 23
+      objectReference: {fileID: 0}
+    - target: {fileID: 2233673779587919196, guid: 471e7baae58e73e4ca0a0e4a03e2d673, type: 3}
+      propertyPath: m_Layer
+      value: 23
+      objectReference: {fileID: 0}
+    - target: {fileID: 2233673780090925425, guid: 471e7baae58e73e4ca0a0e4a03e2d673, type: 3}
+      propertyPath: m_Layer
+      value: 23
+      objectReference: {fileID: 0}
     - target: {fileID: 2233673780310377481, guid: 471e7baae58e73e4ca0a0e4a03e2d673, type: 3}
       propertyPath: m_Name
       value: GameObject (37)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2233673780310377481, guid: 471e7baae58e73e4ca0a0e4a03e2d673, type: 3}
+      propertyPath: m_Layer
+      value: 23
       objectReference: {fileID: 0}
     - target: {fileID: 2233673780310377486, guid: 471e7baae58e73e4ca0a0e4a03e2d673, type: 3}
       propertyPath: m_RootOrder
@@ -15342,9 +15431,25 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 194977203}
     m_Modifications:
+    - target: {fileID: 2233673778500226726, guid: 471e7baae58e73e4ca0a0e4a03e2d673, type: 3}
+      propertyPath: m_Layer
+      value: 23
+      objectReference: {fileID: 0}
+    - target: {fileID: 2233673779587919196, guid: 471e7baae58e73e4ca0a0e4a03e2d673, type: 3}
+      propertyPath: m_Layer
+      value: 23
+      objectReference: {fileID: 0}
+    - target: {fileID: 2233673780090925425, guid: 471e7baae58e73e4ca0a0e4a03e2d673, type: 3}
+      propertyPath: m_Layer
+      value: 23
+      objectReference: {fileID: 0}
     - target: {fileID: 2233673780310377481, guid: 471e7baae58e73e4ca0a0e4a03e2d673, type: 3}
       propertyPath: m_Name
       value: GameObject (39)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2233673780310377481, guid: 471e7baae58e73e4ca0a0e4a03e2d673, type: 3}
+      propertyPath: m_Layer
+      value: 23
       objectReference: {fileID: 0}
     - target: {fileID: 2233673780310377486, guid: 471e7baae58e73e4ca0a0e4a03e2d673, type: 3}
       propertyPath: m_RootOrder
@@ -17372,7 +17477,7 @@ GameObject:
   - component: {fileID: 316930337}
   - component: {fileID: 316930336}
   - component: {fileID: 316930335}
-  m_Layer: 0
+  m_Layer: 23
   m_Name: BoulderHubRectangular_Tex (5)
   m_TagString: Map
   m_Icon: {fileID: 0}
@@ -17825,7 +17930,7 @@ GameObject:
   - component: {fileID: 328094706}
   - component: {fileID: 328094705}
   - component: {fileID: 328094704}
-  m_Layer: 0
+  m_Layer: 23
   m_Name: BoulderHubRectangular_Tex (4)
   m_TagString: Map
   m_Icon: {fileID: 0}
@@ -18189,7 +18294,7 @@ GameObject:
   - component: {fileID: 334175427}
   - component: {fileID: 334175426}
   - component: {fileID: 334175425}
-  m_Layer: 0
+  m_Layer: 23
   m_Name: BoulderHubRectangular_Tex (5)
   m_TagString: Map
   m_Icon: {fileID: 0}
@@ -18523,7 +18628,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 126
   m_CollisionDetection: 0
 --- !u!212 &337379985
 SpriteRenderer:
@@ -19396,7 +19501,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 360033674}
-  m_Layer: 0
+  m_Layer: 23
   m_Name: GameObject (32)
   m_TagString: Map
   m_Icon: {fileID: 0}
@@ -20010,7 +20115,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6772210288568877323, guid: dcd8aac7c53affe499a58cb25b0b02ef, type: 3}
       propertyPath: m_RootOrder
-      value: 70
+      value: 69
       objectReference: {fileID: 0}
     - target: {fileID: 6772210288568877323, guid: dcd8aac7c53affe499a58cb25b0b02ef, type: 3}
       propertyPath: m_LocalPosition.x
@@ -20055,6 +20160,10 @@ PrefabInstance:
     - target: {fileID: 6858353182194773690, guid: dcd8aac7c53affe499a58cb25b0b02ef, type: 3}
       propertyPath: m_Name
       value: BoulderHubCapsuleWrecked_Tex (23)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6858353182194773690, guid: dcd8aac7c53affe499a58cb25b0b02ef, type: 3}
+      propertyPath: m_Layer
+      value: 23
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dcd8aac7c53affe499a58cb25b0b02ef, type: 3}
@@ -20493,7 +20602,7 @@ GameObject:
   - component: {fileID: 383986511}
   - component: {fileID: 383986513}
   - component: {fileID: 383986514}
-  m_Layer: 0
+  m_Layer: 23
   m_Name: BoulderHubRectangular_Tex (1)
   m_TagString: Map
   m_Icon: {fileID: 0}
@@ -21297,7 +21406,7 @@ GameObject:
   - component: {fileID: 402922360}
   - component: {fileID: 402922359}
   - component: {fileID: 402922358}
-  m_Layer: 0
+  m_Layer: 23
   m_Name: BoulderHubRectangular_Tex (1)
   m_TagString: Map
   m_Icon: {fileID: 0}
@@ -21312,7 +21421,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 402922356}
   m_LocalRotation: {x: -0, y: -0, z: 1, w: 0}
-  m_LocalPosition: {x: -0, y: -50.6, z: 0}
+  m_LocalPosition: {x: -0.73, y: -50.6, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -21496,7 +21605,7 @@ GameObject:
   - component: {fileID: 404018923}
   - component: {fileID: 404018922}
   - component: {fileID: 404018921}
-  m_Layer: 0
+  m_Layer: 23
   m_Name: BoulderHubRectangular_Tex (1)
   m_TagString: Map
   m_Icon: {fileID: 0}
@@ -22357,7 +22466,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 415429874}
-  m_Layer: 0
+  m_Layer: 23
   m_Name: GameObject (27)
   m_TagString: Map
   m_Icon: {fileID: 0}
@@ -22382,79 +22491,6 @@ Transform:
   m_Father: {fileID: 194977203}
   m_RootOrder: 25
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &416312615
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 546139529}
-    m_Modifications:
-    - target: {fileID: 4856910567308056261, guid: dcd8aac7c53affe499a58cb25b0b02ef, type: 3}
-      propertyPath: m_Color.b
-      value: 0.62352943
-      objectReference: {fileID: 0}
-    - target: {fileID: 4856910567308056261, guid: dcd8aac7c53affe499a58cb25b0b02ef, type: 3}
-      propertyPath: m_Color.g
-      value: 0.3254902
-      objectReference: {fileID: 0}
-    - target: {fileID: 4856910567308056261, guid: dcd8aac7c53affe499a58cb25b0b02ef, type: 3}
-      propertyPath: m_Color.r
-      value: 0.49019608
-      objectReference: {fileID: 0}
-    - target: {fileID: 6772210288568877323, guid: dcd8aac7c53affe499a58cb25b0b02ef, type: 3}
-      propertyPath: m_RootOrder
-      value: 60
-      objectReference: {fileID: 0}
-    - target: {fileID: 6772210288568877323, guid: dcd8aac7c53affe499a58cb25b0b02ef, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 8.7
-      objectReference: {fileID: 0}
-    - target: {fileID: 6772210288568877323, guid: dcd8aac7c53affe499a58cb25b0b02ef, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -21.34
-      objectReference: {fileID: 0}
-    - target: {fileID: 6772210288568877323, guid: dcd8aac7c53affe499a58cb25b0b02ef, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.42517823
-      objectReference: {fileID: 0}
-    - target: {fileID: 6772210288568877323, guid: dcd8aac7c53affe499a58cb25b0b02ef, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 6772210288568877323, guid: dcd8aac7c53affe499a58cb25b0b02ef, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6772210288568877323, guid: dcd8aac7c53affe499a58cb25b0b02ef, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6772210288568877323, guid: dcd8aac7c53affe499a58cb25b0b02ef, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 6772210288568877323, guid: dcd8aac7c53affe499a58cb25b0b02ef, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6772210288568877323, guid: dcd8aac7c53affe499a58cb25b0b02ef, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6772210288568877323, guid: dcd8aac7c53affe499a58cb25b0b02ef, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 90
-      objectReference: {fileID: 0}
-    - target: {fileID: 6858353182194773690, guid: dcd8aac7c53affe499a58cb25b0b02ef, type: 3}
-      propertyPath: m_Name
-      value: BoulderHubCapsuleWrecked_Tex (19)
-      objectReference: {fileID: 0}
-    - target: {fileID: 6858353182194773690, guid: dcd8aac7c53affe499a58cb25b0b02ef, type: 3}
-      propertyPath: m_Layer
-      value: 7
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: dcd8aac7c53affe499a58cb25b0b02ef, type: 3}
 --- !u!1 &420018772
 GameObject:
   m_ObjectHideFlags: 0
@@ -23932,7 +23968,7 @@ GameObject:
   - component: {fileID: 455667922}
   - component: {fileID: 455667921}
   - component: {fileID: 455667920}
-  m_Layer: 0
+  m_Layer: 23
   m_Name: BoulderHubRectangular_Tex (5)
   m_TagString: Map
   m_Icon: {fileID: 0}
@@ -24745,7 +24781,7 @@ GameObject:
   - component: {fileID: 467028715}
   - component: {fileID: 467028714}
   - component: {fileID: 467028713}
-  m_Layer: 0
+  m_Layer: 23
   m_Name: BoulderHubRectangular_Tex (5)
   m_TagString: Map
   m_Icon: {fileID: 0}
@@ -25273,7 +25309,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 470364040}
-  m_Layer: 0
+  m_Layer: 23
   m_Name: GameObject (2)
   m_TagString: Map
   m_Icon: {fileID: 0}
@@ -25394,7 +25430,7 @@ GameObject:
   - component: {fileID: 470952228}
   - component: {fileID: 470952227}
   - component: {fileID: 470952226}
-  m_Layer: 0
+  m_Layer: 23
   m_Name: BoulderHubRectangular_Tex (1)
   m_TagString: Map
   m_Icon: {fileID: 0}
@@ -26556,7 +26592,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 486934032}
-  m_Layer: 0
+  m_Layer: 23
   m_Name: GameObject (3)
   m_TagString: Map
   m_Icon: {fileID: 0}
@@ -27259,7 +27295,7 @@ GameObject:
   - component: {fileID: 502850293}
   - component: {fileID: 502850292}
   - component: {fileID: 502850291}
-  m_Layer: 0
+  m_Layer: 23
   m_Name: BoulderHubRectangular_Tex (1)
   m_TagString: Map
   m_Icon: {fileID: 0}
@@ -27689,7 +27725,7 @@ GameObject:
   - component: {fileID: 506097985}
   - component: {fileID: 506097984}
   - component: {fileID: 506097983}
-  m_Layer: 0
+  m_Layer: 23
   m_Name: BoulderHubRectangular_Tex (4)
   m_TagString: Map
   m_Icon: {fileID: 0}
@@ -27970,7 +28006,7 @@ GameObject:
   - component: {fileID: 512178519}
   - component: {fileID: 512178518}
   - component: {fileID: 512178517}
-  m_Layer: 0
+  m_Layer: 23
   m_Name: BoulderHubRectangular_Tex (5)
   m_TagString: Map
   m_Icon: {fileID: 0}
@@ -30284,6 +30320,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BoulderHubCapsuleWrecked_Tex (15)
       objectReference: {fileID: 0}
+    - target: {fileID: 6858353182194773690, guid: dcd8aac7c53affe499a58cb25b0b02ef, type: 3}
+      propertyPath: m_Layer
+      value: 23
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dcd8aac7c53affe499a58cb25b0b02ef, type: 3}
 --- !u!4 &544298038 stripped
@@ -30618,8 +30658,6 @@ Transform:
   - {fileID: 475365831}
   - {fileID: 1885582971}
   - {fileID: 1019602841}
-  - {fileID: 732658906}
-  - {fileID: 1803610948}
   - {fileID: 738991319}
   - {fileID: 157661661}
   - {fileID: 447370813}
@@ -31344,9 +31382,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1383919057}
     m_Modifications:
+    - target: {fileID: 4640733875849494618, guid: af0b75fd0380b774e80a793d468ce24e, type: 3}
+      propertyPath: m_Layer
+      value: 23
+      objectReference: {fileID: 0}
+    - target: {fileID: 8675640778606374362, guid: af0b75fd0380b774e80a793d468ce24e, type: 3}
+      propertyPath: m_Layer
+      value: 23
+      objectReference: {fileID: 0}
     - target: {fileID: 8675640779870368213, guid: af0b75fd0380b774e80a793d468ce24e, type: 3}
       propertyPath: m_Name
       value: Planet
+      objectReference: {fileID: 0}
+    - target: {fileID: 8675640779870368213, guid: af0b75fd0380b774e80a793d468ce24e, type: 3}
+      propertyPath: m_Layer
+      value: 23
       objectReference: {fileID: 0}
     - target: {fileID: 8675640779870368214, guid: af0b75fd0380b774e80a793d468ce24e, type: 3}
       propertyPath: m_RootOrder
@@ -31408,7 +31458,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 573568929}
-  m_Layer: 0
+  m_Layer: 23
   m_Name: GameObject (4)
   m_TagString: Map
   m_Icon: {fileID: 0}
@@ -31528,7 +31578,7 @@ GameObject:
   - component: {fileID: 576214345}
   - component: {fileID: 576214344}
   - component: {fileID: 576214343}
-  m_Layer: 0
+  m_Layer: 23
   m_Name: BoulderHubRectangular_Tex (1)
   m_TagString: Map
   m_Icon: {fileID: 0}
@@ -33013,7 +33063,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 597599365}
-  m_Layer: 0
+  m_Layer: 23
   m_Name: GameObject (1)
   m_TagString: Map
   m_Icon: {fileID: 0}
@@ -33386,7 +33436,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 126
   m_CollisionDetection: 0
 --- !u!212 &612006379
 SpriteRenderer:
@@ -33739,7 +33789,7 @@ GameObject:
   - component: {fileID: 616066901}
   - component: {fileID: 616066900}
   - component: {fileID: 616066899}
-  m_Layer: 0
+  m_Layer: 23
   m_Name: BoulderHubRectangular_Tex (5)
   m_TagString: Map
   m_Icon: {fileID: 0}
@@ -33959,7 +34009,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 126
   m_CollisionDetection: 0
 --- !u!212 &617291972
 SpriteRenderer:
@@ -34134,7 +34184,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 619395699}
-  m_Layer: 0
+  m_Layer: 23
   m_Name: GameObject (14)
   m_TagString: Map
   m_Icon: {fileID: 0}
@@ -34422,7 +34472,7 @@ GameObject:
   - component: {fileID: 623171824}
   - component: {fileID: 623171823}
   - component: {fileID: 623171822}
-  m_Layer: 0
+  m_Layer: 23
   m_Name: BoulderHubRectangular_Tex (1)
   m_TagString: Map
   m_Icon: {fileID: 0}
@@ -35142,7 +35192,7 @@ GameObject:
   - component: {fileID: 635896382}
   - component: {fileID: 635896381}
   - component: {fileID: 635896380}
-  m_Layer: 0
+  m_Layer: 23
   m_Name: BoulderHubRectangular_Tex (4)
   m_TagString: Map
   m_Icon: {fileID: 0}
@@ -36261,7 +36311,7 @@ GameObject:
   - component: {fileID: 658010534}
   - component: {fileID: 658010533}
   - component: {fileID: 658010532}
-  m_Layer: 0
+  m_Layer: 23
   m_Name: BoulderHubRectangular_Tex (6)
   m_TagString: Map
   m_Icon: {fileID: 0}
@@ -36457,7 +36507,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 659078438}
-  m_Layer: 0
+  m_Layer: 23
   m_Name: GameObject (6)
   m_TagString: Map
   m_Icon: {fileID: 0}
@@ -37275,7 +37325,7 @@ GameObject:
   - component: {fileID: 669164315}
   - component: {fileID: 669164314}
   - component: {fileID: 669164313}
-  m_Layer: 0
+  m_Layer: 23
   m_Name: BoulderHubRectangular_Tex (5)
   m_TagString: Map
   m_Icon: {fileID: 0}
@@ -37536,7 +37586,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 670865929}
-  m_Layer: 0
+  m_Layer: 23
   m_Name: GameObject (24)
   m_TagString: Map
   m_Icon: {fileID: 0}
@@ -37905,7 +37955,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6772210288568877323, guid: dcd8aac7c53affe499a58cb25b0b02ef, type: 3}
       propertyPath: m_RootOrder
-      value: 69
+      value: 68
       objectReference: {fileID: 0}
     - target: {fileID: 6772210288568877323, guid: dcd8aac7c53affe499a58cb25b0b02ef, type: 3}
       propertyPath: m_LocalPosition.x
@@ -38215,7 +38265,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6772210288568877323, guid: dcd8aac7c53affe499a58cb25b0b02ef, type: 3}
       propertyPath: m_RootOrder
-      value: 69
+      value: 68
       objectReference: {fileID: 0}
     - target: {fileID: 6772210288568877323, guid: dcd8aac7c53affe499a58cb25b0b02ef, type: 3}
       propertyPath: m_LocalPosition.x
@@ -38260,6 +38310,10 @@ PrefabInstance:
     - target: {fileID: 6858353182194773690, guid: dcd8aac7c53affe499a58cb25b0b02ef, type: 3}
       propertyPath: m_Name
       value: BoulderHubCapsuleWrecked_Tex (22)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6858353182194773690, guid: dcd8aac7c53affe499a58cb25b0b02ef, type: 3}
+      propertyPath: m_Layer
+      value: 23
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dcd8aac7c53affe499a58cb25b0b02ef, type: 3}
@@ -38881,68 +38935,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 696247796}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1001 &696775120
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 194977203}
-    m_Modifications:
-    - target: {fileID: 6772210288568877323, guid: dcd8aac7c53affe499a58cb25b0b02ef, type: 3}
-      propertyPath: m_RootOrder
-      value: 68
-      objectReference: {fileID: 0}
-    - target: {fileID: 6772210288568877323, guid: dcd8aac7c53affe499a58cb25b0b02ef, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 11.63
-      objectReference: {fileID: 0}
-    - target: {fileID: 6772210288568877323, guid: dcd8aac7c53affe499a58cb25b0b02ef, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -22.88
-      objectReference: {fileID: 0}
-    - target: {fileID: 6772210288568877323, guid: dcd8aac7c53affe499a58cb25b0b02ef, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.42517823
-      objectReference: {fileID: 0}
-    - target: {fileID: 6772210288568877323, guid: dcd8aac7c53affe499a58cb25b0b02ef, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.9244156
-      objectReference: {fileID: 0}
-    - target: {fileID: 6772210288568877323, guid: dcd8aac7c53affe499a58cb25b0b02ef, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6772210288568877323, guid: dcd8aac7c53affe499a58cb25b0b02ef, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6772210288568877323, guid: dcd8aac7c53affe499a58cb25b0b02ef, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0.38138676
-      objectReference: {fileID: 0}
-    - target: {fileID: 6772210288568877323, guid: dcd8aac7c53affe499a58cb25b0b02ef, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6772210288568877323, guid: dcd8aac7c53affe499a58cb25b0b02ef, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6772210288568877323, guid: dcd8aac7c53affe499a58cb25b0b02ef, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 44.839
-      objectReference: {fileID: 0}
-    - target: {fileID: 6858353182194773690, guid: dcd8aac7c53affe499a58cb25b0b02ef, type: 3}
-      propertyPath: m_Name
-      value: BoulderHubCapsuleWrecked_Tex (21)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: dcd8aac7c53affe499a58cb25b0b02ef, type: 3}
---- !u!4 &696775121 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 6772210288568877323, guid: dcd8aac7c53affe499a58cb25b0b02ef, type: 3}
-  m_PrefabInstance: {fileID: 696775120}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &698276361
 GameObject:
   m_ObjectHideFlags: 0
@@ -40391,7 +40383,7 @@ GameObject:
   - component: {fileID: 720742664}
   - component: {fileID: 720742663}
   - component: {fileID: 720742662}
-  m_Layer: 0
+  m_Layer: 23
   m_Name: BoulderHubRectangular_Tex (5)
   m_TagString: Map
   m_Icon: {fileID: 0}
@@ -40603,11 +40595,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1839285944889265386, guid: bbfd7c67daf236a48a2085972547489b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -11.006288
+      value: -11.29
       objectReference: {fileID: 0}
     - target: {fileID: 1839285944889265386, guid: bbfd7c67daf236a48a2085972547489b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.7299995
+      value: 1.38
       objectReference: {fileID: 0}
     - target: {fileID: 1839285944889265386, guid: bbfd7c67daf236a48a2085972547489b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -40652,6 +40644,10 @@ PrefabInstance:
     - target: {fileID: 1839285944889265399, guid: bbfd7c67daf236a48a2085972547489b, type: 3}
       propertyPath: m_Name
       value: Button (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1839285944889265399, guid: bbfd7c67daf236a48a2085972547489b, type: 3}
+      propertyPath: m_Layer
+      value: 23
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bbfd7c67daf236a48a2085972547489b, type: 3}
@@ -41500,11 +41496,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 730416639}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
---- !u!4 &732658906 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 6772210288568877323, guid: dcd8aac7c53affe499a58cb25b0b02ef, type: 3}
-  m_PrefabInstance: {fileID: 416312615}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &733737312
 GameObject:
   m_ObjectHideFlags: 0
@@ -42593,6 +42584,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BoulderHubCapsuleWrecked_Tex (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 6858353182194773690, guid: dcd8aac7c53affe499a58cb25b0b02ef, type: 3}
+      propertyPath: m_Layer
+      value: 23
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dcd8aac7c53affe499a58cb25b0b02ef, type: 3}
 --- !u!4 &751858483 stripped
@@ -43185,7 +43180,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 126
   m_CollisionDetection: 0
 --- !u!212 &760544574
 SpriteRenderer:
@@ -43357,7 +43352,7 @@ GameObject:
   - component: {fileID: 762478833}
   - component: {fileID: 762478832}
   - component: {fileID: 762478831}
-  m_Layer: 0
+  m_Layer: 23
   m_Name: BoulderHubRectangular_Tex (4)
   m_TagString: Map
   m_Icon: {fileID: 0}
@@ -43952,7 +43947,7 @@ GameObject:
   - component: {fileID: 771667209}
   - component: {fileID: 771667208}
   - component: {fileID: 771667207}
-  m_Layer: 0
+  m_Layer: 23
   m_Name: BoulderHubRectangular_Tex (1)
   m_TagString: Map
   m_Icon: {fileID: 0}
@@ -44151,7 +44146,7 @@ GameObject:
   - component: {fileID: 774983603}
   - component: {fileID: 774983602}
   - component: {fileID: 774983601}
-  m_Layer: 0
+  m_Layer: 23
   m_Name: BoulderHubRectangular_Tex (5)
   m_TagString: Map
   m_Icon: {fileID: 0}
@@ -44370,7 +44365,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 126
   m_CollisionDetection: 0
 --- !u!212 &776856642
 SpriteRenderer:
@@ -44913,7 +44908,7 @@ GameObject:
   - component: {fileID: 784310278}
   - component: {fileID: 784310277}
   - component: {fileID: 784310276}
-  m_Layer: 0
+  m_Layer: 23
   m_Name: BoulderHubRectangular_Tex (4)
   m_TagString: Map
   m_Icon: {fileID: 0}
@@ -45145,7 +45140,7 @@ GameObject:
   - component: {fileID: 787961541}
   - component: {fileID: 787961540}
   - component: {fileID: 787961539}
-  m_Layer: 0
+  m_Layer: 23
   m_Name: BoulderHubRectangular_Tex (1)
   m_TagString: Map
   m_Icon: {fileID: 0}
@@ -45974,7 +45969,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 798003488}
-  m_Layer: 0
+  m_Layer: 23
   m_Name: GameObject (13)
   m_TagString: Map
   m_Icon: {fileID: 0}
@@ -46710,7 +46705,7 @@ GameObject:
   - component: {fileID: 806986250}
   - component: {fileID: 806986249}
   - component: {fileID: 806986248}
-  m_Layer: 0
+  m_Layer: 23
   m_Name: BoulderHubRectangular_Tex (5)
   m_TagString: Map
   m_Icon: {fileID: 0}
@@ -47394,7 +47389,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 823000738}
-  m_Layer: 0
+  m_Layer: 23
   m_Name: GameObject (26)
   m_TagString: Map
   m_Icon: {fileID: 0}
@@ -47431,7 +47426,7 @@ GameObject:
   - component: {fileID: 829530736}
   - component: {fileID: 829530735}
   - component: {fileID: 829530734}
-  m_Layer: 0
+  m_Layer: 23
   m_Name: BoulderHubRectangular_Tex (5)
   m_TagString: Map
   m_Icon: {fileID: 0}
@@ -47712,7 +47707,7 @@ GameObject:
   - component: {fileID: 833900461}
   - component: {fileID: 833900460}
   - component: {fileID: 833900459}
-  m_Layer: 0
+  m_Layer: 23
   m_Name: BoulderHubRectangular_Tex (5)
   m_TagString: Map
   m_Icon: {fileID: 0}
@@ -49337,6 +49332,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BoulderHubCapsuleWrecked_Tex (18)
       objectReference: {fileID: 0}
+    - target: {fileID: 6858353182194773690, guid: dcd8aac7c53affe499a58cb25b0b02ef, type: 3}
+      propertyPath: m_Layer
+      value: 23
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dcd8aac7c53affe499a58cb25b0b02ef, type: 3}
 --- !u!4 &856449103 stripped
@@ -49995,7 +49994,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 126
   m_CollisionDetection: 0
 --- !u!212 &861099967
 SpriteRenderer:
@@ -51212,7 +51211,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6772210288568877323, guid: dcd8aac7c53affe499a58cb25b0b02ef, type: 3}
       propertyPath: m_RootOrder
-      value: 70
+      value: 69
       objectReference: {fileID: 0}
     - target: {fileID: 6772210288568877323, guid: dcd8aac7c53affe499a58cb25b0b02ef, type: 3}
       propertyPath: m_LocalPosition.x
@@ -51273,7 +51272,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6772210288568877323, guid: dcd8aac7c53affe499a58cb25b0b02ef, type: 3}
       propertyPath: m_RootOrder
-      value: 73
+      value: 72
       objectReference: {fileID: 0}
     - target: {fileID: 6772210288568877323, guid: dcd8aac7c53affe499a58cb25b0b02ef, type: 3}
       propertyPath: m_LocalPosition.x
@@ -51318,6 +51317,10 @@ PrefabInstance:
     - target: {fileID: 6858353182194773690, guid: dcd8aac7c53affe499a58cb25b0b02ef, type: 3}
       propertyPath: m_Name
       value: BoulderHubCapsuleWrecked_Tex (26)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6858353182194773690, guid: dcd8aac7c53affe499a58cb25b0b02ef, type: 3}
+      propertyPath: m_Layer
+      value: 23
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dcd8aac7c53affe499a58cb25b0b02ef, type: 3}
@@ -52197,6 +52200,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BoulderHubCapsuleWrecked_Tex (16)
       objectReference: {fileID: 0}
+    - target: {fileID: 6858353182194773690, guid: dcd8aac7c53affe499a58cb25b0b02ef, type: 3}
+      propertyPath: m_Layer
+      value: 23
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dcd8aac7c53affe499a58cb25b0b02ef, type: 3}
 --- !u!4 &896628879 stripped
@@ -52436,7 +52443,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2233673780310377486, guid: 471e7baae58e73e4ca0a0e4a03e2d673, type: 3}
       propertyPath: m_RootOrder
-      value: 62
+      value: 61
       objectReference: {fileID: 0}
     - target: {fileID: 2233673780310377486, guid: 471e7baae58e73e4ca0a0e4a03e2d673, type: 3}
       propertyPath: m_LocalPosition.x
@@ -52575,7 +52582,7 @@ GameObject:
   - component: {fileID: 902967542}
   - component: {fileID: 902967541}
   - component: {fileID: 902967540}
-  m_Layer: 0
+  m_Layer: 23
   m_Name: BoulderHubRectangular_Tex (6)
   m_TagString: Map
   m_Icon: {fileID: 0}
@@ -52887,7 +52894,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 911185222}
-  m_Layer: 0
+  m_Layer: 23
   m_Name: GameObject (25)
   m_TagString: Map
   m_Icon: {fileID: 0}
@@ -53783,7 +53790,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 919310393}
-  m_Layer: 0
+  m_Layer: 23
   m_Name: GameObject (12)
   m_TagString: Map
   m_Icon: {fileID: 0}
@@ -55537,7 +55544,7 @@ GameObject:
   - component: {fileID: 950433538}
   - component: {fileID: 950433537}
   - component: {fileID: 950433536}
-  m_Layer: 0
+  m_Layer: 23
   m_Name: BoulderHubRectangular_Tex (1)
   m_TagString: Map
   m_Icon: {fileID: 0}
@@ -55902,7 +55909,7 @@ GameObject:
   - component: {fileID: 959495563}
   - component: {fileID: 959495562}
   - component: {fileID: 959495561}
-  m_Layer: 0
+  m_Layer: 23
   m_Name: BoulderHubRectangular_Tex (5)
   m_TagString: Map
   m_Icon: {fileID: 0}
@@ -56266,7 +56273,7 @@ GameObject:
   - component: {fileID: 962095950}
   - component: {fileID: 962095951}
   - component: {fileID: 962095952}
-  m_Layer: 7
+  m_Layer: 23
   m_Name: MapIconFriendBunnySpritesheet_Tex_10
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -57553,6 +57560,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BoulderHubCapsuleWrecked_Tex (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 6858353182194773690, guid: dcd8aac7c53affe499a58cb25b0b02ef, type: 3}
+      propertyPath: m_Layer
+      value: 23
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dcd8aac7c53affe499a58cb25b0b02ef, type: 3}
 --- !u!4 &979580593 stripped
@@ -57652,7 +57663,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 980646528}
-  m_Layer: 0
+  m_Layer: 23
   m_Name: GameObject (11)
   m_TagString: Map
   m_Icon: {fileID: 0}
@@ -58420,7 +58431,7 @@ GameObject:
   - component: {fileID: 995770245}
   - component: {fileID: 995770244}
   - component: {fileID: 995770243}
-  m_Layer: 0
+  m_Layer: 23
   m_Name: BoulderHubRectangular_Tex (1)
   m_TagString: Map
   m_Icon: {fileID: 0}
@@ -59234,6 +59245,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BoulderHubCapsuleWrecked_Tex (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 6858353182194773690, guid: dcd8aac7c53affe499a58cb25b0b02ef, type: 3}
+      propertyPath: m_Layer
+      value: 23
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dcd8aac7c53affe499a58cb25b0b02ef, type: 3}
 --- !u!4 &1005493300 stripped
@@ -59833,7 +59848,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1018999171}
-  m_Layer: 0
+  m_Layer: 23
   m_Name: GameObject (22)
   m_TagString: Map
   m_Icon: {fileID: 0}
@@ -61279,7 +61294,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6772210288568877323, guid: dcd8aac7c53affe499a58cb25b0b02ef, type: 3}
       propertyPath: m_RootOrder
-      value: 72
+      value: 71
       objectReference: {fileID: 0}
     - target: {fileID: 6772210288568877323, guid: dcd8aac7c53affe499a58cb25b0b02ef, type: 3}
       propertyPath: m_LocalPosition.x
@@ -61917,7 +61932,7 @@ GameObject:
   - component: {fileID: 1055383796}
   - component: {fileID: 1055383795}
   - component: {fileID: 1055383794}
-  m_Layer: 0
+  m_Layer: 23
   m_Name: BoulderHubRectangular_Tex (1)
   m_TagString: Map
   m_Icon: {fileID: 0}
@@ -63798,7 +63813,7 @@ GameObject:
   - component: {fileID: 1078557525}
   - component: {fileID: 1078557524}
   - component: {fileID: 1078557523}
-  m_Layer: 0
+  m_Layer: 23
   m_Name: BoulderHubRectangular_Tex (1)
   m_TagString: Map
   m_Icon: {fileID: 0}
@@ -63913,7 +63928,7 @@ GameObject:
   - component: {fileID: 1078835806}
   - component: {fileID: 1078835805}
   - component: {fileID: 1078835804}
-  m_Layer: 0
+  m_Layer: 23
   m_Name: BoulderHubRectangular_Tex (4)
   m_TagString: Map
   m_Icon: {fileID: 0}
@@ -64445,7 +64460,7 @@ GameObject:
   - component: {fileID: 1086441757}
   - component: {fileID: 1086441756}
   - component: {fileID: 1086441755}
-  m_Layer: 0
+  m_Layer: 23
   m_Name: BoulderHubRectangular_Tex (1)
   m_TagString: Map
   m_Icon: {fileID: 0}
@@ -65258,7 +65273,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1098728647}
-  m_Layer: 0
+  m_Layer: 23
   m_Name: GameObject (21)
   m_TagString: Map
   m_Icon: {fileID: 0}
@@ -65617,68 +65632,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1102487851}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1001 &1104416763
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 194977203}
-    m_Modifications:
-    - target: {fileID: 6772210288568877323, guid: dcd8aac7c53affe499a58cb25b0b02ef, type: 3}
-      propertyPath: m_RootOrder
-      value: 61
-      objectReference: {fileID: 0}
-    - target: {fileID: 6772210288568877323, guid: dcd8aac7c53affe499a58cb25b0b02ef, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 8.7
-      objectReference: {fileID: 0}
-    - target: {fileID: 6772210288568877323, guid: dcd8aac7c53affe499a58cb25b0b02ef, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -8.81
-      objectReference: {fileID: 0}
-    - target: {fileID: 6772210288568877323, guid: dcd8aac7c53affe499a58cb25b0b02ef, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.42517823
-      objectReference: {fileID: 0}
-    - target: {fileID: 6772210288568877323, guid: dcd8aac7c53affe499a58cb25b0b02ef, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 6772210288568877323, guid: dcd8aac7c53affe499a58cb25b0b02ef, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6772210288568877323, guid: dcd8aac7c53affe499a58cb25b0b02ef, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6772210288568877323, guid: dcd8aac7c53affe499a58cb25b0b02ef, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 6772210288568877323, guid: dcd8aac7c53affe499a58cb25b0b02ef, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6772210288568877323, guid: dcd8aac7c53affe499a58cb25b0b02ef, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6772210288568877323, guid: dcd8aac7c53affe499a58cb25b0b02ef, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 90
-      objectReference: {fileID: 0}
-    - target: {fileID: 6858353182194773690, guid: dcd8aac7c53affe499a58cb25b0b02ef, type: 3}
-      propertyPath: m_Name
-      value: BoulderHubCapsuleWrecked_Tex (20)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: dcd8aac7c53affe499a58cb25b0b02ef, type: 3}
---- !u!4 &1104416764 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 6772210288568877323, guid: dcd8aac7c53affe499a58cb25b0b02ef, type: 3}
-  m_PrefabInstance: {fileID: 1104416763}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1105556923
 GameObject:
   m_ObjectHideFlags: 0
@@ -66019,7 +65972,7 @@ Camera:
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4278190135
+    m_Bits: 4286578743
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -66059,8 +66012,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shakeTime: 0.5
-  shakeSpeed: 100
-  shakePos: 1
+  shakeSpeed: 75
+  shakePos: 0.02
   spaceship: {fileID: 54165705}
   offset: {x: 0, y: 0, z: -10}
 --- !u!1001 &1113755384
@@ -66117,6 +66070,10 @@ PrefabInstance:
     - target: {fileID: 6858353182194773690, guid: dcd8aac7c53affe499a58cb25b0b02ef, type: 3}
       propertyPath: m_Name
       value: BoulderHubCapsuleWrecked_Tex (12)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6858353182194773690, guid: dcd8aac7c53affe499a58cb25b0b02ef, type: 3}
+      propertyPath: m_Layer
+      value: 23
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dcd8aac7c53affe499a58cb25b0b02ef, type: 3}
@@ -66439,7 +66396,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2233673780310377486, guid: 471e7baae58e73e4ca0a0e4a03e2d673, type: 3}
       propertyPath: m_RootOrder
-      value: 66
+      value: 65
       objectReference: {fileID: 0}
     - target: {fileID: 2233673780310377486, guid: 471e7baae58e73e4ca0a0e4a03e2d673, type: 3}
       propertyPath: m_LocalPosition.x
@@ -67641,6 +67598,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BoulderHubCapsuleWrecked_Tex (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 6858353182194773690, guid: dcd8aac7c53affe499a58cb25b0b02ef, type: 3}
+      propertyPath: m_Layer
+      value: 23
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dcd8aac7c53affe499a58cb25b0b02ef, type: 3}
 --- !u!4 &1144208445 stripped
@@ -68180,7 +68141,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 126
   m_CollisionDetection: 0
 --- !u!212 &1150405898
 SpriteRenderer:
@@ -68275,7 +68236,7 @@ GameObject:
   - component: {fileID: 1151583384}
   - component: {fileID: 1151583383}
   - component: {fileID: 1151583382}
-  m_Layer: 0
+  m_Layer: 23
   m_Name: BoulderHubRectangular_Tex (1)
   m_TagString: Map
   m_Icon: {fileID: 0}
@@ -68555,7 +68516,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1157202512}
-  m_Layer: 0
+  m_Layer: 23
   m_Name: GameObject (29)
   m_TagString: Map
   m_Icon: {fileID: 0}
@@ -68941,7 +68902,7 @@ GameObject:
   - component: {fileID: 1166733486}
   - component: {fileID: 1166733485}
   - component: {fileID: 1166733484}
-  m_Layer: 0
+  m_Layer: 23
   m_Name: BoulderHubRectangular_Tex (4)
   m_TagString: Map
   m_Icon: {fileID: 0}
@@ -69571,7 +69532,7 @@ GameObject:
   - component: {fileID: 1173723586}
   - component: {fileID: 1173723585}
   - component: {fileID: 1173723584}
-  m_Layer: 0
+  m_Layer: 23
   m_Name: BoulderHubRectangular_Tex (1)
   m_TagString: Map
   m_Icon: {fileID: 0}
@@ -70744,7 +70705,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1197992185}
-  m_Layer: 0
+  m_Layer: 23
   m_Name: GameObject (5)
   m_TagString: Map
   m_Icon: {fileID: 0}
@@ -72301,7 +72262,7 @@ GameObject:
   - component: {fileID: 1227780386}
   - component: {fileID: 1227780385}
   - component: {fileID: 1227780384}
-  m_Layer: 0
+  m_Layer: 23
   m_Name: BoulderHubRectangular_Tex (4)
   m_TagString: Map
   m_Icon: {fileID: 0}
@@ -74556,9 +74517,25 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 194977203}
     m_Modifications:
+    - target: {fileID: 2233673778500226726, guid: 471e7baae58e73e4ca0a0e4a03e2d673, type: 3}
+      propertyPath: m_Layer
+      value: 23
+      objectReference: {fileID: 0}
+    - target: {fileID: 2233673779587919196, guid: 471e7baae58e73e4ca0a0e4a03e2d673, type: 3}
+      propertyPath: m_Layer
+      value: 23
+      objectReference: {fileID: 0}
+    - target: {fileID: 2233673780090925425, guid: 471e7baae58e73e4ca0a0e4a03e2d673, type: 3}
+      propertyPath: m_Layer
+      value: 23
+      objectReference: {fileID: 0}
     - target: {fileID: 2233673780310377481, guid: 471e7baae58e73e4ca0a0e4a03e2d673, type: 3}
       propertyPath: m_Name
       value: GameObject (40)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2233673780310377481, guid: 471e7baae58e73e4ca0a0e4a03e2d673, type: 3}
+      propertyPath: m_Layer
+      value: 23
       objectReference: {fileID: 0}
     - target: {fileID: 2233673780310377486, guid: 471e7baae58e73e4ca0a0e4a03e2d673, type: 3}
       propertyPath: m_RootOrder
@@ -74830,7 +74807,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6772210288568877323, guid: dcd8aac7c53affe499a58cb25b0b02ef, type: 3}
       propertyPath: m_RootOrder
-      value: 68
+      value: 67
       objectReference: {fileID: 0}
     - target: {fileID: 6772210288568877323, guid: dcd8aac7c53affe499a58cb25b0b02ef, type: 3}
       propertyPath: m_LocalPosition.x
@@ -74891,7 +74868,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1279319478}
-  m_Layer: 0
+  m_Layer: 23
   m_Name: GameObject (28)
   m_TagString: Map
   m_Icon: {fileID: 0}
@@ -75393,7 +75370,7 @@ GameObject:
   - component: {fileID: 1289906890}
   - component: {fileID: 1289906889}
   - component: {fileID: 1289906888}
-  m_Layer: 0
+  m_Layer: 23
   m_Name: BoulderHubRectangular_Tex (1)
   m_TagString: Map
   m_Icon: {fileID: 0}
@@ -76290,7 +76267,7 @@ GameObject:
   - component: {fileID: 1307031074}
   - component: {fileID: 1307031073}
   - component: {fileID: 1307031072}
-  m_Layer: 0
+  m_Layer: 23
   m_Name: BoulderHubRectangular_Tex (4)
   m_TagString: Map
   m_Icon: {fileID: 0}
@@ -76434,9 +76411,25 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 194977203}
     m_Modifications:
+    - target: {fileID: 2233673778500226726, guid: 471e7baae58e73e4ca0a0e4a03e2d673, type: 3}
+      propertyPath: m_Layer
+      value: 23
+      objectReference: {fileID: 0}
+    - target: {fileID: 2233673779587919196, guid: 471e7baae58e73e4ca0a0e4a03e2d673, type: 3}
+      propertyPath: m_Layer
+      value: 23
+      objectReference: {fileID: 0}
+    - target: {fileID: 2233673780090925425, guid: 471e7baae58e73e4ca0a0e4a03e2d673, type: 3}
+      propertyPath: m_Layer
+      value: 23
+      objectReference: {fileID: 0}
     - target: {fileID: 2233673780310377481, guid: 471e7baae58e73e4ca0a0e4a03e2d673, type: 3}
       propertyPath: m_Name
       value: GameObject (35)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2233673780310377481, guid: 471e7baae58e73e4ca0a0e4a03e2d673, type: 3}
+      propertyPath: m_Layer
+      value: 23
       objectReference: {fileID: 0}
     - target: {fileID: 2233673780310377486, guid: 471e7baae58e73e4ca0a0e4a03e2d673, type: 3}
       propertyPath: m_RootOrder
@@ -77816,9 +77809,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1383919057}
     m_Modifications:
+    - target: {fileID: 4640733875849494618, guid: af0b75fd0380b774e80a793d468ce24e, type: 3}
+      propertyPath: m_Layer
+      value: 23
+      objectReference: {fileID: 0}
+    - target: {fileID: 8675640778606374362, guid: af0b75fd0380b774e80a793d468ce24e, type: 3}
+      propertyPath: m_Layer
+      value: 23
+      objectReference: {fileID: 0}
     - target: {fileID: 8675640779870368213, guid: af0b75fd0380b774e80a793d468ce24e, type: 3}
       propertyPath: m_Name
       value: Planet (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8675640779870368213, guid: af0b75fd0380b774e80a793d468ce24e, type: 3}
+      propertyPath: m_Layer
+      value: 23
       objectReference: {fileID: 0}
     - target: {fileID: 8675640779870368214, guid: af0b75fd0380b774e80a793d468ce24e, type: 3}
       propertyPath: m_RootOrder
@@ -78311,7 +78316,7 @@ GameObject:
   - component: {fileID: 1347648033}
   - component: {fileID: 1347648032}
   - component: {fileID: 1347648031}
-  m_Layer: 0
+  m_Layer: 23
   m_Name: BoulderHubRectangular_Tex (1)
   m_TagString: Map
   m_Icon: {fileID: 0}
@@ -78613,7 +78618,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 126
   m_CollisionDetection: 0
 --- !u!212 &1350965150
 SpriteRenderer:
@@ -78992,7 +78997,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6772210288568877323, guid: dcd8aac7c53affe499a58cb25b0b02ef, type: 3}
       propertyPath: m_RootOrder
-      value: 71
+      value: 70
       objectReference: {fileID: 0}
     - target: {fileID: 6772210288568877323, guid: dcd8aac7c53affe499a58cb25b0b02ef, type: 3}
       propertyPath: m_LocalPosition.x
@@ -79037,6 +79042,10 @@ PrefabInstance:
     - target: {fileID: 6858353182194773690, guid: dcd8aac7c53affe499a58cb25b0b02ef, type: 3}
       propertyPath: m_Name
       value: BoulderHubCapsuleWrecked_Tex (24)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6858353182194773690, guid: dcd8aac7c53affe499a58cb25b0b02ef, type: 3}
+      propertyPath: m_Layer
+      value: 23
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dcd8aac7c53affe499a58cb25b0b02ef, type: 3}
@@ -79224,7 +79233,7 @@ GameObject:
   - component: {fileID: 1363316081}
   - component: {fileID: 1363316080}
   - component: {fileID: 1363316079}
-  m_Layer: 0
+  m_Layer: 23
   m_Name: BoulderHubRectangular_Tex (5)
   m_TagString: Map
   m_Icon: {fileID: 0}
@@ -79239,7 +79248,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1363316077}
   m_LocalRotation: {x: -0, y: -0, z: 1, w: 0}
-  m_LocalPosition: {x: -0, y: -61.6, z: 0}
+  m_LocalPosition: {x: -0.73, y: -61.6, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -79839,7 +79848,7 @@ GameObject:
   - component: {fileID: 1378170489}
   - component: {fileID: 1378170488}
   - component: {fileID: 1378170487}
-  m_Layer: 0
+  m_Layer: 23
   m_Name: BoulderHubRectangular_Tex (1)
   m_TagString: Map
   m_Icon: {fileID: 0}
@@ -80037,7 +80046,7 @@ GameObject:
   - component: {fileID: 1381304721}
   - component: {fileID: 1381304720}
   - component: {fileID: 1381304719}
-  m_Layer: 0
+  m_Layer: 23
   m_Name: BoulderHubRectangular_Tex (1)
   m_TagString: Map
   m_Icon: {fileID: 0}
@@ -80296,9 +80305,25 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 194977203}
     m_Modifications:
+    - target: {fileID: 2233673778500226726, guid: 471e7baae58e73e4ca0a0e4a03e2d673, type: 3}
+      propertyPath: m_Layer
+      value: 23
+      objectReference: {fileID: 0}
+    - target: {fileID: 2233673779587919196, guid: 471e7baae58e73e4ca0a0e4a03e2d673, type: 3}
+      propertyPath: m_Layer
+      value: 23
+      objectReference: {fileID: 0}
+    - target: {fileID: 2233673780090925425, guid: 471e7baae58e73e4ca0a0e4a03e2d673, type: 3}
+      propertyPath: m_Layer
+      value: 23
+      objectReference: {fileID: 0}
     - target: {fileID: 2233673780310377481, guid: 471e7baae58e73e4ca0a0e4a03e2d673, type: 3}
       propertyPath: m_Name
       value: GameObject (34)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2233673780310377481, guid: 471e7baae58e73e4ca0a0e4a03e2d673, type: 3}
+      propertyPath: m_Layer
+      value: 23
       objectReference: {fileID: 0}
     - target: {fileID: 2233673780310377486, guid: 471e7baae58e73e4ca0a0e4a03e2d673, type: 3}
       propertyPath: m_RootOrder
@@ -80616,7 +80641,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2233673780310377486, guid: 471e7baae58e73e4ca0a0e4a03e2d673, type: 3}
       propertyPath: m_RootOrder
-      value: 67
+      value: 66
       objectReference: {fileID: 0}
     - target: {fileID: 2233673780310377486, guid: 471e7baae58e73e4ca0a0e4a03e2d673, type: 3}
       propertyPath: m_LocalPosition.x
@@ -82317,6 +82342,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BoulderHubCapsuleWrecked_Tex (17)
       objectReference: {fileID: 0}
+    - target: {fileID: 6858353182194773690, guid: dcd8aac7c53affe499a58cb25b0b02ef, type: 3}
+      propertyPath: m_Layer
+      value: 23
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dcd8aac7c53affe499a58cb25b0b02ef, type: 3}
 --- !u!4 &1421545014 stripped
@@ -82675,7 +82704,7 @@ GameObject:
   - component: {fileID: 1430501018}
   - component: {fileID: 1430501017}
   - component: {fileID: 1430501016}
-  m_Layer: 0
+  m_Layer: 23
   m_Name: BoulderHubRectangular_Tex (4)
   m_TagString: Map
   m_Icon: {fileID: 0}
@@ -83529,7 +83558,7 @@ GameObject:
   - component: {fileID: 1442949267}
   - component: {fileID: 1442949266}
   - component: {fileID: 1442949265}
-  m_Layer: 0
+  m_Layer: 23
   m_Name: BoulderHubRectangular_Tex (1)
   m_TagString: Map
   m_Icon: {fileID: 0}
@@ -83975,7 +84004,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1446396368}
-  m_Layer: 0
+  m_Layer: 23
   m_Name: GameObject (19)
   m_TagString: Map
   m_Icon: {fileID: 0}
@@ -85118,6 +85147,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BoulderHubCapsuleWrecked_Tex (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 6858353182194773690, guid: dcd8aac7c53affe499a58cb25b0b02ef, type: 3}
+      propertyPath: m_Layer
+      value: 23
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dcd8aac7c53affe499a58cb25b0b02ef, type: 3}
 --- !u!4 &1475685236 stripped
@@ -85850,6 +85883,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BoulderHubCapsuleWrecked_Tex (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 6858353182194773690, guid: dcd8aac7c53affe499a58cb25b0b02ef, type: 3}
+      propertyPath: m_Layer
+      value: 23
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dcd8aac7c53affe499a58cb25b0b02ef, type: 3}
 --- !u!4 &1488887973 stripped
@@ -85869,7 +85906,7 @@ GameObject:
   - component: {fileID: 1490695584}
   - component: {fileID: 1490695583}
   - component: {fileID: 1490695586}
-  m_Layer: 0
+  m_Layer: 23
   m_Name: BoulderHubRectangular_Tex (5)
   m_TagString: Map
   m_Icon: {fileID: 0}
@@ -86276,7 +86313,7 @@ GameObject:
   - component: {fileID: 1495504749}
   - component: {fileID: 1495504748}
   - component: {fileID: 1495504747}
-  m_Layer: 0
+  m_Layer: 23
   m_Name: BoulderHubRectangular_Tex (5)
   m_TagString: Map
   m_Icon: {fileID: 0}
@@ -86391,7 +86428,7 @@ GameObject:
   - component: {fileID: 1496490049}
   - component: {fileID: 1496490048}
   - component: {fileID: 1496490047}
-  m_Layer: 0
+  m_Layer: 23
   m_Name: BoulderHubRectangular_Tex (1)
   m_TagString: Map
   m_Icon: {fileID: 0}
@@ -86503,7 +86540,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1497044690}
-  m_Layer: 0
+  m_Layer: 23
   m_Name: GameObject (30)
   m_TagString: Map
   m_Icon: {fileID: 0}
@@ -86879,7 +86916,7 @@ GameObject:
   - component: {fileID: 1502714948}
   - component: {fileID: 1502714947}
   - component: {fileID: 1502714946}
-  m_Layer: 0
+  m_Layer: 23
   m_Name: BoulderHubRectangular_Tex (5)
   m_TagString: Map
   m_Icon: {fileID: 0}
@@ -87406,7 +87443,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1508138881}
-  m_Layer: 0
+  m_Layer: 23
   m_Name: GameObject (31)
   m_TagString: Map
   m_Icon: {fileID: 0}
@@ -87692,9 +87729,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameObject (44)
       objectReference: {fileID: 0}
+    - target: {fileID: 4020318268126944638, guid: 57413785e618c1e4ab598645d751f9a1, type: 3}
+      propertyPath: m_Layer
+      value: 23
+      objectReference: {fileID: 0}
     - target: {fileID: 4020318268126944639, guid: 57413785e618c1e4ab598645d751f9a1, type: 3}
       propertyPath: m_RootOrder
-      value: 64
+      value: 63
       objectReference: {fileID: 0}
     - target: {fileID: 4020318268126944639, guid: 57413785e618c1e4ab598645d751f9a1, type: 3}
       propertyPath: m_LocalPosition.x
@@ -87735,6 +87776,18 @@ PrefabInstance:
     - target: {fileID: 4020318268126944639, guid: 57413785e618c1e4ab598645d751f9a1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4020318269265352333, guid: 57413785e618c1e4ab598645d751f9a1, type: 3}
+      propertyPath: m_Layer
+      value: 23
+      objectReference: {fileID: 0}
+    - target: {fileID: 4020318269429184788, guid: 57413785e618c1e4ab598645d751f9a1, type: 3}
+      propertyPath: m_Layer
+      value: 23
+      objectReference: {fileID: 0}
+    - target: {fileID: 4020318269997988838, guid: 57413785e618c1e4ab598645d751f9a1, type: 3}
+      propertyPath: m_Layer
+      value: 23
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 57413785e618c1e4ab598645d751f9a1, type: 3}
@@ -88738,7 +88791,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1542192807}
-  m_Layer: 0
+  m_Layer: 23
   m_Name: GameObject (23)
   m_TagString: Map
   m_Icon: {fileID: 0}
@@ -89556,7 +89609,7 @@ GameObject:
   - component: {fileID: 1554193772}
   - component: {fileID: 1554193771}
   - component: {fileID: 1554193770}
-  m_Layer: 0
+  m_Layer: 23
   m_Name: BoulderHubRectangular_Tex (4)
   m_TagString: Map
   m_Icon: {fileID: 0}
@@ -90798,7 +90851,7 @@ GameObject:
   - component: {fileID: 1583074819}
   - component: {fileID: 1583074818}
   - component: {fileID: 1583074817}
-  m_Layer: 0
+  m_Layer: 23
   m_Name: BoulderHubRectangular_Tex (5)
   m_TagString: Map
   m_Icon: {fileID: 0}
@@ -92699,7 +92752,7 @@ GameObject:
   - component: {fileID: 1616040773}
   - component: {fileID: 1616040772}
   - component: {fileID: 1616040771}
-  m_Layer: 0
+  m_Layer: 23
   m_Name: BoulderHubRectangular_Tex (5)
   m_TagString: Map
   m_Icon: {fileID: 0}
@@ -92814,7 +92867,7 @@ GameObject:
   - component: {fileID: 1616203560}
   - component: {fileID: 1616203559}
   - component: {fileID: 1616203558}
-  m_Layer: 0
+  m_Layer: 23
   m_Name: BoulderHubRectangular_Tex (5)
   m_TagString: Map
   m_Icon: {fileID: 0}
@@ -92997,7 +93050,7 @@ GameObject:
   - component: {fileID: 1622437623}
   - component: {fileID: 1622437622}
   - component: {fileID: 1622437621}
-  m_Layer: 0
+  m_Layer: 23
   m_Name: BoulderHubRectangular_Tex (4)
   m_TagString: Map
   m_Icon: {fileID: 0}
@@ -93229,7 +93282,7 @@ GameObject:
   - component: {fileID: 1624869643}
   - component: {fileID: 1624869642}
   - component: {fileID: 1624869641}
-  m_Layer: 0
+  m_Layer: 23
   m_Name: BoulderHubRectangular_Tex (1)
   m_TagString: Map
   m_Icon: {fileID: 0}
@@ -94007,7 +94060,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1643399295}
-  m_Layer: 0
+  m_Layer: 23
   m_Name: GameObject (33)
   m_TagString: Map
   m_Icon: {fileID: 0}
@@ -94254,6 +94307,10 @@ PrefabInstance:
     - target: {fileID: 6858353182194773690, guid: dcd8aac7c53affe499a58cb25b0b02ef, type: 3}
       propertyPath: m_Name
       value: BoulderHubCapsuleWrecked_Tex (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6858353182194773690, guid: dcd8aac7c53affe499a58cb25b0b02ef, type: 3}
+      propertyPath: m_Layer
+      value: 23
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dcd8aac7c53affe499a58cb25b0b02ef, type: 3}
@@ -96170,7 +96227,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1684579870}
-  m_Layer: 0
+  m_Layer: 23
   m_Name: GameObject (16)
   m_TagString: Map
   m_Icon: {fileID: 0}
@@ -96291,7 +96348,7 @@ GameObject:
   - component: {fileID: 1688046474}
   - component: {fileID: 1688046473}
   - component: {fileID: 1688046472}
-  m_Layer: 0
+  m_Layer: 23
   m_Name: BoulderHubRectangular_Tex (4)
   m_TagString: Map
   m_Icon: {fileID: 0}
@@ -97128,7 +97185,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1711758880}
-  m_Layer: 0
+  m_Layer: 23
   m_Name: GameObject (9)
   m_TagString: Map
   m_Icon: {fileID: 0}
@@ -98037,7 +98094,7 @@ GameObject:
   - component: {fileID: 1729857282}
   - component: {fileID: 1729857281}
   - component: {fileID: 1729857280}
-  m_Layer: 0
+  m_Layer: 23
   m_Name: BoulderHubRectangular_Tex (4)
   m_TagString: Map
   m_Icon: {fileID: 0}
@@ -98407,7 +98464,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4020318268126944639, guid: 57413785e618c1e4ab598645d751f9a1, type: 3}
       propertyPath: m_RootOrder
-      value: 64
+      value: 63
       objectReference: {fileID: 0}
     - target: {fileID: 4020318268126944639, guid: 57413785e618c1e4ab598645d751f9a1, type: 3}
       propertyPath: m_LocalPosition.x
@@ -98557,6 +98614,10 @@ PrefabInstance:
     - target: {fileID: 6858353182194773690, guid: dcd8aac7c53affe499a58cb25b0b02ef, type: 3}
       propertyPath: m_Name
       value: BoulderHubCapsuleWrecked_Tex (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6858353182194773690, guid: dcd8aac7c53affe499a58cb25b0b02ef, type: 3}
+      propertyPath: m_Layer
+      value: 23
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dcd8aac7c53affe499a58cb25b0b02ef, type: 3}
@@ -98781,7 +98842,7 @@ GameObject:
   - component: {fileID: 1741758630}
   - component: {fileID: 1741758629}
   - component: {fileID: 1741758628}
-  m_Layer: 0
+  m_Layer: 23
   m_Name: BoulderHubRectangular_Tex (1)
   m_TagString: Map
   m_Icon: {fileID: 0}
@@ -99358,6 +99419,10 @@ PrefabInstance:
     - target: {fileID: 6858353182194773690, guid: dcd8aac7c53affe499a58cb25b0b02ef, type: 3}
       propertyPath: m_Name
       value: BoulderHubCapsuleWrecked_Tex (11)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6858353182194773690, guid: dcd8aac7c53affe499a58cb25b0b02ef, type: 3}
+      propertyPath: m_Layer
+      value: 23
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dcd8aac7c53affe499a58cb25b0b02ef, type: 3}
@@ -101008,7 +101073,7 @@ GameObject:
   - component: {fileID: 1784997419}
   - component: {fileID: 1784997418}
   - component: {fileID: 1784997417}
-  m_Layer: 0
+  m_Layer: 23
   m_Name: BoulderHubRectangular_Tex (4)
   m_TagString: Map
   m_Icon: {fileID: 0}
@@ -102704,7 +102769,7 @@ GameObject:
   - component: {fileID: 1801363678}
   - component: {fileID: 1801363677}
   - component: {fileID: 1801363676}
-  m_Layer: 0
+  m_Layer: 23
   m_Name: BoulderHubRectangular_Tex (4)
   m_TagString: Map
   m_Icon: {fileID: 0}
@@ -102719,7 +102784,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1801363674}
   m_LocalRotation: {x: -0, y: -0, z: 1, w: 0}
-  m_LocalPosition: {x: -0, y: -56.1, z: 0}
+  m_LocalPosition: {x: -0.73, y: -56.1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -102807,11 +102872,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!4 &1803610948 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 6772210288568877323, guid: dcd8aac7c53affe499a58cb25b0b02ef, type: 3}
-  m_PrefabInstance: {fileID: 1951889804}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1804818509
 GameObject:
   m_ObjectHideFlags: 0
@@ -103159,7 +103219,7 @@ GameObject:
   - component: {fileID: 1811152126}
   - component: {fileID: 1811152125}
   - component: {fileID: 1811152124}
-  m_Layer: 0
+  m_Layer: 23
   m_Name: BoulderHubRectangular_Tex (5)
   m_TagString: Map
   m_Icon: {fileID: 0}
@@ -103681,7 +103741,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1821790154}
-  m_Layer: 0
+  m_Layer: 23
   m_Name: GameObject (7)
   m_TagString: Map
   m_Icon: {fileID: 0}
@@ -103964,7 +104024,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6772210288568877323, guid: dcd8aac7c53affe499a58cb25b0b02ef, type: 3}
       propertyPath: m_RootOrder
-      value: 72
+      value: 71
       objectReference: {fileID: 0}
     - target: {fileID: 6772210288568877323, guid: dcd8aac7c53affe499a58cb25b0b02ef, type: 3}
       propertyPath: m_LocalPosition.x
@@ -104009,6 +104069,10 @@ PrefabInstance:
     - target: {fileID: 6858353182194773690, guid: dcd8aac7c53affe499a58cb25b0b02ef, type: 3}
       propertyPath: m_Name
       value: BoulderHubCapsuleWrecked_Tex (25)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6858353182194773690, guid: dcd8aac7c53affe499a58cb25b0b02ef, type: 3}
+      propertyPath: m_Layer
+      value: 23
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dcd8aac7c53affe499a58cb25b0b02ef, type: 3}
@@ -104721,9 +104785,25 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 194977203}
     m_Modifications:
+    - target: {fileID: 2233673778500226726, guid: 471e7baae58e73e4ca0a0e4a03e2d673, type: 3}
+      propertyPath: m_Layer
+      value: 23
+      objectReference: {fileID: 0}
+    - target: {fileID: 2233673779587919196, guid: 471e7baae58e73e4ca0a0e4a03e2d673, type: 3}
+      propertyPath: m_Layer
+      value: 23
+      objectReference: {fileID: 0}
+    - target: {fileID: 2233673780090925425, guid: 471e7baae58e73e4ca0a0e4a03e2d673, type: 3}
+      propertyPath: m_Layer
+      value: 23
+      objectReference: {fileID: 0}
     - target: {fileID: 2233673780310377481, guid: 471e7baae58e73e4ca0a0e4a03e2d673, type: 3}
       propertyPath: m_Name
       value: GameObject (36)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2233673780310377481, guid: 471e7baae58e73e4ca0a0e4a03e2d673, type: 3}
+      propertyPath: m_Layer
+      value: 23
       objectReference: {fileID: 0}
     - target: {fileID: 2233673780310377486, guid: 471e7baae58e73e4ca0a0e4a03e2d673, type: 3}
       propertyPath: m_RootOrder
@@ -104987,7 +105067,7 @@ GameObject:
   - component: {fileID: 1846373800}
   - component: {fileID: 1846373799}
   - component: {fileID: 1846373798}
-  m_Layer: 0
+  m_Layer: 23
   m_Name: BoulderHubRectangular_Tex (5)
   m_TagString: Map
   m_Icon: {fileID: 0}
@@ -106297,7 +106377,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1870498022}
-  m_Layer: 0
+  m_Layer: 23
   m_Name: GameObject (17)
   m_TagString: Map
   m_Icon: {fileID: 0}
@@ -106500,7 +106580,7 @@ GameObject:
   - component: {fileID: 1873259537}
   - component: {fileID: 1873259538}
   - component: {fileID: 1873259539}
-  m_Layer: 7
+  m_Layer: 23
   m_Name: MapIconFriendBunnySpritesheet_Tex_9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -106808,6 +106888,10 @@ PrefabInstance:
     - target: {fileID: 6858353182194773690, guid: dcd8aac7c53affe499a58cb25b0b02ef, type: 3}
       propertyPath: m_Name
       value: BoulderHubCapsuleWrecked_Tex (14)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6858353182194773690, guid: dcd8aac7c53affe499a58cb25b0b02ef, type: 3}
+      propertyPath: m_Layer
+      value: 23
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dcd8aac7c53affe499a58cb25b0b02ef, type: 3}
@@ -107363,7 +107447,7 @@ GameObject:
   - component: {fileID: 1893639970}
   - component: {fileID: 1893639969}
   - component: {fileID: 1893639968}
-  m_Layer: 0
+  m_Layer: 23
   m_Name: BoulderHubRectangular_Tex (4)
   m_TagString: Map
   m_Icon: {fileID: 0}
@@ -107593,7 +107677,7 @@ GameObject:
   - component: {fileID: 1893987029}
   - component: {fileID: 1893987028}
   - component: {fileID: 1893987031}
-  m_Layer: 0
+  m_Layer: 23
   m_Name: BoulderHubRectangular_Tex (4)
   m_TagString: Map
   m_Icon: {fileID: 0}
@@ -109518,7 +109602,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 126
   m_CollisionDetection: 0
 --- !u!212 &1920874963
 SpriteRenderer:
@@ -109946,7 +110030,7 @@ GameObject:
   - component: {fileID: 1929490216}
   - component: {fileID: 1929490215}
   - component: {fileID: 1929490214}
-  m_Layer: 0
+  m_Layer: 23
   m_Name: BoulderHubRectangular_Tex (5)
   m_TagString: Map
   m_Icon: {fileID: 0}
@@ -110421,6 +110505,10 @@ PrefabInstance:
     - target: {fileID: 6858353182194773690, guid: dcd8aac7c53affe499a58cb25b0b02ef, type: 3}
       propertyPath: m_Name
       value: BoulderHubCapsuleWrecked_Tex (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6858353182194773690, guid: dcd8aac7c53affe499a58cb25b0b02ef, type: 3}
+      propertyPath: m_Layer
+      value: 23
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dcd8aac7c53affe499a58cb25b0b02ef, type: 3}
@@ -111279,7 +111367,7 @@ GameObject:
   - component: {fileID: 1948791132}
   - component: {fileID: 1948791131}
   - component: {fileID: 1948791130}
-  m_Layer: 0
+  m_Layer: 23
   m_Name: BoulderHubRectangular_Tex (4)
   m_TagString: Map
   m_Icon: {fileID: 0}
@@ -111389,9 +111477,25 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 194977203}
     m_Modifications:
+    - target: {fileID: 2233673778500226726, guid: 471e7baae58e73e4ca0a0e4a03e2d673, type: 3}
+      propertyPath: m_Layer
+      value: 23
+      objectReference: {fileID: 0}
+    - target: {fileID: 2233673779587919196, guid: 471e7baae58e73e4ca0a0e4a03e2d673, type: 3}
+      propertyPath: m_Layer
+      value: 23
+      objectReference: {fileID: 0}
+    - target: {fileID: 2233673780090925425, guid: 471e7baae58e73e4ca0a0e4a03e2d673, type: 3}
+      propertyPath: m_Layer
+      value: 23
+      objectReference: {fileID: 0}
     - target: {fileID: 2233673780310377481, guid: 471e7baae58e73e4ca0a0e4a03e2d673, type: 3}
       propertyPath: m_Name
       value: GameObject (42)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2233673780310377481, guid: 471e7baae58e73e4ca0a0e4a03e2d673, type: 3}
+      propertyPath: m_Layer
+      value: 23
       objectReference: {fileID: 0}
     - target: {fileID: 2233673780310377486, guid: 471e7baae58e73e4ca0a0e4a03e2d673, type: 3}
       propertyPath: m_RootOrder
@@ -111444,79 +111548,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2233673780310377486, guid: 471e7baae58e73e4ca0a0e4a03e2d673, type: 3}
   m_PrefabInstance: {fileID: 1951246018}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &1951889804
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 546139529}
-    m_Modifications:
-    - target: {fileID: 4856910567308056261, guid: dcd8aac7c53affe499a58cb25b0b02ef, type: 3}
-      propertyPath: m_Color.b
-      value: 0.62352943
-      objectReference: {fileID: 0}
-    - target: {fileID: 4856910567308056261, guid: dcd8aac7c53affe499a58cb25b0b02ef, type: 3}
-      propertyPath: m_Color.g
-      value: 0.3254902
-      objectReference: {fileID: 0}
-    - target: {fileID: 4856910567308056261, guid: dcd8aac7c53affe499a58cb25b0b02ef, type: 3}
-      propertyPath: m_Color.r
-      value: 0.49019608
-      objectReference: {fileID: 0}
-    - target: {fileID: 6772210288568877323, guid: dcd8aac7c53affe499a58cb25b0b02ef, type: 3}
-      propertyPath: m_RootOrder
-      value: 61
-      objectReference: {fileID: 0}
-    - target: {fileID: 6772210288568877323, guid: dcd8aac7c53affe499a58cb25b0b02ef, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 8.7
-      objectReference: {fileID: 0}
-    - target: {fileID: 6772210288568877323, guid: dcd8aac7c53affe499a58cb25b0b02ef, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -8.81
-      objectReference: {fileID: 0}
-    - target: {fileID: 6772210288568877323, guid: dcd8aac7c53affe499a58cb25b0b02ef, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.42517823
-      objectReference: {fileID: 0}
-    - target: {fileID: 6772210288568877323, guid: dcd8aac7c53affe499a58cb25b0b02ef, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 6772210288568877323, guid: dcd8aac7c53affe499a58cb25b0b02ef, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6772210288568877323, guid: dcd8aac7c53affe499a58cb25b0b02ef, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6772210288568877323, guid: dcd8aac7c53affe499a58cb25b0b02ef, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 6772210288568877323, guid: dcd8aac7c53affe499a58cb25b0b02ef, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6772210288568877323, guid: dcd8aac7c53affe499a58cb25b0b02ef, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6772210288568877323, guid: dcd8aac7c53affe499a58cb25b0b02ef, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 90
-      objectReference: {fileID: 0}
-    - target: {fileID: 6858353182194773690, guid: dcd8aac7c53affe499a58cb25b0b02ef, type: 3}
-      propertyPath: m_Name
-      value: BoulderHubCapsuleWrecked_Tex (20)
-      objectReference: {fileID: 0}
-    - target: {fileID: 6858353182194773690, guid: dcd8aac7c53affe499a58cb25b0b02ef, type: 3}
-      propertyPath: m_Layer
-      value: 7
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: dcd8aac7c53affe499a58cb25b0b02ef, type: 3}
 --- !u!1 &1952548299
 GameObject:
   m_ObjectHideFlags: 0
@@ -113290,13 +113321,29 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 194977203}
     m_Modifications:
+    - target: {fileID: 2233673778500226726, guid: 471e7baae58e73e4ca0a0e4a03e2d673, type: 3}
+      propertyPath: m_Layer
+      value: 23
+      objectReference: {fileID: 0}
+    - target: {fileID: 2233673779587919196, guid: 471e7baae58e73e4ca0a0e4a03e2d673, type: 3}
+      propertyPath: m_Layer
+      value: 23
+      objectReference: {fileID: 0}
+    - target: {fileID: 2233673780090925425, guid: 471e7baae58e73e4ca0a0e4a03e2d673, type: 3}
+      propertyPath: m_Layer
+      value: 23
+      objectReference: {fileID: 0}
     - target: {fileID: 2233673780310377481, guid: 471e7baae58e73e4ca0a0e4a03e2d673, type: 3}
       propertyPath: m_Name
       value: GameObject (43)
       objectReference: {fileID: 0}
+    - target: {fileID: 2233673780310377481, guid: 471e7baae58e73e4ca0a0e4a03e2d673, type: 3}
+      propertyPath: m_Layer
+      value: 23
+      objectReference: {fileID: 0}
     - target: {fileID: 2233673780310377486, guid: 471e7baae58e73e4ca0a0e4a03e2d673, type: 3}
       propertyPath: m_RootOrder
-      value: 62
+      value: 61
       objectReference: {fileID: 0}
     - target: {fileID: 2233673780310377486, guid: 471e7baae58e73e4ca0a0e4a03e2d673, type: 3}
       propertyPath: m_LocalPosition.x
@@ -113344,68 +113391,6 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 2233673780310377486, guid: 471e7baae58e73e4ca0a0e4a03e2d673, type: 3}
   m_PrefabInstance: {fileID: 1982959184}
-  m_PrefabAsset: {fileID: 0}
---- !u!1001 &1986817834
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 194977203}
-    m_Modifications:
-    - target: {fileID: 6772210288568877323, guid: dcd8aac7c53affe499a58cb25b0b02ef, type: 3}
-      propertyPath: m_RootOrder
-      value: 60
-      objectReference: {fileID: 0}
-    - target: {fileID: 6772210288568877323, guid: dcd8aac7c53affe499a58cb25b0b02ef, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 8.7
-      objectReference: {fileID: 0}
-    - target: {fileID: 6772210288568877323, guid: dcd8aac7c53affe499a58cb25b0b02ef, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -21.34
-      objectReference: {fileID: 0}
-    - target: {fileID: 6772210288568877323, guid: dcd8aac7c53affe499a58cb25b0b02ef, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.42517823
-      objectReference: {fileID: 0}
-    - target: {fileID: 6772210288568877323, guid: dcd8aac7c53affe499a58cb25b0b02ef, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 6772210288568877323, guid: dcd8aac7c53affe499a58cb25b0b02ef, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6772210288568877323, guid: dcd8aac7c53affe499a58cb25b0b02ef, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6772210288568877323, guid: dcd8aac7c53affe499a58cb25b0b02ef, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 6772210288568877323, guid: dcd8aac7c53affe499a58cb25b0b02ef, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6772210288568877323, guid: dcd8aac7c53affe499a58cb25b0b02ef, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6772210288568877323, guid: dcd8aac7c53affe499a58cb25b0b02ef, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 90
-      objectReference: {fileID: 0}
-    - target: {fileID: 6858353182194773690, guid: dcd8aac7c53affe499a58cb25b0b02ef, type: 3}
-      propertyPath: m_Name
-      value: BoulderHubCapsuleWrecked_Tex (19)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: dcd8aac7c53affe499a58cb25b0b02ef, type: 3}
---- !u!4 &1986817835 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 6772210288568877323, guid: dcd8aac7c53affe499a58cb25b0b02ef, type: 3}
-  m_PrefabInstance: {fileID: 1986817834}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1989540640
 GameObject:
@@ -113772,7 +113757,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 126
   m_CollisionDetection: 0
 --- !u!212 &1994846502
 SpriteRenderer:
@@ -114389,7 +114374,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4020318268126944639, guid: 57413785e618c1e4ab598645d751f9a1, type: 3}
       propertyPath: m_RootOrder
-      value: 63
+      value: 62
       objectReference: {fileID: 0}
     - target: {fileID: 4020318268126944639, guid: 57413785e618c1e4ab598645d751f9a1, type: 3}
       propertyPath: m_LocalPosition.x
@@ -115408,7 +115393,7 @@ GameObject:
   - component: {fileID: 2019095635}
   - component: {fileID: 2019095634}
   - component: {fileID: 2019095633}
-  m_Layer: 0
+  m_Layer: 23
   m_Name: BoulderHubRectangular_Tex (1)
   m_TagString: Map
   m_Icon: {fileID: 0}
@@ -116186,7 +116171,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 126
   m_CollisionDetection: 0
 --- !u!212 &2028688936
 SpriteRenderer:
@@ -116904,13 +116889,29 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 194977203}
     m_Modifications:
+    - target: {fileID: 2233673778500226726, guid: 471e7baae58e73e4ca0a0e4a03e2d673, type: 3}
+      propertyPath: m_Layer
+      value: 23
+      objectReference: {fileID: 0}
+    - target: {fileID: 2233673779587919196, guid: 471e7baae58e73e4ca0a0e4a03e2d673, type: 3}
+      propertyPath: m_Layer
+      value: 23
+      objectReference: {fileID: 0}
+    - target: {fileID: 2233673780090925425, guid: 471e7baae58e73e4ca0a0e4a03e2d673, type: 3}
+      propertyPath: m_Layer
+      value: 23
+      objectReference: {fileID: 0}
     - target: {fileID: 2233673780310377481, guid: 471e7baae58e73e4ca0a0e4a03e2d673, type: 3}
       propertyPath: m_Name
       value: GameObject (45)
       objectReference: {fileID: 0}
+    - target: {fileID: 2233673780310377481, guid: 471e7baae58e73e4ca0a0e4a03e2d673, type: 3}
+      propertyPath: m_Layer
+      value: 23
+      objectReference: {fileID: 0}
     - target: {fileID: 2233673780310377486, guid: 471e7baae58e73e4ca0a0e4a03e2d673, type: 3}
       propertyPath: m_RootOrder
-      value: 65
+      value: 64
       objectReference: {fileID: 0}
     - target: {fileID: 2233673780310377486, guid: 471e7baae58e73e4ca0a0e4a03e2d673, type: 3}
       propertyPath: m_LocalPosition.x
@@ -117221,7 +117222,7 @@ GameObject:
   - component: {fileID: 2046709208}
   - component: {fileID: 2046709207}
   - component: {fileID: 2046709206}
-  m_Layer: 0
+  m_Layer: 23
   m_Name: BoulderHubRectangular_Tex (1)
   m_TagString: Map
   m_Icon: {fileID: 0}
@@ -117819,7 +117820,7 @@ GameObject:
   - component: {fileID: 2052493723}
   - component: {fileID: 2052493722}
   - component: {fileID: 2052493721}
-  m_Layer: 0
+  m_Layer: 23
   m_Name: BoulderHubRectangular_Tex (4)
   m_TagString: Map
   m_Icon: {fileID: 0}
@@ -119185,7 +119186,7 @@ GameObject:
   - component: {fileID: 2077542311}
   - component: {fileID: 2077542310}
   - component: {fileID: 2077542309}
-  m_Layer: 0
+  m_Layer: 23
   m_Name: BoulderHubRectangular_Tex (4)
   m_TagString: Map
   m_Icon: {fileID: 0}
@@ -119814,6 +119815,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BoulderHubCapsuleWrecked_Tex (13)
       objectReference: {fileID: 0}
+    - target: {fileID: 6858353182194773690, guid: dcd8aac7c53affe499a58cb25b0b02ef, type: 3}
+      propertyPath: m_Layer
+      value: 23
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dcd8aac7c53affe499a58cb25b0b02ef, type: 3}
 --- !u!4 &2087267572 stripped
@@ -119950,7 +119955,7 @@ GameObject:
   - component: {fileID: 2091279426}
   - component: {fileID: 2091279425}
   - component: {fileID: 2091279424}
-  m_Layer: 0
+  m_Layer: 23
   m_Name: BoulderHubRectangular_Tex (4)
   m_TagString: Map
   m_Icon: {fileID: 0}
@@ -120482,9 +120487,25 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 194977203}
     m_Modifications:
+    - target: {fileID: 2233673778500226726, guid: 471e7baae58e73e4ca0a0e4a03e2d673, type: 3}
+      propertyPath: m_Layer
+      value: 23
+      objectReference: {fileID: 0}
+    - target: {fileID: 2233673779587919196, guid: 471e7baae58e73e4ca0a0e4a03e2d673, type: 3}
+      propertyPath: m_Layer
+      value: 23
+      objectReference: {fileID: 0}
+    - target: {fileID: 2233673780090925425, guid: 471e7baae58e73e4ca0a0e4a03e2d673, type: 3}
+      propertyPath: m_Layer
+      value: 23
+      objectReference: {fileID: 0}
     - target: {fileID: 2233673780310377481, guid: 471e7baae58e73e4ca0a0e4a03e2d673, type: 3}
       propertyPath: m_Name
       value: GameObject (41)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2233673780310377481, guid: 471e7baae58e73e4ca0a0e4a03e2d673, type: 3}
+      propertyPath: m_Layer
+      value: 23
       objectReference: {fileID: 0}
     - target: {fileID: 2233673780310377486, guid: 471e7baae58e73e4ca0a0e4a03e2d673, type: 3}
       propertyPath: m_RootOrder
@@ -120940,7 +120961,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2233673780310377486, guid: 471e7baae58e73e4ca0a0e4a03e2d673, type: 3}
       propertyPath: m_RootOrder
-      value: 65
+      value: 64
       objectReference: {fileID: 0}
     - target: {fileID: 2233673780310377486, guid: 471e7baae58e73e4ca0a0e4a03e2d673, type: 3}
       propertyPath: m_LocalPosition.x
@@ -121621,7 +121642,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6772210288568877323, guid: dcd8aac7c53affe499a58cb25b0b02ef, type: 3}
       propertyPath: m_RootOrder
-      value: 73
+      value: 72
       objectReference: {fileID: 0}
     - target: {fileID: 6772210288568877323, guid: dcd8aac7c53affe499a58cb25b0b02ef, type: 3}
       propertyPath: m_LocalPosition.x
@@ -122947,6 +122968,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Button
       objectReference: {fileID: 0}
+    - target: {fileID: 1839285944889265399, guid: bbfd7c67daf236a48a2085972547489b, type: 3}
+      propertyPath: m_Layer
+      value: 23
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bbfd7c67daf236a48a2085972547489b, type: 3}
 --- !u!4 &1839285945093893372 stripped
@@ -122961,9 +122986,25 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 194977203}
     m_Modifications:
+    - target: {fileID: 2233673778500226726, guid: 471e7baae58e73e4ca0a0e4a03e2d673, type: 3}
+      propertyPath: m_Layer
+      value: 23
+      objectReference: {fileID: 0}
+    - target: {fileID: 2233673779587919196, guid: 471e7baae58e73e4ca0a0e4a03e2d673, type: 3}
+      propertyPath: m_Layer
+      value: 23
+      objectReference: {fileID: 0}
+    - target: {fileID: 2233673780090925425, guid: 471e7baae58e73e4ca0a0e4a03e2d673, type: 3}
+      propertyPath: m_Layer
+      value: 23
+      objectReference: {fileID: 0}
     - target: {fileID: 2233673780310377481, guid: 471e7baae58e73e4ca0a0e4a03e2d673, type: 3}
       propertyPath: m_Name
       value: GameObject (20)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2233673780310377481, guid: 471e7baae58e73e4ca0a0e4a03e2d673, type: 3}
+      propertyPath: m_Layer
+      value: 23
       objectReference: {fileID: 0}
     - target: {fileID: 2233673780310377486, guid: 471e7baae58e73e4ca0a0e4a03e2d673, type: 3}
       propertyPath: m_RootOrder
@@ -123022,6 +123063,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameObject (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 4020318268126944638, guid: 57413785e618c1e4ab598645d751f9a1, type: 3}
+      propertyPath: m_Layer
+      value: 23
+      objectReference: {fileID: 0}
     - target: {fileID: 4020318268126944639, guid: 57413785e618c1e4ab598645d751f9a1, type: 3}
       propertyPath: m_RootOrder
       value: 7
@@ -123066,6 +123111,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4020318269265352333, guid: 57413785e618c1e4ab598645d751f9a1, type: 3}
+      propertyPath: m_Layer
+      value: 23
+      objectReference: {fileID: 0}
+    - target: {fileID: 4020318269429184788, guid: 57413785e618c1e4ab598645d751f9a1, type: 3}
+      propertyPath: m_Layer
+      value: 23
+      objectReference: {fileID: 0}
+    - target: {fileID: 4020318269997988838, guid: 57413785e618c1e4ab598645d751f9a1, type: 3}
+      propertyPath: m_Layer
+      value: 23
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 57413785e618c1e4ab598645d751f9a1, type: 3}
 --- !u!1001 &4761547425168948884
@@ -123080,8 +123137,16 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4761547424143479162, guid: 344e6e7cb74ad1a498c095a98d377664, type: 3}
+      propertyPath: m_Layer
+      value: 23
+      objectReference: {fileID: 0}
+    - target: {fileID: 4761547424143479162, guid: 344e6e7cb74ad1a498c095a98d377664, type: 3}
       propertyPath: m_TagString
       value: Map
+      objectReference: {fileID: 0}
+    - target: {fileID: 4761547424503382944, guid: 344e6e7cb74ad1a498c095a98d377664, type: 3}
+      propertyPath: m_Layer
+      value: 23
       objectReference: {fileID: 0}
     - target: {fileID: 4761547424503382944, guid: 344e6e7cb74ad1a498c095a98d377664, type: 3}
       propertyPath: m_TagString
@@ -123102,6 +123167,10 @@ PrefabInstance:
     - target: {fileID: 4761547425927618170, guid: 344e6e7cb74ad1a498c095a98d377664, type: 3}
       propertyPath: m_Name
       value: ButtonWall
+      objectReference: {fileID: 0}
+    - target: {fileID: 4761547425927618170, guid: 344e6e7cb74ad1a498c095a98d377664, type: 3}
+      propertyPath: m_Layer
+      value: 23
       objectReference: {fileID: 0}
     - target: {fileID: 4761547425927618170, guid: 344e6e7cb74ad1a498c095a98d377664, type: 3}
       propertyPath: m_TagString
@@ -123221,6 +123290,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BoulderHubCapsuleWrecked_Tex
       objectReference: {fileID: 0}
+    - target: {fileID: 6858353182194773690, guid: dcd8aac7c53affe499a58cb25b0b02ef, type: 3}
+      propertyPath: m_Layer
+      value: 23
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dcd8aac7c53affe499a58cb25b0b02ef, type: 3}
 --- !u!4 &4990488684456478978 stripped
@@ -123240,7 +123313,7 @@ GameObject:
   - component: {fileID: 6631802506943405624}
   - component: {fileID: 755458268489070684}
   - component: {fileID: 1794822962561308387}
-  m_Layer: 0
+  m_Layer: 23
   m_Name: BoulderHubRectangular_Tex (5)
   m_TagString: Map
   m_Icon: {fileID: 0}
@@ -123321,6 +123394,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1783750612}
     m_Modifications:
+    - target: {fileID: 4761547424143479162, guid: 344e6e7cb74ad1a498c095a98d377664, type: 3}
+      propertyPath: m_Layer
+      value: 23
+      objectReference: {fileID: 0}
+    - target: {fileID: 4761547424503382944, guid: 344e6e7cb74ad1a498c095a98d377664, type: 3}
+      propertyPath: m_Layer
+      value: 23
+      objectReference: {fileID: 0}
     - target: {fileID: 4761547425927618148, guid: 344e6e7cb74ad1a498c095a98d377664, type: 3}
       propertyPath: button
       value: 
@@ -123332,6 +123413,10 @@ PrefabInstance:
     - target: {fileID: 4761547425927618170, guid: 344e6e7cb74ad1a498c095a98d377664, type: 3}
       propertyPath: m_Name
       value: ButtonWall (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4761547425927618170, guid: 344e6e7cb74ad1a498c095a98d377664, type: 3}
+      propertyPath: m_Layer
+      value: 23
       objectReference: {fileID: 0}
     - target: {fileID: 4761547425927618171, guid: 344e6e7cb74ad1a498c095a98d377664, type: 3}
       propertyPath: m_RootOrder
