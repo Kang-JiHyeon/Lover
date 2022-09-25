@@ -161,8 +161,8 @@ public class KIM_LobbyManager : MonoBehaviourPunCallbacks
     [PunRPC]
     void RPCLoadScene()
     {
-        //PhotonNetwork.LoadLevel("KIM_Scene_Game");
-        PhotonNetwork.LoadLevel("KANG_Scene_Game 2");
+        PhotonNetwork.LoadLevel("KIM_Scene_Game 2");
+        //PhotonNetwork.LoadLevel("KANG_Scene_Game 2");
     }
 
     //¹æ »ý¼º
