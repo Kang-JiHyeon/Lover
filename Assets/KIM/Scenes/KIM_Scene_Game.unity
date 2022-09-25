@@ -2613,29 +2613,9 @@ PrefabInstance:
       propertyPath: sceneViewId
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 2872528265906593010, guid: 749d56a947a95634c8e62330be538ce1, type: 3}
-      propertyPath: turretEffect
-      value: 
-      objectReference: {fileID: 1325162549174434037, guid: 6efef897733d8db40b3e031e58bb1f61, type: 3}
-    - target: {fileID: 2872528266473275162, guid: 749d56a947a95634c8e62330be538ce1, type: 3}
-      propertyPath: turretEffect
-      value: 
-      objectReference: {fileID: 1325162549174434037, guid: 6efef897733d8db40b3e031e58bb1f61, type: 3}
     - target: {fileID: 2872528266671130596, guid: 749d56a947a95634c8e62330be538ce1, type: 3}
       propertyPath: sceneViewId
       value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 2872528266976725879, guid: 749d56a947a95634c8e62330be538ce1, type: 3}
-      propertyPath: turretEffect
-      value: 
-      objectReference: {fileID: 1325162549174434037, guid: 6efef897733d8db40b3e031e58bb1f61, type: 3}
-    - target: {fileID: 2872528266986062383, guid: 749d56a947a95634c8e62330be538ce1, type: 3}
-      propertyPath: turretEffect
-      value: 
-      objectReference: {fileID: 1325162549174434037, guid: 6efef897733d8db40b3e031e58bb1f61, type: 3}
-    - target: {fileID: 2872528267316947633, guid: 749d56a947a95634c8e62330be538ce1, type: 3}
-      propertyPath: m_Icon
-      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 2872528267451710967, guid: 749d56a947a95634c8e62330be538ce1, type: 3}
       propertyPath: m_Name
@@ -2696,50 +2676,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2872528267451710967, guid: 749d56a947a95634c8e62330be538ce1, type: 3}
   m_PrefabInstance: {fileID: 54165704}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &54165706
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 54165705}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6380e80cddb29e14192671aabbda0924, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dieEffect: {fileID: 1298771497853436609, guid: 108479979bf30e64c85cffe583a4de76, type: 3}
---- !u!1 &54165707 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2872528266198184140, guid: 749d56a947a95634c8e62330be538ce1, type: 3}
-  m_PrefabInstance: {fileID: 54165704}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &54165708
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 54165707}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7c4c2c4e4c233444594f2655ef3afbb8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  engineEffect: {fileID: 2255599692758329746, guid: 24c5a96d78bf2574c92b70e04592fcfd, type: 3}
---- !u!114 &54165713
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 54165705}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ef648b09075e4054fb622e5b07d42042, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  HittedEffect: {fileID: 7831183381731700664, guid: 6219995037a4f1e4099aa664475be320, type: 3}
 --- !u!1 &54432556
 GameObject:
   m_ObjectHideFlags: 0
