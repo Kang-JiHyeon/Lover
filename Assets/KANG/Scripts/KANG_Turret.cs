@@ -7,6 +7,8 @@ using Photon.Pun;
 
 public class KANG_Turret : KANG_Machine
 {
+    AudioSource source;
+    public AudioClip attackSound;
     // Fire
     public List<Transform> turretCannons;
     public GameObject bulletFactory;
@@ -21,6 +23,7 @@ public class KANG_Turret : KANG_Machine
     // Start is called before the first frame update
     void Start()
     {
+        source = GetComponent<AudioSource>();
         // √—±∏ ¿‘±∏
         for (int i = 0; i < rotAxis.childCount; i++)
         {
@@ -120,6 +123,7 @@ public class KANG_Turret : KANG_Machine
     [PunRPC]
     void RPCTurretEffect(int idx)
     {
+        source.PlayOneShot(attackSound);
         GameObject effect = Instantiate(turretEffect);
         effect.transform.position = turretCannons[idx].position + turretCannons[idx].up * 0.5f;
         effect.transform.up = turretCannons[idx].up;

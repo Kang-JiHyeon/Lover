@@ -6,6 +6,10 @@ using UnityEngine.UI;
 
 public class KIM_LobbyManager : MonoBehaviourPunCallbacks
 {
+    AudioSource source;
+    public AudioClip swipe;
+    public AudioClip ready;
+
     public GameObject text;
     public GameObject readyText1;
     public GameObject readyText2;
@@ -104,6 +108,7 @@ public class KIM_LobbyManager : MonoBehaviourPunCallbacks
 
     void Start()
     {
+        source = GetComponent<AudioSource>();
         CreateRoom();
         arr[0] = charactor1;
         arr[1] = charactor2;
@@ -257,6 +262,54 @@ public class KIM_LobbyManager : MonoBehaviourPunCallbacks
             photonView.RPC("RPCReady", RpcTarget.AllBuffered, false, 4);
         }
 
+        // 내가 플레이어 1일 때, 엔터키 누르면 레디
+        if (text.activeSelf == true && Input.GetKeyDown(KeyCode.Return) && playerIndex == 1)
+        {
+            photonView.RPC("RPCSound", RpcTarget.All);
+            photonView.RPC("RPCReady", RpcTarget.AllBuffered, true, 1);
+        }
+        // 내가 플레이어 1일 때, ESC를 누르면 레디 해제
+        else if (text.activeSelf == true && Input.GetKeyDown(KeyCode.Escape) && playerIndex == 1)
+        {
+            photonView.RPC("RPCReady", RpcTarget.AllBuffered, false, 1);
+        }
+
+        // 내가 플레이어 2일 때, 엔터키 누르면 레디
+        if (text.activeSelf == true && Input.GetKeyDown(KeyCode.Return) && playerIndex == 2)
+        {
+            photonView.RPC("RPCSound", RpcTarget.All);
+            photonView.RPC("RPCReady", RpcTarget.AllBuffered, true, 2);
+        }
+        // 내가 플레이어 2일 때, ESC를 누르면 레디 해제
+        else if (text.activeSelf == true && Input.GetKeyDown(KeyCode.Escape) && playerIndex == 2)
+        {
+            photonView.RPC("RPCReady", RpcTarget.AllBuffered, false, 2);
+        }
+
+        // 내가 플레이어 3일 때, 엔터키 누르면 레디
+        if (text.activeSelf == true && Input.GetKeyDown(KeyCode.Return) && playerIndex == 3)
+        {
+            photonView.RPC("RPCSound", RpcTarget.All);
+            photonView.RPC("RPCReady", RpcTarget.AllBuffered, true, 3);
+        }
+        // 내가 플레이어 3일 때, ESC를 누르면 레디 해제
+        else if (text.activeSelf == true && Input.GetKeyDown(KeyCode.Escape) && playerIndex == 3)
+        {
+            photonView.RPC("RPCReady", RpcTarget.AllBuffered, false, 3);
+        }
+
+        // 내가 플레이어 4일 때, 엔터키 누르면 레디
+        if (text.activeSelf == true && Input.GetKeyDown(KeyCode.Return) && playerIndex == 4)
+        {
+            photonView.RPC("RPCSound", RpcTarget.All);
+            photonView.RPC("RPCReady", RpcTarget.AllBuffered, true, 4);
+        }
+        // 내가 플레이어 4일 때, ESC를 누르면 레디 해제
+        else if (text.activeSelf == true && Input.GetKeyDown(KeyCode.Escape) && playerIndex == 4)
+        {
+            photonView.RPC("RPCReady", RpcTarget.AllBuffered, false, 4);
+        }
+
         // 내가 플레이어 1일 때, 모두가 레디중일 때 엔터키 누르면 게임 시작
         if (PhotonNetwork.PlayerList.Length == 2 && playerIndex == 1 && player1Ready && player2Ready)
         {
@@ -280,54 +333,11 @@ public class KIM_LobbyManager : MonoBehaviourPunCallbacks
             }
         }
 
-        // 내가 플레이어 1일 때, 엔터키 누르면 레디
-        if (text.activeSelf == true && Input.GetKeyDown(KeyCode.Return) && playerIndex == 1)
-        {
-            photonView.RPC("RPCReady", RpcTarget.AllBuffered, true, 1);
-        }
-        // 내가 플레이어 1일 때, ESC를 누르면 레디 해제
-        else if (text.activeSelf == true && Input.GetKeyDown(KeyCode.Escape) && playerIndex == 1)
-        {
-            photonView.RPC("RPCReady", RpcTarget.AllBuffered, false, 1);
-        }
-
-        // 내가 플레이어 2일 때, 엔터키 누르면 레디
-        if (text.activeSelf == true && Input.GetKeyDown(KeyCode.Return) && playerIndex == 2)
-        {
-            photonView.RPC("RPCReady", RpcTarget.AllBuffered, true, 2);
-        }
-        // 내가 플레이어 2일 때, ESC를 누르면 레디 해제
-        else if (text.activeSelf == true && Input.GetKeyDown(KeyCode.Escape) && playerIndex == 2)
-        {
-            photonView.RPC("RPCReady", RpcTarget.AllBuffered, false, 2);
-        }
-
-        // 내가 플레이어 3일 때, 엔터키 누르면 레디
-        if (text.activeSelf == true && Input.GetKeyDown(KeyCode.Return) && playerIndex == 3)
-        {
-            photonView.RPC("RPCReady", RpcTarget.AllBuffered, true, 3);
-        }
-        // 내가 플레이어 3일 때, ESC를 누르면 레디 해제
-        else if (text.activeSelf == true && Input.GetKeyDown(KeyCode.Escape) && playerIndex == 3)
-        {
-            photonView.RPC("RPCReady", RpcTarget.AllBuffered, false, 3);
-        }
-
-        // 내가 플레이어 4일 때, 엔터키 누르면 레디
-        if (text.activeSelf == true && Input.GetKeyDown(KeyCode.Return) && playerIndex == 4)
-        {
-            photonView.RPC("RPCReady", RpcTarget.AllBuffered, true, 4);
-        }
-        // 내가 플레이어 4일 때, ESC를 누르면 레디 해제
-        else if (text.activeSelf == true && Input.GetKeyDown(KeyCode.Escape) && playerIndex == 4)
-        {
-            photonView.RPC("RPCReady", RpcTarget.AllBuffered, false, 4);
-        }
-
         countText.GetComponent<Text>().text = "Player Number: " + playerIndex.ToString();
 
         if (Input.GetKeyDown(KeyCode.RightArrow))
         {
+            source.PlayOneShot(swipe);
             if (playerIndex == 1 && !player1Ready)
             {
                 if (idx1 == 3)
@@ -359,6 +369,7 @@ public class KIM_LobbyManager : MonoBehaviourPunCallbacks
         }
         else if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
+            source.PlayOneShot(swipe);
             if (playerIndex == 1 && !player1Ready)
             {
                 if (idx1 == 0)
@@ -416,6 +427,12 @@ public class KIM_LobbyManager : MonoBehaviourPunCallbacks
             player4Ready = ready;
             readyText4.SetActive(ready);
         }
+    }
+
+    [PunRPC]
+    void RPCSound()
+    {
+        source.PlayOneShot(ready);
     }
 
     [PunRPC]

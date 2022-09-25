@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class KIM_ButtonWall : MonoBehaviour
 {
+    AudioSource source;
+    public AudioClip open;
     public KIM_Button button;
     public KIM_Button button2;
     Vector2 size;
@@ -16,6 +18,7 @@ public class KIM_ButtonWall : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        source = GetComponent<AudioSource>();
         wall1 = transform.Find("Wall1").gameObject;
         wall2 = transform.Find("Wall2").gameObject;
         size = wall1.GetComponent<SpriteRenderer>().size;
@@ -28,6 +31,8 @@ public class KIM_ButtonWall : MonoBehaviour
         if (button.clicked && button2.clicked)
         {
             isOpen = true;
+            if (wall1.GetComponent<BoxCollider>().enabled)
+                source.PlayOneShot(open);
         }
 
         if (isOpen)

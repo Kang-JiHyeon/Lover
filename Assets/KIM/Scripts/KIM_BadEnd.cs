@@ -5,6 +5,9 @@ using Photon.Pun;
 
 public class KIM_BadEnd : MonoBehaviourPun
 {
+    AudioSource source;
+    public AudioClip destroyedSound;
+
     public GameObject dieEffect;
     KANG_ShipHP sh;
     bool isEnd = false;
@@ -23,6 +26,7 @@ public class KIM_BadEnd : MonoBehaviourPun
     // Start is called before the first frame update
     void Start()
     {
+        source = GetComponent<AudioSource>();
         sh = GetComponent<KANG_ShipHP>();
     }
 
@@ -35,6 +39,7 @@ public class KIM_BadEnd : MonoBehaviourPun
 
     IEnumerator OnEnd()
     {
+        source.PlayOneShot(destroyedSound);
         GameObject effect = Instantiate(dieEffect);
         effect.transform.position = transform.position;
         GetComponent<CharacterController>().enabled = false;

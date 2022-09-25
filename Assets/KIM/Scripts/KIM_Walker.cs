@@ -5,6 +5,12 @@ using Photon.Pun;
 
 public class KIM_Walker : MonoBehaviourPun
 {
+    AudioSource source;
+
+    public AudioClip hittedSound;
+    public AudioClip destroyedSound;
+    public AudioClip attackSound;
+
     protected enum EnemyState
     {
         Idle,
@@ -51,6 +57,7 @@ public class KIM_Walker : MonoBehaviourPun
     // Start is called before the first frame update
     void Start()
     {
+        source = GetComponent<AudioSource>();
         ship = GameObject.Find("Spaceship");
         if (planet == null)
         {
@@ -163,6 +170,7 @@ public class KIM_Walker : MonoBehaviourPun
     IEnumerator Fire()
     {
         yield return new WaitForSeconds(0.5f);
+        source.PlayOneShot(attackSound);
         GameObject bullet = Instantiate(bulletFactory);
         bullet.transform.position = bulletDispen.transform.position;
         bullet.GetComponent<KIM_InsectMissile>().dir = turret.transform.up;
@@ -179,6 +187,7 @@ public class KIM_Walker : MonoBehaviourPun
         else if (other.gameObject.layer == LayerMask.NameToLayer("PlayerBullet"))
         {
             Hitted -= 1;
+            source.PlayOneShot(hittedSound);
         }
     }
 

@@ -51,6 +51,7 @@ public class KIM_FireInsect : KIM_InsectController
     IEnumerator Fire()
     {
         yield return new WaitForSeconds(0.5f);
+        source.PlayOneShot(attackSound);
         GameObject bullet = Instantiate(bulletFactory);
         bullet.transform.position = bulletDispen.transform.position;
         bullet.GetComponent<KIM_InsectMissile>().dir = -transform.right;

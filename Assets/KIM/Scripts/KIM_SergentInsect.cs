@@ -76,6 +76,7 @@ public class KIM_SergentInsect : KIM_InsectController
     IEnumerator Fire()
     {
         yield return new WaitForSeconds(0.5f);
+        source.PlayOneShot(attackSound);
         GameObject bullet = Instantiate(bulletFactory);
         bullet.transform.position = bulletDispen.transform.position;
         bullet.GetComponent<KIM_InsectMissile>().dir = -transform.right;
@@ -113,6 +114,7 @@ public class KIM_SergentInsect : KIM_InsectController
         else if (other.gameObject.layer == LayerMask.NameToLayer("PlayerBullet"))
         {
             Hitted -= 1;
+            source.PlayOneShot(hittedSound);
         }
     }
 

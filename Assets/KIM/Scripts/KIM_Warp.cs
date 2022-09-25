@@ -5,6 +5,9 @@ using Photon.Pun;
 
 public class KIM_Warp : MonoBehaviourPun
 {
+    AudioSource source;
+    public AudioClip open;
+
     [SerializeField]
     int unlockCount;
     GameObject ship;
@@ -17,6 +20,7 @@ public class KIM_Warp : MonoBehaviourPun
     // Start is called before the first frame update
     void Start()
     {
+        source = GetComponent<AudioSource>();
         unSeal.SetActive(false);
         ship = GameObject.Find("Spaceship");
         cc = ship.GetComponent<CharacterController>();
@@ -29,7 +33,10 @@ public class KIM_Warp : MonoBehaviourPun
         if (unlockCount <= KIM_GameManager.Instance.RescueCount)
         {
             if (seal.activeSelf)
+            {
                 cm.UnLock = true;
+                source.PlayOneShot(open);
+            }
          
             seal.SetActive(false);
             unSeal.SetActive(true);
