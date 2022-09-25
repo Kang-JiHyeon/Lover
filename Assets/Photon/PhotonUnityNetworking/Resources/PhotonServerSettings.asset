@@ -67,6 +67,10 @@ MonoBehaviour:
   - RpcRightKey
   - RpcSetEnableTexture
   - RpcUpKey
+  - RPCSetText
+  - RPCEffect
+  - RPCAnim
+  - RPCTurretEffect
   - RpcMapSetActive
   DisableAutoOpenWizard: 1
   ShowSettings: 1

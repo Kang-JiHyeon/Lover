@@ -28,10 +28,11 @@ public class KIM_Warp : MonoBehaviourPun
     {
         if (unlockCount <= KIM_GameManager.Instance.RescueCount)
         {
+            if (seal.activeSelf)
+                cm.UnLock = true;
+         
             seal.SetActive(false);
             unSeal.SetActive(true);
-
-            cm.UnLock = true;
         }
     }
 

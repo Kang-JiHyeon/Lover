@@ -15,6 +15,8 @@ public class KIM_SergentInsect : KIM_InsectController
     public Sprite damaged2;
     public Sprite heavyDamaged;
     public Sprite heavyDamaged2;
+
+
     // Start is called before the first frame update
     protected override void Start()
     {
@@ -103,27 +105,28 @@ public class KIM_SergentInsect : KIM_InsectController
     private void OnTriggerEnter(Collider other)
     {
         // ºÎµúÈú ¶§ Æ¨°Ü³ª°¡±â ±¸Çö
-        if (other.gameObject.layer == LayerMask.NameToLayer("Ship") || other.gameObject.CompareTag("Map"))
+        if (other.gameObject.layer == LayerMask.NameToLayer("Ship") || other.gameObject.layer == LayerMask.NameToLayer("Map"))
         {
             // ship.hp--;
             StartCoroutine(Collide(other.transform));
         }
         else if (other.gameObject.layer == LayerMask.NameToLayer("PlayerBullet"))
         {
-            hp -= 1;
+            Hitted -= 1;
         }
     }
 
     IEnumerator Collide(Transform other)
     {
         float collideTime = 0;
-
+        IsCollide = true;
         while (collideTime < 0.5f)
         {
             collideTime += Time.deltaTime;
-            transform.position = Vector3.Lerp(transform.position, transform.position + (transform.position - other.position).normalized, Time.deltaTime * 10);
+            transform.position = Vector3.Lerp(transform.position, transform.position + (transform.position - other.position).normalized * 4, Time.deltaTime);
             yield return null;
         }
+        IsCollide = false;
     }
 
     private void OnDestroy()

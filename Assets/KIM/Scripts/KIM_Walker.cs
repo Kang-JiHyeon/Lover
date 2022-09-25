@@ -30,9 +30,24 @@ public class KIM_Walker : MonoBehaviourPun
     public Sprite heavyDamaged;
 
     public float speed = 2.0f;
-    float hp = 4;
+    int hp = 4;
+    public int Hitted
+    {
+        get { return hp; }
+        set
+        {
+            if (value != hp && value <= hp)
+            {
+                iTween.ScaleTo(gameObject, iTween.Hash("x", 0.5f, "y", 0.5f, "time", 0.1f, "easetype", iTween.EaseType.easeOutBounce));
+                iTween.ScaleTo(gameObject, iTween.Hash("x", 0.7f, "y", 0.7f, "time", 0.1f, "easetype", iTween.EaseType.easeOutBounce, "delay", 0.16f));
+            }
+            hp = value;
+        }
+    }
+
     GameObject ship;
     Vector3 dir;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -102,7 +117,11 @@ public class KIM_Walker : MonoBehaviourPun
     void RPCAttack()
     {
         iTween.ScaleTo(stomach, iTween.Hash("x", 1.1f, "y", 0.7f, "time", 0.3f, "easetype", iTween.EaseType.easeInOutBack));
+        iTween.MoveTo(stomach, iTween.Hash("y", -0.36f, "time", 0.3f, "easetype", iTween.EaseType.easeInOutBack, "islocal", true));
+        iTween.MoveTo(turret, iTween.Hash("y", 0.15f, "time", 0.3f, "easetype", iTween.EaseType.easeInOutBack, "islocal", true));
         iTween.ScaleTo(stomach, iTween.Hash("x", 1, "y", 1, "time", 0.3f, "easetype", iTween.EaseType.easeInOutBack, "delay", 0.31f));
+        iTween.MoveTo(stomach, iTween.Hash("y", 0f, "time", 0.3f, "easetype", iTween.EaseType.easeInOutBack, "islocal", true, "delay", 0.31f));
+        iTween.MoveTo(turret, iTween.Hash("y", 0.52f, "time", 0.3f, "easetype", iTween.EaseType.easeInOutBack, "islocal", true, "delay", 0.31f));
         StartCoroutine("Fire");
         currentTime = 0;
     }
@@ -159,7 +178,7 @@ public class KIM_Walker : MonoBehaviourPun
         }
         else if (other.gameObject.layer == LayerMask.NameToLayer("PlayerBullet"))
         {
-            hp -= 1;
+            Hitted -= 1;
         }
     }
 
