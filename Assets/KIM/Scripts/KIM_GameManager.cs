@@ -40,7 +40,7 @@ public class KIM_GameManager : MonoBehaviourPunCallbacks
 
         ship = GameObject.Find("Spaceship");
 
-        if (PhotonNetwork.IsMasterClient)
+        if (KIM_PlayerTransit.Instance.playerIndex == 1)
         {
             if (KIM_PlayerTransit.Instance.idx1 == 0)
             {
@@ -67,7 +67,7 @@ public class KIM_GameManager : MonoBehaviourPunCallbacks
                 player.gameObject.name = "Player";
             }
         }
-        else
+        else if(KIM_PlayerTransit.Instance.playerIndex == 2)
         {
             if (KIM_PlayerTransit.Instance.idx2 == 0)
             {
@@ -88,6 +88,60 @@ public class KIM_GameManager : MonoBehaviourPunCallbacks
                 player.gameObject.name = "Player";
             }
             if (KIM_PlayerTransit.Instance.idx2 == 3)
+            {
+                GameObject player = PhotonNetwork.Instantiate("Player4", ship.transform.position, Quaternion.identity);
+                player.transform.SetParent(ship.transform);
+                player.gameObject.name = "Player";
+            }
+        }
+        else if (KIM_PlayerTransit.Instance.playerIndex == 3)
+        {
+            if (KIM_PlayerTransit.Instance.idx3 == 0)
+            {
+                GameObject player = PhotonNetwork.Instantiate("Player", ship.transform.position, Quaternion.identity);
+                player.transform.SetParent(ship.transform);
+                player.gameObject.name = "Player";
+            }
+            if (KIM_PlayerTransit.Instance.idx3 == 1)
+            {
+                GameObject player = PhotonNetwork.Instantiate("Player2", ship.transform.position, Quaternion.identity);
+                player.transform.SetParent(ship.transform);
+                player.gameObject.name = "Player";
+            }
+            if (KIM_PlayerTransit.Instance.idx3 == 2)
+            {
+                GameObject player = PhotonNetwork.Instantiate("Player3", ship.transform.position, Quaternion.identity);
+                player.transform.SetParent(ship.transform);
+                player.gameObject.name = "Player";
+            }
+            if (KIM_PlayerTransit.Instance.idx3 == 3)
+            {
+                GameObject player = PhotonNetwork.Instantiate("Player4", ship.transform.position, Quaternion.identity);
+                player.transform.SetParent(ship.transform);
+                player.gameObject.name = "Player";
+            }
+        }
+        else if (KIM_PlayerTransit.Instance.playerIndex == 4)
+        {
+            if (KIM_PlayerTransit.Instance.idx4 == 0)
+            {
+                GameObject player = PhotonNetwork.Instantiate("Player", ship.transform.position, Quaternion.identity);
+                player.transform.SetParent(ship.transform);
+                player.gameObject.name = "Player";
+            }
+            if (KIM_PlayerTransit.Instance.idx4 == 1)
+            {
+                GameObject player = PhotonNetwork.Instantiate("Player2", ship.transform.position, Quaternion.identity);
+                player.transform.SetParent(ship.transform);
+                player.gameObject.name = "Player";
+            }
+            if (KIM_PlayerTransit.Instance.idx4 == 2)
+            {
+                GameObject player = PhotonNetwork.Instantiate("Player3", ship.transform.position, Quaternion.identity);
+                player.transform.SetParent(ship.transform);
+                player.gameObject.name = "Player";
+            }
+            if (KIM_PlayerTransit.Instance.idx4 == 3)
             {
                 GameObject player = PhotonNetwork.Instantiate("Player4", ship.transform.position, Quaternion.identity);
                 player.transform.SetParent(ship.transform);
