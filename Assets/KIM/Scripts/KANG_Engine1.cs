@@ -4,9 +4,8 @@ using UnityEngine;
 using Photon.Pun;
 
 // 엔진을 회전시키고, 가동하고 싶다.
-public class KANG_Engine : KANG_Machine
+public class KANG_Engine1 : KANG_Machine
 {
-    KIM_Engine ke;
     CharacterController cc;
     Transform ship;
     public Vector3 moveDir;
@@ -24,8 +23,6 @@ public class KANG_Engine : KANG_Machine
         ship = transform.parent;
         cc = ship.GetComponent<CharacterController>();
         localAngle = rotAxis.localEulerAngles;
-
-        ke = GetComponent<KIM_Engine>();
     }
 
     // Update is called once per frame
@@ -129,7 +126,6 @@ public class KANG_Engine : KANG_Machine
 
         //cc.Move(moveDir * curMoveSpeed * Time.deltaTime);
         photonView.RPC("RPCMove", RpcTarget.All, moveDir * curMoveSpeed * Time.deltaTime);
-        ke.CreateEffect();
     }
 
     [PunRPC]

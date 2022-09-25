@@ -34,7 +34,7 @@ public class KIM_Planet : MonoBehaviour
             Vector3 dir = ship.transform.position - transform.position;
             dir.Normalize();
 
-            cc.Move(((transform.position + dir * transform.localScale.x * 9.14f) - ship.transform.position).normalized * 2 * Time.deltaTime);
+            cc.Move(((transform.position + dir * transform.localScale.x * 9.14f) - ship.transform.position).normalized * Time.deltaTime);
         }
     }
 
