@@ -16,6 +16,9 @@ public class KIM_Warp : MonoBehaviourPun
     public GameObject unSeal;
     KANG_CameraMove cm;
 
+    public GameObject mapIconSeal;
+    public GameObject mapIconUnSeal;
+
     bool isEnd;
     // Start is called before the first frame update
     void Start()
@@ -25,6 +28,9 @@ public class KIM_Warp : MonoBehaviourPun
         ship = GameObject.Find("Spaceship");
         cc = ship.GetComponent<CharacterController>();
         cm = GameObject.Find("Main Camera").GetComponent<KANG_CameraMove>();
+
+        mapIconSeal.SetActive(true);
+        mapIconUnSeal.SetActive(false);
     }
 
     // Update is called once per frame
@@ -36,10 +42,14 @@ public class KIM_Warp : MonoBehaviourPun
             {
                 cm.UnLock = true;
                 source.PlayOneShot(open);
+
+                mapIconSeal.SetActive(false);
+                mapIconUnSeal.SetActive(true);
             }
          
             seal.SetActive(false);
             unSeal.SetActive(true);
+
         }
     }
 
