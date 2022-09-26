@@ -77267,9 +77267,17 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 139006190252599397, guid: 68e1c06900d2cb24b8c00bd94aade0b4, type: 3}
+      propertyPath: mapIconSeal
+      value: 
+      objectReference: {fileID: 1171129057}
+    - target: {fileID: 139006190252599397, guid: 68e1c06900d2cb24b8c00bd94aade0b4, type: 3}
       propertyPath: unlockCount
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 139006190252599397, guid: 68e1c06900d2cb24b8c00bd94aade0b4, type: 3}
+      propertyPath: mapIconUnSeal
+      value: 
+      objectReference: {fileID: 266506234}
     - target: {fileID: 139006190252599402, guid: 68e1c06900d2cb24b8c00bd94aade0b4, type: 3}
       propertyPath: m_RootOrder
       value: 10
