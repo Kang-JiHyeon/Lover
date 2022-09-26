@@ -1,11 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
 // 우주선 중심을 기준으로 회전하고 싶다.
 // 필요속성: 우주선 중심, 회전 속도, 회전 방향
 
-public class KANG_YamatoRotate : MonoBehaviour
+public class KANG_YamatoRotate : MonoBehaviourPun
 {
     // 회전중심
     public Transform spaceship;
@@ -37,6 +38,9 @@ public class KANG_YamatoRotate : MonoBehaviour
 
         Rotate();
     }
+
+
+
 
     public void Rotate()
     {
