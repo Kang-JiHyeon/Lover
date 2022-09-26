@@ -6,6 +6,8 @@ public class KIM_Jail : MonoBehaviour
 {
     AudioSource source;
 
+    GameObject friend;
+
     public AudioClip alarm;
     public AudioClip destroyedSound;
     public AudioClip rescueSound;
@@ -34,6 +36,7 @@ public class KIM_Jail : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        friend = transform.Find("Friend").gameObject;
         ship = GameObject.Find("Spaceship");
         source = GetComponent<AudioSource>();
         hostage = transform.Find("Hostage").gameObject;
@@ -50,6 +53,8 @@ public class KIM_Jail : MonoBehaviour
             {
                 source.PlayOneShot(alarm);
                 source.PlayOneShot(destroyedSound);
+                GetComponent<BoxCollider>().enabled = false;
+                friend.SetActive(false);
             }
             hostage.transform.up = Vector3.up;
             notDestroyed.SetActive(false);

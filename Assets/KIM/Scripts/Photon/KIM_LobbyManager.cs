@@ -127,7 +127,30 @@ public class KIM_LobbyManager : MonoBehaviourPunCallbacks
         if (PhotonNetwork.PlayerList.Length > 3 && PhotonNetwork.LocalPlayer == PhotonNetwork.PlayerList[3])
             playerIndex = 4;
 
-        KIM_PlayerTransit.Instance.playerIndex = playerIndex;   
+        KIM_PlayerTransit.Instance.playerIndex = playerIndex;
+
+        // 내가 플레이어 1일 때, 모두가 레디중일 때 엔터키 누르면 게임 시작
+        if (PhotonNetwork.PlayerList.Length == 2 && playerIndex == 1 && player1Ready && player2Ready)
+        {
+            if (text.activeSelf == true && Input.GetKeyDown(KeyCode.Return))
+            {
+                photonView.RPC("RPCLoadScene", RpcTarget.All);
+            }
+        }
+        else if (PhotonNetwork.PlayerList.Length == 3 && playerIndex == 1 && player1Ready && player2Ready && player3Ready)
+        {
+            if (text.activeSelf == true && Input.GetKeyDown(KeyCode.Return))
+            {
+                photonView.RPC("RPCLoadScene", RpcTarget.All);
+            }
+        }
+        else if (PhotonNetwork.PlayerList.Length == 4 && playerIndex == 1 && player1Ready && player2Ready && player3Ready && player4Ready)
+        {
+            if (text.activeSelf == true && Input.GetKeyDown(KeyCode.Return))
+            {
+                photonView.RPC("RPCLoadScene", RpcTarget.All);
+            }
+        }
 
         if (PhotonNetwork.PlayerList.Length == 2)
         {
@@ -308,29 +331,6 @@ public class KIM_LobbyManager : MonoBehaviourPunCallbacks
         else if (text.activeSelf == true && Input.GetKeyDown(KeyCode.Escape) && playerIndex == 4)
         {
             photonView.RPC("RPCReady", RpcTarget.AllBuffered, false, 4);
-        }
-
-        // 내가 플레이어 1일 때, 모두가 레디중일 때 엔터키 누르면 게임 시작
-        if (PhotonNetwork.PlayerList.Length == 2 && playerIndex == 1 && player1Ready && player2Ready)
-        {
-            if (text.activeSelf == true && Input.GetKeyDown(KeyCode.Return))
-            {
-                photonView.RPC("RPCLoadScene", RpcTarget.All);
-            }
-        }
-        else if (PhotonNetwork.PlayerList.Length == 3 && playerIndex == 1 && player1Ready && player2Ready && player3Ready)
-        {
-            if (text.activeSelf == true && Input.GetKeyDown(KeyCode.Return))
-            {
-                photonView.RPC("RPCLoadScene", RpcTarget.All);
-            }
-        }
-        else if (PhotonNetwork.PlayerList.Length == 4 && playerIndex == 1 && player1Ready && player2Ready && player3Ready && player4Ready)
-        {
-            if (text.activeSelf == true && Input.GetKeyDown(KeyCode.Return))
-            {
-                photonView.RPC("RPCLoadScene", RpcTarget.All);
-            }
         }
 
         countText.GetComponent<Text>().text = "Player Number: " + playerIndex.ToString();
