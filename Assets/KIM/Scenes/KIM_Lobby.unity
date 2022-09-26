@@ -1035,7 +1035,7 @@ MonoBehaviour:
   playerIdx: 4
   open: {fileID: 8300000, guid: 255c47460ad5b0241a0c595dec4afe7a, type: 3}
   close: {fileID: 8300000, guid: 9f199c147e9b1204da40135d69c53579, type: 3}
-  playerText: {fileID: 1714111248}
+  playerText: {fileID: 279117497}
 --- !u!212 &402964609
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1782,7 +1782,7 @@ MonoBehaviour:
   playerIdx: 3
   open: {fileID: 8300000, guid: 255c47460ad5b0241a0c595dec4afe7a, type: 3}
   close: {fileID: 8300000, guid: 9f199c147e9b1204da40135d69c53579, type: 3}
-  playerText: {fileID: 279117497}
+  playerText: {fileID: 1714111248}
 --- !u!212 &657955552
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3017,7 +3017,7 @@ MonoBehaviour:
   playerIdx: 4
   open: {fileID: 8300000, guid: 255c47460ad5b0241a0c595dec4afe7a, type: 3}
   close: {fileID: 8300000, guid: 9f199c147e9b1204da40135d69c53579, type: 3}
-  playerText: {fileID: 1714111248}
+  playerText: {fileID: 279117497}
 --- !u!212 &1156919362
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3668,7 +3668,7 @@ MonoBehaviour:
   playerIdx: 3
   open: {fileID: 8300000, guid: 255c47460ad5b0241a0c595dec4afe7a, type: 3}
   close: {fileID: 8300000, guid: 9f199c147e9b1204da40135d69c53579, type: 3}
-  playerText: {fileID: 279117497}
+  playerText: {fileID: 1714111248}
 --- !u!212 &1466189514
 SpriteRenderer:
   m_ObjectHideFlags: 0
