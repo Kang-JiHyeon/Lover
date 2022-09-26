@@ -17,9 +17,9 @@ MonoBehaviour:
     AppIdFusion: 
     AppIdChat: 
     AppIdVoice: 
-    AppVersion: 
+    AppVersion: 1
     UseNameServer: 1
-    FixedRegion: 
+    FixedRegion: kr
     Server: 
     Port: 0
     ProxyServer: 
@@ -76,6 +76,8 @@ MonoBehaviour:
   - RPCOpen
   - RPCDebug
   - RPCSound
+  - RpcChangeMState
+  - RpcChangeYState
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1
