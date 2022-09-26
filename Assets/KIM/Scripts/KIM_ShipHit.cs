@@ -4,11 +4,17 @@ using UnityEngine;
 
 public class KIM_ShipHit : MonoBehaviour
 {
+    AudioSource source;
+
+    public AudioClip hittedSound;
+    public AudioClip collideSound;
+
     public GameObject HittedEffect;
     KANG_CameraMove cm;
     // Start is called before the first frame update
     void Start()
     {
+        source = GetComponent<AudioSource>();
         cm = Camera.main.gameObject.GetComponent<KANG_CameraMove>();
     }
 
@@ -31,11 +37,12 @@ public class KIM_ShipHit : MonoBehaviour
             }
             effect.transform.position = hit.point;
             Destroy(effect, 3.0f);
-
+            source.PlayOneShot(collideSound);
             cm.CamShake();
         }
         else if (other.gameObject.layer == LayerMask.NameToLayer("EnemyBullet"))
         {
+            source.PlayOneShot(hittedSound);
             cm.CamShake();
         }
     }

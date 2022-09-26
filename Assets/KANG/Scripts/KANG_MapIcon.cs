@@ -6,7 +6,7 @@ using UnityEngine;
 // 맵 아이콘의 scale을 조절하고 싶다.
 public class KANG_MapIcon : MonoBehaviour
 {
-    float maxSize = 1.7f;
+    float maxSize = 1.7f; 
     float minSize = 0.5f;
 
     public float sizeChangeTime = 0.5f;

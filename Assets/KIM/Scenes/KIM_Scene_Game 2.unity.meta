@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/KANG/Scenes/KANG1_Scene.unity.meta
 guid: ef528cbe4d1b5f04c89d39ae0ee015d5
+========
+guid: 16239359284131e4f90bb9fe9496aef1
+>>>>>>>> KIM:Assets/KIM/Scenes/KIM_Scene_0908.unity.meta
 DefaultImporter:
   externalObjects: {}
   userData: 

@@ -4,6 +4,12 @@ using UnityEngine;
 using Photon.Pun;
 public class KIM_InsectController : MonoBehaviourPun
 {
+    protected AudioSource source;
+
+    public AudioClip hittedSound;
+    public AudioClip destroyedSound;
+    public AudioClip attackSound;
+
     protected enum EnemyState
     {
         Idle,
@@ -52,6 +58,7 @@ public class KIM_InsectController : MonoBehaviourPun
     // Start is called before the first frame update
     protected virtual void Start()
     {
+        source = GetComponent<AudioSource>();
         ir = GetComponentInChildren<KIM_InsectRotate>();
         cc = GetComponent<CharacterController>();   
         ship = GameObject.Find("Spaceship");

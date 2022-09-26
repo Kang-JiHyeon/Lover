@@ -60,6 +60,7 @@ public class KIM_BasicInsect : KIM_InsectController
     IEnumerator Fire()
     {
         yield return new WaitForSeconds(0.5f);
+        source.PlayOneShot(attackSound);
         GameObject bullet = Instantiate(bulletFactory);
         bullet.transform.position = bulletDispen.transform.position;
         bullet.GetComponent<KIM_InsectMissile>().dir = -transform.right;
@@ -71,11 +72,13 @@ public class KIM_BasicInsect : KIM_InsectController
         if (other.gameObject.layer == LayerMask.NameToLayer("Ship") || other.gameObject.layer == LayerMask.NameToLayer("Map"))
         {
             // ship.hp--;
+            source.PlayOneShot(hittedSound);
             StartCoroutine(Collide(other.transform));
         }
         else if (other.gameObject.layer == LayerMask.NameToLayer("PlayerBullet"))
         {
             Hitted -= 1;
+            source.PlayOneShot(hittedSound);
         }
     }
 

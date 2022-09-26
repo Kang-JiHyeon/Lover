@@ -4,6 +4,14 @@ using UnityEngine;
 
 public class KIM_Jail : MonoBehaviour
 {
+    AudioSource source;
+
+    GameObject friend;
+
+    public AudioClip alarm;
+    public AudioClip destroyedSound;
+    public AudioClip rescueSound;
+
     float hp = 8;
 
     public GameObject jailHead;
@@ -28,8 +36,9 @@ public class KIM_Jail : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        friend = transform.Find("Friend").gameObject;
         ship = GameObject.Find("Spaceship");
-
+        source = GetComponent<AudioSource>();
         hostage = transform.Find("Hostage").gameObject;
         destroyed = transform.Find("Destroyed").gameObject;
         notDestroyed = transform.Find("NotDestroyed").gameObject;
@@ -40,6 +49,13 @@ public class KIM_Jail : MonoBehaviour
     {
         if (hp <= 0)
         {
+            if (notDestroyed.activeSelf)
+            {
+                source.PlayOneShot(alarm);
+                source.PlayOneShot(destroyedSound);
+                GetComponent<BoxCollider>().enabled = false;
+                friend.SetActive(false);
+            }
             hostage.transform.up = Vector3.up;
             notDestroyed.SetActive(false);
             destroyed.SetActive(true);
@@ -84,6 +100,7 @@ public class KIM_Jail : MonoBehaviour
         effect.transform.SetParent(ship.transform);
         Destroy(effect, 2.5f);
         yield return new WaitForSeconds(2.0f);
+        source.PlayOneShot(rescueSound);
         hostage.SetActive(false);
         destroyed.transform.Find("Alarm").gameObject.SetActive(false);
     }
