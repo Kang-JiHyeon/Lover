@@ -27,7 +27,7 @@ public class KIM_InsectMissile : MonoBehaviour
             Destroy(gameObject);
         }
 
-        if(other.gameObject.layer == LayerMask.NameToLayer("Enemy"))
+        if(other.gameObject.layer == LayerMask.NameToLayer(""))
         {
             Destroy(other.gameObject);
         }
