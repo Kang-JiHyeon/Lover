@@ -481,7 +481,7 @@ public class KIM_LobbyManager : MonoBehaviourPunCallbacks
     void RPCLoadScene()
     {
         //PhotonNetwork.OpCleanActorRpcBuffer(PhotonNetwork.LocalPlayer.ActorNumber);
-        PhotonNetwork.CleanRpcBufferIfMine(photonView);
+        //PhotonNetwork.CleanRpcBufferIfMine(photonView);
         PhotonNetwork.LoadLevel("KIM_Scene_Game 2");
         //PhotonNetwork.LoadLevel("KANG_Scene_Game 2");
     }
