@@ -8,6 +8,11 @@ using UnityEngine;
 
 public class KANG_Yamato : KANG_Machine
 {
+    AudioSource source;
+
+    public AudioClip attackSound;
+    public GameObject yamatoEffect;
+
     public GameObject yamatoBulletFactory;
     public Transform firePos;
     public bool isYamatoControl = false;
@@ -46,6 +51,8 @@ public class KANG_Yamato : KANG_Machine
     // Start is called before the first frame update
     void Start()
     {
+        source = GetComponent<AudioSource>();
+
         curCreateTime = createTime;
 
         for (int i = 0; i < transform.childCount - 1; i++)
@@ -161,7 +168,18 @@ public class KANG_Yamato : KANG_Machine
         {
             curCreateTime = 0f;
             PhotonNetwork.Instantiate("YamatoMissile", firePos.position, firePos.rotation);
+            photonView.RPC("RPCYamatoEffect", RpcTarget.All);
         }
+    }
+
+    [PunRPC]
+    void RPCYamatoEffect()
+    {
+        source.PlayOneShot(attackSound);
+        GameObject effect = Instantiate(yamatoEffect);
+        effect.transform.position = firePos.position + firePos.up * 0.5f;
+        effect.transform.up = firePos.up;
+        Destroy(effect, 1.0f);
     }
 
     // 비활성화 상태
