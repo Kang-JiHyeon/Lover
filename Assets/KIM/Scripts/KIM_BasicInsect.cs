@@ -22,8 +22,6 @@ public class KIM_BasicInsect : KIM_InsectController
     protected override void Update()
     {
         base.Update();
-        if (hp <= 0)
-            Destroy(gameObject);
     }
 
     float currentTime = 0;

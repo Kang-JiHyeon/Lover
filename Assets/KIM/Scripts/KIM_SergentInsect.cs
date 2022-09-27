@@ -28,9 +28,7 @@ public class KIM_SergentInsect : KIM_InsectController
     protected override void Update()
     {
         base.Update();
-        if (hp <= 0)
-            Destroy(gameObject);
-        else if (hp <= 2)
+        if (hp <= 2)
         {
             head.GetComponent<SpriteRenderer>().sprite = heavyDamaged;
             stomach.GetComponent<SpriteRenderer>().sprite = heavyDamaged2;

@@ -146,13 +146,16 @@ public class KIM_PlayerController1 : MonoBehaviourPun, IPunObservable
                 if (Input.GetKeyDown(KeyCode.B))
                 {
                     isModule = false;
+                    photonView.RPC("RPCControl", RpcTarget.All, false);
                 }
             }
             // 모듈에 타고 있지 않을 때 모듈 위에 있고, 키를 누르면 모듈에 탐
-            else if (target && (Input.GetKeyUp(KeyCode.UpArrow) || Input.GetKeyUp(KeyCode.LeftArrow) ||
+            else if (target && !target.GetComponent<KANG_Machine>().IsControl && 
+                (Input.GetKeyUp(KeyCode.UpArrow) || Input.GetKeyUp(KeyCode.LeftArrow) ||
                 Input.GetKeyUp(KeyCode.DownArrow) || Input.GetKeyUp(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.M)))
             {
                 isModule = true;
+                photonView.RPC("RPCControl", RpcTarget.All, true);
             }
         }
         else
@@ -160,6 +163,13 @@ public class KIM_PlayerController1 : MonoBehaviourPun, IPunObservable
             transform.position = Vector3.Lerp(transform.position, receivePos, 15 * Time.deltaTime);
             transform.rotation = Quaternion.Lerp(transform.rotation, receiveRot, 15 * Time.deltaTime);
         }
+    }
+
+    [PunRPC] 
+    void RPCControl(bool value)
+    {
+        machine = target.GetComponent<KANG_Machine>();
+        machine.IsControl = value;
     }
 
     [PunRPC]

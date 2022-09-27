@@ -18,6 +18,12 @@ public class KANG_Machine : MonoBehaviourPun
     public float rotDir = 0f;
     public float rotSpeed = 30f;
 
+    protected bool isControl = false;
+    public virtual bool IsControl
+    {
+        get { return isControl; }
+        set { isControl = value; }
+    }
 
     public enum MachineState
     {

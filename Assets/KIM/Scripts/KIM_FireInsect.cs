@@ -13,6 +13,7 @@ public class KIM_FireInsect : KIM_InsectController
     protected override void Start()
     {
         base.Start();
+        hp = 1;
     }
 
     // Update is called once per frame
@@ -66,7 +67,7 @@ public class KIM_FireInsect : KIM_InsectController
             Debug.Log(other.gameObject.name);
             GameObject explo = Instantiate(dieExplosion);
             explo.transform.position = transform.position;
-            Destroy(gameObject);
+            Hitted -= 1;
         }
     }
 }
