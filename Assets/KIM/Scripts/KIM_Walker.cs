@@ -35,6 +35,14 @@ public class KIM_Walker : MonoBehaviourPun
     public Sprite damaged;
     public Sprite heavyDamaged;
 
+    public Material flash;
+    public Material defaultM;
+
+    [SerializeField]
+    protected int sprites;
+    public GameObject sprite;
+    List<SpriteRenderer> list = new List<SpriteRenderer>();
+
     public float speed = 2.0f;
     int hp = 4;
     public int Hitted
@@ -46,8 +54,23 @@ public class KIM_Walker : MonoBehaviourPun
             {
                 iTween.ScaleTo(gameObject, iTween.Hash("x", 0.5f, "y", 0.5f, "time", 0.1f, "easetype", iTween.EaseType.easeOutBounce));
                 iTween.ScaleTo(gameObject, iTween.Hash("x", 0.7f, "y", 0.7f, "time", 0.1f, "easetype", iTween.EaseType.easeOutBounce, "delay", 0.16f));
+                StopCoroutine("OnHitFlash");
+                StartCoroutine("OnHitFlash");
             }
             hp = value;
+        }
+    }
+
+    IEnumerator OnHitFlash()
+    {
+        foreach (SpriteRenderer sprite in list)
+        {
+            sprite.material = flash;
+        }
+        yield return new WaitForSeconds(0.1f);
+        foreach (SpriteRenderer sprite in list)
+        {
+            sprite.material = defaultM;
         }
     }
 
@@ -63,6 +86,12 @@ public class KIM_Walker : MonoBehaviourPun
         {
             planet = GameObject.Find("Planet");
         }
+
+        for (int i = 0; i < sprites; i++)
+        {
+            list.Add(transform.GetChild(i).GetComponent<SpriteRenderer>());
+        }
+        list.Add(sprite.GetComponent<SpriteRenderer>());
     }
 
     // Update is called once per frame
@@ -91,7 +120,7 @@ public class KIM_Walker : MonoBehaviourPun
         }
 
         transform.right = Vector3.Cross(transform.forward, planet.transform.position - transform.position);
-        if (Vector3.Distance(planet.transform.position, transform.position) > planet.GetComponent<KIM_Planet>().Radius)
+        if (Vector3.Distance(planet.transform.position, transform.position) > planet.GetComponent<KIM_Planet>().Radius + 0.85f)
             transform.position += (planet.transform.position - transform.position).normalized * Time.deltaTime;
     }
 

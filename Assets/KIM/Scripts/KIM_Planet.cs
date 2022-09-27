@@ -25,6 +25,8 @@ public class KIM_Planet : MonoBehaviour
     // Update is called once per frame
     void LateUpdate()
     {
+        radius = transform.localScale.x * 4.63f;
+        Debug.Log("Radius: " + radius);
         FadeOrbit();
 
         orbit.transform.Rotate(0, 0, -5f * Time.deltaTime);

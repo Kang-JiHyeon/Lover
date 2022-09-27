@@ -441,6 +441,10 @@ MonoBehaviour:
   leg4: {fileID: 7458729693796262422}
   damaged: {fileID: 179026298, guid: 5378eb2bc863c934c988f8cff0b78208, type: 3}
   heavyDamaged: {fileID: -1884641564, guid: 5378eb2bc863c934c988f8cff0b78208, type: 3}
+  flash: {fileID: 2100000, guid: ff0c153bd8581994785ca478473aa998, type: 2}
+  defaultM: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  sprites: 6
+  sprite: {fileID: 7458729692722752106}
   speed: 2
 --- !u!136 &7458729693416515143
 CapsuleCollider:
