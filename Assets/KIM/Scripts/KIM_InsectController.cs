@@ -77,10 +77,9 @@ public class KIM_InsectController : MonoBehaviourPun
         else if (estate == EnemyState.Attack)
             Attack();
 
-        if (hp <= 0)
+        if (hp <= 0 && photonView.IsMine)
             PhotonNetwork.Destroy(gameObject);
     }
-
 
     protected Vector3 moveDir = Vector3.zero;
     protected float currentTime_base = 0;
