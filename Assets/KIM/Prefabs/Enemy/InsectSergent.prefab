@@ -57,6 +57,9 @@ MonoBehaviour:
   hittedSound: {fileID: 8300000, guid: e58ab195161b81a41bbe37cce8d8714f, type: 3}
   destroyedSound: {fileID: 8300000, guid: c255c2a45621f674b89e536a1b249618, type: 3}
   attackSound: {fileID: 8300000, guid: b37e269534580054cb53e2fe24234641, type: 3}
+  flash: {fileID: 2100000, guid: ff0c153bd8581994785ca478473aa998, type: 2}
+  defaultM: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  sprites: 4
   moveSpeed: 0.3
   head: {fileID: 3125598819104505845}
   stomach: {fileID: 3125598818947163272}

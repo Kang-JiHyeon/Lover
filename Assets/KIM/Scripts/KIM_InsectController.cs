@@ -10,6 +10,13 @@ public class KIM_InsectController : MonoBehaviourPun
     public AudioClip destroyedSound;
     public AudioClip attackSound;
 
+    public Material flash;
+    public Material defaultM;
+
+    [SerializeField]
+    protected int sprites;
+    List<SpriteRenderer> list = new List<SpriteRenderer>();
+
     protected enum EnemyState
     {
         Idle,
@@ -50,8 +57,23 @@ public class KIM_InsectController : MonoBehaviourPun
             {
                 iTween.ScaleTo(gameObject, iTween.Hash("x", 0.7f, "y", 0.7f, "time", 0.1f, "easetype", iTween.EaseType.easeOutBounce));
                 iTween.ScaleTo(gameObject, iTween.Hash("x", 1, "y", 1, "time", 0.1f, "easetype", iTween.EaseType.easeOutBounce, "delay", 0.16f));
+                StopCoroutine("OnHitFlash");
+                StartCoroutine("OnHitFlash");
             }
             hp = value;
+        }
+    }
+
+    IEnumerator OnHitFlash()
+    {
+        foreach (SpriteRenderer sprite in list)
+        {
+            sprite.material = flash;
+        }
+        yield return new WaitForSeconds(0.1f);
+        foreach (SpriteRenderer sprite in list)
+        {
+            sprite.material = defaultM;
         }
     }
 
@@ -63,6 +85,11 @@ public class KIM_InsectController : MonoBehaviourPun
         cc = GetComponent<CharacterController>();   
         ship = GameObject.Find("Spaceship");
         estate = EnemyState.Idle;
+
+        for (int i = 0; i < sprites; i++)
+        {
+            list.Add(transform.GetChild(i).GetComponent<SpriteRenderer>());
+        }
     }
     // Update is called once per frame
     protected virtual void Update()

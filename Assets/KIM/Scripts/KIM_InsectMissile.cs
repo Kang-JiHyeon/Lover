@@ -22,16 +22,17 @@ public class KIM_InsectMissile : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         // ship.hp--;
-        if (other.gameObject.CompareTag("Map"))
-        {
-            Destroy(gameObject);
-        }
+        //if (other.gameObject.CompareTag("Map"))
+        //{
+        //    Destroy(gameObject);
+        //}
 
-        if(other.gameObject.layer == LayerMask.NameToLayer(""))
-        {
-            Destroy(other.gameObject);
-        }
+        //if(other.gameObject.layer == LayerMask.NameToLayer(""))
+        //{
+        //    Destroy(other.gameObject);
+        //}
 
+        Destroy(gameObject);
     }
 
     private void OnDestroy()
