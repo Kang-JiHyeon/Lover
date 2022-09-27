@@ -9,10 +9,35 @@ public class KIM_Jail : MonoBehaviour
     GameObject friend;
 
     public AudioClip alarm;
+    public AudioClip hittedSound;
     public AudioClip destroyedSound;
     public AudioClip rescueSound;
 
     float hp = 8;
+    public float HP
+    {
+        get { return hp; }
+        set
+        {
+            if (value != hp)
+            {
+                iTween.ScaleTo(gameObject, iTween.Hash("x", 0.7f, "y", 0.7f, "time", 0.1f, "easetype", iTween.EaseType.easeOutBounce));
+                iTween.ScaleTo(gameObject, iTween.Hash("x", 1f, "y", 1f, "time", 0.1f, "easetype", iTween.EaseType.easeOutBounce, "delay", 0.16f));
+                StopCoroutine("OnHitFlash");
+                StartCoroutine("OnHitFlash");
+            }
+            hp = value;
+        }
+    }
+
+    IEnumerator OnHitFlash()
+    {
+        jailBody.GetComponent<SpriteRenderer>().material = flash;
+        jailHead.GetComponent<SpriteRenderer>().material = flash;
+        yield return new WaitForSeconds(0.1f);
+        jailBody.GetComponent<SpriteRenderer>().material = defaultM;
+        jailHead.GetComponent<SpriteRenderer>().material = defaultM;
+    }
 
     public GameObject jailHead;
     public GameObject jailBody;
@@ -31,6 +56,9 @@ public class KIM_Jail : MonoBehaviour
     GameObject destroyed;
     GameObject notDestroyed;
     GameObject hostage;
+
+    public Material flash;
+    public Material defaultM;
 
     bool isRescue = false;
     // Start is called before the first frame update
@@ -109,7 +137,8 @@ public class KIM_Jail : MonoBehaviour
     {
         if (other.gameObject.layer == LayerMask.NameToLayer("PlayerBullet"))
         {
-            hp--;
+            HP--;
+            source.PlayOneShot(hittedSound);
         }
     }
 }
