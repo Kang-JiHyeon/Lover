@@ -8,17 +8,14 @@ using Photon.Pun;
 
 public class KANG_YamatoRotate : MonoBehaviourPun, IPunObservable
 {
-    // 회전중심
-    public Transform spaceship;
     // 회전속도
-     float rotSpeed = 100;
-    // 회전방향
-    public float rotDir = 1f;
+    public float rotSpeed = 20f;
 
-    // yamato texture
-    public List<Transform> rotObjects;
-
-    float rotZ;
+    // Rpc 회전 속도
+    float lerpSpeed = 25f;
+    
+    // rpc 회전
+    Quaternion receiveRot;
 
     // Start is called before the first frame update
     void Start()
@@ -38,16 +35,16 @@ public class KANG_YamatoRotate : MonoBehaviourPun, IPunObservable
     {
         if(photonView.IsMine)
         {
-            transform.Rotate(-transform.forward * Time.deltaTime * 20);
+            transform.Rotate(-transform.forward * rotSpeed * Time.deltaTime);
         }
         else
         {
             //transform.Rotate(-transform.forward);
-            transform.rotation = Quaternion.Lerp(transform.rotation, receiveRot, 25 * Time.deltaTime);
+            transform.rotation = Quaternion.Lerp(transform.rotation, receiveRot, lerpSpeed * Time.deltaTime);
         }
     }
 
-    Quaternion receiveRot;
+
 
 
     public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
@@ -55,7 +52,6 @@ public class KANG_YamatoRotate : MonoBehaviourPun, IPunObservable
         //데이터 보내기
         if (stream.IsWriting) // isMine == true
         {
-            //position, rotation
             stream.SendNext(transform.rotation);
         }
         //데이터 받기
