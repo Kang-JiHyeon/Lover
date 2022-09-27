@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Photon.Pun;
 
 public class KANG_ViewMap : KANG_Machine
 {
@@ -22,19 +21,12 @@ public class KANG_ViewMap : KANG_Machine
     // M키를 누르고 있으면 맵 지도를 띄우고 싶다.
     public override void ActionKey()
     {
-        photonView.RPC("RpcMapSetActive", RpcTarget.All, true);
+        mapTV.SetActive(true);
     }
 
     // M키를 떼면 맵 지도를 끄고 싶다.
     public override void ActionKeyUp()
     {
-        photonView.RPC("RpcMapSetActive", RpcTarget.All, false);
+        mapTV.SetActive(false);
     }
-
-    [PunRPC]
-    void RpcMapSetActive(bool valse)
-    {
-        mapTV.SetActive(valse);
-    }
-
 }
