@@ -9,7 +9,7 @@ using Photon.Pun;
 public class KANG_YamatoRotate : MonoBehaviourPun, IPunObservable
 {
     // 회전속도
-    public float rotSpeed = 20f;
+    float rotSpeed = 20f;
 
     // Rpc 회전 속도
     float lerpSpeed = 25f;
@@ -39,7 +39,6 @@ public class KANG_YamatoRotate : MonoBehaviourPun, IPunObservable
         }
         else
         {
-            //transform.Rotate(-transform.forward);
             transform.rotation = Quaternion.Lerp(transform.rotation, receiveRot, lerpSpeed * Time.deltaTime);
         }
     }

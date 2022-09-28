@@ -30,9 +30,10 @@ public class KANG_Yamato : KANG_Machine
     float curCoolTime = 0f;
 
     // Texture
-    public List<GameObject> machines;
+    public List<GameObject> liveTextures;
+    public List<GameObject> deadTextures;
     public List<GameObject> controls;
-
+    int textureIndex = 0;
     // Laser
     public GameObject Laser;
 
@@ -54,25 +55,9 @@ public class KANG_Yamato : KANG_Machine
         source = GetComponent<AudioSource>();
 
         curCreateTime = createTime;
-
-        for (int i = 0; i < transform.childCount - 1; i++)
-        {
-            Transform child = transform.GetChild(i);
-            for (int j = 0; j < child.childCount; j++)
-            {
-                GameObject texture = child.GetChild(j).gameObject;
-
-                if (texture)
-                {
-                    if (i == 0)
-                        machines.Add(texture);
-                    else if (i == 1)
-                        controls.Add(texture);
-                }
-            }
-
-        }
+        //SetEnableTexture(textureIndex, false);
         SetEnableTexture(false);
+
     }
 
     // Update is called once per frame
@@ -131,9 +116,11 @@ public class KANG_Yamato : KANG_Machine
         switch (mState)
         {
             case MachineState.Idle:
+                textureIndex = 0;
                 IdleAttack();
                 break;
             case MachineState.Beam:
+                textureIndex = 1;
                 BeamAttack();
                 break;
         }
@@ -219,16 +206,16 @@ public class KANG_Yamato : KANG_Machine
 
         if (photonView.IsMine)
         {
-            photonView.RPC("RpcSetEnableTexture", RpcTarget.All, isEnable);
+            photonView.RPC("RpcSetEnableTexture", RpcTarget.All, textureIndex, isEnable);
         }
     }
 
     [PunRPC]
-    void RpcSetEnableTexture(bool isEnable)
+    void RpcSetEnableTexture(int index, bool isEnable)
     {
-        machines[0].SetActive(isEnable);
-        machines[1].SetActive(!isEnable);
-
+        liveTextures[index].SetActive(isEnable);
+        deadTextures[index].SetActive(!isEnable);
+        
         controls[0].SetActive(isEnable);
         controls[1].SetActive(!isEnable);
     }
