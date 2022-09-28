@@ -80,6 +80,7 @@ MonoBehaviour:
   - RpcChangeYState
   - RPCControl
   - RPCDestroy
+  - RPCYamatoEffect
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1
