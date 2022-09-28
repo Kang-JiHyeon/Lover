@@ -156,12 +156,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e69ed0f6df16c034998256af9b952da5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  presentOmni: {fileID: 6310179705467493575, guid: 422968bf8692764449dab392e017a6a6, type: 3}
+  crystal: 1
   sprites:
   - {fileID: 698653886, guid: 173f537c882aa3045a2e7dd1dc91710f, type: 3}
   - {fileID: -1072052229, guid: 173f537c882aa3045a2e7dd1dc91710f, type: 3}
   - {fileID: 1154697970, guid: 173f537c882aa3045a2e7dd1dc91710f, type: 3}
-  effectF: {fileID: 5102684701224821870, guid: 6f8d3240326f04e40bede1016eea9df0, type: 3}
+  effectF: {fileID: 5102684701224821870, guid: 19ccb65f67dd6ad41b69a4be0452739d, type: 3}
 --- !u!65 &6226606186117587002
 BoxCollider:
   m_ObjectHideFlags: 0

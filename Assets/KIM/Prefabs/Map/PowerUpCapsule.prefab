@@ -141,7 +141,7 @@ MonoBehaviour:
   - {fileID: 1309355089, guid: 723710d068f5b824583cbbe41aa975b0, type: 3}
   - {fileID: -461512508, guid: 723710d068f5b824583cbbe41aa975b0, type: 3}
   - {fileID: -1305401089, guid: 723710d068f5b824583cbbe41aa975b0, type: 3}
-  effectF: {fileID: 1247311384876784, guid: 4adffb0018aeda44e9263f901167af1f, type: 3}
+  effectF: {fileID: 1503552191884250405, guid: 41be60015a0b509489d2cdeffb95c57e, type: 3}
 --- !u!65 &7104915378356353892
 BoxCollider:
   m_ObjectHideFlags: 0

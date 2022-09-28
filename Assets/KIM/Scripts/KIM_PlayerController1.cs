@@ -5,6 +5,7 @@ using Photon.Pun;
 
 public class KIM_PlayerController1 : MonoBehaviourPun, IPunObservable
 {
+    GameObject ship;
     GameObject target;
     KANG_Machine machine;
 
@@ -22,6 +23,8 @@ public class KIM_PlayerController1 : MonoBehaviourPun, IPunObservable
     // Start is called before the first frame update
     void Awake()
     {
+        ship = GameObject.Find("Spaceship");
+        transform.SetParent(ship.transform);
         rb = GetComponent<Rigidbody>(); 
     }
 

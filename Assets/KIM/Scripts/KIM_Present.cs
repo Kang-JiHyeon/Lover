@@ -75,9 +75,6 @@ public class KIM_Present : MonoBehaviourPun
                 present = PhotonNetwork.Instantiate("BeamPresentOmni", ship.transform.position, Quaternion.identity);
 
             if (photonView.IsMine)
-                present.transform.SetParent(ship.transform);
-
-            if (photonView.IsMine)
                 PhotonNetwork.Destroy(gameObject);
         }
     }
