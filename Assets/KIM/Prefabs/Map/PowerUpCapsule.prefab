@@ -133,6 +133,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 473ecc70724dc114ab193308fa535d35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  crystal: 1
   flash: {fileID: 2100000, guid: ff0c153bd8581994785ca478473aa998, type: 2}
   defaultM: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   sprites:

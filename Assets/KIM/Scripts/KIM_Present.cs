@@ -5,6 +5,8 @@ using Photon.Pun;
 
 public class KIM_Present : MonoBehaviourPun
 {
+    [SerializeField]
+    int crystal = 1;
     GameObject ship;
     Vector3 newPos;
     SpriteRenderer render;
@@ -61,24 +63,23 @@ public class KIM_Present : MonoBehaviourPun
     }
 
     GameObject present;
-
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.layer == LayerMask.NameToLayer("Ship"))
         {
-            if (photonView.IsMine)
-            {
-                present = PhotonNetwork.Instantiate("PresentOmni", ship.transform.position, Quaternion.identity);
-                photonView.RPC("RPCSetParent", RpcTarget.All);
-                PhotonNetwork.Destroy(gameObject);
-            }
-        }
-    }
+            if (crystal == 1 && photonView.IsMine)
+                present = PhotonNetwork.Instantiate("PowerPresentOmni", ship.transform.position, Quaternion.identity);
+            if (crystal == 2 && photonView.IsMine)
+                present = PhotonNetwork.Instantiate("MetalPresentOmni", ship.transform.position, Quaternion.identity);
+            if (crystal == 3 && photonView.IsMine)
+                present = PhotonNetwork.Instantiate("BeamPresentOmni", ship.transform.position, Quaternion.identity);
 
-    [PunRPC]
-    void RPCSetParent()
-    {
-        present.transform.SetParent(ship.transform);
+            if (photonView.IsMine)
+                present.transform.SetParent(ship.transform);
+
+            if (photonView.IsMine)
+                PhotonNetwork.Destroy(gameObject);
+        }
     }
 
     private void OnDestroy()

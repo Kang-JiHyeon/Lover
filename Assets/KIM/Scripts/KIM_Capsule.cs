@@ -5,6 +5,8 @@ using Photon.Pun;
 
 public class KIM_Capsule : MonoBehaviourPun
 {
+    [SerializeField]
+    int crystal = 1;
     GameObject prop;
     SpriteRenderer render;
     public Material flash;
@@ -58,9 +60,19 @@ public class KIM_Capsule : MonoBehaviourPun
 
         if (hp <= 0)
         {
-            if (photonView.IsMine)
+            if (photonView.IsMine && crystal == 1)
             {
-                GameObject present = PhotonNetwork.Instantiate("Present", transform.position, Quaternion.identity);
+                GameObject present = PhotonNetwork.Instantiate("PowerPresent", transform.position, Quaternion.identity);
+                PhotonNetwork.Destroy(gameObject);
+            }
+            else if (photonView.IsMine && crystal == 2)
+            {
+                GameObject present = PhotonNetwork.Instantiate("MetalPresent", transform.position, Quaternion.identity);
+                PhotonNetwork.Destroy(gameObject);
+            }
+            else if (photonView.IsMine && crystal == 3)
+            {
+                GameObject present = PhotonNetwork.Instantiate("BeamPresent", transform.position, Quaternion.identity);
                 PhotonNetwork.Destroy(gameObject);
             }
         }
