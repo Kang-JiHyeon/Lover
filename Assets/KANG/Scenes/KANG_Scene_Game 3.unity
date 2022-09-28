@@ -3112,18 +3112,18 @@ PrefabInstance:
       propertyPath: sceneViewId
       value: 46
       objectReference: {fileID: 0}
+    - target: {fileID: 2872528266255113056, guid: 749d56a947a95634c8e62330be538ce1, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2872528266671130596, guid: 749d56a947a95634c8e62330be538ce1, type: 3}
       propertyPath: sceneViewId
       value: 52
       objectReference: {fileID: 0}
-    - target: {fileID: 2872528267217525208, guid: 749d56a947a95634c8e62330be538ce1, type: 3}
-      propertyPath: attackSound
-      value: 
-      objectReference: {fileID: 8300000, guid: 3ce45a441037c8f449ab44caaaf3c02f, type: 3}
-    - target: {fileID: 2872528267217525208, guid: 749d56a947a95634c8e62330be538ce1, type: 3}
-      propertyPath: yamatoEffect
-      value: 
-      objectReference: {fileID: 5102684701224821870, guid: 6f8d3240326f04e40bede1016eea9df0, type: 3}
+    - target: {fileID: 2872528267325591577, guid: 749d56a947a95634c8e62330be538ce1, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2872528267451710967, guid: 749d56a947a95634c8e62330be538ce1, type: 3}
       propertyPath: m_Name
       value: Spaceship
@@ -3176,6 +3176,14 @@ PrefabInstance:
       propertyPath: hitImage
       value: 
       objectReference: {fileID: 1101787174}
+    - target: {fileID: 3021387962866088194, guid: 749d56a947a95634c8e62330be538ce1, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3923110532878862668, guid: 749d56a947a95634c8e62330be538ce1, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6816169225507619135, guid: 749d56a947a95634c8e62330be538ce1, type: 3}
       propertyPath: sceneViewId
       value: 51
