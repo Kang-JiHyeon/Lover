@@ -155,7 +155,11 @@ public class KANG_Shield : KANG_Machine
         shieldTextures[index].SetActive(isEnable);
     }
 
-
+    [PunRPC]
+    void RpcChangeMState(MachineState state)
+    {
+        mState = state;
+    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -163,7 +167,8 @@ public class KANG_Shield : KANG_Machine
         {
             SetShield((int)mState, false);
 
-            mState = MachineState.Beam;
+            //mState = MachineState.Beam;
+            photonView.RPC("RpcChangeMState", RpcTarget.All, MachineState.Beam);
 
             SetShield((int)mState, true);
         }
@@ -176,7 +181,8 @@ public class KANG_Shield : KANG_Machine
         {
             SetShield((int)mState, false);
 
-            mState = MachineState.Idle;
+            //mState = MachineState.Idle;
+            photonView.RPC("RpcChangeMState", RpcTarget.All, MachineState.Idle);
 
             SetShield((int)mState, true);
         }

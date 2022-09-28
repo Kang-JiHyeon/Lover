@@ -10,12 +10,20 @@ public class KANG_Engine : KANG_Machine
     CharacterController cc;
     Transform ship;
     public Vector3 moveDir;
+    public Vector3 bounceDir;
     public float moveSpeed = 2f;
     public float curMoveSpeed = 0f;
     public bool isBounce;
     public float bounceTime = 0.2f;
-    float curTime = 0f;
-    public Vector3 bounceDir;
+    float curBounceTime = 0f;
+
+    public Transform firePos;
+
+    public MachineState mState = MachineState.Idle;
+
+    public List<GameObject> engineTextures;
+
+
 
     // Start is called before the first frame update
     void Start()
@@ -25,6 +33,14 @@ public class KANG_Engine : KANG_Machine
         localAngle = rotAxis.localEulerAngles;
 
         ke = GetComponent<KIM_Engine>();
+
+        Transform engine = transform.GetChild(0);
+        for (int i=1; i< engine.childCount; i++)
+        {
+            engineTextures.Add(engine.GetChild(i).gameObject);
+            engineTextures[i - 1].SetActive(false);
+        }
+        engineTextures[0].SetActive(true);
     }
 
     // Update is called once per frame
@@ -35,12 +51,12 @@ public class KANG_Engine : KANG_Machine
         {
             LerpMoveSpeed(0f);
             // 일정시간동안 튕기는 방향으로 이동하고 싶다.
-            curTime += Time.deltaTime;
+            curBounceTime += Time.deltaTime;
 
 
-            if (curTime > bounceTime)
+            if (curBounceTime > bounceTime)
             {
-                curTime = 0f;
+                curBounceTime = 0f;
                 isBounce = false;
             }
 
@@ -109,12 +125,31 @@ public class KANG_Engine : KANG_Machine
         localAngle.z = localAngle.z > 180 ? localAngle.z - 360 : localAngle.z;
         rotAxis.localRotation = Quaternion.Euler(0, 0, localAngle.z);
     }
-
+    
 
     // 우주선 이동
     public override void ActionKey()
     {
+        switch (mState)
+        {
+            case MachineState.Idle:
+                break;
+            case MachineState.Beam:
+                Beam();
+                
+                break;
+        }
 
+        print("curActionKeyDownTime : " + curActionKeyDownTime);
+        Move();
+    }
+    void Beam()
+    {
+        curActionKeyDownTime += Time.deltaTime;
+    }
+
+    void Move()
+    {
         // 움직임 방향
         if (moveSpeed > 0 && !isBounce)
         {
@@ -131,6 +166,12 @@ public class KANG_Engine : KANG_Machine
         ke.CreateEffect();
     }
 
+
+    float curActionKeyDownTime = 0f;
+    float beamShootTime = 3f;
+
+       
+
     [PunRPC]
     void RPCMove(Vector3 dir)
     {
@@ -140,7 +181,26 @@ public class KANG_Engine : KANG_Machine
     // 우주선 멈춤
     public override void ActionKeyUp()
     {
+        switch (mState)
+        {
+            case MachineState.Idle:
+                break;
+            case MachineState.Beam:
+                BeamShoot();
+                curActionKeyDownTime = 0f;
+                break;
+        }
         StartCoroutine(IeActionKeyUp(0f));
+    }
+
+    // 키를 누른지 일정 시간 이상이 되었을 때 키를 떼면 빔을 발사하고 싶다.
+    void BeamShoot()
+    {
+        if(curActionKeyDownTime > beamShootTime)
+        {
+            PhotonNetwork.Instantiate("YamatoMissile", firePos.position, firePos.rotation);
+            print("Beam 발사");
+        }
     }
 
     IEnumerator IeActionKeyUp(float targetSpeed, float changeSpeed = 1f)
@@ -163,6 +223,49 @@ public class KANG_Engine : KANG_Machine
         if (Mathf.Abs(targetSpeed - curMoveSpeed) < 0.1f)
         {
             curMoveSpeed = targetSpeed;
+        }
+    }
+
+    [PunRPC]
+    void RpcChangeMState(MachineState state)
+    {
+        mState = state;
+    }
+
+    void SetEngine(int index, bool isEnable)
+    {
+        
+    }
+
+
+    [PunRPC]
+    void RpcSetEngine(int index, bool isEnable)
+    {
+        engineTextures[index].SetActive(isEnable);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.name.Contains("Beam"))
+        {
+            photonView.RPC("RpcSetEngine", RpcTarget.All, (int)mState, false);
+
+            photonView.RPC("RpcChangeMState", RpcTarget.All, MachineState.Beam);
+
+            photonView.RPC("RpcSetEngine", RpcTarget.All, (int)mState, true);
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        // 보석 장착 없어지면 mState를 기본 상태로 전환하고 싶다.
+        if (other.gameObject.name.Contains("Jewel"))
+        {
+            photonView.RPC("RpcSetEngine", RpcTarget.All, (int)mState, false);
+
+            photonView.RPC("RpcChangeMState", RpcTarget.All, MachineState.Idle);
+
+            photonView.RPC("RpcSetEngine", RpcTarget.All, (int)mState, true);
         }
     }
 }

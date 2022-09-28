@@ -3092,6 +3092,10 @@ PrefabInstance:
       propertyPath: sceneViewId
       value: 45
       objectReference: {fileID: 0}
+    - target: {fileID: 1458175827507882557, guid: 749d56a947a95634c8e62330be538ce1, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2073297960320551771, guid: 749d56a947a95634c8e62330be538ce1, type: 3}
       propertyPath: sceneViewId
       value: 48
@@ -3112,15 +3116,15 @@ PrefabInstance:
       propertyPath: sceneViewId
       value: 46
       objectReference: {fileID: 0}
-    - target: {fileID: 2872528266255113056, guid: 749d56a947a95634c8e62330be538ce1, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
+    - target: {fileID: 2872528266198184144, guid: 749d56a947a95634c8e62330be538ce1, type: 3}
+      propertyPath: firePos
+      value: 
+      objectReference: {fileID: 2123817009}
     - target: {fileID: 2872528266671130596, guid: 749d56a947a95634c8e62330be538ce1, type: 3}
       propertyPath: sceneViewId
       value: 52
       objectReference: {fileID: 0}
-    - target: {fileID: 2872528267325591577, guid: 749d56a947a95634c8e62330be538ce1, type: 3}
+    - target: {fileID: 2872528266817475856, guid: 749d56a947a95634c8e62330be538ce1, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
@@ -3176,14 +3180,6 @@ PrefabInstance:
       propertyPath: hitImage
       value: 
       objectReference: {fileID: 1101787174}
-    - target: {fileID: 3021387962866088194, guid: 749d56a947a95634c8e62330be538ce1, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3923110532878862668, guid: 749d56a947a95634c8e62330be538ce1, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6816169225507619135, guid: 749d56a947a95634c8e62330be538ce1, type: 3}
       propertyPath: sceneViewId
       value: 51
@@ -121919,6 +121915,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!4 &2123817009 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7510474755660977808, guid: 749d56a947a95634c8e62330be538ce1, type: 3}
+  m_PrefabInstance: {fileID: 54165704}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2124173018
 PrefabInstance:
   m_ObjectHideFlags: 0

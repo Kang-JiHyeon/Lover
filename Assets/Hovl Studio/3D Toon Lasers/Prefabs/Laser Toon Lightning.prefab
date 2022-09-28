@@ -53557,7 +53557,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4419999949185646}
-  - component: {fileID: 114008910386843990}
   - component: {fileID: 120985675070875736}
   m_Layer: 0
   m_Name: Laser Toon Lightning
@@ -53583,25 +53582,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114008910386843990
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1997207017492988}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ea4308861e24ac4caa06d26e151d595, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damageOverTime: 30
-  HitEffect: {fileID: 1590660104381900}
-  HitOffset: 0.01
-  useLaserRotation: 1
-  MaxLength: 30
-  MainTextureLength: 1.6
-  NoiseTextureLength: 0.3
 --- !u!120 &120985675070875736
 LineRenderer:
   m_ObjectHideFlags: 0
