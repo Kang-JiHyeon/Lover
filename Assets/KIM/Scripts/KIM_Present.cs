@@ -31,16 +31,16 @@ public class KIM_Present : MonoBehaviourPun
         }
         else if (currentTime > 2.4f)
         {
-            photonView.RPC("RPCSetSprt", RpcTarget.AllBuffered, 2);
+            photonView.RPC("RPCSetPresentSpr", RpcTarget.AllBuffered, 2);
         }
         else if (currentTime > 1.2f)
         {
-            photonView.RPC("RPCSetSprt", RpcTarget.AllBuffered, 1);
+            photonView.RPC("RPCSetPresentSpr", RpcTarget.AllBuffered, 1);
         }
         else
         {
             if (photonView.IsMine)
-                photonView.RPC("RPCSetSprt", RpcTarget.AllBuffered, 0);
+                photonView.RPC("RPCSetPresentSpr", RpcTarget.AllBuffered, 0);
         }
 
         //if (photonView.IsMine)
@@ -55,7 +55,7 @@ public class KIM_Present : MonoBehaviourPun
     }
 
     [PunRPC]
-    void RPCSetSprt(int idx)
+    void RPCSetPresentSpr(int idx)
     {
         render.sprite = sprites[idx];
     }

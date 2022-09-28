@@ -86,6 +86,8 @@ MonoBehaviour:
   - RPCSetSpr
   - RPCSetParent
   - RPCSetSprt
+  - RPCSetPresentSpr
+  - RPCSetCapsuleSpr
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1

@@ -34,24 +34,24 @@ public class KIM_Capsule : MonoBehaviourPun
         }
         else if (currentTime > 0.9f)
         {
-            photonView.RPC("RPCSetSpr", RpcTarget.AllBuffered, 3);
+            photonView.RPC("RPCSetCapsuleSpr", RpcTarget.AllBuffered, 3);
             photonView.RPC("RPCRotate", RpcTarget.AllBuffered, 30f, Time.deltaTime);
         }
         else if (currentTime > 0.6f)
         {
-            photonView.RPC("RPCSetSpr", RpcTarget.AllBuffered, 2);
+            photonView.RPC("RPCSetCapsuleSpr", RpcTarget.AllBuffered, 2);
             photonView.RPC("RPCRotate", RpcTarget.AllBuffered, 30f, Time.deltaTime);
         }
         else if (currentTime > 0.3f)
         {
-            photonView.RPC("RPCSetSpr", RpcTarget.AllBuffered, 1);
+            photonView.RPC("RPCSetCapsuleSpr", RpcTarget.AllBuffered, 1);
             photonView.RPC("RPCRotate", RpcTarget.AllBuffered, -30f, Time.deltaTime);
         }
         else
         {
             if (photonView.IsMine)
             {
-                photonView.RPC("RPCSetSpr", RpcTarget.AllBuffered, 0);
+                photonView.RPC("RPCSetCapsuleSpr", RpcTarget.AllBuffered, 0);
                 photonView.RPC("RPCRotate", RpcTarget.AllBuffered, -30f, Time.deltaTime);
             }
         }
@@ -73,7 +73,7 @@ public class KIM_Capsule : MonoBehaviourPun
     }
 
     [PunRPC]
-    void RPCSetSpr(int idx)
+    void RPCSetCapsuleSpr(int idx)
     {
         render.sprite = sprites[idx];
     }

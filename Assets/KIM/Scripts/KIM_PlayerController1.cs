@@ -146,7 +146,7 @@ public class KIM_PlayerController1 : MonoBehaviourPun, IPunObservable
                 if (Input.GetKeyDown(KeyCode.B))
                 {
                     isModule = false;
-                    photonView.RPC("RPCControl", RpcTarget.AllBuffered, false);
+                    photonView.RPC("RPCControl", RpcTarget.AllBuffered, false, target.name);
                 }
             }
             // 모듈에 타고 있지 않을 때 모듈 위에 있고, 키를 누르면 모듈에 탐
@@ -155,7 +155,7 @@ public class KIM_PlayerController1 : MonoBehaviourPun, IPunObservable
                 Input.GetKeyUp(KeyCode.DownArrow) || Input.GetKeyUp(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.M)))
             {
                 isModule = true;
-                photonView.RPC("RPCControl", RpcTarget.AllBuffered, true);
+                photonView.RPC("RPCControl", RpcTarget.AllBuffered, true, target.name);
             }
         }
         else
@@ -166,9 +166,9 @@ public class KIM_PlayerController1 : MonoBehaviourPun, IPunObservable
     }
 
     [PunRPC] 
-    void RPCControl(bool value)
+    void RPCControl(bool value, string s)
     {
-        machine = target.GetComponent<KANG_Machine>();
+        machine = GameObject.Find(s).GetComponent<KANG_Machine>();
         machine.IsControl = value;
     }
 
