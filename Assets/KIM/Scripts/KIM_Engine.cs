@@ -30,7 +30,7 @@ public class KIM_Engine : MonoBehaviourPun
     {
         currentTime += deltaTime;
 
-        if (currentTime > 0.4f)
+        if (currentTime > 0.15f)
         {
             GameObject effect = Instantiate(engineEffect);
             effect.transform.position = transform.Find("EngineMachine").transform.Find("EngineOrangeBalls_Tex").position +
