@@ -5,48 +5,55 @@ using Photon.Pun;
 
 public class KIM_Capsule : MonoBehaviourPun
 {
+    GameObject prop;
     SpriteRenderer render;
     public Material flash;
     public Material defaultM;
     public Sprite[] sprites = new Sprite[4];
-    int idx = 0;
+    public GameObject effectF;
     int hp = 3;
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-        render = GetComponentInChildren<SpriteRenderer>();
+        prop = transform.Find("Propellor").gameObject;
+        render = transform.Find("Capsule").GetComponent<SpriteRenderer>();
     }
 
     float currentTime = 0;
     // Update is called once per frame
     void Update()
     {
+        prop.transform.Rotate(0, 0, 500f * Time.deltaTime);
+
         if (photonView.IsMine)
             currentTime += Time.deltaTime;
-        if (currentTime > 0.3f)
+        
+        if (currentTime > 1.2f)
         {
-            render.sprite = sprites[idx++];
-            if (idx >= sprites.Length)
-                idx = 0;
-        }
-        else if (currentTime > 0.6f)
-        {
-            render.sprite = sprites[idx++];
-            if (idx >= sprites.Length)
-                idx = 0;
+            currentTime = 0;
         }
         else if (currentTime > 0.9f)
         {
-            render.sprite = sprites[idx++];
-            if (idx >= sprites.Length)
-                idx = 0;
+            photonView.RPC("RPCSetSpr", RpcTarget.AllBuffered, 3);
+            photonView.RPC("RPCRotate", RpcTarget.AllBuffered, 30f, Time.deltaTime);
         }
-        else if (currentTime > 1.2f)
+        else if (currentTime > 0.6f)
         {
-            render.sprite = sprites[idx++];
-            if (idx >= sprites.Length)
-                idx = 0;
-            currentTime = 0;
+            photonView.RPC("RPCSetSpr", RpcTarget.AllBuffered, 2);
+            photonView.RPC("RPCRotate", RpcTarget.AllBuffered, 30f, Time.deltaTime);
+        }
+        else if (currentTime > 0.3f)
+        {
+            photonView.RPC("RPCSetSpr", RpcTarget.AllBuffered, 1);
+            photonView.RPC("RPCRotate", RpcTarget.AllBuffered, -30f, Time.deltaTime);
+        }
+        else
+        {
+            if (photonView.IsMine)
+            {
+                photonView.RPC("RPCSetSpr", RpcTarget.AllBuffered, 0);
+                photonView.RPC("RPCRotate", RpcTarget.AllBuffered, -30f, Time.deltaTime);
+            }
         }
 
         if (hp <= 0)
@@ -59,18 +66,39 @@ public class KIM_Capsule : MonoBehaviourPun
         }
     }
 
+    [PunRPC]
+    void RPCRotate(float angle, float deltaTime)
+    {
+        transform.Rotate(0, 0, angle * deltaTime);
+    }
+
+    [PunRPC]
+    void RPCSetSpr(int idx)
+    {
+        render.sprite = sprites[idx];
+    }
+
     private void OnTriggerEnter(Collider other)
     {
-        hp--;
-        iTween.ScaleTo(gameObject, iTween.Hash("x", 0.7f, "y", 0.7f, "time", 0.1f, "easetype", iTween.EaseType.easeOutBounce));
-        iTween.ScaleTo(gameObject, iTween.Hash("x", 1, "y", 1, "time", 0.1f, "easetype", iTween.EaseType.easeOutBounce, "delay", 0.16f));
-        StopCoroutine("OnHitFlash");
-        StartCoroutine("OnHitFlash");
+        if (other.gameObject.layer == LayerMask.NameToLayer("PlayerBullet"))
+        {
+            hp--;
+            iTween.ScaleTo(gameObject, iTween.Hash("x", 0.7f, "y", 0.7f, "time", 0.1f, "easetype", iTween.EaseType.easeOutBounce));
+            iTween.ScaleTo(gameObject, iTween.Hash("x", 1, "y", 1, "time", 0.1f, "easetype", iTween.EaseType.easeOutBounce, "delay", 0.11f));
+            StopCoroutine("OnHitFlash");
+            StartCoroutine("OnHitFlash");
+        }
     }
     IEnumerator OnHitFlash()
     {
         render.material = flash;
         yield return new WaitForSeconds(0.1f);
         render.material = defaultM;
+    }
+
+    private void OnDestroy()
+    {
+        GameObject effect = Instantiate(effectF);
+        effect.transform.position = transform.position;
     }
 }

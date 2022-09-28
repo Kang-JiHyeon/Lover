@@ -81,6 +81,11 @@ MonoBehaviour:
   - RPCControl
   - RPCDestroy
   - RPCYamatoEffect
+  - RPCRotate
+  - RPCSetPos
+  - RPCSetSpr
+  - RPCSetParent
+  - RPCSetSprt
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1
