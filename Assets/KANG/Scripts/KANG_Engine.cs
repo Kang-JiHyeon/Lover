@@ -136,11 +136,8 @@ public class KANG_Engine : KANG_Machine
                 break;
             case MachineState.Beam:
                 Beam();
-                
                 break;
         }
-
-        print("curActionKeyDownTime : " + curActionKeyDownTime);
         Move();
     }
     void Beam()
@@ -231,12 +228,6 @@ public class KANG_Engine : KANG_Machine
     {
         mState = state;
     }
-
-    void SetEngine(int index, bool isEnable)
-    {
-        
-    }
-
 
     [PunRPC]
     void RpcSetEngine(int index, bool isEnable)
