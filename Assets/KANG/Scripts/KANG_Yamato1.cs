@@ -6,7 +6,7 @@ using UnityEngine;
 
 // yamato를 조작할 수 있고, 공격 키를 누르면 공격을 발사하고 싶다.
 
-public class KANG_Yamato : KANG_Machine
+public class KANG_Yamato1 : KANG_Machine
 {
     AudioSource source;
 
