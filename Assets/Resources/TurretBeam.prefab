@@ -24420,7 +24420,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4192878086608550
 Transform:
   m_ObjectHideFlags: 0
@@ -39032,14 +39032,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1798407287873408}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4557122259304616}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!198 &198414435863721378
 ParticleSystem:
   m_ObjectHideFlags: 0
@@ -48747,8 +48747,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1915435310513538}
-  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -48756,7 +48756,7 @@ Transform:
   - {fileID: 4919014834166178}
   m_Father: {fileID: 4419999949185646}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!198 &198149481935044224
 ParticleSystem:
   m_ObjectHideFlags: 0
@@ -49009,8 +49009,8 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 4
-      minScalar: 2
+      scalar: 2
+      minScalar: 1
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -53563,7 +53563,7 @@ GameObject:
   - component: {fileID: 2501739053130179583}
   - component: {fileID: 1892458269444561484}
   m_Layer: 25
-  m_Name: EngineLaser
+  m_Name: TurretBeam
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -53628,11 +53628,11 @@ LineRenderer:
   m_SortingLayer: 0
   m_SortingOrder: -1
   m_Positions:
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: -8, z: 0}
+  - {x: 0, y: 1, z: 0}
+  - {x: 0, y: -0.5, z: 0}
   m_Parameters:
     serializedVersion: 3
-    widthMultiplier: 0.8085978
+    widthMultiplier: 0.5308806
     widthCurve:
       serializedVersion: 2
       m_Curve:
@@ -53647,7 +53647,7 @@ LineRenderer:
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 1
-        value: 0.17412376
+        value: 0.41760063
         inSlope: 0
         outSlope: 0
         tangentMode: 0
