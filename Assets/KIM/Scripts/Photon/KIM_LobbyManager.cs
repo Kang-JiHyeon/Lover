@@ -155,8 +155,10 @@ public class KIM_LobbyManager : MonoBehaviourPunCallbacks
         if (PhotonNetwork.PlayerList.Length == 2)
         {
             text.SetActive(true);
-            photonView.RPC("RPCReady", RpcTarget.AllBuffered, false, 3);
-            photonView.RPC("RPCReady", RpcTarget.AllBuffered, false, 4);
+            if (readyText3.activeSelf == true)
+                photonView.RPC("RPCReady", RpcTarget.AllBuffered, false, 3);
+            if (readyText4.activeSelf == true)
+                photonView.RPC("RPCReady", RpcTarget.AllBuffered, false, 4);
             if (playerIndex == 1 && player1Ready && player2Ready)
             {
                 text.GetComponent<Text>().text = "Press Enter To Start!";
@@ -185,7 +187,8 @@ public class KIM_LobbyManager : MonoBehaviourPunCallbacks
         else if (PhotonNetwork.PlayerList.Length == 3)
         {
             text.SetActive(true);
-            photonView.RPC("RPCReady", RpcTarget.AllBuffered, false, 4);
+            if (readyText4.activeSelf == true)
+                photonView.RPC("RPCReady", RpcTarget.AllBuffered, false, 4);
             if (playerIndex == 1 && player1Ready && player2Ready && player3Ready)
             {
                 text.GetComponent<Text>().text = "Press Enter To Start!";
@@ -279,14 +282,18 @@ public class KIM_LobbyManager : MonoBehaviourPunCallbacks
         else if (PhotonNetwork.PlayerList.Length < 2)
         {
             text.SetActive(false);
-            photonView.RPC("RPCReady", RpcTarget.AllBuffered, false, 1);
-            photonView.RPC("RPCReady", RpcTarget.AllBuffered, false, 2);
-            photonView.RPC("RPCReady", RpcTarget.AllBuffered, false, 3);
-            photonView.RPC("RPCReady", RpcTarget.AllBuffered, false, 4);
+            if (readyText1.activeSelf == true)
+                photonView.RPC("RPCReady", RpcTarget.AllBuffered, false, 1);
+            if (readyText2.activeSelf == true)
+                photonView.RPC("RPCReady", RpcTarget.AllBuffered, false, 2);
+            if (readyText3.activeSelf == true)
+                photonView.RPC("RPCReady", RpcTarget.AllBuffered, false, 3);
+            if (readyText4.activeSelf == true)
+                photonView.RPC("RPCReady", RpcTarget.AllBuffered, false, 4);
         }
 
         // 내가 플레이어 1일 때, 엔터키 누르면 레디
-        if (text.activeSelf == true && Input.GetKeyDown(KeyCode.Return) && playerIndex == 1)
+        if (text.activeSelf == true && Input.GetKeyDown(KeyCode.Return) && playerIndex == 1 && !player1Ready)
         {
             photonView.RPC("RPCSound", RpcTarget.All);
             photonView.RPC("RPCReady", RpcTarget.AllBuffered, true, 1);
@@ -298,7 +305,7 @@ public class KIM_LobbyManager : MonoBehaviourPunCallbacks
         }
 
         // 내가 플레이어 2일 때, 엔터키 누르면 레디
-        if (text.activeSelf == true && Input.GetKeyDown(KeyCode.Return) && playerIndex == 2)
+        if (text.activeSelf == true && Input.GetKeyDown(KeyCode.Return) && playerIndex == 2 && !player2Ready)
         {
             photonView.RPC("RPCSound", RpcTarget.All);
             photonView.RPC("RPCReady", RpcTarget.AllBuffered, true, 2);
@@ -310,7 +317,7 @@ public class KIM_LobbyManager : MonoBehaviourPunCallbacks
         }
 
         // 내가 플레이어 3일 때, 엔터키 누르면 레디
-        if (text.activeSelf == true && Input.GetKeyDown(KeyCode.Return) && playerIndex == 3)
+        if (text.activeSelf == true && Input.GetKeyDown(KeyCode.Return) && playerIndex == 3 && !player3Ready)
         {
             photonView.RPC("RPCSound", RpcTarget.All);
             photonView.RPC("RPCReady", RpcTarget.AllBuffered, true, 3);
@@ -322,7 +329,7 @@ public class KIM_LobbyManager : MonoBehaviourPunCallbacks
         }
 
         // 내가 플레이어 4일 때, 엔터키 누르면 레디
-        if (text.activeSelf == true && Input.GetKeyDown(KeyCode.Return) && playerIndex == 4)
+        if (text.activeSelf == true && Input.GetKeyDown(KeyCode.Return) && playerIndex == 4 && !player4Ready)
         {
             photonView.RPC("RPCSound", RpcTarget.All);
             photonView.RPC("RPCReady", RpcTarget.AllBuffered, true, 4);

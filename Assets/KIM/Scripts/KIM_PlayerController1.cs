@@ -5,8 +5,13 @@ using Photon.Pun;
 
 public class KIM_PlayerController1 : MonoBehaviourPun, IPunObservable
 {
+    GameObject ship;
     GameObject target;
     KANG_Machine machine;
+
+    public GameObject powerCrystal;
+    public GameObject MetalCrystal;
+    public GameObject BeamCrystal;
 
     Rigidbody rb;
     bool isLadder;
@@ -22,6 +27,8 @@ public class KIM_PlayerController1 : MonoBehaviourPun, IPunObservable
     // Start is called before the first frame update
     void Awake()
     {
+        ship = GameObject.Find("Spaceship");
+        transform.SetParent(ship.transform);
         rb = GetComponent<Rigidbody>(); 
     }
 
@@ -38,7 +45,7 @@ public class KIM_PlayerController1 : MonoBehaviourPun, IPunObservable
 
             if (Input.GetKey(KeyCode.M))
             {
-                if (isModule)
+                if (isModule && target)
                 {
                     machine = target.GetComponent<KANG_Machine>();
                     machine.ActionKey();
@@ -47,7 +54,7 @@ public class KIM_PlayerController1 : MonoBehaviourPun, IPunObservable
             else if (Input.GetKeyUp(KeyCode.M))
             {
 
-                if (isModule)
+                if (isModule && target)
                 {
                     machine = target.GetComponent<KANG_Machine>();
                     machine.ActionKeyUp();
@@ -56,7 +63,7 @@ public class KIM_PlayerController1 : MonoBehaviourPun, IPunObservable
 
             if (Input.GetKey(KeyCode.UpArrow))
             {
-                if (isModule)
+                if (isModule && target)
                 {
                     machine = target.GetComponent<KANG_Machine>();
                     machine.UpKey();
@@ -68,7 +75,7 @@ public class KIM_PlayerController1 : MonoBehaviourPun, IPunObservable
             }
             if (Input.GetKey(KeyCode.DownArrow))
             {
-                if (isModule)
+                if (isModule && target)
                 {
                     machine = target.GetComponent<KANG_Machine>();
                     machine.DownKey();
@@ -80,7 +87,7 @@ public class KIM_PlayerController1 : MonoBehaviourPun, IPunObservable
             }
             if (Input.GetKey(KeyCode.LeftArrow))
             {
-                if (isModule)
+                if (isModule && target)
                 {
                     machine = target.GetComponent<KANG_Machine>();
                     machine.LeftKey();
@@ -96,7 +103,7 @@ public class KIM_PlayerController1 : MonoBehaviourPun, IPunObservable
             }
             if (Input.GetKey(KeyCode.RightArrow))
             {
-                if (isModule)
+                if (isModule && target)
                 {
                     machine = target.GetComponent<KANG_Machine>();
                     machine.RightKey();
@@ -113,7 +120,7 @@ public class KIM_PlayerController1 : MonoBehaviourPun, IPunObservable
 
             if (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.RightArrow))
             {
-                if (isModule)
+                if (isModule && target)
                 {
                     machine = target.GetComponent<KANG_Machine>();
                     machine.ArrowKey();
@@ -125,7 +132,7 @@ public class KIM_PlayerController1 : MonoBehaviourPun, IPunObservable
             || (Input.GetKeyUp(KeyCode.LeftArrow) && !(Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.RightArrow)))
             || (Input.GetKeyUp(KeyCode.RightArrow) && !(Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.LeftArrow))))
             {
-                if (isModule)
+                if (isModule && target)
                 {
                     machine = target.GetComponent<KANG_Machine>();
                     machine.ArrowKeyUp();
@@ -141,12 +148,12 @@ public class KIM_PlayerController1 : MonoBehaviourPun, IPunObservable
             }
 
             // 모듈에 타고 있을 때 B키 누르면 모듈 내림
-            if (isModule)
+            if (isModule && target)
             {
                 if (Input.GetKeyDown(KeyCode.B))
                 {
                     isModule = false;
-                    photonView.RPC("RPCControl", RpcTarget.AllBuffered, false);
+                    photonView.RPC("RPCControl", RpcTarget.AllBuffered, false, target.name);
                 }
             }
             // 모듈에 타고 있지 않을 때 모듈 위에 있고, 키를 누르면 모듈에 탐
@@ -155,7 +162,7 @@ public class KIM_PlayerController1 : MonoBehaviourPun, IPunObservable
                 Input.GetKeyUp(KeyCode.DownArrow) || Input.GetKeyUp(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.M)))
             {
                 isModule = true;
-                photonView.RPC("RPCControl", RpcTarget.AllBuffered, true);
+                photonView.RPC("RPCControl", RpcTarget.AllBuffered, true, target.name);
             }
         }
         else
@@ -166,9 +173,9 @@ public class KIM_PlayerController1 : MonoBehaviourPun, IPunObservable
     }
 
     [PunRPC] 
-    void RPCControl(bool value)
+    void RPCControl(bool value, string s)
     {
-        machine = target.GetComponent<KANG_Machine>();
+        machine = GameObject.Find(s).GetComponent<KANG_Machine>();
         machine.IsControl = value;
     }
 
@@ -176,6 +183,31 @@ public class KIM_PlayerController1 : MonoBehaviourPun, IPunObservable
     void RPCGravity(bool use)
     {
         rb.useGravity = use;
+    }
+
+    public void CrystalInit(int idx)
+    {
+        if (idx == 1)
+        {
+            GameObject crystal = Instantiate(powerCrystal);
+            crystal.transform.SetParent(transform);
+            crystal.transform.localPosition = new Vector3(0, 1f, 0);
+            Destroy(crystal, 15f);
+        }
+        else if (idx == 2)
+        {
+            GameObject crystal = Instantiate(MetalCrystal);
+            crystal.transform.SetParent(transform);
+            crystal.transform.localPosition = new Vector3(0, 1f, 0);
+            Destroy(crystal, 15f);
+        }
+        else if (idx == 3)
+        {
+            GameObject crystal = Instantiate(BeamCrystal);
+            crystal.transform.SetParent(transform);
+            crystal.transform.localPosition = new Vector3(0, 1f, 0);
+            Destroy(crystal, 15f);
+        }
     }
 
     public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)

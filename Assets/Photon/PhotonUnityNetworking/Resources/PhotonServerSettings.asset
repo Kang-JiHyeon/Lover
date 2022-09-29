@@ -81,6 +81,20 @@ MonoBehaviour:
   - RPCControl
   - RPCDestroy
   - RPCYamatoEffect
+  - RPCRotate
+  - RPCSetPos
+  - RPCSetSpr
+  - RPCSetParent
+  - RPCSetSprt
+  - RPCSetPresentSpr
+  - RPCSetCapsuleSpr
+  - RPCSetJewelSpr
+  - RPCSetPresentParent
+  - RPCJewelSound
+  - RPCCrystalSound
+  - RPCEndSound
+  - RPCDie
+  - RPCOffListener
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1
