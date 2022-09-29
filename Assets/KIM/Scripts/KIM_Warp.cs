@@ -5,6 +5,7 @@ using Photon.Pun;
 
 public class KIM_Warp : MonoBehaviourPun
 {
+    AudioListener listener;
     AudioSource source;
     public AudioClip open;
 
@@ -23,6 +24,7 @@ public class KIM_Warp : MonoBehaviourPun
     // Start is called before the first frame update
     void Start()
     {
+        listener = GameObject.Find("Main Camera").GetComponent<AudioListener>();
         source = GetComponent<AudioSource>();
         unSeal.SetActive(false);
         ship = GameObject.Find("Spaceship");
@@ -63,7 +65,14 @@ public class KIM_Warp : MonoBehaviourPun
             cc.Move((transform.position - ship.transform.position) * Time.deltaTime);
             yield return null;
         }
+        photonView.RPC("RPCOffListener", RpcTarget.All);
         PhotonNetwork.LoadLevel("KIM_Ending");
+    }
+
+    [PunRPC]
+    void RPCOffListener()
+    {
+        listener.enabled = false;
     }
 
     private void OnTriggerEnter(Collider other)
