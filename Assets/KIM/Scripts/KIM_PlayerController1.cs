@@ -45,7 +45,7 @@ public class KIM_PlayerController1 : MonoBehaviourPun, IPunObservable
 
             if (Input.GetKey(KeyCode.M))
             {
-                if (isModule)
+                if (isModule && target)
                 {
                     machine = target.GetComponent<KANG_Machine>();
                     machine.ActionKey();
@@ -54,7 +54,7 @@ public class KIM_PlayerController1 : MonoBehaviourPun, IPunObservable
             else if (Input.GetKeyUp(KeyCode.M))
             {
 
-                if (isModule)
+                if (isModule && target)
                 {
                     machine = target.GetComponent<KANG_Machine>();
                     machine.ActionKeyUp();
@@ -63,7 +63,7 @@ public class KIM_PlayerController1 : MonoBehaviourPun, IPunObservable
 
             if (Input.GetKey(KeyCode.UpArrow))
             {
-                if (isModule)
+                if (isModule && target)
                 {
                     machine = target.GetComponent<KANG_Machine>();
                     machine.UpKey();
@@ -75,7 +75,7 @@ public class KIM_PlayerController1 : MonoBehaviourPun, IPunObservable
             }
             if (Input.GetKey(KeyCode.DownArrow))
             {
-                if (isModule)
+                if (isModule && target)
                 {
                     machine = target.GetComponent<KANG_Machine>();
                     machine.DownKey();
@@ -87,7 +87,7 @@ public class KIM_PlayerController1 : MonoBehaviourPun, IPunObservable
             }
             if (Input.GetKey(KeyCode.LeftArrow))
             {
-                if (isModule)
+                if (isModule && target)
                 {
                     machine = target.GetComponent<KANG_Machine>();
                     machine.LeftKey();
@@ -103,7 +103,7 @@ public class KIM_PlayerController1 : MonoBehaviourPun, IPunObservable
             }
             if (Input.GetKey(KeyCode.RightArrow))
             {
-                if (isModule)
+                if (isModule && target)
                 {
                     machine = target.GetComponent<KANG_Machine>();
                     machine.RightKey();
@@ -120,7 +120,7 @@ public class KIM_PlayerController1 : MonoBehaviourPun, IPunObservable
 
             if (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.RightArrow))
             {
-                if (isModule)
+                if (isModule && target)
                 {
                     machine = target.GetComponent<KANG_Machine>();
                     machine.ArrowKey();
@@ -132,7 +132,7 @@ public class KIM_PlayerController1 : MonoBehaviourPun, IPunObservable
             || (Input.GetKeyUp(KeyCode.LeftArrow) && !(Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.RightArrow)))
             || (Input.GetKeyUp(KeyCode.RightArrow) && !(Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.LeftArrow))))
             {
-                if (isModule)
+                if (isModule && target)
                 {
                     machine = target.GetComponent<KANG_Machine>();
                     machine.ArrowKeyUp();
@@ -148,7 +148,7 @@ public class KIM_PlayerController1 : MonoBehaviourPun, IPunObservable
             }
 
             // 모듈에 타고 있을 때 B키 누르면 모듈 내림
-            if (isModule)
+            if (isModule && target)
             {
                 if (Input.GetKeyDown(KeyCode.B))
                 {

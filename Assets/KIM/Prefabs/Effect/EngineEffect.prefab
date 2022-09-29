@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 593533386773950476}
   - component: {fileID: 916748968897036776}
-  m_Layer: 0
+  m_Layer: 23
   m_Name: EngineEffect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
