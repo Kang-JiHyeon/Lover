@@ -140,9 +140,32 @@ public class KANG_Engine : KANG_Machine
         }
         Move();
     }
+
+    public GameObject engineBeamFactory;
+    GameObject engineBeam;
     void Beam()
     {
         curActionKeyDownTime += Time.deltaTime;
+
+        // 키를 누른지 일정시간이 지나면 엔진beam 효과를 생성하고 싶다.
+        if(curActionKeyDownTime > beamShootTime)
+        {
+            if(engineBeam == null)
+            {
+                print("엔진 빔 가열");
+
+                photonView.RPC("RpcCreateBeam", RpcTarget.All);
+            }
+        }
+    }
+    [PunRPC]
+    void RpcCreateBeam()
+    {
+        engineBeam = Instantiate(engineBeamFactory);
+        engineBeam.transform.parent = firePos;
+        engineBeam.transform.position = firePos.transform.position;
+        engineBeam.transform.localPosition = new Vector3(0, 0.6f, 0.1f);
+        engineBeam.transform.forward = firePos.up;
     }
 
     void Move()
@@ -195,9 +218,19 @@ public class KANG_Engine : KANG_Machine
     {
         if(curActionKeyDownTime > beamShootTime)
         {
-            PhotonNetwork.Instantiate("YamatoMissile", firePos.position, firePos.rotation);
+            if(engineBeam!= null)
+            {
+                photonView.RPC("RpcBeamDestroy", RpcTarget.All);
+            }
+            PhotonNetwork.Instantiate("EngineLaser", firePos.position, firePos.rotation);
             print("Beam 발사");
         }
+    }
+
+    [PunRPC]
+    void RpcBeamDestroy()
+    {
+        Destroy(engineBeam);
     }
 
     IEnumerator IeActionKeyUp(float targetSpeed, float changeSpeed = 1f)

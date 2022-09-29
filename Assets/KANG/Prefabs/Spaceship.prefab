@@ -366,7 +366,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &7510474755660977808
 Transform:
   m_ObjectHideFlags: 0
@@ -1296,11 +1296,15 @@ MonoBehaviour:
   rotDir: 0
   rotSpeed: 50
   moveDir: {x: 0, y: 0, z: 0}
+  bounceDir: {x: 0, y: 0, z: 0}
   moveSpeed: 2
   curMoveSpeed: 0
   isBounce: 0
   bounceTime: 1
-  bounceDir: {x: 0, y: 0, z: 0}
+  firePos: {fileID: 7510474755660977808}
+  mState: 0
+  engineTextures: []
+  engineBeamFactory: {fileID: 100004, guid: 150ecd1162fe8ef42bb80ec9a0f22024, type: 3}
 --- !u!114 &6816169225507619135
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2099,7 +2103,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2872528266817475857
 Transform:
   m_ObjectHideFlags: 0
