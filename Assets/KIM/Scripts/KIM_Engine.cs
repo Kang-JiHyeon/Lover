@@ -5,13 +5,15 @@ using Photon.Pun;
 
 public class KIM_Engine : MonoBehaviourPun
 {
+    AudioSource source;
+    public AudioClip clip;
     float currentTime = 0;
     public GameObject engineEffect;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        source = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -25,10 +27,25 @@ public class KIM_Engine : MonoBehaviourPun
         photonView.RPC("RPCEffect", RpcTarget.All, Time.deltaTime);
     }
 
+    public void EndSound()
+    {
+        photonView.RPC("RPCEndSound", RpcTarget.All);
+    }
+
+    [PunRPC]
+    void RPCEndSound()
+    {
+        source.Stop();
+        source.PlayOneShot(clip);
+    }
+
     [PunRPC]
     void RPCEffect(float deltaTime)
     {
         currentTime += deltaTime;
+
+        if (!source.isPlaying)
+            source.Play();
 
         if (currentTime > 0.15f)
         {

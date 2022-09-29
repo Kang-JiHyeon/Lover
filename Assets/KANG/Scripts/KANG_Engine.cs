@@ -141,6 +141,7 @@ public class KANG_Engine : KANG_Machine
     public override void ActionKeyUp()
     {
         StartCoroutine(IeActionKeyUp(0f));
+        ke.EndSound();
     }
 
     IEnumerator IeActionKeyUp(float targetSpeed, float changeSpeed = 1f)
