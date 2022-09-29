@@ -55,8 +55,13 @@ public class KANG_Yamato : KANG_Machine
         source = GetComponent<AudioSource>();
 
         curCreateTime = createTime;
-        //SetEnableTexture(textureIndex, false);
-        SetEnableTexture(false);
+
+        for (int i = 0; i < liveTextures.Count; i++)
+        {
+            liveTextures[i].SetActive(false);
+            deadTextures[i].SetActive(false);
+        }
+        deadTextures[0].SetActive(true);
 
     }
 
@@ -81,8 +86,6 @@ public class KANG_Yamato : KANG_Machine
     {
         if (yState == YamatoState.Enable)
         {
-            //yState = YamatoState.Attack;
-            
             photonView.RPC("RpcChangeYState", RpcTarget.All, YamatoState.Attack);
         }
 
@@ -134,7 +137,7 @@ public class KANG_Yamato : KANG_Machine
             curAttackTime = 0f;
             curCreateTime = createTime;
 
-            SetEnableTexture(false);
+            SetTexture(textureIndex, false);
 
             if (photonView.IsMine)
             {
@@ -169,65 +172,10 @@ public class KANG_Yamato : KANG_Machine
         Destroy(effect, 1.0f);
     }
 
-    // 비활성화 상태
-    // - 쿨 타임이 다 차면 활성화 상태로 전이하고 싶다.
-    // - 쿨 타임이 다 차면 활성화 텍스쳐로 바꾼다.
-    private void Disable()
-    {
-        if (Laser.activeSelf == true)
-        {
-            Laser.SetActive(false);
-        }
-        
-        curCoolTime += Time.deltaTime;
-
-        if (curCoolTime > coolTime)
-        {
-            curCoolTime = 0f;
-
-            SetEnableTexture(true);
-
-            if (photonView.IsMine)
-            {
-                photonView.RPC("RpcChangeYState", RpcTarget.All, YamatoState.Enable);
-
-            }
-        }
-    }
-
-    // 텍스쳐 변경 함수
-    void SetEnableTexture(bool isEnable)
-    {
-        //machines[0].SetActive(isEnable);
-        //machines[1].SetActive(!isEnable);
-
-        //controls[0].SetActive(isEnable);
-        //controls[1].SetActive(!isEnable);
-
-        if (photonView.IsMine)
-        {
-            photonView.RPC("RpcSetEnableTexture", RpcTarget.All, textureIndex, isEnable);
-        }
-    }
-
-    [PunRPC]
-    void RpcSetEnableTexture(int index, bool isEnable)
-    {
-        liveTextures[index].SetActive(isEnable);
-        deadTextures[index].SetActive(!isEnable);
-        
-        controls[0].SetActive(isEnable);
-        controls[1].SetActive(!isEnable);
-    }
-
-    // * 빔 상태 공격
-    // up 방향으로 Ray를 쏜다.
-    // 닿인 대상이 enemy라면
-    // 없앤다.
-    // 
+    // 빔 상태 공격
     void BeamAttack()
     {
-        if(Laser.activeSelf == false)
+        if (Laser.activeSelf == false)
         {
             Laser.SetActive(true);
         }
@@ -238,11 +186,63 @@ public class KANG_Yamato : KANG_Machine
         {
             curAttackTime = 0f;
 
+            SetTexture(textureIndex, false);
+
             if (photonView.IsMine)
             {
                 photonView.RPC("RpcChangeYState", RpcTarget.All, YamatoState.Disable);
             }
         }
+    }
+
+    // 비활성화 상태
+    // - 쿨 타임이 다 차면 활성화 상태로 전이하고 싶다.
+    // - 쿨 타임이 다 차면 활성화 텍스쳐로 바꾼다.
+    private void Disable()
+    {
+        if (Laser.activeSelf == true)
+        {
+            Laser.SetActive(false);
+        }
+
+        curCoolTime += Time.deltaTime;
+
+        if (curCoolTime > coolTime)
+        {
+            curCoolTime = 0f;
+
+            SetTexture(textureIndex, true);
+
+            if (photonView.IsMine)
+            {
+                photonView.RPC("RpcChangeYState", RpcTarget.All, YamatoState.Enable);
+            }
+        }
+    }
+
+    // 텍스쳐 변경 함수
+    void SetTexture(int index, bool isEnable)
+    {
+        if (photonView.IsMine)
+        {
+            photonView.RPC("RpcSetTexture", RpcTarget.All, index, isEnable);
+        }
+    }
+
+    [PunRPC]
+    void RpcSetTexture(int index, bool isEnable)
+    {
+        for (int i = 0; i < liveTextures.Count; i++)
+        {
+            liveTextures[i].SetActive(false);
+            deadTextures[i].SetActive(false);
+        }
+
+        liveTextures[index].SetActive(isEnable);
+        deadTextures[index].SetActive(!isEnable);
+
+        controls[0].SetActive(isEnable);
+        controls[1].SetActive(!isEnable);
     }
 
 
@@ -253,8 +253,25 @@ public class KANG_Yamato : KANG_Machine
             if (photonView.IsMine)
             {
                 photonView.RPC("RpcChangeMState", RpcTarget.All, MachineState.Beam);
+                textureIndex = 1;
+                SetTexture(textureIndex, yState != YamatoState.Disable);
             }
-            
+
         }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        // 보석 장착 없어지면 mState를 기본 상태로 전환하고 싶다.
+        if (other.gameObject.name.Contains("Jewel"))
+        {
+            if (photonView.IsMine)
+            {
+                photonView.RPC("RpcChangeMState", RpcTarget.All, MachineState.Idle);
+                textureIndex = 0;
+                SetTexture(textureIndex, yState != YamatoState.Disable);
+            }
+        } 
+       
     }
 }

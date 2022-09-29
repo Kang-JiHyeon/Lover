@@ -12,12 +12,15 @@ public class KANG_Shield : KANG_Machine
     //public Transform shieldAxis;
     public KANG_Engine engine;
 
-    public Transform shieldWave;
+    public Transform shield;
 
     Vector3 downPos;
     Vector3 upPos;
 
     public MachineState mState = MachineState.Idle;
+
+    public List<GameObject> shieldGenerators;
+    public List<GameObject> shieldTextures;
 
     // Start is called before the first frame update
     void Start()
@@ -26,16 +29,19 @@ public class KANG_Shield : KANG_Machine
         //engine = GameObject.Find("Engine").GetComponent<KANG_Engine>();
         //shieldWave = rotAxis.Find("ShieldWave_Tex");
 
-        upPos = shieldWave.localPosition;
-        downPos = shieldWave.localPosition;
-        downPos.y = shieldWave.localPosition.y - upDownValue;
+        upPos = shield.localPosition;
+        downPos = shield.localPosition;
+        downPos.y = shield.localPosition.y - upDownValue;
         localAngle = rotAxis.localEulerAngles;
+
+        shieldGenerators[0].SetActive(true);
+        shieldTextures[0].SetActive(true);
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        
     }
 
     public override void UpKey()
@@ -112,7 +118,7 @@ public class KANG_Shield : KANG_Machine
     // ArrowKey가 입력되면 stopCorutine을 하고 싶다.
     IEnumerator IeArrowKeyUp()
     {
-        while (shieldWave.localPosition.y < upPos.y)
+        while (shield.localPosition.y < upPos.y)
         {
             //print(shieldWave.localPosition.y);
             LerpUpDownPos(upPos);
@@ -122,9 +128,9 @@ public class KANG_Shield : KANG_Machine
 
     void LerpUpDownPos(Vector3 pos)
     {
-        photonView.RPC("RPCLerpUpDownPos", RpcTarget.All, Vector3.Lerp(shieldWave.localPosition, pos, Time.deltaTime * upDownSpeed));
+        photonView.RPC("RPCLerpUpDownPos", RpcTarget.All, Vector3.Lerp(shield.localPosition, pos, Time.deltaTime * upDownSpeed));
         
-        if (Mathf.Abs((shieldWave.localPosition - pos).magnitude) < 0.1f)
+        if (Mathf.Abs((shield.localPosition - pos).magnitude) < 0.1f)
         {
             photonView.RPC("RPCLerpUpDownPos", RpcTarget.All, pos);
         }
@@ -133,18 +139,52 @@ public class KANG_Shield : KANG_Machine
     [PunRPC]
     void RPCLerpUpDownPos(Vector3 position)
     {
-        shieldWave.localPosition = position;
+        shield.localPosition = position;
+    }
+
+    // 머신 상태에 따른 쉴드 변경
+    void SetShield(int index, bool isEnable)
+    {
+        photonView.RPC("RpcSetShield", RpcTarget.All, index, isEnable);
+    }
+
+    [PunRPC]
+    void RpcSetShield(int index, bool isEnable)
+    {
+        shieldGenerators[index].SetActive(isEnable);
+        shieldTextures[index].SetActive(isEnable);
+    }
+
+    [PunRPC]
+    void RpcChangeMState(MachineState state)
+    {
+        mState = state;
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.name.Contains("Beam"))
         {
-            mState = MachineState.Beam;
-            print("shieldState : " + mState);
+            SetShield((int)mState, false);
+
+            //mState = MachineState.Beam;
+            photonView.RPC("RpcChangeMState", RpcTarget.All, MachineState.Beam);
+
+            SetShield((int)mState, true);
         }
     }
 
+    private void OnTriggerExit(Collider other)
+    {
+        // 보석 장착 없어지면 mState를 기본 상태로 전환하고 싶다.
+        if (other.gameObject.name.Contains("Jewel"))
+        {
+            SetShield((int)mState, false);
 
+            //mState = MachineState.Idle;
+            photonView.RPC("RpcChangeMState", RpcTarget.All, MachineState.Idle);
 
+            SetShield((int)mState, true);
+        }
+    }
 }

@@ -28,8 +28,8 @@ public class KANG_Machine : MonoBehaviourPun
     public enum MachineState
     {
         Idle,
-        Power,
         Beam,
+        Power,
         Steel
     }
 

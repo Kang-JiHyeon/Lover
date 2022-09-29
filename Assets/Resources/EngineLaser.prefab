@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4120715904248774}
   - component: {fileID: 198689438387635684}
   - component: {fileID: 199249063155627394}
-  m_Layer: 0
+  m_Layer: 25
   m_Name: Flash
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4893,7 +4893,7 @@ GameObject:
   - component: {fileID: 4887479163508228}
   - component: {fileID: 198776319121702372}
   - component: {fileID: 199045921135436436}
-  m_Layer: 0
+  m_Layer: 25
   m_Name: Shine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9811,7 +9811,7 @@ GameObject:
   - component: {fileID: 4627730682091414}
   - component: {fileID: 198732503489224552}
   - component: {fileID: 199957149200013958}
-  m_Layer: 0
+  m_Layer: 25
   m_Name: Electro
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14699,7 +14699,7 @@ GameObject:
   - component: {fileID: 4227838472246054}
   - component: {fileID: 198830275284314122}
   - component: {fileID: 199955012110448620}
-  m_Layer: 0
+  m_Layer: 25
   m_Name: Trails
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19532,7 +19532,7 @@ GameObject:
   - component: {fileID: 4919014834166178}
   - component: {fileID: 198710666444295636}
   - component: {fileID: 199930776873949084}
-  m_Layer: 0
+  m_Layer: 25
   m_Name: ShockWaves
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24414,13 +24414,13 @@ GameObject:
   - component: {fileID: 4192878086608550}
   - component: {fileID: 198930281064127298}
   - component: {fileID: 199122505244917176}
-  m_Layer: 0
+  m_Layer: 25
   m_Name: Hit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &4192878086608550
 Transform:
   m_ObjectHideFlags: 0
@@ -29303,13 +29303,13 @@ GameObject:
   - component: {fileID: 4746520948764970}
   - component: {fileID: 198056165489868066}
   - component: {fileID: 199509117392829132}
-  m_Layer: 0
+  m_Layer: 25
   m_Name: Sparks
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &4746520948764970
 Transform:
   m_ObjectHideFlags: 0
@@ -29515,7 +29515,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 0.15566039, g: 1, b: 0.28637397, a: 1}
-      maxColor: {r: 0.16509432, g: 0.46340674, b: 1, a: 1}
+      maxColor: {r: 1, g: 0.6489575, b: 0.16470587, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -34194,7 +34194,7 @@ GameObject:
   - component: {fileID: 4503161767264946}
   - component: {fileID: 198088365669196666}
   - component: {fileID: 199848464847708578}
-  m_Layer: 0
+  m_Layer: 25
   m_Name: ShineLightning
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39018,13 +39018,13 @@ GameObject:
   - component: {fileID: 4971462974751906}
   - component: {fileID: 198414435863721378}
   - component: {fileID: 199404003385918980}
-  m_Layer: 0
+  m_Layer: 25
   m_Name: Trails
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &4971462974751906
 Transform:
   m_ObjectHideFlags: 0
@@ -39230,7 +39230,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 0.15566039, g: 1, b: 0.28637397, a: 1}
-      maxColor: {r: 0.6933962, g: 0.8442256, b: 1, a: 1}
+      maxColor: {r: 1, g: 0.92640245, b: 0.69411767, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -43851,7 +43851,7 @@ GameObject:
   - component: {fileID: 4245430077208396}
   - component: {fileID: 198854220867403324}
   - component: {fileID: 199738513326976734}
-  m_Layer: 0
+  m_Layer: 25
   m_Name: BigSparks
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -48733,13 +48733,13 @@ GameObject:
   - component: {fileID: 4557122259304616}
   - component: {fileID: 198149481935044224}
   - component: {fileID: 199966674131640534}
-  m_Layer: 0
+  m_Layer: 25
   m_Name: Flash
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &4557122259304616
 Transform:
   m_ObjectHideFlags: 0
@@ -48947,7 +48947,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0.24056602, g: 0.42782536, b: 1, a: 1}
+      maxColor: {r: 1, g: 0.90568084, b: 0.23921567, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -49009,8 +49009,8 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 1.4
-      minScalar: 0.9
+      scalar: 4
+      minScalar: 2
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -53558,8 +53558,12 @@ GameObject:
   m_Component:
   - component: {fileID: 4419999949185646}
   - component: {fileID: 120985675070875736}
-  m_Layer: 0
-  m_Name: Laser Toon Lightning
+  - component: {fileID: 462770723359518286}
+  - component: {fileID: 6188635117599416984}
+  - component: {fileID: 2501739053130179583}
+  - component: {fileID: 1892458269444561484}
+  m_Layer: 25
+  m_Name: EngineLaser
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -53573,7 +53577,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1997207017492988}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.11, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -53625,10 +53629,10 @@ LineRenderer:
   m_SortingOrder: -1
   m_Positions:
   - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 10}
+  - {x: 0, y: -8, z: 0}
   m_Parameters:
     serializedVersion: 3
-    widthMultiplier: 0.3
+    widthMultiplier: 0.8085978
     widthCurve:
       serializedVersion: 2
       m_Curve:
@@ -53643,7 +53647,7 @@ LineRenderer:
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 1
-        value: 1
+        value: 0.17412376
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -53655,25 +53659,25 @@ LineRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 0.3820755, g: 0.61491126, b: 1, a: 1}
-      key1: {r: 0.3820755, g: 0.61491126, b: 1, a: 1}
-      key2: {r: 0, g: 0, b: 0, a: 0}
-      key3: {r: 0, g: 0, b: 0, a: 0}
-      key4: {r: 0, g: 0, b: 0, a: 0}
+      key0: {r: 1, g: 0.9696857, b: 0, a: 1}
+      key1: {r: 1, g: 0.96467197, b: 0, a: 1}
+      key2: {r: 1, g: 0.96467197, b: 0, a: 0.827451}
+      key3: {r: 1, g: 0.96467197, b: 0, a: 0}
+      key4: {r: 1, g: 0.96467197, b: 0, a: 0}
       key5: {r: 0, g: 0, b: 0, a: 0}
       key6: {r: 0, g: 0, b: 0, a: 0}
       key7: {r: 0, g: 0, b: 0, a: 0}
       ctime0: 0
       ctime1: 65535
-      ctime2: 0
-      ctime3: 0
-      ctime4: 0
+      ctime2: 65535
+      ctime3: 65535
+      ctime4: 65535
       ctime5: 0
       ctime6: 0
       ctime7: 0
       atime0: 0
       atime1: 65535
-      atime2: 0
+      atime2: 56861
       atime3: 0
       atime4: 0
       atime5: 0
@@ -53690,3 +53694,69 @@ LineRenderer:
     generateLightingData: 0
   m_UseWorldSpace: 0
   m_Loop: 0
+--- !u!136 &462770723359518286
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1997207017492988}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 1.53
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: -1, z: 0}
+--- !u!114 &6188635117599416984
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1997207017492988}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents: []
+  sceneViewId: 0
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
+--- !u!114 &2501739053130179583
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1997207017492988}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79956ab53c64d174d9f9996c2ed0169d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletSpeed: 60
+  destroyTime: 1
+--- !u!114 &1892458269444561484
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1997207017492988}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 570858985f16e344ba1f333419ab0e8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletSpeed: 60
+  destroyTime: 1
+  effectFactory: {fileID: 100000, guid: bc66a90f18a98f1459359c1c4ad80217, type: 3}
+  createTime: 0.02
