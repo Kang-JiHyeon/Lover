@@ -185,4 +185,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 227d1dbfae0a1ab42b9fbc238fe2c199, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  powerCrystal: {fileID: 4762602971385090797, guid: 0eef1a7ccb732d6408f5fea88a12f5b7, type: 3}
+  MetalCrystal: {fileID: 4762602971385090797, guid: be00f16c4cb810c4a96227c1d0ae6a5b, type: 3}
+  BeamCrystal: {fileID: 4762602971385090797, guid: 912075d9e575df14b9a79397e027b4e6, type: 3}
   speed: 5

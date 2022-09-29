@@ -9,6 +9,10 @@ public class KIM_PlayerController1 : MonoBehaviourPun, IPunObservable
     GameObject target;
     KANG_Machine machine;
 
+    public GameObject powerCrystal;
+    public GameObject MetalCrystal;
+    public GameObject BeamCrystal;
+
     Rigidbody rb;
     bool isLadder;
     bool isModule;
@@ -179,6 +183,31 @@ public class KIM_PlayerController1 : MonoBehaviourPun, IPunObservable
     void RPCGravity(bool use)
     {
         rb.useGravity = use;
+    }
+
+    public void CrystalInit(int idx)
+    {
+        if (idx == 1)
+        {
+            GameObject crystal = Instantiate(powerCrystal);
+            crystal.transform.SetParent(transform);
+            crystal.transform.localPosition = new Vector3(0, 1f, 0);
+            Destroy(crystal, 15f);
+        }
+        else if (idx == 2)
+        {
+            GameObject crystal = Instantiate(MetalCrystal);
+            crystal.transform.SetParent(transform);
+            crystal.transform.localPosition = new Vector3(0, 1f, 0);
+            Destroy(crystal, 15f);
+        }
+        else if (idx == 3)
+        {
+            GameObject crystal = Instantiate(BeamCrystal);
+            crystal.transform.SetParent(transform);
+            crystal.transform.localPosition = new Vector3(0, 1f, 0);
+            Destroy(crystal, 15f);
+        }
     }
 
     public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)

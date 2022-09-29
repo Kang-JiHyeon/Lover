@@ -90,6 +90,8 @@ MonoBehaviour:
   - RPCSetCapsuleSpr
   - RPCSetJewelSpr
   - RPCSetPresentParent
+  - RPCJewelSound
+  - RPCCrystalSound
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1

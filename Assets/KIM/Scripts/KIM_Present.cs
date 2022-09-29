@@ -68,11 +68,11 @@ public class KIM_Present : MonoBehaviourPun
         if (other.gameObject.layer == LayerMask.NameToLayer("Ship"))
         {
             if (crystal == 1 && photonView.IsMine)
-                present = PhotonNetwork.Instantiate("PowerPresentOmni", ship.transform.position, Quaternion.identity);
+                present = PhotonNetwork.Instantiate("PowerPresentOmni", ship.transform.position - Vector3.up * 1.3f, Quaternion.identity);
             if (crystal == 2 && photonView.IsMine)
-                present = PhotonNetwork.Instantiate("MetalPresentOmni", ship.transform.position, Quaternion.identity);
+                present = PhotonNetwork.Instantiate("MetalPresentOmni", ship.transform.position - Vector3.up * 1.3f, Quaternion.identity);
             if (crystal == 3 && photonView.IsMine)
-                present = PhotonNetwork.Instantiate("BeamPresentOmni", ship.transform.position, Quaternion.identity);
+                present = PhotonNetwork.Instantiate("BeamPresentOmni", ship.transform.position - Vector3.up * 1.3f, Quaternion.identity);
 
             if (photonView.IsMine)
                 PhotonNetwork.Destroy(gameObject);
@@ -83,5 +83,6 @@ public class KIM_Present : MonoBehaviourPun
     {
         GameObject effect = Instantiate(effectF);
         effect.transform.position = transform.position;
+        Destroy(effect, 1f);
     }
 }

@@ -156,7 +156,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e69ed0f6df16c034998256af9b952da5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  crystal: 1
+  crystal: 2
   sprites:
   - {fileID: 698653886, guid: 173f537c882aa3045a2e7dd1dc91710f, type: 3}
   - {fileID: -1072052229, guid: 173f537c882aa3045a2e7dd1dc91710f, type: 3}

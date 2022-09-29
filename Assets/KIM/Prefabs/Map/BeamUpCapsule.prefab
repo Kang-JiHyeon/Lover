@@ -98,7 +98,7 @@ GameObject:
   - component: {fileID: 7104915378356353889}
   - component: {fileID: 7104915378356353888}
   m_Layer: 23
-  m_Name: PowerUpCapsule
+  m_Name: BeamUpCapsule
   m_TagString: Map
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -133,7 +133,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 473ecc70724dc114ab193308fa535d35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  crystal: 1
+  crystal: 3
   flash: {fileID: 2100000, guid: ff0c153bd8581994785ca478473aa998, type: 2}
   defaultM: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   sprites:

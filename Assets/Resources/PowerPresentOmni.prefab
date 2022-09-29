@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 6310179705467493568}
   - component: {fileID: 6310179705467493569}
   - component: {fileID: 6310179705467493574}
-  - component: {fileID: 4093967531422090686}
   - component: {fileID: 7967864195615108709}
   - component: {fileID: -5403091919980805190}
   m_Layer: 0
@@ -57,7 +56,7 @@ MonoBehaviour:
   OwnershipTransfer: 0
   observableSearch: 2
   ObservedComponents:
-  - {fileID: 4093967531422090686}
+  - {fileID: 0}
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
@@ -90,22 +89,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &4093967531422090686
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6310179705467493575}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SynchronizePosition: 1
-  m_SynchronizeRotation: 1
-  m_SynchronizeScale: 0
-  m_UseLocal: 1
 --- !u!114 &7967864195615108709
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -118,8 +101,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ee102c5a0124dd46b07e038259a8a22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  crystal: 1
   clip: {fileID: 8300000, guid: 5d36be29869e9f4478f7f261661b8478, type: 3}
-  jewel: {fileID: -2090322318, guid: f9da558cbb46f3145a301bc0e44f12f5, type: 3}
 --- !u!82 &-5403091919980805190
 AudioSource:
   m_ObjectHideFlags: 0
