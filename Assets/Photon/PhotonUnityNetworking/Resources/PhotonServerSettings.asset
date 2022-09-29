@@ -95,6 +95,11 @@ MonoBehaviour:
   - RPCEndSound
   - RPCDie
   - RPCOffListener
+  - RpcBeamDestroy
+  - RpcCreateBeam
+  - RpcSetEngine
+  - RpcSetShield
+  - RpcSetTexture
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1

@@ -284,7 +284,7 @@ public class KANG_Engine : KANG_Machine
     private void OnTriggerExit(Collider other)
     {
         // 보석 장착 없어지면 mState를 기본 상태로 전환하고 싶다.
-        if (other.gameObject.name.Contains("Jewel"))
+        if (other.gameObject.name.Contains("Crystal"))
         {
             photonView.RPC("RpcSetEngine", RpcTarget.All, (int)mState, false);
 
