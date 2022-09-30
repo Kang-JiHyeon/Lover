@@ -34,7 +34,7 @@ public class KIM_PlayerController1 : MonoBehaviourPun, IPunObservable
     }
 
     // Update is called once per frame
-    void LateUpdate()
+    void Update()
     {
         if (photonView.IsMine)
         {
