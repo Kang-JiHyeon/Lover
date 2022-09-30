@@ -13,20 +13,25 @@ public class KANG_Turret : KANG_Machine
     public List<Transform> idleFirePostions;
     public GameObject bulletFactory;
     public GameObject turretEffect;
-    public float createTime = 0.5f;
+    public float createTime = 0.1f;
     float currentTime = 0f;
     int index = 0;
 
-    public List<GameObject> turretStateTexs;
+    public List<GameObject> cannonStates;
     public Transform beamFirePosition;
 
     LineRenderer Line;
+
+    SpriteRenderer spriteRender;
+    public List<Sprite> turretTexs;
 
     public MachineState mState = MachineState.Idle;
 
     // Start is called before the first frame update
     void Start()
     {
+        spriteRender = GetComponent<SpriteRenderer>();
+
         source = GetComponent<AudioSource>();
 
         // 현재 회전값
@@ -36,15 +41,15 @@ public class KANG_Turret : KANG_Machine
 
         for (int i = 0; i < rotAxis.childCount; i++)
         {
-            turretStateTexs.Add(rotAxis.GetChild(i).gameObject);
-            turretStateTexs[i].SetActive(false);
+            cannonStates.Add(rotAxis.GetChild(i).gameObject);
+            cannonStates[i].SetActive(false);
         }
-        turretStateTexs[0].SetActive(true);
+        cannonStates[0].SetActive(true);
 
         // idle 총구 입구
-        for (int i = 0; i < turretStateTexs[0].transform.childCount; i++)
+        for (int i = 0; i < cannonStates[0].transform.childCount; i++)
         {
-            idleFirePostions.Add(turretStateTexs[0].transform.GetChild(i));
+            idleFirePostions.Add(cannonStates[0].transform.GetChild(i));
         }
 
         Line = GetComponent<LineRenderer>();
@@ -132,38 +137,49 @@ public class KANG_Turret : KANG_Machine
         switch (mState)
         {
             case MachineState.Idle:
-                IdleFire();
+                BulletFire(createTime);
                 break;
             case MachineState.Beam:
                 BeamFire();
                 break;
+            case MachineState.Power:
+                BulletFire(createTime / 2);
+                break;
+
         }
     }
-
-    void IdleFire()
+    int addValue = 1;
+    void BulletFire(float fireTime)
     {
         currentTime += Time.deltaTime;
 
-        if (currentTime > createTime)
+        if (currentTime > fireTime)
         {
-            PhotonNetwork.Instantiate("Bullet", idleFirePostions[index].position, idleFirePostions[index].rotation);
+            //cannonStates[(int)mState].transform.GetChild(index).position
+            Transform cannon = cannonStates[(int)mState].transform.GetChild(index);
+
+            PhotonNetwork.Instantiate("Bullet", cannon.position, cannon.rotation);
             photonView.RPC("RPCAnim", RpcTarget.All, index);
             photonView.RPC("RPCTurretEffect", RpcTarget.All, index);
             currentTime = 0f;
-            index++;
-            index %= rotAxis.childCount;
+
+            if (index <= 0) addValue = 1;
+            else if (index >= cannon.parent.childCount - 1) addValue = -1;
+            index += addValue;
+
         }
     }
     bool isBeamFire = false;
 
     void BeamFire()
     {
-        if(isBeamFire == false)
+        if (isBeamFire == false)
         {
             PhotonNetwork.Instantiate("TurretBeam", beamFirePosition.position, beamFirePosition.rotation);
             isBeamFire = true;
         }
     }
+
 
 
     public override void ActionKeyUp()
@@ -174,20 +190,36 @@ public class KANG_Turret : KANG_Machine
     [PunRPC]
     void RPCTurretEffect(int idx)
     {
+        Transform cannon = cannonStates[(int)mState].transform;
+
+        //source.PlayOneShot(attackSound);
+        //GameObject effect = Instantiate(turretEffect);
+        //effect.transform.position = idleFirePostions[idx].position + idleFirePostions[idx].up * 0.5f;
+        //effect.transform.up = idleFirePostions[idx].up;
+        //Destroy(effect, 1.0f);
+
         source.PlayOneShot(attackSound);
         GameObject effect = Instantiate(turretEffect);
-        effect.transform.position = idleFirePostions[idx].position + idleFirePostions[idx].up * 0.5f;
-        effect.transform.up = idleFirePostions[idx].up;
+        effect.transform.position = cannon.GetChild(idx).position + cannon.GetChild(idx).up * 0.5f;
+        effect.transform.up = cannon.GetChild(idx).up;
         Destroy(effect, 1.0f);
     }
 
     [PunRPC]
     void RPCAnim(int idx)
     {
-        iTween.ScaleTo(idleFirePostions[idx].gameObject, iTween.Hash("y", 0.7f, "time", 0.05f, "easetype", iTween.EaseType.easeInOutBack));
-        iTween.ScaleTo(idleFirePostions[idx].gameObject, iTween.Hash("y", 1f, "time", 0.05f, "delay", 0.06f, "easetype", iTween.EaseType.easeInOutBack));
-        iTween.MoveTo(idleFirePostions[idx].gameObject, iTween.Hash("islocal", true, "y", 0.55f, "time", 0.05f, "easetype", iTween.EaseType.easeInOutBack));
-        iTween.MoveTo(idleFirePostions[idx].gameObject, iTween.Hash("islocal", true, "y", 0.7f, "time", 0.05f, "delay", 0.06f, "easetype", iTween.EaseType.easeInOutBack));
+        //iTween.ScaleTo(idleFirePostions[idx].gameObject, iTween.Hash("y", 0.7f, "time", 0.05f, "easetype", iTween.EaseType.easeInOutBack));
+        //iTween.ScaleTo(idleFirePostions[idx].gameObject, iTween.Hash("y", 1f, "time", 0.05f, "delay", 0.06f, "easetype", iTween.EaseType.easeInOutBack));
+        //iTween.MoveTo(idleFirePostions[idx].gameObject, iTween.Hash("islocal", true, "y", 0.55f, "time", 0.05f, "easetype", iTween.EaseType.easeInOutBack));
+        //iTween.MoveTo(idleFirePostions[idx].gameObject, iTween.Hash("islocal", true, "y", 0.7f, "time", 0.05f, "delay", 0.06f, "easetype", iTween.EaseType.easeInOutBack));
+
+        Transform cannon = cannonStates[(int)mState].transform;
+
+        iTween.ScaleTo(cannon.GetChild(idx).gameObject, iTween.Hash("y", 0.7f, "time", 0.05f, "easetype", iTween.EaseType.easeInOutBack));
+        iTween.ScaleTo(cannon.GetChild(idx).gameObject, iTween.Hash("y", 1f, "time", 0.05f, "delay", 0.06f, "easetype", iTween.EaseType.easeInOutBack));
+        iTween.MoveTo(cannon.GetChild(idx).gameObject, iTween.Hash("islocal", true, "y", 0.55f, "time", 0.05f, "easetype", iTween.EaseType.easeInOutBack));
+        iTween.MoveTo(cannon.GetChild(idx).gameObject, iTween.Hash("islocal", true, "y", 0.7f, "time", 0.05f, "delay", 0.06f, "easetype", iTween.EaseType.easeInOutBack));
+
     }
 
     void TurretRotate(float deltaTime)
@@ -208,11 +240,13 @@ public class KANG_Turret : KANG_Machine
     [PunRPC]
     void RpcChangeTurretTex()
     {
-        for(int i =0; i<turretStateTexs.Count; i++)
+        for (int i = 0; i < cannonStates.Count; i++)
         {
-            turretStateTexs[i].SetActive(false);
+            cannonStates[i].SetActive(false);
         }
-        turretStateTexs[(int)mState].SetActive(true);
+        cannonStates[(int)mState].SetActive(true);
+        spriteRender.sprite = turretTexs[(int)mState];
+        index = 0;
     }
 
     [PunRPC]
@@ -240,11 +274,17 @@ public class KANG_Turret : KANG_Machine
 
         if (other.gameObject.name.Contains("Beam"))
         {
-            
             photonView.RPC("RpcChangeMState", RpcTarget.All, MachineState.Beam);
             photonView.RPC("RpcChangeTurretTex", RpcTarget.All);
             photonView.RPC("RpcChangeCannonTex", RpcTarget.All, true);
         }
+        else if (other.gameObject.name.Contains("Power"))
+        {
+            photonView.RPC("RpcChangeMState", RpcTarget.All, MachineState.Power);
+            photonView.RPC("RpcChangeTurretTex", RpcTarget.All);
+
+        }
+
     }
 
     private void OnTriggerExit(Collider other)
