@@ -3134,11 +3134,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2872528267451710971, guid: 749d56a947a95634c8e62330be538ce1, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -14.4
+      value: -14.399994
       objectReference: {fileID: 0}
     - target: {fileID: 2872528267451710971, guid: 749d56a947a95634c8e62330be538ce1, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -12.8
+      value: -11.799999
       objectReference: {fileID: 0}
     - target: {fileID: 2872528267451710971, guid: 749d56a947a95634c8e62330be538ce1, type: 3}
       propertyPath: m_LocalPosition.z
@@ -66500,6 +66500,7 @@ GameObject:
   - component: {fileID: 1107969336}
   - component: {fileID: 1107969335}
   - component: {fileID: 1107969338}
+  - component: {fileID: 1107969339}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -66566,7 +66567,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1107969334}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -14.8, y: -12.8, z: -10}
+  m_LocalPosition: {x: -14.8, y: -11.8, z: -10}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -66592,6 +66593,29 @@ MonoBehaviour:
   spaceship: {fileID: 54165705}
   offset: {x: 0, y: 0, z: -10}
   capPos: {x: 0, y: 0, z: 0}
+  capSize: 0
+--- !u!114 &1107969339
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1107969334}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents: []
+  sceneViewId: 70
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!1001 &1113755384
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -37,6 +37,7 @@ public class KANG_CameraMove : MonoBehaviour
         set { captured = value; }
     }
     public Vector3 capPos;
+    public float capSize;
 
     // Start is called before the first frame update
     void Start()
@@ -50,15 +51,15 @@ public class KANG_CameraMove : MonoBehaviour
     {
         if (spaceship && !unLock && !shake && !Captured)
         {
-            transform.position = Vector3.Lerp(transform.position, spaceship.transform.position + offset, Time.deltaTime * 1.5f);
+            transform.position = Vector3.Lerp(transform.position, spaceship.transform.position + offset, Time.deltaTime * 3f);
             Camera.main.orthographicSize = Mathf.Lerp(Camera.main.orthographicSize, 9, Time.deltaTime * 0.5f);
             postCam.orthographicSize = Mathf.Lerp(postCam.orthographicSize, 9, Time.deltaTime * 0.5f);
         }
-        else if (Captured)
+        else if (Captured && !unLock)
         {
             transform.position = Vector3.Lerp(transform.position, capPos + offset, Time.deltaTime * 0.5f);
-            Camera.main.orthographicSize = Mathf.Lerp(Camera.main.orthographicSize, 12, Time.deltaTime * 0.5f);
-            postCam.orthographicSize = Mathf.Lerp(postCam.orthographicSize, 12, Time.deltaTime * 0.5f);
+            Camera.main.orthographicSize = Mathf.Lerp(Camera.main.orthographicSize, capSize, Time.deltaTime * 0.5f);
+            postCam.orthographicSize = Mathf.Lerp(postCam.orthographicSize, capSize, Time.deltaTime * 0.5f);
         }
     }
 
@@ -78,7 +79,10 @@ public class KANG_CameraMove : MonoBehaviour
         while (currentTime < shakeTime)
         {
             currentTime += Time.deltaTime;
-            transform.position = spaceship.transform.position + offset;
+            if (!Captured)
+                transform.position = Vector3.Lerp(transform.position, spaceship.transform.position + offset, Time.deltaTime * 3f);
+            else
+                transform.position = Vector3.Lerp(transform.position, capPos + offset, Time.deltaTime * 0.5f);
             transform.position += Vector3.right * Mathf.Sin(shakeSpeed * currentTime) * shakePos + Vector3.up * Mathf.Sin(shakeSpeed * currentTime) * shakePos; 
             yield return null;
         }
