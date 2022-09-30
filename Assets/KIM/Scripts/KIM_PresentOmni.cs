@@ -37,6 +37,8 @@ public class KIM_PresentOmni : MonoBehaviourPun
                 pc.CrystalInit(2);
             else if (crystal == 3)
                 pc.CrystalInit(3);
+            else if (crystal == 4)
+                pc.CrystalInit(4);
             Destroy(gameObject);
         }
     }

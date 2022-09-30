@@ -12,6 +12,7 @@ public class KIM_PlayerController1 : MonoBehaviourPun, IPunObservable
     public GameObject powerCrystal;
     public GameObject MetalCrystal;
     public GameObject BeamCrystal;
+    public GameObject CrowBarCrystal;
 
     Rigidbody rb;
     bool isLadder;
@@ -204,6 +205,13 @@ public class KIM_PlayerController1 : MonoBehaviourPun, IPunObservable
         else if (idx == 3)
         {
             GameObject crystal = Instantiate(BeamCrystal);
+            crystal.transform.SetParent(transform);
+            crystal.transform.localPosition = new Vector3(0, 1f, 0);
+            Destroy(crystal, 15f);
+        }
+        else if (idx == 4)
+        {
+            GameObject crystal = Instantiate(CrowBarCrystal);
             crystal.transform.SetParent(transform);
             crystal.transform.localPosition = new Vector3(0, 1f, 0);
             Destroy(crystal, 15f);

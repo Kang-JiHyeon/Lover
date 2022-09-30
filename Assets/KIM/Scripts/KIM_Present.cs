@@ -73,6 +73,8 @@ public class KIM_Present : MonoBehaviourPun
                 present = PhotonNetwork.Instantiate("MetalPresentOmni", ship.transform.position - Vector3.up * 1.3f, Quaternion.identity);
             if (crystal == 3 && photonView.IsMine)
                 present = PhotonNetwork.Instantiate("BeamPresentOmni", ship.transform.position - Vector3.up * 1.3f, Quaternion.identity);
+            if (crystal == 4 && photonView.IsMine)
+                present = PhotonNetwork.Instantiate("CrowBarPresentOmni", ship.transform.position - Vector3.up * 1.3f, Quaternion.identity);
 
             if (photonView.IsMine)
                 PhotonNetwork.Destroy(gameObject);
