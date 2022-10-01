@@ -5,6 +5,8 @@ using Photon.Pun;
 
 public class KIM_PlayerController1 : MonoBehaviourPun, IPunObservable
 {
+    AudioSource source;
+
     GameObject ship;
     GameObject target;
     KANG_Machine machine;
@@ -28,6 +30,7 @@ public class KIM_PlayerController1 : MonoBehaviourPun, IPunObservable
     // Start is called before the first frame update
     void Awake()
     {
+        source = GetComponent<AudioSource>();
         ship = GameObject.Find("Spaceship");
         transform.SetParent(ship.transform);
         rb = GetComponent<Rigidbody>(); 
@@ -186,13 +189,14 @@ public class KIM_PlayerController1 : MonoBehaviourPun, IPunObservable
         rb.useGravity = use;
     }
 
-    public void CrystalInit(int idx)
+    public void CrystalInit(int idx, AudioClip clip)
     {
         if (idx == 1)
         {
             GameObject crystal = Instantiate(powerCrystal);
             crystal.transform.SetParent(transform);
             crystal.transform.localPosition = new Vector3(0, 1f, 0);
+            source.PlayOneShot(clip);
             Destroy(crystal, 15f);
         }
         else if (idx == 2)
@@ -200,6 +204,7 @@ public class KIM_PlayerController1 : MonoBehaviourPun, IPunObservable
             GameObject crystal = Instantiate(MetalCrystal);
             crystal.transform.SetParent(transform);
             crystal.transform.localPosition = new Vector3(0, 1f, 0);
+            source.PlayOneShot(clip);
             Destroy(crystal, 15f);
         }
         else if (idx == 3)
@@ -207,6 +212,7 @@ public class KIM_PlayerController1 : MonoBehaviourPun, IPunObservable
             GameObject crystal = Instantiate(BeamCrystal);
             crystal.transform.SetParent(transform);
             crystal.transform.localPosition = new Vector3(0, 1f, 0);
+            source.PlayOneShot(clip);
             Destroy(crystal, 15f);
         }
         else if (idx == 4)
@@ -214,6 +220,7 @@ public class KIM_PlayerController1 : MonoBehaviourPun, IPunObservable
             GameObject crystal = Instantiate(CrowBarCrystal);
             crystal.transform.SetParent(transform);
             crystal.transform.localPosition = new Vector3(0, 1f, 0);
+            source.PlayOneShot(clip);
             Destroy(crystal, 15f);
         }
     }
