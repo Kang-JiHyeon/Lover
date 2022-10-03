@@ -180,6 +180,7 @@ public class KANG_Engine : KANG_Machine
         engineBeam.transform.position = firePos.transform.position;
         engineBeam.transform.localPosition = new Vector3(0, 0.6f, 0.1f);
         engineBeam.transform.forward = firePos.up;
+        ke.BeamCharged();
     }
 
     float createTIme = 1f;
@@ -266,6 +267,7 @@ public class KANG_Engine : KANG_Machine
     void RpcBeamDestroy()
     {
         Destroy(engineBeam);
+        ke.BeamRelease();
     }
 
     IEnumerator IeActionKeyUp(float targetSpeed, float changeSpeed = 1f)

@@ -2396,7 +2396,7 @@ MonoBehaviour:
   OwnershipTransfer: 0
   observableSearch: 2
   ObservedComponents: []
-  sceneViewId: 69
+  sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
 --- !u!1 &2872528266143773157
@@ -2618,7 +2618,7 @@ MonoBehaviour:
   OwnershipTransfer: 0
   observableSearch: 2
   ObservedComponents: []
-  sceneViewId: 51
+  sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
 --- !u!114 &54165708
@@ -2634,6 +2634,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clip: {fileID: 8300000, guid: edd98e3eec61fc94bb6a2f50e6b751b8, type: 3}
+  beamCharged: {fileID: 0}
+  beamRelease: {fileID: 0}
   engineEffect: {fileID: 2255599692758329746, guid: 24c5a96d78bf2574c92b70e04592fcfd, type: 3}
 --- !u!82 &54165707
 AudioSource:
@@ -3220,7 +3222,7 @@ MonoBehaviour:
   OwnershipTransfer: 0
   observableSearch: 2
   ObservedComponents: []
-  sceneViewId: 46
+  sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
 --- !u!1 &2872528266731300019
@@ -3293,7 +3295,7 @@ MonoBehaviour:
   observableSearch: 2
   ObservedComponents:
   - {fileID: 2872528266731300023}
-  sceneViewId: 47
+  sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
 --- !u!1 &2872528266766152911
@@ -4126,6 +4128,8 @@ MonoBehaviour:
   rotDir: 0
   rotSpeed: 30
   attackSound: {fileID: 8300000, guid: 3ce45a441037c8f449ab44caaaf3c02f, type: 3}
+  beamLoop: {fileID: 0}
+  missile: {fileID: 0}
   yamatoEffect: {fileID: 5102684701224821870, guid: 6f8d3240326f04e40bede1016eea9df0, type: 3}
   yamatoBulletFactory: {fileID: 4993557486822331358, guid: 741cdd5278cf5b642b6014fe6341c955, type: 3}
   firePos: {fileID: 2872528266931267605}
@@ -4170,7 +4174,7 @@ MonoBehaviour:
   OwnershipTransfer: 0
   observableSearch: 2
   ObservedComponents: []
-  sceneViewId: 45
+  sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
 --- !u!212 &7854424493240034413
@@ -4913,7 +4917,7 @@ MonoBehaviour:
   OwnershipTransfer: 0
   observableSearch: 2
   ObservedComponents: []
-  sceneViewId: 2
+  sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
 --- !u!114 &54165706
@@ -6577,7 +6581,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4258312601589728045, guid: 2c039426867cbf54ab1413edb20fa8b3, type: 3}
       propertyPath: sceneViewId
-      value: 52
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5472744900921152416, guid: 2c039426867cbf54ab1413edb20fa8b3, type: 3}
       propertyPath: m_Name
@@ -6821,7 +6825,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4258312601589728045, guid: 2c039426867cbf54ab1413edb20fa8b3, type: 3}
       propertyPath: sceneViewId
-      value: 48
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5472744900921152416, guid: 2c039426867cbf54ab1413edb20fa8b3, type: 3}
       propertyPath: m_Name
@@ -7131,7 +7135,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4258312601589728045, guid: 2c039426867cbf54ab1413edb20fa8b3, type: 3}
       propertyPath: sceneViewId
-      value: 50
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5472744900921152416, guid: 2c039426867cbf54ab1413edb20fa8b3, type: 3}
       propertyPath: m_Name
@@ -7245,7 +7249,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4258312601589728045, guid: 2c039426867cbf54ab1413edb20fa8b3, type: 3}
       propertyPath: sceneViewId
-      value: 49
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5472744900921152416, guid: 2c039426867cbf54ab1413edb20fa8b3, type: 3}
       propertyPath: m_Name

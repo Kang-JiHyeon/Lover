@@ -37,7 +37,7 @@ public class KIM_Crystal : MonoBehaviour
             else
             {
                 GetComponentInChildren<SpriteRenderer>().sprite = other.transform.Find("CrystalPot").GetComponent<SpriteRenderer>().sprite;
-                if (other.name.Contains("Beam") || other.name.Contains("Metal"))
+                if (other.gameObject.name.Contains("Beam") || other.gameObject.name.Contains("Metal"))
                 {
                     transform.GetChild(0).localScale = Vector3.one * 0.5f;
                 }

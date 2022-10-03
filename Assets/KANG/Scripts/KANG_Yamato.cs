@@ -11,6 +11,8 @@ public class KANG_Yamato : KANG_Machine
     AudioSource source;
 
     public AudioClip attackSound;
+    public AudioClip beamLoop;
+    public AudioClip missile;
     public GameObject yamatoEffect;
 
     public GameObject yamatoBulletFactory;
@@ -196,12 +198,24 @@ public class KANG_Yamato : KANG_Machine
         Destroy(effect, 1.0f);
     }
 
+    [PunRPC]
+    void RPCMissileSound()
+    {
+        source.PlayOneShot(missile);
+    }
+
     // ºö »óÅÂ °ø°Ý
     void BeamAttack()
     {
         if (Laser.activeSelf == false)
         {
             Laser.SetActive(true);
+        }
+
+        if (!source.isPlaying)
+        {
+            source.clip = beamLoop;
+            source.Play();
         }
 
         curAttackTime += Time.deltaTime;
@@ -230,11 +244,12 @@ public class KANG_Yamato : KANG_Machine
             {
                 PhotonNetwork.Instantiate("YamatoPowerMissile", powerFirePoss[i].position, powerFirePoss[i].rotation);
             }
+            photonView.RPC("RPCMissileSound", RpcTarget.All);
             curCreateTime = 0f;
         }
     }
 
-            void MetalAttack()
+    void MetalAttack()
     {
         if (metal.state == KANG_YamatoMetal.BladeState.Idle)
             metal.state = KANG_YamatoMetal.BladeState.UpRotate;

@@ -7,6 +7,8 @@ public class KIM_Engine : MonoBehaviourPun
 {
     AudioSource source;
     public AudioClip clip;
+    public AudioClip beamCharged;
+    public AudioClip beamRelease;
     float currentTime = 0;
     public GameObject engineEffect;
 
@@ -20,6 +22,16 @@ public class KIM_Engine : MonoBehaviourPun
     void Update()
     {
         
+    }
+
+    public void BeamCharged()
+    {
+        source.PlayOneShot(beamCharged);
+    }
+
+    public void BeamRelease()
+    {
+        source.PlayOneShot(beamRelease);
     }
 
     public void CreateEffect()
