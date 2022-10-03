@@ -3184,6 +3184,18 @@ PrefabInstance:
       propertyPath: hitImage
       value: 
       objectReference: {fileID: 1101787174}
+    - target: {fileID: 3320923678842444450, guid: 749d56a947a95634c8e62330be538ce1, type: 3}
+      propertyPath: linePositions.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3320923679912447271, guid: 749d56a947a95634c8e62330be538ce1, type: 3}
+      propertyPath: linePositions.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3320923679919883391, guid: 749d56a947a95634c8e62330be538ce1, type: 3}
+      propertyPath: linePositions.Array.size
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6816169225507619135, guid: 749d56a947a95634c8e62330be538ce1, type: 3}
       propertyPath: sceneViewId
       value: 86

@@ -63,7 +63,7 @@ public class KANG_TurretMetal : MonoBehaviourPun
     }
 
     //public List<Vector3> linePositions;
-    public Vector3[] linePositions = new Vector3[5];
+    //public Vector3[] linePositions = new Vector3[5];
     
     void DrawLine()
     {
