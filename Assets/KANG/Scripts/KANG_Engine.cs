@@ -238,16 +238,20 @@ public class KANG_Engine : KANG_Machine
         switch (mState)
         {
             case MachineState.Idle:
+                ke.EndSound();
                 break;
             case MachineState.Beam:
                 BeamShoot();
                 curActionKeyDownTime = 0f;
                 break;
             case MachineState.Power:
+                ke.EndSound();
+                break;
+            case MachineState.Metal:
+                ke.EndSound();
                 break;
         }
         StartCoroutine(IeActionKeyUp(0f));
-        ke.EndSound();
     }
 
     // 키를 누른지 일정 시간 이상이 되었을 때 키를 떼면 빔을 발사하고 싶다.
@@ -267,6 +271,7 @@ public class KANG_Engine : KANG_Machine
     void RpcBeamDestroy()
     {
         Destroy(engineBeam);
+        GetComponent<AudioSource>().Stop();
         ke.BeamRelease();
     }
 

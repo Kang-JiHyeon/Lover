@@ -37,11 +37,9 @@ public class KIM_Crystal : MonoBehaviour
             else
             {
                 GetComponentInChildren<SpriteRenderer>().sprite = other.transform.Find("CrystalPot").GetComponent<SpriteRenderer>().sprite;
-                if (other.gameObject.name.Contains("Beam") || other.gameObject.name.Contains("Metal"))
-                {
+                gameObject.name = GetComponentInChildren<SpriteRenderer>().sprite.name; 
+                if (gameObject.name.Contains("Beam") || gameObject.name.Contains("Metal"))
                     transform.GetChild(0).localScale = Vector3.one * 0.5f;
-                }
-                gameObject.name = GetComponentInChildren<SpriteRenderer>().sprite.name;
                 other.transform.Find("CrystalPot").GetComponent<SpriteRenderer>().sprite = null;
             }
         }
