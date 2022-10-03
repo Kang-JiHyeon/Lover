@@ -7,6 +7,7 @@ using UnityEngine;
 public class KANG_CameraMove : MonoBehaviour
 {
     GameObject warp;
+    Camera postCam;
 
     public float shakeTime = 0.5f;
     public float shakeSpeed = 100f;
@@ -29,17 +30,37 @@ public class KANG_CameraMove : MonoBehaviour
     }
     bool shake = false;
 
+    bool captured = false;
+    public bool Captured
+    {
+        get { return captured; }
+        set { captured = value; }
+    }
+    public Vector3 capPos;
+    public float capSize;
+
     // Start is called before the first frame update
     void Start()
     {
+        postCam = transform.Find("Post Camera").GetComponent<Camera>();
         warp = GameObject.Find("Warp");
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (spaceship && !unLock && !shake)
-            transform.position = spaceship.transform.position + offset;
+        if (spaceship && !unLock && !shake && !Captured)
+        {
+            transform.position = Vector3.Lerp(transform.position, spaceship.transform.position + offset, Time.deltaTime * 3f);
+            Camera.main.orthographicSize = Mathf.Lerp(Camera.main.orthographicSize, 9, Time.deltaTime * 0.5f);
+            postCam.orthographicSize = Mathf.Lerp(postCam.orthographicSize, 9, Time.deltaTime * 0.5f);
+        }
+        else if (Captured && !unLock)
+        {
+            transform.position = Vector3.Lerp(transform.position, capPos + offset, Time.deltaTime * 0.5f);
+            Camera.main.orthographicSize = Mathf.Lerp(Camera.main.orthographicSize, capSize, Time.deltaTime * 0.5f);
+            postCam.orthographicSize = Mathf.Lerp(postCam.orthographicSize, capSize, Time.deltaTime * 0.5f);
+        }
     }
 
     public void CamShake()
@@ -58,7 +79,10 @@ public class KANG_CameraMove : MonoBehaviour
         while (currentTime < shakeTime)
         {
             currentTime += Time.deltaTime;
-            transform.position = spaceship.transform.position + offset;
+            if (!Captured)
+                transform.position = Vector3.Lerp(transform.position, spaceship.transform.position + offset, Time.deltaTime * 3f);
+            else
+                transform.position = Vector3.Lerp(transform.position, capPos + offset, Time.deltaTime * 0.5f);
             transform.position += Vector3.right * Mathf.Sin(shakeSpeed * currentTime) * shakePos + Vector3.up * Mathf.Sin(shakeSpeed * currentTime) * shakePos; 
             yield return null;
         }

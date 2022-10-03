@@ -75,6 +75,11 @@ public class KIM_Capsule : MonoBehaviourPun
                 GameObject present = PhotonNetwork.Instantiate("BeamPresent", transform.position, Quaternion.identity);
                 PhotonNetwork.Destroy(gameObject);
             }
+            else if (photonView.IsMine && crystal == 4)
+            {
+                GameObject present = PhotonNetwork.Instantiate("CrowBarPresent", transform.position, Quaternion.identity);
+                PhotonNetwork.Destroy(gameObject);
+            }
         }
     }
 

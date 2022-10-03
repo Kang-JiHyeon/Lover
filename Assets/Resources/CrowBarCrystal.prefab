@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 4762602970626601208}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4762602971385090796}
@@ -73,7 +73,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 5
-  m_Sprite: {fileID: -1294011985, guid: 3ee3fc86c90e22f4db0815e00a0547b9, type: 3}
+  m_Sprite: {fileID: -888906300, guid: 2ac8114bf252f00438c6999125c1276d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -93,11 +93,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4762602971385090796}
-  - component: {fileID: -7740275249646036649}
-  - component: {fileID: 2881480672675397587}
-  - component: {fileID: -6716715985653253314}
+  - component: {fileID: -6091656626202382394}
+  - component: {fileID: 1223571986583159127}
+  - component: {fileID: -7335333639262513030}
   m_Layer: 0
-  m_Name: MetalCrystal
+  m_Name: CrowBarCrystal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -119,7 +119,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &-7740275249646036649
+--- !u!114 &-6091656626202382394
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -132,7 +132,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   effectF: {fileID: 5926024682430244212, guid: 58d05b4e21af1604a9b0a3571749e763, type: 3}
---- !u!65 &2881480672675397587
+--- !u!65 &1223571986583159127
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -145,7 +145,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.5, y: 0.5, z: 1}
   m_Center: {x: 0, y: -1, z: 0}
---- !u!54 &-6716715985653253314
+--- !u!54 &-7335333639262513030
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

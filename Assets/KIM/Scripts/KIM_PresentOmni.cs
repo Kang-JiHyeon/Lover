@@ -17,6 +17,7 @@ public class KIM_PresentOmni : MonoBehaviourPun
         source = GetComponent<AudioSource>();
         ship = GameObject.Find("Spaceship");
         transform.SetParent(ship.transform);
+        Destroy(gameObject, 15f);
     }
 
     // Update is called once per frame
@@ -29,21 +30,16 @@ public class KIM_PresentOmni : MonoBehaviourPun
     {
         if (other.gameObject.layer == LayerMask.NameToLayer("Player"))
         {
-            photonView.RPC("RPCCrystalSound", RpcTarget.All);
             pc = other.GetComponent<KIM_PlayerController1>();
             if (crystal == 1) 
-                pc.CrystalInit(1);
+                pc.CrystalInit(1, clip);
             else if (crystal == 2)
-                pc.CrystalInit(2);
+                pc.CrystalInit(2, clip);
             else if (crystal == 3)
-                pc.CrystalInit(3);
+                pc.CrystalInit(3, clip);
+            else if (crystal == 4)
+                pc.CrystalInit(4, clip);
             Destroy(gameObject);
         }
-    }
-
-    [PunRPC]
-    void RPCCrystalSound()
-    {
-        source.PlayOneShot(clip);
     }
 }
