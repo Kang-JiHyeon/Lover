@@ -234,7 +234,7 @@ public class KANG_Yamato : KANG_Machine
         }
     }
 
-            void MetalAttack()
+    void MetalAttack()
     {
         if (metal.state == KANG_YamatoMetal.BladeState.Idle)
             metal.state = KANG_YamatoMetal.BladeState.UpRotate;

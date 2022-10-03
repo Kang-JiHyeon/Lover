@@ -20,13 +20,16 @@ public class KANG_YamatoMetal : MonoBehaviour
     float curBladePosY;
     float curBladeScale;
 
-    public float rotSpeed = 250f;
+    public float rotSpeed = 400f;
+    public float bladeRotSpeed = 1.5f;
     public float axisYScale = 180;
     public float bladePos;
     public float bladeScale;
 
     public float attackTime = 3f;
     float curTime = 0f;
+
+
 
     public enum BladeState
     {
@@ -41,7 +44,7 @@ public class KANG_YamatoMetal : MonoBehaviour
         DownRotate
     }
 
-    public BladeState state = BladeState.UpRotate;
+    public BladeState state = BladeState.Idle;
 
     // Start is called before the first frame update
     void Start()
@@ -74,6 +77,9 @@ public class KANG_YamatoMetal : MonoBehaviour
             case BladeState.Expand:
                 SetBladeScale(1.1f, 1);
                 break;
+            case BladeState.Attack:
+                BladeRotate();
+                break;
             case BladeState.Contract:
                 SetBladeScale(0, -1);
                 break;
@@ -85,6 +91,8 @@ public class KANG_YamatoMetal : MonoBehaviour
                 break;
         }
     }
+
+
 
     private void Idle()
     {
@@ -137,28 +145,33 @@ public class KANG_YamatoMetal : MonoBehaviour
     }
 
 
-
     // 3. Blade의 크기를 늘리거나 줄이고 싶다.
     private void SetBladeScale(float targetScale, float op)
     {
-        if(op > 0)
-        {
-            curTime += Time.deltaTime;
-
-            if(curTime > attackTime)
-            {
-                state = BladeState.Contract;
-                curTime = 0f;
-            }
-        }
-
-        curBladeScale += Time.deltaTime * 7 * op;
+        curBladeScale += Time.deltaTime * 8 * op;
         curBladeScale = Mathf.Clamp(curBladeScale, 0f, 1.1f);
         bladeBack.localScale = new Vector3(curBladeScale, curBladeScale, curBladeScale);
-
-        if(op < 0 && curBladeScale <= targetScale)
+        if(op > 0 && curBladeScale >= targetScale)
+        {
+            state = BladeState.Attack;
+        }
+        else if(op < 0 && curBladeScale <= targetScale)
         {
             state = BladeState.Down;
         }
+    }
+
+
+    // 4. 공격 중일 때 블레이드를 회전시키고 싶다.
+    private void BladeRotate()
+    {
+        curTime += Time.deltaTime;
+
+        if (curTime > attackTime)
+        {
+            state = BladeState.Contract;
+            curTime = 0f;
+        }
+        blade.Rotate(-blade.forward, bladeRotSpeed);
     }
 }
