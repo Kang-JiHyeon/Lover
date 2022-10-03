@@ -12,6 +12,8 @@ public class KANG_Yamato : KANG_Machine
 
     public AudioClip attackSound;
     public AudioClip beamLoop;
+    public AudioClip metalLoop;
+    public AudioClip metalSound;
     public AudioClip missile;
     public GameObject yamatoEffect;
 
@@ -223,7 +225,7 @@ public class KANG_Yamato : KANG_Machine
         if (curAttackTime > attackTime)
         {
             curAttackTime = 0f;
-
+            source.Stop();
             SetTexture(false);
 
             if (photonView.IsMine)
@@ -252,7 +254,16 @@ public class KANG_Yamato : KANG_Machine
     void MetalAttack()
     {
         if (metal.state == KANG_YamatoMetal.BladeState.Idle)
+        {
             metal.state = KANG_YamatoMetal.BladeState.UpRotate;
+            photonView.RPC("RPCMetalSound", RpcTarget.All);
+        }
+    }
+
+    [PunRPC]
+    void RPCMetalSound()
+    {
+        source.PlayOneShot(metalSound);
     }
 
     // 비활성화 상태
