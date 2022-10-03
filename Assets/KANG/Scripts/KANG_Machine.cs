@@ -30,7 +30,7 @@ public class KANG_Machine : MonoBehaviourPun
         Idle,
         Beam,
         Power,
-        Steel
+        Metal
     }
 
 

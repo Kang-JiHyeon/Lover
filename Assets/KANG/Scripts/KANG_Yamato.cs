@@ -37,6 +37,8 @@ public class KANG_Yamato : KANG_Machine
     // Laser
     public GameObject Laser;
 
+    public KANG_YamatoMetal metal;
+
 
     public enum YamatoState
     {
@@ -48,6 +50,8 @@ public class KANG_Yamato : KANG_Machine
     public YamatoState yState = YamatoState.Disable;
     public MachineState mState = MachineState.Idle;
 
+
+    public List<Transform> powerFirePoss;
 
     // Start is called before the first frame update
     void Start()
@@ -63,6 +67,12 @@ public class KANG_Yamato : KANG_Machine
         }
         deadTextures[0].SetActive(true);
 
+        // 파워 총구 위치 리스트
+        Transform yamatoPower = liveTextures[2].transform;
+        for (int i=0; i< yamatoPower.childCount; i++)
+        {
+            powerFirePoss.Add(yamatoPower.GetChild(i));
+        }
     }
 
     // Update is called once per frame
@@ -89,6 +99,10 @@ public class KANG_Yamato : KANG_Machine
             photonView.RPC("RpcChangeYState", RpcTarget.All, YamatoState.Attack);
         }
 
+    }
+    public void ChangeYState(YamatoState state)
+    {
+        photonView.RPC("RpcChangeYState", RpcTarget.All, state);
     }
 
     [PunRPC]
@@ -121,13 +135,23 @@ public class KANG_Yamato : KANG_Machine
             case MachineState.Idle:
                 textureIndex = 0;
                 IdleAttack();
+                Fire();
                 break;
             case MachineState.Beam:
                 textureIndex = 1;
                 BeamAttack();
                 break;
+            case MachineState.Power:
+                IdleAttack();
+                PowerAttack();
+                break;
+            case MachineState.Metal:
+                MetalAttack();
+                break;
         }
     }
+
+
     void IdleAttack()
     {
         curAttackTime += Time.deltaTime;
@@ -137,14 +161,14 @@ public class KANG_Yamato : KANG_Machine
             curAttackTime = 0f;
             curCreateTime = createTime;
 
-            SetTexture(textureIndex, false);
+            SetTexture(false);
 
             if (photonView.IsMine)
             {
                 photonView.RPC("RpcChangeYState", RpcTarget.All, YamatoState.Disable);
             }
         }
-        Fire();
+        //Fire();
     }
 
     // 일정 시간 간격으로 총알을 발사하고 싶다.
@@ -186,13 +210,34 @@ public class KANG_Yamato : KANG_Machine
         {
             curAttackTime = 0f;
 
-            SetTexture(textureIndex, false);
+            SetTexture(false);
 
             if (photonView.IsMine)
             {
                 photonView.RPC("RpcChangeYState", RpcTarget.All, YamatoState.Disable);
             }
         }
+    }
+
+    // 일정 시간마다 총구들에서 유도탄이 나가게 하고 싶다.
+    void PowerAttack()
+    {
+        curCreateTime += Time.deltaTime;
+
+        if (curCreateTime > 0.25f)
+        {
+            for (int i = 0; i < powerFirePoss.Count; i++)
+            {
+                PhotonNetwork.Instantiate("YamatoPowerMissile", powerFirePoss[i].position, powerFirePoss[i].rotation);
+            }
+            curCreateTime = 0f;
+        }
+    }
+
+            void MetalAttack()
+    {
+        if (metal.state == KANG_YamatoMetal.BladeState.Idle)
+            metal.state = KANG_YamatoMetal.BladeState.UpRotate;
     }
 
     // 비활성화 상태
@@ -211,7 +256,7 @@ public class KANG_Yamato : KANG_Machine
         {
             curCoolTime = 0f;
 
-            SetTexture(textureIndex, true);
+            SetTexture(true);
 
             if (photonView.IsMine)
             {
@@ -221,11 +266,11 @@ public class KANG_Yamato : KANG_Machine
     }
 
     // 텍스쳐 변경 함수
-    void SetTexture(int index, bool isEnable)
+    public void SetTexture(bool isEnable)
     {
         if (photonView.IsMine)
         {
-            photonView.RPC("RpcSetTexture", RpcTarget.All, index, isEnable);
+            photonView.RPC("RpcSetTexture", RpcTarget.All, (int)mState, isEnable);
         }
     }
 
@@ -250,14 +295,19 @@ public class KANG_Yamato : KANG_Machine
     {
         if (other.gameObject.name.Contains("Beam"))
         {
-            if (photonView.IsMine)
-            {
-                photonView.RPC("RpcChangeMState", RpcTarget.All, MachineState.Beam);
-                textureIndex = 1;
-                SetTexture(textureIndex, yState != YamatoState.Disable);
-            }
+            photonView.RPC("RpcChangeMState", RpcTarget.All, MachineState.Beam);
+        }
+        else if (other.gameObject.name.Contains("Power"))
+        {
+            photonView.RPC("RpcChangeMState", RpcTarget.All, MachineState.Power);
+        }
+        else if (other.gameObject.name.Contains("Metal"))
+        {
+            photonView.RPC("RpcChangeMState", RpcTarget.All, MachineState.Metal);
 
         }
+
+        SetTexture(yState != YamatoState.Disable);
     }
 
     private void OnTriggerExit(Collider other)
@@ -269,7 +319,7 @@ public class KANG_Yamato : KANG_Machine
             {
                 photonView.RPC("RpcChangeMState", RpcTarget.All, MachineState.Idle);
                 textureIndex = 0;
-                SetTexture(textureIndex, yState != YamatoState.Disable);
+                SetTexture(yState != YamatoState.Disable);
             }
         } 
        

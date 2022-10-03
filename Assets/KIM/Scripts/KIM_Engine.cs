@@ -50,8 +50,8 @@ public class KIM_Engine : MonoBehaviourPun
         if (currentTime > 0.15f)
         {
             GameObject effect = Instantiate(engineEffect);
-            effect.transform.position = transform.Find("EngineMachine").transform.Find("EngineOrangeBalls_Tex").position +
-                transform.Find("EngineMachine").transform.Find("EngineOrangeBalls_Tex").up * 0.5f;
+            effect.transform.position = transform.Find("EngineMachine").transform.Find("EnginePos").position +
+                transform.Find("EngineMachine").transform.Find("EnginePos").up * 0.5f;
             effect.transform.up = transform.Find("EngineMachine").up;
             iTween.ScaleTo(effect, iTween.Hash("x", 3f, "y", 3f, "z", 3f, "time", 1.5f, "easetype", iTween.EaseType.easeOutQuart));
             StartCoroutine(OnColor(effect));

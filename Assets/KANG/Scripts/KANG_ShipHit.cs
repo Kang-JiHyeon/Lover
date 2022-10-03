@@ -22,16 +22,19 @@ public class KANG_ShipHit : MonoBehaviourPun
 
     void OnHit()
     {
-        if (photonView.IsMine)
-        {
-            photonView.RPC("RpcOnHit", RpcTarget.AllBuffered);
-        }
+        KANG_ShipHP.instance.HP--;
+        //if (photonView.IsMine)
+        //{
+        //    photonView.RPC("RpcOnHit", RpcTarget.MasterClient);
+        //}
+
     }
 
     [PunRPC]
     void RpcOnHit()
     {
         KANG_ShipHP.instance.HP--;
+        print(KANG_ShipHP.instance.HP);
     }
 
 
@@ -45,6 +48,13 @@ public class KANG_ShipHit : MonoBehaviourPun
             engine.isBounce = true;
 
             OnHit();
+            //if (PhotonNetwork.IsMasterClient)
+            //{
+            //    KANG_ShipHP.instance.HP--;
+            //}
+            //else
+            //{
+            //}
 
             print("Map Bounce, HP--");
         }

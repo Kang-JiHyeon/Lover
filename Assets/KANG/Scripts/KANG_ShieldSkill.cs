@@ -31,10 +31,6 @@ public class KANG_ShieldSkill : MonoBehaviour
     {
 
     }
-    void Idle(GameObject go)
-    {
-        Destroy(go);
-    }
 
     // 적 공격을 튕겨내고 싶다.
     void Beam(Vector3 dir)
@@ -53,15 +49,17 @@ public class KANG_ShieldSkill : MonoBehaviour
             switch (shield.mState)
             {
                 case KANG_Machine.MachineState.Idle:
-                    Idle(other.gameObject);
+                    Destroy(other.gameObject);
                     break;
                 case KANG_Machine.MachineState.Beam:
                     missile = other.gameObject.GetComponent<KIM_InsectMissile>();
                     Beam(other.transform.position - transform.position);
                     break;
+                case KANG_Machine.MachineState.Metal:
+                    Destroy(other.gameObject);
+                    break;
             }
         }
-
 
         if (other.gameObject.CompareTag("Map"))
         {
