@@ -10,32 +10,36 @@ public class KANG_Turret : KANG_Machine
 {
     AudioSource source;
     public AudioClip attackSound;
-    public AudioClip beamSound;
-    // Fire
+
+    // Turret
+    SpriteRenderer spriteRender;
+    public List<Sprite> turretTexs;
+    public List<GameObject> cannonStates;
+    
+    // Idle, Power
     public List<Transform> idleFirePostions;
     public GameObject bulletFactory;
     public GameObject turretEffect;
     public float createTime = 0.1f;
     float currentTime = 0f;
-    int index = 0;
+    int firePosIndex = 0;
 
-    public List<GameObject> cannonStates;
+    // Beam
     public Transform beamFirePosition;
-
     LineRenderer Line;
 
-    SpriteRenderer spriteRender;
-    public List<Sprite> turretTexs;
-
-    public MachineState mState = MachineState.Idle;
-
-    bool isMetalDown = false;
-
+    // Metal
+    public GameObject turretMetal;
     public Transform metalTargetPos;
     public float metalMaxDis = 10f;
-    float metalMoveSpeed = 5f;
+    Vector3 originMetalTargetPos;
+    float metalTargetMoveSpeed = 5f;
     float originRotSpeed;
+    bool isMetalDown = false;
 
+    // 포탑 상태
+    public MachineState mState = MachineState.Idle;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -64,7 +68,7 @@ public class KANG_Turret : KANG_Machine
 
         Line = GetComponent<LineRenderer>();
 
-        //metalTargetPos = transform.GetChild(0).GetChild(3).Find("MetalTargetPos");
+        originMetalTargetPos = metalTargetPos.localPosition;
 
     }
 
@@ -167,6 +171,7 @@ public class KANG_Turret : KANG_Machine
                 MetalUp();
                 break;
         }
+
         isMetalDown = false;
     }
 
@@ -174,28 +179,51 @@ public class KANG_Turret : KANG_Machine
 
     private void MetalUp()
     {
-        Vector3 dir = metalTargetPos.position - rotAxis.position;
+        //Vector3 dir = metalTargetPos.position - rotAxis.position;
 
-        Vector3 pos = rotAxis.localPosition + new Vector3(0, metalMaxDis, 0);
-        metalTargetPos.localPosition = Vector3.Lerp(metalTargetPos.localPosition, pos, Time.deltaTime * metalMoveSpeed);
+        //Vector3 pos = rotAxis.localPosition + new Vector3(0, metalMaxDis, 0);
+        //metalTargetPos.localPosition = Vector3.Lerp(metalTargetPos.localPosition, pos, Time.deltaTime * metalMoveSpeed);
+
+        //if (Mathf.Abs(dir.magnitude - metalMaxDis) < 0.1f)
+        //{
+        //    metalTargetPos.localPosition = pos;
+        //}
+
+        turretMetal.GetComponent<KANG_TurretMetal>().isUpDown = true;
+
+        Vector3 dir = metalTargetPos.position - originMetalTargetPos;
+
+        Vector3 pos = originMetalTargetPos + new Vector3(0, metalMaxDis, 0);
+        metalTargetPos.localPosition = Vector3.Lerp(metalTargetPos.localPosition, pos, Time.deltaTime * metalTargetMoveSpeed);
 
         if (Mathf.Abs(dir.magnitude - metalMaxDis) < 0.1f)
         {
             metalTargetPos.localPosition = pos;
         }
+
     }
 
     private void MetalDown()
     {
-        Vector3 dir = metalTargetPos.position - rotAxis.position;
+        //Vector3 dir = metalTargetPos.position - rotAxis.position;
 
-        metalTargetPos.localPosition = Vector3.Lerp(metalTargetPos.localPosition, rotAxis.localPosition, Time.deltaTime * metalMoveSpeed);
+        //metalTargetPos.localPosition = Vector3.Lerp(metalTargetPos.localPosition, rotAxis.localPosition, Time.deltaTime * metalMoveSpeed);
 
-        if (dir.magnitude < 0.1f)
+        //if (dir.magnitude < 0.1f)
+        //{
+        //    metalTargetPos.localPosition = rotAxis.localPosition;
+        //}
+
+        turretMetal.GetComponent<KANG_TurretMetal>().isUpDown = true;
+
+        Vector3 dir = metalTargetPos.position - originMetalTargetPos;
+
+        metalTargetPos.localPosition = Vector3.Lerp(metalTargetPos.localPosition, originMetalTargetPos, Time.deltaTime * metalTargetMoveSpeed);
+
+        if ((dir - originMetalTargetPos).magnitude < 0.1f)
         {
-            metalTargetPos.localPosition = rotAxis.localPosition;
+            metalTargetPos.localPosition = originMetalTargetPos;
         }
-
     }
 
 
@@ -207,16 +235,16 @@ public class KANG_Turret : KANG_Machine
         if (currentTime > fireTime)
         {
             //cannonStates[(int)mState].transform.GetChild(index).position
-            Transform cannon = cannonStates[(int)mState].transform.GetChild(index);
+            Transform cannon = cannonStates[(int)mState].transform.GetChild(firePosIndex);
 
             PhotonNetwork.Instantiate("Bullet", cannon.position, cannon.rotation);
-            photonView.RPC("RPCAnim", RpcTarget.All, index);
-            photonView.RPC("RPCTurretEffect", RpcTarget.All, index);
+            photonView.RPC("RPCAnim", RpcTarget.All, firePosIndex);
+            photonView.RPC("RPCTurretEffect", RpcTarget.All, firePosIndex);
             currentTime = 0f;
 
-            if (index <= 0) addValue = 1;
-            else if (index >= cannon.parent.childCount - 1) addValue = -1;
-            index += addValue;
+            if (firePosIndex <= 0) addValue = 1;
+            else if (firePosIndex >= cannon.parent.childCount - 1) addValue = -1;
+            firePosIndex += addValue;
 
         }
     }
@@ -227,16 +255,10 @@ public class KANG_Turret : KANG_Machine
         if (isBeamFire == false)
         {
             PhotonNetwork.Instantiate("TurretBeam", beamFirePosition.position, beamFirePosition.rotation);
-            photonView.RPC("RPCBeamSound", RpcTarget.All);
             isBeamFire = true;
         }
     }
 
-    [PunRPC]
-    void RPCBeamSound()
-    {
-        source.PlayOneShot(beamSound);
-    }
 
 
     public override void ActionKeyUp()
@@ -288,8 +310,6 @@ public class KANG_Turret : KANG_Machine
         rotAxis.localRotation = Quaternion.Euler(0, 0, localAngle.z);
     }
 
-    bool isLine = false;
-
     [PunRPC]
     void RpcChangeMState(MachineState state)
     {
@@ -304,8 +324,18 @@ public class KANG_Turret : KANG_Machine
         }
         cannonStates[(int)mState].SetActive(true);
         spriteRender.sprite = turretTexs[(int)mState];
-        index = 0;
+        firePosIndex = 0;
+
+        if(mState == MachineState.Metal)
+        {
+            turretMetal.SetActive(true);
+        }
+        else
+        {
+            turretMetal.SetActive(false);
+        }
     }
+    
 
     [PunRPC]
     void RpcChangeCannonTex(bool isEnable)
@@ -321,15 +351,12 @@ public class KANG_Turret : KANG_Machine
         }
     }
 
+    
 
-    // 플레이어가 감지되면 조종선 활성화
+
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Player"))
-        {
-            isLine = true;
-        }
-
+        
         if (other.gameObject.name.Contains("Beam"))
         {
             photonView.RPC("RpcChangeMState", RpcTarget.All, MachineState.Beam);
@@ -344,7 +371,7 @@ public class KANG_Turret : KANG_Machine
         if (other.gameObject.name.Contains("Metal"))
         {
             photonView.RPC("RpcChangeMState", RpcTarget.All, MachineState.Metal);
-            rotSpeed = originRotSpeed * 5f; // 300
+            rotSpeed = originRotSpeed * 6f; // 300
         }
         photonView.RPC("RpcChangeTurretTex", RpcTarget.All);
 
@@ -352,6 +379,10 @@ public class KANG_Turret : KANG_Machine
 
     private void OnTriggerExit(Collider other)
     {
-        isLine = false;
+        if (other.gameObject.name.Contains("Crystal"))
+        {
+            photonView.RPC("RpcChangeMState", RpcTarget.All, MachineState.Idle);
+            photonView.RPC("RpcChangeTurretTex", RpcTarget.All);
+        }
     }
 }
