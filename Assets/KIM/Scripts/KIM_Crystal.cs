@@ -36,7 +36,8 @@ public class KIM_Crystal : MonoBehaviour
             //내가 크로우바라면 모듈에 부딪힐 때 스프라이트 변경시키고 자신의 스프라이트도 변경, 동시에 이름도 변경
             else
             {
-                GetComponentInChildren<SpriteRenderer>().sprite = other.transform.Find("CrystalPot").GetComponent<SpriteRenderer>().sprite;
+                if (other.transform.Find("CrystalPot").GetComponent<SpriteRenderer>().sprite != null)
+                    GetComponentInChildren<SpriteRenderer>().sprite = other.transform.Find("CrystalPot").GetComponent<SpriteRenderer>().sprite;
                 gameObject.name = GetComponentInChildren<SpriteRenderer>().sprite.name; 
                 if (gameObject.name.Contains("Beam") || gameObject.name.Contains("Metal"))
                     transform.GetChild(0).localScale = Vector3.one * 0.5f;
