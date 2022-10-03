@@ -11,6 +11,7 @@ using UnityEngine.UI;
 
 public class KANG_ShipHP : MonoBehaviour
 {
+    public GameObject DieEffectFactory;
     public GameObject DeathSprite;
     Slider HPBar;
     GameObject fillArea;
@@ -40,7 +41,9 @@ public class KANG_ShipHP : MonoBehaviour
 
         set
         {
+
             hp = value;
+            print("HP : " + hp);
 
             HPBar.value--;
             hitColor.a = 0.1f;
@@ -56,7 +59,6 @@ public class KANG_ShipHP : MonoBehaviour
 
                 HPBar.value = 0f;
                 fillArea.SetActive(false);
-
 
             }
             else if(hp > warningHP)

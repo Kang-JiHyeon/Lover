@@ -21,13 +21,18 @@ public class KANG_Engine : KANG_Machine
 
     public MachineState mState = MachineState.Idle;
 
-    public List<GameObject> engineTextures;
+    //public List<GameObject> engineTextures;
+    public List<Sprite> engineTextures;
+    SpriteRenderer engineSprite;
 
 
 
     // Start is called before the first frame update
     void Start()
     {
+        engineSprite = firePos.GetComponent<SpriteRenderer>();
+        engineSprite.sprite = engineTextures[0];
+
         ship = transform.parent;
         cc = ship.GetComponent<CharacterController>();
         localAngle = rotAxis.localEulerAngles;
@@ -35,12 +40,12 @@ public class KANG_Engine : KANG_Machine
         ke = GetComponent<KIM_Engine>();
 
         Transform engine = transform.GetChild(0);
-        for (int i=1; i< engine.childCount; i++)
-        {
-            engineTextures.Add(engine.GetChild(i).gameObject);
-            engineTextures[i - 1].SetActive(false);
-        }
-        engineTextures[0].SetActive(true);
+        //for (int i=1; i< engine.childCount; i++)
+        //{
+        //    engineTextures.Add(engine.GetChild(i).gameObject);
+        //    engineTextures[i - 1].SetActive(false);
+        //}
+        //engineTextures[0].SetActive(true);
     }
 
     // Update is called once per frame
@@ -133,12 +138,21 @@ public class KANG_Engine : KANG_Machine
         switch (mState)
         {
             case MachineState.Idle:
+                Move(moveSpeed);
                 break;
             case MachineState.Beam:
+                Move(moveSpeed);
                 Beam();
                 break;
+            case MachineState.Power:
+                Move(moveSpeed * 2);
+                break;
+            case MachineState.Metal:
+                Move(moveSpeed);
+                Metal();
+                break;
         }
-        Move();
+        
     }
 
     public GameObject engineBeamFactory;
@@ -168,13 +182,32 @@ public class KANG_Engine : KANG_Machine
         engineBeam.transform.forward = firePos.up;
     }
 
-    void Move()
+    float createTIme = 1f;
+    float curTime = 1f;
+    void Metal()
+    {
+        curTime += Time.deltaTime;
+        
+        if(curTime > createTIme)
+        {
+            Vector3 pos = firePos.position;
+            pos.y += 0.2f;
+            pos.z -= 0.3f;
+            PhotonNetwork.Instantiate("Shuriken", pos, firePos.rotation);
+            curTime = 0f;
+        }
+        
+    }
+
+
+
+    void Move(float speed)
     {
         // 움직임 방향
-        if (moveSpeed > 0 && !isBounce)
+        if (speed > 0 && !isBounce)
         {
-            StopCoroutine(IeActionKeyUp(moveSpeed));
-            LerpMoveSpeed(moveSpeed);
+            StopCoroutine(IeActionKeyUp(speed));
+            LerpMoveSpeed(speed);
             // 엔진에서 우주선 중심을 향하는 벡터
             moveDir = ship.forward - rotAxis.up;
             moveDir.z = 0;
@@ -209,6 +242,8 @@ public class KANG_Engine : KANG_Machine
                 BeamShoot();
                 curActionKeyDownTime = 0f;
                 break;
+            case MachineState.Power:
+                break;
         }
         StartCoroutine(IeActionKeyUp(0f));
         ke.EndSound();
@@ -224,7 +259,6 @@ public class KANG_Engine : KANG_Machine
                 photonView.RPC("RpcBeamDestroy", RpcTarget.All);
             }
             PhotonNetwork.Instantiate("EngineLaser", firePos.position, firePos.rotation);
-            print("Beam 발사");
         }
     }
 
@@ -261,24 +295,27 @@ public class KANG_Engine : KANG_Machine
     void RpcChangeMState(MachineState state)
     {
         mState = state;
-    }
-
-    [PunRPC]
-    void RpcSetEngine(int index, bool isEnable)
-    {
-        engineTextures[index].SetActive(isEnable);
+        engineSprite.sprite = engineTextures[(int)mState];
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.name.Contains("Beam"))
         {
-            photonView.RPC("RpcSetEngine", RpcTarget.All, (int)mState, false);
-
             photonView.RPC("RpcChangeMState", RpcTarget.All, MachineState.Beam);
-
-            photonView.RPC("RpcSetEngine", RpcTarget.All, (int)mState, true);
+            
         }
+
+        else if (other.gameObject.name.Contains("Power"))
+        {
+            photonView.RPC("RpcChangeMState", RpcTarget.All, MachineState.Power);
+        }
+
+        else if (other.gameObject.name.Contains("Metal"))
+        {
+            photonView.RPC("RpcChangeMState", RpcTarget.All, MachineState.Metal);
+        }
+
     }
 
     private void OnTriggerExit(Collider other)
@@ -286,11 +323,7 @@ public class KANG_Engine : KANG_Machine
         // 보석 장착 없어지면 mState를 기본 상태로 전환하고 싶다.
         if (other.gameObject.name.Contains("Crystal"))
         {
-            photonView.RPC("RpcSetEngine", RpcTarget.All, (int)mState, false);
-
             photonView.RPC("RpcChangeMState", RpcTarget.All, MachineState.Idle);
-
-            photonView.RPC("RpcSetEngine", RpcTarget.All, (int)mState, true);
         }
     }
 }

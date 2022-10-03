@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
+using System;
 
 // 부모 클래스의 특정키가 입력되었을 때 동작하는 함수를 재정의한다.
 
@@ -27,9 +28,17 @@ public class KANG_Turret : KANG_Machine
 
     public MachineState mState = MachineState.Idle;
 
+    bool isMetalDown = false;
+
+    public Transform metalTargetPos;
+    public float metalMaxDis = 10f;
+    float metalMoveSpeed = 5f;
+    float originRotSpeed;
+
     // Start is called before the first frame update
     void Start()
     {
+        originRotSpeed = rotSpeed;
         spriteRender = GetComponent<SpriteRenderer>();
 
         source = GetComponent<AudioSource>();
@@ -54,6 +63,8 @@ public class KANG_Turret : KANG_Machine
 
         Line = GetComponent<LineRenderer>();
 
+        //metalTargetPos = transform.GetChild(0).GetChild(3).Find("MetalTargetPos");
+
     }
 
     private void Update()
@@ -69,6 +80,12 @@ public class KANG_Turret : KANG_Machine
         //        print("조준선 그림");
         //    }
         //}
+
+
+        if (isMetalDown)
+        {
+            MetalDown();
+        }
     }
 
 
@@ -145,9 +162,42 @@ public class KANG_Turret : KANG_Machine
             case MachineState.Power:
                 BulletFire(createTime / 2);
                 break;
+            case MachineState.Metal:
+                MetalUp();
+                break;
+        }
+        isMetalDown = false;
+    }
 
+    // M키를 누르는동안 최대 거리까지 targetPos의 y값을 증가시키고 싶다.
+
+    private void MetalUp()
+    {
+        Vector3 dir = metalTargetPos.position - rotAxis.position;
+
+        Vector3 pos = rotAxis.localPosition + new Vector3(0, metalMaxDis, 0);
+        metalTargetPos.localPosition = Vector3.Lerp(metalTargetPos.localPosition, pos, Time.deltaTime * metalMoveSpeed);
+
+        if (Mathf.Abs(dir.magnitude - metalMaxDis) < 0.1f)
+        {
+            metalTargetPos.localPosition = pos;
         }
     }
+
+    private void MetalDown()
+    {
+        Vector3 dir = metalTargetPos.position - rotAxis.position;
+
+        metalTargetPos.localPosition = Vector3.Lerp(metalTargetPos.localPosition, rotAxis.localPosition, Time.deltaTime * metalMoveSpeed);
+
+        if (dir.magnitude < 0.1f)
+        {
+            metalTargetPos.localPosition = rotAxis.localPosition;
+        }
+
+    }
+
+
     int addValue = 1;
     void BulletFire(float fireTime)
     {
@@ -185,6 +235,7 @@ public class KANG_Turret : KANG_Machine
     public override void ActionKeyUp()
     {
         isBeamFire = false;
+        isMetalDown = true;
     }
 
     [PunRPC]
@@ -275,15 +326,20 @@ public class KANG_Turret : KANG_Machine
         if (other.gameObject.name.Contains("Beam"))
         {
             photonView.RPC("RpcChangeMState", RpcTarget.All, MachineState.Beam);
-            photonView.RPC("RpcChangeTurretTex", RpcTarget.All);
             photonView.RPC("RpcChangeCannonTex", RpcTarget.All, true);
+            rotSpeed = originRotSpeed;
         }
-        else if (other.gameObject.name.Contains("Power"))
+        if (other.gameObject.name.Contains("Power"))
         {
             photonView.RPC("RpcChangeMState", RpcTarget.All, MachineState.Power);
-            photonView.RPC("RpcChangeTurretTex", RpcTarget.All);
-
+            rotSpeed = originRotSpeed;
         }
+        if (other.gameObject.name.Contains("Metal"))
+        {
+            photonView.RPC("RpcChangeMState", RpcTarget.All, MachineState.Metal);
+            rotSpeed = originRotSpeed * 5f; // 300
+        }
+        photonView.RPC("RpcChangeTurretTex", RpcTarget.All);
 
     }
 

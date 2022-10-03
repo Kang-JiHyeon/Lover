@@ -22,6 +22,7 @@ public class KANG_Shield : KANG_Machine
     public List<GameObject> shieldGenerators;
     public List<GameObject> shieldTextures;
 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -163,13 +164,21 @@ public class KANG_Shield : KANG_Machine
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.name.Contains("Beam"))
+        if (other.gameObject.name.Contains("Crystal"))
         {
             SetShield((int)mState, false);
-
-            //mState = MachineState.Beam;
-            photonView.RPC("RpcChangeMState", RpcTarget.All, MachineState.Beam);
-
+            if (other.gameObject.name.Contains("Beam"))
+            {
+                photonView.RPC("RpcChangeMState", RpcTarget.All, MachineState.Beam);
+            }
+            else if (other.gameObject.name.Contains("Power"))
+            {
+                photonView.RPC("RpcChangeMState", RpcTarget.All, MachineState.Power);
+            }
+            else if (other.gameObject.name.Contains("Metal"))
+            {
+                photonView.RPC("RpcChangeMState", RpcTarget.All, MachineState.Metal);
+            }
             SetShield((int)mState, true);
         }
     }
