@@ -62,7 +62,12 @@ public class KANG_TurretMetal : MonoBehaviourPun
 
         if((cannonPos.position - transform.position).magnitude > 0.5f)
         {
-            Rotate();
+            transform.localScale = new Vector3(2f, 2f, 2f);
+            transform.Rotate(-transform.forward, 5f);
+        }
+        else
+        {
+            transform.localScale = new Vector3(1.3f, 1.3f, 1.3f);
         }
     }
 
@@ -79,10 +84,6 @@ public class KANG_TurretMetal : MonoBehaviourPun
         line.SetPosition(1, tPos + offset);
     }
 
-    void Rotate()
-    {
-        transform.Rotate(-transform.forward, 5f);
-    }
  
     private void OnTriggerEnter(Collider other)
     {
