@@ -23,7 +23,7 @@ public class KANG_TurretMetal : MonoBehaviourPun
     // มู
     LineRenderer line;
     public Transform cannonPos;
-    public Vector3 offset = new Vector3(0, 0, -0.1f);
+    public Vector3 offset = new Vector3(0, 0, -0.2f);
 
 
     // Start is called before the first frame update
@@ -59,6 +59,11 @@ public class KANG_TurretMetal : MonoBehaviourPun
                 transform.position = targetPos.position;
             }
         }
+
+        if((cannonPos.position - transform.position).magnitude > 0.5f)
+        {
+            Rotate();
+        }
     }
 
     void DrawLine()
@@ -67,13 +72,17 @@ public class KANG_TurretMetal : MonoBehaviourPun
         Vector3 tPos = transform.position;
         cPos.z = 0;
         tPos.z = 0;
-        line.SetPosition(0, cannonPos.position + offset);
-        line.SetPosition(1, transform.position + offset);
+        //line.SetPosition(0, cannonPos.position + offset);
+        //line.SetPosition(1, transform.position + offset);
 
         line.SetPosition(0, cPos + offset);
         line.SetPosition(1, tPos + offset);
     }
 
+    void Rotate()
+    {
+        transform.Rotate(-transform.forward, 5f);
+    }
  
     private void OnTriggerEnter(Collider other)
     {
