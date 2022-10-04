@@ -6931,6 +6931,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2872528267487737580}
     m_Modifications:
+    - target: {fileID: 705674538318180668, guid: 2c039426867cbf54ab1413edb20fa8b3, type: 3}
+      propertyPath: offset.z
+      value: -0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 5472744900921152416, guid: 2c039426867cbf54ab1413edb20fa8b3, type: 3}
       propertyPath: m_Name
       value: Turret_Up

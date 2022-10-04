@@ -82,6 +82,39 @@ public class KANG_Yamato : KANG_Machine
     // Update is called once per frame
     void Update()
     {
+        // ġƮŰ
+        if (PhotonNetwork.IsMasterClient)
+        {
+            // idle
+            if (Input.GetKeyDown(KeyCode.Alpha1))
+            {
+                photonView.RPC("RpcChangeMState", RpcTarget.All, MachineState.Idle);
+                SetTexture(yState != YamatoState.Disable);
+            }
+
+            // Beam
+            if (Input.GetKeyDown(KeyCode.Alpha2))
+            {
+                photonView.RPC("RpcChangeMState", RpcTarget.All, MachineState.Beam);
+                SetTexture(yState != YamatoState.Disable);
+            }
+            // power
+            if (Input.GetKeyDown(KeyCode.Alpha3))
+            {
+                photonView.RPC("RpcChangeMState", RpcTarget.All, MachineState.Power);
+                SetTexture(yState != YamatoState.Disable);
+            }
+            // metal
+            if (Input.GetKeyDown(KeyCode.Alpha4))
+            {
+                photonView.RPC("RpcChangeMState", RpcTarget.All, MachineState.Metal);
+                SetTexture(yState != YamatoState.Disable);
+            }
+        }
+
+        
+
+
         switch (yState)
         {
             case YamatoState.Enable:

@@ -76,19 +76,38 @@ public class KANG_Turret : KANG_Machine
 
     private void Update()
     {
-        //if (isLine)
-        //{
-        //    RaycastHit hit;
-        //    Line.SetPosition(0, beamFirePosition.position);
-        //    if (Physics.Raycast(beamFirePosition.position, beamFirePosition.up, out hit, 100))
-        //    {
-        //        Debug.DrawRay(beamFirePosition.position, beamFirePosition.up, Color.red);
-        //        Line.SetPosition(1, beamFirePosition.position + new Vector3(0, hit.distance, 0));
-        //        print("조준선 그림");
-        //    }
-        //}
+        // 치트키
+        if (PhotonNetwork.IsMasterClient)
+        {
+            // 치트키
+            // idle
+            if (Input.GetKeyDown(KeyCode.Alpha1))
+            {
+                photonView.RPC("RpcChangeMState", RpcTarget.All, MachineState.Idle);
+                photonView.RPC("RpcChangeTurretTex", RpcTarget.All);
+            }
 
+            // Beam
+            if (Input.GetKeyDown(KeyCode.Alpha2))
+            {
+                photonView.RPC("RpcChangeMState", RpcTarget.All, MachineState.Beam);
+                photonView.RPC("RpcChangeCannonTex", RpcTarget.All, true);
+                photonView.RPC("RpcChangeTurretTex", RpcTarget.All);
+            }
+            // power
+            if (Input.GetKeyDown(KeyCode.Alpha3))
+            {
+                photonView.RPC("RpcChangeMState", RpcTarget.All, MachineState.Power);
+                photonView.RPC("RpcChangeTurretTex", RpcTarget.All);
+            }
+            // metal
+            if (Input.GetKeyDown(KeyCode.Alpha4))
+            {
+                photonView.RPC("RpcChangeMState", RpcTarget.All, MachineState.Metal);
+                photonView.RPC("RpcChangeTurretTex", RpcTarget.All);
+            }
 
+        }
         if (isMetalDown)
         {
             MetalDown();
@@ -181,10 +200,10 @@ public class KANG_Turret : KANG_Machine
     [PunRPC]
     void RpcSetMetalTargetPos(Vector3 position)
     {
-        if (photonView.IsMine)
-        {
+        //if (photonView.IsMine)
+        //{
             metalTargetPos.localPosition = position;
-        }
+        //}
     }
 
     private void MetalUp()
@@ -325,6 +344,14 @@ public class KANG_Turret : KANG_Machine
     void RpcChangeMState(MachineState state)
     {
         mState = state;
+        if(mState == MachineState.Metal)
+        {
+            rotSpeed = originRotSpeed * 6f;
+        }
+        else
+        {
+            rotSpeed = originRotSpeed;
+        }
     }
     [PunRPC]
     void RpcChangeTurretTex()
@@ -372,17 +399,17 @@ public class KANG_Turret : KANG_Machine
         {
             photonView.RPC("RpcChangeMState", RpcTarget.All, MachineState.Beam);
             photonView.RPC("RpcChangeCannonTex", RpcTarget.All, true);
-            rotSpeed = originRotSpeed;
+            //rotSpeed = originRotSpeed;
         }
         if (other.gameObject.name.Contains("Power"))
         {
             photonView.RPC("RpcChangeMState", RpcTarget.All, MachineState.Power);
-            rotSpeed = originRotSpeed;
+            //rotSpeed = originRotSpeed;
         }
         if (other.gameObject.name.Contains("Metal"))
         {
             photonView.RPC("RpcChangeMState", RpcTarget.All, MachineState.Metal);
-            rotSpeed = originRotSpeed * 6f; // 300
+            //rotSpeed = originRotSpeed * 6f; // 300
         }
         photonView.RPC("RpcChangeTurretTex", RpcTarget.All);
 

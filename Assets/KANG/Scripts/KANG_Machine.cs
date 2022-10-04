@@ -43,8 +43,10 @@ public class KANG_Machine : MonoBehaviourPun
     // Update is called once per frame
     void Update()
     {
-        
+
+
     }
+
 
     public virtual void UpKey()
     {
