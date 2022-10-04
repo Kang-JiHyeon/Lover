@@ -15,7 +15,6 @@ public class KANG_TurretMetal : MonoBehaviourPun
     // ∏ﬁ≈ª
     public Transform targetPos;
     public float moveSpeed = 2f;
-    public bool isUpDown = false;
     Vector3 bounceDir;
     float bounceTime = 0.05f;
     float curBounceTime = 0f;
@@ -24,7 +23,7 @@ public class KANG_TurretMetal : MonoBehaviourPun
     // ¡Ÿ
     LineRenderer line;
     public Transform cannonPos;
-    public Vector3 offset = new Vector3(0, 0, -0.2f);
+    public Vector3 offset = new Vector3(0, 0, -0.1f);
 
 
     // Start is called before the first frame update
@@ -64,7 +63,7 @@ public class KANG_TurretMetal : MonoBehaviourPun
 
     //public List<Vector3> linePositions;
     //public Vector3[] linePositions = new Vector3[5];
-    
+
     void DrawLine()
     {
         //int index = 0;

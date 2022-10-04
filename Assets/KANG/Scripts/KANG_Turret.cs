@@ -176,53 +176,43 @@ public class KANG_Turret : KANG_Machine
     }
 
     // M키를 누르는동안 최대 거리까지 targetPos의 y값을 증가시키고 싶다.
+    [PunRPC]
+    void RpcSetMetalTargetPos(Vector3 position)
+    {
+        if (photonView.IsMine)
+        {
+            metalTargetPos.localPosition = position;
+        }
+    }
 
     private void MetalUp()
     {
-        //Vector3 dir = metalTargetPos.position - rotAxis.position;
-
-        //Vector3 pos = rotAxis.localPosition + new Vector3(0, metalMaxDis, 0);
-        //metalTargetPos.localPosition = Vector3.Lerp(metalTargetPos.localPosition, pos, Time.deltaTime * metalMoveSpeed);
-
-        //if (Mathf.Abs(dir.magnitude - metalMaxDis) < 0.1f)
-        //{
-        //    metalTargetPos.localPosition = pos;
-        //}
-
-        turretMetal.GetComponent<KANG_TurretMetal>().isUpDown = true;
-
         Vector3 dir = metalTargetPos.position - originMetalTargetPos;
 
         Vector3 pos = originMetalTargetPos + new Vector3(0, metalMaxDis, 0);
-        metalTargetPos.localPosition = Vector3.Lerp(metalTargetPos.localPosition, pos, Time.deltaTime * metalTargetMoveSpeed);
+        //metalTargetPos.localPosition = Vector3.Lerp(metalTargetPos.localPosition, pos, Time.deltaTime * metalTargetMoveSpeed);
+        photonView.RPC("RpcSetMetalTargetPos", RpcTarget.All, Vector3.Lerp(metalTargetPos.localPosition, pos, Time.deltaTime * metalTargetMoveSpeed));
 
         if (Mathf.Abs(dir.magnitude - metalMaxDis) < 0.1f)
         {
-            metalTargetPos.localPosition = pos;
+            //metalTargetPos.localPosition = pos;
+            photonView.RPC("RpcSetMetalTargetPos", RpcTarget.All, pos);
         }
 
     }
 
     private void MetalDown()
     {
-        //Vector3 dir = metalTargetPos.position - rotAxis.position;
-
-        //metalTargetPos.localPosition = Vector3.Lerp(metalTargetPos.localPosition, rotAxis.localPosition, Time.deltaTime * metalMoveSpeed);
-
-        //if (dir.magnitude < 0.1f)
-        //{
-        //    metalTargetPos.localPosition = rotAxis.localPosition;
-        //}
-
-        turretMetal.GetComponent<KANG_TurretMetal>().isUpDown = true;
 
         Vector3 dir = metalTargetPos.position - originMetalTargetPos;
 
-        metalTargetPos.localPosition = Vector3.Lerp(metalTargetPos.localPosition, originMetalTargetPos, Time.deltaTime * metalTargetMoveSpeed);
+        //metalTargetPos.localPosition = Vector3.Lerp(metalTargetPos.localPosition, originMetalTargetPos, Time.deltaTime * metalTargetMoveSpeed);
+        photonView.RPC("RpcSetMetalTargetPos", RpcTarget.All, Vector3.Lerp(metalTargetPos.localPosition, originMetalTargetPos, Time.deltaTime * metalTargetMoveSpeed));
 
         if ((dir - originMetalTargetPos).magnitude < 0.1f)
         {
-            metalTargetPos.localPosition = originMetalTargetPos;
+            //metalTargetPos.localPosition = originMetalTargetPos;
+            photonView.RPC("RpcSetMetalTargetPos", RpcTarget.All, originMetalTargetPos);
         }
     }
 

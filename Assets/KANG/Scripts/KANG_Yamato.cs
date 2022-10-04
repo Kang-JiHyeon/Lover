@@ -137,12 +137,10 @@ public class KANG_Yamato : KANG_Machine
         switch (mState)
         {
             case MachineState.Idle:
-                textureIndex = 0;
                 IdleAttack();
                 Fire();
                 break;
             case MachineState.Beam:
-                textureIndex = 1;
                 BeamAttack();
                 break;
             case MachineState.Power:
@@ -296,12 +294,12 @@ public class KANG_Yamato : KANG_Machine
     {
         if (photonView.IsMine)
         {
-            photonView.RPC("RpcSetTexture", RpcTarget.All, (int)mState, isEnable);
+            photonView.RPC("RpcSetTexture", RpcTarget.All, isEnable);
         }
     }
 
     [PunRPC]
-    void RpcSetTexture(int index, bool isEnable)
+    void RpcSetTexture(bool isEnable)
     {
         for (int i = 0; i < liveTextures.Count; i++)
         {
@@ -309,8 +307,8 @@ public class KANG_Yamato : KANG_Machine
             deadTextures[i].SetActive(false);
         }
 
-        liveTextures[index].SetActive(isEnable);
-        deadTextures[index].SetActive(!isEnable);
+        liveTextures[(int)mState].SetActive(isEnable);
+        deadTextures[(int)mState].SetActive(!isEnable);
 
         controls[0].SetActive(isEnable);
         controls[1].SetActive(!isEnable);
@@ -330,7 +328,6 @@ public class KANG_Yamato : KANG_Machine
         else if (other.gameObject.name.Contains("Metal"))
         {
             photonView.RPC("RpcChangeMState", RpcTarget.All, MachineState.Metal);
-
         }
 
         SetTexture(yState != YamatoState.Disable);
