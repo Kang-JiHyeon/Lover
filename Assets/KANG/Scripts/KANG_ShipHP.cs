@@ -41,7 +41,6 @@ public class KANG_ShipHP : MonoBehaviour
 
         set
         {
-
             hp = value;
             print("HP : " + hp);
 
