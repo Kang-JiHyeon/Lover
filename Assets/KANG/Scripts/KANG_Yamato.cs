@@ -212,18 +212,14 @@ public class KANG_Yamato : KANG_Machine
             Laser.SetActive(true);
         }
 
-        if (!source.isPlaying)
-        {
-            source.clip = beamLoop;
-            source.Play();
-        }
+        photonView.RPC("RPCYBeamSound", RpcTarget.All, true);
 
         curAttackTime += Time.deltaTime;
 
         if (curAttackTime > attackTime)
         {
+            photonView.RPC("RPCYBeamSound", RpcTarget.All, false);
             curAttackTime = 0f;
-            source.Stop();
             SetTexture(false);
 
             if (photonView.IsMine)
@@ -231,6 +227,21 @@ public class KANG_Yamato : KANG_Machine
                 photonView.RPC("RpcChangeYState", RpcTarget.All, YamatoState.Disable);
             }
         }
+    }
+
+    [PunRPC]
+    void RPCYBeamSound(bool value)
+    {
+        if(value)
+        {
+            if (!source.isPlaying)
+            {
+                source.clip = beamLoop;
+                source.Play();
+            }
+        }
+        else
+            source.Stop();
     }
 
     // 일정 시간마다 총구들에서 유도탄이 나가게 하고 싶다.

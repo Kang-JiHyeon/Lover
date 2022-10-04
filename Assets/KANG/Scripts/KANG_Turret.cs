@@ -10,6 +10,7 @@ public class KANG_Turret : KANG_Machine
 {
     AudioSource source;
     public AudioClip attackSound;
+    public AudioClip beamSound;
 
     // Turret
     SpriteRenderer spriteRender;
@@ -245,11 +246,17 @@ public class KANG_Turret : KANG_Machine
         if (isBeamFire == false)
         {
             PhotonNetwork.Instantiate("TurretBeam", beamFirePosition.position, beamFirePosition.rotation);
+            photonView.RPC("RPCBeamSound", RpcTarget.All);
             isBeamFire = true;
         }
     }
 
 
+    [PunRPC]
+    void RPCBeamSound()
+    {
+        source.PlayOneShot(beamSound);
+    }
 
     public override void ActionKeyUp()
     {
