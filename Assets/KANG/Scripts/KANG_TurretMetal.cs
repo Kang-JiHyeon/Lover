@@ -61,25 +61,17 @@ public class KANG_TurretMetal : MonoBehaviourPun
         }
     }
 
-    //public List<Vector3> linePositions;
-    //public Vector3[] linePositions = new Vector3[5];
-
     void DrawLine()
     {
-        //int index = 0;
-        //for(int i= linePositions.Length; i > 0; i--)
-        //{
-        //    float x = cannonPos.position.x - transform.position.x;
-        //    float y = cannonPos.position.y - transform.position.y;
-        //    float z = cannonPos.position.z - transform.position.z;
-
-        //    linePositions[index] = cannonPos.position - new Vector3((x / linePositions.Length) * i, (y / linePositions.Length) * i, z) + offset;
-        //    index++;
-        //}
-
-        //line.SetPositions(linePositions);
+        Vector3 cPos = cannonPos.position;
+        Vector3 tPos = transform.position;
+        cPos.z = 0;
+        tPos.z = 0;
         line.SetPosition(0, cannonPos.position + offset);
         line.SetPosition(1, transform.position + offset);
+
+        line.SetPosition(0, cPos + offset);
+        line.SetPosition(1, tPos + offset);
     }
 
  

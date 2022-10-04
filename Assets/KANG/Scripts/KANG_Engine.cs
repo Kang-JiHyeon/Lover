@@ -51,6 +51,34 @@ public class KANG_Engine : KANG_Machine
     // Update is called once per frame
     void Update()
     {
+        // 치트키
+        if (PhotonNetwork.IsMasterClient)
+        {
+            // 치트키
+            // idle
+            if (Input.GetKeyDown(KeyCode.Alpha1))
+            {
+                photonView.RPC("RpcChangeMState", RpcTarget.All, MachineState.Idle);
+            }
+
+            // Beam
+            if (Input.GetKeyDown(KeyCode.Alpha2))
+            {
+                photonView.RPC("RpcChangeMState", RpcTarget.All, MachineState.Beam);
+            }
+            // power
+            if (Input.GetKeyDown(KeyCode.Alpha3))
+            {
+                photonView.RPC("RpcChangeMState", RpcTarget.All, MachineState.Power);
+            }
+            // metal
+            if (Input.GetKeyDown(KeyCode.Alpha4))
+            {
+                photonView.RPC("RpcChangeMState", RpcTarget.All, MachineState.Metal);
+            }
+        }
+
+
         // 벽에 부딪혔을 때
         if (isBounce)
         {
@@ -310,7 +338,6 @@ public class KANG_Engine : KANG_Machine
         if (other.gameObject.name.Contains("Beam"))
         {
             photonView.RPC("RpcChangeMState", RpcTarget.All, MachineState.Beam);
-            
         }
 
         else if (other.gameObject.name.Contains("Power"))

@@ -42,6 +42,40 @@ public class KANG_Shield : KANG_Machine
     // Update is called once per frame
     void Update()
     {
+        // ġƮŰ
+        if (PhotonNetwork.IsMasterClient)
+        {
+            // idle
+            if (Input.GetKeyDown(KeyCode.Alpha1))
+            {
+                SetShield((int)mState, false);
+                photonView.RPC("RpcChangeMState", RpcTarget.All, MachineState.Idle);
+                SetShield((int)mState, true);
+            }
+
+            // Beam
+            if (Input.GetKeyDown(KeyCode.Alpha2))
+            {
+                SetShield((int)mState, false);
+                photonView.RPC("RpcChangeMState", RpcTarget.All, MachineState.Beam);
+                SetShield((int)mState, true);
+            }
+            // power
+            if (Input.GetKeyDown(KeyCode.Alpha3))
+            {
+                SetShield((int)mState, false);
+                photonView.RPC("RpcChangeMState", RpcTarget.All, MachineState.Power);
+                SetShield((int)mState, true);
+            }
+            // metal
+            if (Input.GetKeyDown(KeyCode.Alpha4))
+            {
+                SetShield((int)mState, false);
+                photonView.RPC("RpcChangeMState", RpcTarget.All, MachineState.Metal);
+                SetShield((int)mState, true);
+            }
+        }
+
         
     }
 
