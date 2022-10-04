@@ -2,14 +2,16 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using Photon.Pun;
 
 // 1. metal을 180도 회전하고 싶다.
 // 2. 지지대의 y Scale을 늘리고, Blade의 y 위치를 늘리고 싶다. 
 // 3. Blade의 크기를 늘리고 싶다.
 
-public class KANG_YamatoMetal : MonoBehaviour
+public class KANG_YamatoMetal : MonoBehaviourPun
 {
+    AudioSource source;
+
     public KANG_Yamato yamato;
     public Transform yamatoMetal;
     public Transform axis;
@@ -49,6 +51,8 @@ public class KANG_YamatoMetal : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        source = GetComponent<AudioSource>();
+
         yamatoMetal = transform.GetChild(0);
         axis = yamatoMetal.GetChild(0);
         blade = yamatoMetal.GetChild(1);
@@ -108,11 +112,11 @@ public class KANG_YamatoMetal : MonoBehaviour
         yamatoMetal.localRotation = Quaternion.Euler(0, 0, currentRot.z);
 
 
-        if(op > 0 && currentRot.z >= targetZ)
+        if (op > 0 && currentRot.z >= targetZ)
         {
             state = BladeState.Up;
         }
-        else if(op < 0 && currentRot.z <= targetZ)
+        else if (op < 0 && currentRot.z <= targetZ)
         {
             state = BladeState.Idle;
             yamato.ChangeYState(KANG_Yamato.YamatoState.Disable);
@@ -133,11 +137,11 @@ public class KANG_YamatoMetal : MonoBehaviour
         blade.localPosition = new Vector3(blade.localPosition.x, curBladePosY, blade.localPosition.z);
 
 
-        if(op > 0 && curAxisScaleY >= targetScaleY && curBladePosY >= targetPosY)
+        if (op > 0 && curAxisScaleY >= targetScaleY && curBladePosY >= targetPosY)
         {
             state = BladeState.Expand;
         }
-        else if(op < 0 && curAxisScaleY <= targetScaleY && curBladePosY <= targetPosY)
+        else if (op < 0 && curAxisScaleY <= targetScaleY && curBladePosY <= targetPosY)
         {
             state = BladeState.DownRotate;
         }
@@ -151,11 +155,11 @@ public class KANG_YamatoMetal : MonoBehaviour
         curBladeScale += Time.deltaTime * 8 * op;
         curBladeScale = Mathf.Clamp(curBladeScale, 0f, 1.1f);
         bladeBack.localScale = new Vector3(curBladeScale, curBladeScale, curBladeScale);
-        if(op > 0 && curBladeScale >= targetScale)
+        if (op > 0 && curBladeScale >= targetScale)
         {
             state = BladeState.Attack;
         }
-        else if(op < 0 && curBladeScale <= targetScale)
+        else if (op < 0 && curBladeScale <= targetScale)
         {
             state = BladeState.Down;
         }
@@ -166,12 +170,27 @@ public class KANG_YamatoMetal : MonoBehaviour
     private void BladeRotate()
     {
         curTime += Time.deltaTime;
-
+        photonView.RPC("RPCMYSound", RpcTarget.All, true);
         if (curTime > attackTime)
         {
             state = BladeState.Contract;
+            photonView.RPC("RPCMYSound", RpcTarget.All, false);
             curTime = 0f;
         }
         blade.Rotate(-blade.forward, bladeRotSpeed);
+    }
+
+    [PunRPC]
+    void RPCMYSound(bool value)
+    {
+        if (value)
+        {
+            if (!source.isPlaying)
+            {
+                source.Play();
+            }
+        }
+        else
+            source.Stop();
     }
 }

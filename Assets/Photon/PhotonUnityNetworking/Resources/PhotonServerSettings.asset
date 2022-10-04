@@ -109,6 +109,7 @@ MonoBehaviour:
   - RPCMetalSound
   - RPCYBeamSound
   - RpcSetMetalTargetPos
+  - RPCMYSound
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1
