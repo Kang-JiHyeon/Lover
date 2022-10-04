@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 162110819}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0, y: 0.07, z: 0}
+  m_LocalPosition: {x: 0, y: 0.07, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -425,13 +425,13 @@ GameObject:
   m_Component:
   - component: {fileID: 919332373}
   - component: {fileID: 919332374}
-  m_Layer: 0
+  m_Layer: 25
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &919332373
 Transform:
   m_ObjectHideFlags: 0
@@ -455,7 +455,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 919332372}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -2467,6 +2467,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clip: {fileID: 8300000, guid: edd98e3eec61fc94bb6a2f50e6b751b8, type: 3}
+  beamCharged: {fileID: 0}
+  beamRelease: {fileID: 0}
   engineEffect: {fileID: 2255599692758329746, guid: 24c5a96d78bf2574c92b70e04592fcfd, type: 3}
 --- !u!82 &54165707
 AudioSource:
@@ -3959,6 +3961,10 @@ MonoBehaviour:
   rotDir: 0
   rotSpeed: 30
   attackSound: {fileID: 8300000, guid: 3ce45a441037c8f449ab44caaaf3c02f, type: 3}
+  beamLoop: {fileID: 0}
+  metalLoop: {fileID: 0}
+  metalSound: {fileID: 0}
+  missile: {fileID: 0}
   yamatoEffect: {fileID: 5102684701224821870, guid: 6f8d3240326f04e40bede1016eea9df0, type: 3}
   yamatoBulletFactory: {fileID: 4993557486822331358, guid: 741cdd5278cf5b642b6014fe6341c955, type: 3}
   firePos: {fileID: 2872528266931267605}
@@ -5837,7 +5843,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8598796295750003642}
   - component: {fileID: 8768036614703557186}
-  - component: {fileID: 1695938150}
   m_Layer: 0
   m_Name: YamatoBeamDead_Tex
   m_TagString: Untagged
@@ -5912,26 +5917,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &1695938150
-Animator:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8414896629565145868}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 2e0cb641f10ed1446b4265351ab21642, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &8854604288688067901
 GameObject:
   m_ObjectHideFlags: 0
@@ -6023,9 +6008,57 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1977524293}
     m_Modifications:
+    - target: {fileID: 1273962576579432, guid: fd915375aaf0fc84eb9c7494badb5054, type: 3}
+      propertyPath: m_Layer
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 1353054561174520, guid: fd915375aaf0fc84eb9c7494badb5054, type: 3}
+      propertyPath: m_Layer
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 1386013196558592, guid: fd915375aaf0fc84eb9c7494badb5054, type: 3}
+      propertyPath: m_Layer
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 1425734706551030, guid: fd915375aaf0fc84eb9c7494badb5054, type: 3}
+      propertyPath: m_Layer
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 1501334076589534, guid: fd915375aaf0fc84eb9c7494badb5054, type: 3}
+      propertyPath: m_Layer
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 1590660104381900, guid: fd915375aaf0fc84eb9c7494badb5054, type: 3}
+      propertyPath: m_Layer
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 1608071298729838, guid: fd915375aaf0fc84eb9c7494badb5054, type: 3}
+      propertyPath: m_Layer
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 1620295340485200, guid: fd915375aaf0fc84eb9c7494badb5054, type: 3}
+      propertyPath: m_Layer
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 1798407287873408, guid: fd915375aaf0fc84eb9c7494badb5054, type: 3}
+      propertyPath: m_Layer
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 1818655743351880, guid: fd915375aaf0fc84eb9c7494badb5054, type: 3}
+      propertyPath: m_Layer
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 1915435310513538, guid: fd915375aaf0fc84eb9c7494badb5054, type: 3}
+      propertyPath: m_Layer
+      value: 25
+      objectReference: {fileID: 0}
     - target: {fileID: 1997207017492988, guid: fd915375aaf0fc84eb9c7494badb5054, type: 3}
       propertyPath: m_Name
       value: Laser Toon Lightning
+      objectReference: {fileID: 0}
+    - target: {fileID: 1997207017492988, guid: fd915375aaf0fc84eb9c7494badb5054, type: 3}
+      propertyPath: m_Layer
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 1997207017492988, guid: fd915375aaf0fc84eb9c7494badb5054, type: 3}
       propertyPath: m_IsActive
