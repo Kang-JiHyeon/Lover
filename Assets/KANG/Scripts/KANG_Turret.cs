@@ -11,6 +11,7 @@ public class KANG_Turret : KANG_Machine
     AudioSource source;
     public AudioClip attackSound;
     public AudioClip beamSound;
+    public AudioClip metalsound;
 
     // Turret
     SpriteRenderer spriteRender;
@@ -189,7 +190,7 @@ public class KANG_Turret : KANG_Machine
     private void MetalUp()
     {
         Vector3 dir = metalTargetPos.position - originMetalTargetPos;
-
+        photonView.RPC("RPCMetalTurret", RpcTarget.All, true);
         Vector3 pos = originMetalTargetPos + new Vector3(0, metalMaxDis, 0);
         //metalTargetPos.localPosition = Vector3.Lerp(metalTargetPos.localPosition, pos, Time.deltaTime * metalTargetMoveSpeed);
         photonView.RPC("RpcSetMetalTargetPos", RpcTarget.All, Vector3.Lerp(metalTargetPos.localPosition, pos, Time.deltaTime * metalTargetMoveSpeed));
@@ -199,14 +200,27 @@ public class KANG_Turret : KANG_Machine
             //metalTargetPos.localPosition = pos;
             photonView.RPC("RpcSetMetalTargetPos", RpcTarget.All, pos);
         }
+    }
 
+    [PunRPC]
+    void RPCMetalTurret(bool value)
+    {
+        if (value)
+        {
+            if (!source.isPlaying)
+            {
+                source.clip = metalsound;
+                source.Play();
+            }
+        }
+        else
+            source.Stop();
     }
 
     private void MetalDown()
     {
-
         Vector3 dir = metalTargetPos.position - originMetalTargetPos;
-
+        photonView.RPC("RPCMetalTurret", RpcTarget.All, false);
         //metalTargetPos.localPosition = Vector3.Lerp(metalTargetPos.localPosition, originMetalTargetPos, Time.deltaTime * metalTargetMoveSpeed);
         photonView.RPC("RpcSetMetalTargetPos", RpcTarget.All, Vector3.Lerp(metalTargetPos.localPosition, originMetalTargetPos, Time.deltaTime * metalTargetMoveSpeed));
 

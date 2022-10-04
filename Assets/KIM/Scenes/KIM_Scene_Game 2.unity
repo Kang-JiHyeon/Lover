@@ -3140,10 +3140,18 @@ PrefabInstance:
       propertyPath: beamSound
       value: 
       objectReference: {fileID: 8300000, guid: 9439dc1f5bbf5a1428058cc9865e286a, type: 3}
+    - target: {fileID: 2872528265906593010, guid: 749d56a947a95634c8e62330be538ce1, type: 3}
+      propertyPath: metalsound
+      value: 
+      objectReference: {fileID: 8300000, guid: 9f8d421f5000ef44d8ca9542ce62bff6, type: 3}
     - target: {fileID: 2872528266473275162, guid: 749d56a947a95634c8e62330be538ce1, type: 3}
       propertyPath: beamSound
       value: 
       objectReference: {fileID: 8300000, guid: 9439dc1f5bbf5a1428058cc9865e286a, type: 3}
+    - target: {fileID: 2872528266473275162, guid: 749d56a947a95634c8e62330be538ce1, type: 3}
+      propertyPath: metalsound
+      value: 
+      objectReference: {fileID: 8300000, guid: 9f8d421f5000ef44d8ca9542ce62bff6, type: 3}
     - target: {fileID: 2872528266671130596, guid: 749d56a947a95634c8e62330be538ce1, type: 3}
       propertyPath: sceneViewId
       value: 52
@@ -3152,10 +3160,18 @@ PrefabInstance:
       propertyPath: beamSound
       value: 
       objectReference: {fileID: 8300000, guid: 9439dc1f5bbf5a1428058cc9865e286a, type: 3}
+    - target: {fileID: 2872528266976725879, guid: 749d56a947a95634c8e62330be538ce1, type: 3}
+      propertyPath: metalsound
+      value: 
+      objectReference: {fileID: 8300000, guid: 9f8d421f5000ef44d8ca9542ce62bff6, type: 3}
     - target: {fileID: 2872528266986062383, guid: 749d56a947a95634c8e62330be538ce1, type: 3}
       propertyPath: beamSound
       value: 
       objectReference: {fileID: 8300000, guid: 9439dc1f5bbf5a1428058cc9865e286a, type: 3}
+    - target: {fileID: 2872528266986062383, guid: 749d56a947a95634c8e62330be538ce1, type: 3}
+      propertyPath: metalsound
+      value: 
+      objectReference: {fileID: 8300000, guid: 9f8d421f5000ef44d8ca9542ce62bff6, type: 3}
     - target: {fileID: 2872528267217525208, guid: 749d56a947a95634c8e62330be538ce1, type: 3}
       propertyPath: missile
       value: 
