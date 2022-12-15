@@ -36,7 +36,7 @@ public class KANG_EngineBeam : MonoBehaviourPun
         }
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider other) 
     {
         Destroy(gameObject);
     }

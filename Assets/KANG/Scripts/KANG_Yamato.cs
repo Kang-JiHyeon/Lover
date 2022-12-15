@@ -8,6 +8,7 @@ using UnityEngine;
 
 public class KANG_Yamato : KANG_Machine
 {
+    #region skip
     AudioSource source;
 
     public AudioClip attackSound;
@@ -37,7 +38,7 @@ public class KANG_Yamato : KANG_Machine
     public List<GameObject> liveTextures;
     public List<GameObject> deadTextures;
     public List<GameObject> controls;
-    int textureIndex = 0;
+
     // Laser
     public GameObject Laser;
 
@@ -128,7 +129,7 @@ public class KANG_Yamato : KANG_Machine
                 break;
         }
     }
-
+    #endregion
     public override void ActionKey()
     {
         if (yState == YamatoState.Enable)
@@ -137,6 +138,8 @@ public class KANG_Yamato : KANG_Machine
         }
 
     }
+
+
     public void ChangeYState(YamatoState state)
     {
         photonView.RPC("RpcChangeYState", RpcTarget.All, state);
@@ -385,7 +388,6 @@ public class KANG_Yamato : KANG_Machine
             if (photonView.IsMine)
             {
                 photonView.RPC("RpcChangeMState", RpcTarget.All, MachineState.Idle);
-                textureIndex = 0;
                 SetTexture(yState != YamatoState.Disable);
             }
         } 

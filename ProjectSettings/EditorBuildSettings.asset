@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/KIM/Scenes/KIM_Connection.unity
     guid: 5d48773f2f5cbfd4a93bd83f49b9174b
   - enabled: 1
+    path: Assets/KANG/Scenes/KANG_LobbyScene.unity
+    guid: bc9065139546d0144a0d8316ab85fef8
+  - enabled: 1
     path: Assets/KIM/Scenes/KIM_Lobby.unity
     guid: d9edbeb1d8103ec41aeb921357ff24c7
   - enabled: 1

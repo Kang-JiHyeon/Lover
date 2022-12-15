@@ -109,7 +109,7 @@ public class KIM_LobbyManager : MonoBehaviourPunCallbacks
     void Start()
     {
         source = GetComponent<AudioSource>();
-        CreateRoom();
+        //CreateRoom();
         arr[0] = charactor1;
         arr[1] = charactor2;
         arr[2] = charactor3;
