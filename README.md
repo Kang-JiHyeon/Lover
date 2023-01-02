@@ -1,6 +1,14 @@
 # Lover
 메타버스아카데미 3차 프로젝트
 
+<p>
+<img src="https://user-images.githubusercontent.com/65221707/210224656-377468dd-bb40-4d7e-91f7-0eaf4777caa9.png" width="30%" height="40%">
+<img src="https://user-images.githubusercontent.com/65221707/210224777-8997e703-7b21-4aed-bfd6-288f4268d3be.png" width="30%" height="40%">
+<img src="https://user-images.githubusercontent.com/65221707/210225254-f3cb2bc1-9e1f-490d-a0af-a4a82c1871fd.png" width="30%" height="40%">
+</p>
+
+<br>
+
 ### Photon Network를 활용한 온라인 멀티플레이 게임 <br>(Lovers in a Dangerous Spacetime 모작)
 
 |개요|내용|
@@ -12,3 +20,5 @@
 | 사용언어 및<br>개발환경 | C#, Unity, Photon, Git |
 | 느낀 점 | - 객체지향 개념을 사용해봄으로서 코드 구조의 중요성을 깨달음.<br>- WBS작성을 하면서 프로젝트 진행도 공유의 중요성을 알게됨. |
 | 참고자료 | - Github 링크 : https://github.com/Kang-JiHyeon/Lover<br>- 시연영상 링크 : https://youtu.be/HPPhyI7_Trs <br> - 포트폴리오 링크 : https://www.notion.so/Lovers-in-a-Dangerous-Spacetime-60282f6f304440b0aba687ec4716320a|
+
+<br>
