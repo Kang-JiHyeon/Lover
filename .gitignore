@@ -4,6 +4,7 @@ Logs/
 Temp/
 UserSettings/
 Obj/
+bulid/
 *.csproj
 *.sln
 .vsconfig
