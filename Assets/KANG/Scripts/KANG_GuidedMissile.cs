@@ -44,7 +44,8 @@ public class KANG_GuidedMissile : MonoBehaviour
         // 일정 거리 내의 enemy 중에서 최단 거리에 있는 에너미를 찾고 싶다. 
         Collider[] enemyCols = Physics.OverlapSphere(transform.position, 50, 1 << 29);
 
-        for(int i = 0; i< enemyCols.Length; i++)
+        // 유도미사일과 가장 가까이 있는 에너미를 찾음
+        for(int i = 0; i < enemyCols.Length; i++)
         {
             shortDistance = float.MaxValue;
 
@@ -55,7 +56,6 @@ public class KANG_GuidedMissile : MonoBehaviour
                 nearstEnemy = enemyCols[i].transform;
             }
         }
-
 
         if (nearstEnemy != null)
         {
@@ -77,14 +77,12 @@ public class KANG_GuidedMissile : MonoBehaviour
         }
 
         transform.up = Vector3.Lerp(transform.up, targetDir, Time.deltaTime * rotSpeed);
-
         transform.position += transform.up * moveSpeed * Time.deltaTime;
     }
 
     void Smoke()
     {
         GameObject smoke = Instantiate(smokeFactory);
-        
     }
 
 

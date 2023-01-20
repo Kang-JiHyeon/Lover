@@ -16,18 +16,18 @@ public class KANG_ObjectPooling : MonoBehaviour
 {
     // 오브젝트 풀에 담을 게임 오브젝트
     public GameObject goFactory;
-
-    // 오브젝트 풀
+    // 오브젝트 풀 생성
     public List<GameObject> goPool = new List<GameObject>();
-    // 풀 크기 -> static으로 선언
+    // 오브젝트 풀 크기
     public static int poolSize = 30;
 
     void Start()
     {
-        // 오브젝트를 미리 생성하여 pool 에 추가한 뒤 비활성화
+        // 오브젝트를 미리 생성하여 pool에 추가한 뒤 비활성화
         for(int i=0; i<poolSize; i++)
         {
             GameObject go = Instantiate(goFactory);
+            go.transform.parent = transform;
             goPool.Add(go);
             go.SetActive(false);
         }
@@ -42,7 +42,7 @@ public class KANG_ObjectPooling : MonoBehaviour
         // 오프젝트 풀에 오브젝트가 있다면
         if(goPool.Count > 0)
         {
-            // 오브젝트를 꺼내서 활성화
+            // 오브젝트를 활성화한 후 Pool에서 제거
             GameObject go = goPool[0];
             go.SetActive(true);
             go.transform.position = position;
@@ -50,5 +50,4 @@ public class KANG_ObjectPooling : MonoBehaviour
             goPool.RemoveAt(0);
         }
     }
-    
 }

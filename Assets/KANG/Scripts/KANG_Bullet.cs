@@ -8,13 +8,14 @@ using UnityEngine;
 
 public class KANG_Bullet : MonoBehaviourPun
 {
+    public GameObject turret;
     public float bulletSpeed = 10f;
     public float destroyTime = 5f;
 
     // Start is called before the first frame update
     void Start()
     {
-        Destroy(gameObject, destroyTime);
+        turret = transform.parent.gameObject;
     }
 
     // Update is called once per frame
@@ -26,6 +27,11 @@ public class KANG_Bullet : MonoBehaviourPun
 
     private void OnTriggerEnter(Collider other)
     {
-        Destroy(gameObject);
+        if(turret != null)
+        {
+            KANG_ObjectPooling pool = turret.GetComponent<KANG_ObjectPooling>();
+            pool.goPool.Add(gameObject);
+            gameObject.SetActive(false);
+        }
     }
 }

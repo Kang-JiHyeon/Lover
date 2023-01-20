@@ -48,6 +48,8 @@ public class KANG_Turret : KANG_Machine
     // Start is called before the first frame update
     void Start()
     {
+        objectPooling = GetComponent<KANG_ObjectPooling>();
+
         originRotSpeed = rotSpeed;
         spriteRender = GetComponent<SpriteRenderer>();
 
@@ -79,6 +81,13 @@ public class KANG_Turret : KANG_Machine
 
     private void Update()
     {
+        // Test
+        if (Input.GetKey(KeyCode.Q))
+        {
+            print("ÃÑ¾Ë ¹ß»ç Áß");
+            ActionKey();
+        }
+
         // Ä¡Æ®Å°
         if (PhotonNetwork.IsMasterClient)
         {
@@ -255,15 +264,17 @@ public class KANG_Turret : KANG_Machine
 
         if (currentTime > fireTime)
         {
-            Transform cannon = cannonStates[(int)mState].transform.GetChild(firePosIndex);
-
-            PhotonNetwork.Instantiate("Bullet", cannon.position, cannon.rotation);
-            //photonView.RPC("RPCFire", RpcTarget.All, cannon.position, cannon.rotation);
-
-            photonView.RPC("RPCAnim", RpcTarget.All, firePosIndex);
-            photonView.RPC("RPCTurretEffect", RpcTarget.All, firePosIndex);
             currentTime = 0f;
 
+            // ÃÑ±¸ Æ®·£½ºÆû
+            Transform cannon = cannonStates[(int)mState].transform.GetChild(firePosIndex);
+
+            // ÃÑ¾Ë ¹ß»ç
+            photonView.RPC("RPCFire", RpcTarget.All, cannon.position, cannon.rotation);
+            photonView.RPC("RPCAnim", RpcTarget.All, firePosIndex);
+            photonView.RPC("RPCTurretEffect", RpcTarget.All, firePosIndex);
+
+            // ÃÑ±¸ ÀÎµ¦½º ÁöÁ¤
             if (firePosIndex <= 0) addValue = 1;
             else if (firePosIndex >= cannon.parent.childCount - 1) addValue = -1;
             firePosIndex += addValue;
@@ -282,6 +293,7 @@ public class KANG_Turret : KANG_Machine
         }
     }
 
+    [PunRPC]
     void RPCFire(Vector3 position, Quaternion rotation)
     {
         objectPooling.UseObject(position, rotation);

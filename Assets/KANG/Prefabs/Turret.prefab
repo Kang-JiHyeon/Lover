@@ -172,6 +172,7 @@ GameObject:
   - component: {fileID: 5472744900921152429}
   - component: {fileID: 1279915885}
   - component: {fileID: 1279915884}
+  - component: {fileID: 1268688125304115308}
   - component: {fileID: 4258312601589728045}
   - component: {fileID: 5222311475243239100}
   - component: {fileID: 6033631936173086425}
@@ -284,6 +285,8 @@ MonoBehaviour:
   rotDir: 0
   rotSpeed: 50
   attackSound: {fileID: 8300000, guid: 3ce45a441037c8f449ab44caaaf3c02f, type: 3}
+  beamSound: {fileID: 0}
+  metalsound: {fileID: 0}
   turretTexs:
   - {fileID: 21300000, guid: b6ae68c7c5712aa4d870dba6713bcd42, type: 3}
   - {fileID: 21300000, guid: 4f84490821da9c641a4803ab1fbbb7e4, type: 3}
@@ -299,6 +302,20 @@ MonoBehaviour:
   metalTargetPos: {fileID: 4500846756861276656}
   metalMaxDis: 10
   mState: 0
+--- !u!114 &1268688125304115308
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5472744900921152416}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51ef30d7489d90d418df99a1dd72afb9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  goFactory: {fileID: 4353396649654612325, guid: d23a01019795d2e4aae47af914b0a385, type: 3}
+  goPool: []
 --- !u!114 &4258312601589728045
 MonoBehaviour:
   m_ObjectHideFlags: 0
