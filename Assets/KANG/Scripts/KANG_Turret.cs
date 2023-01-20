@@ -8,6 +8,9 @@ using System;
 
 public class KANG_Turret : KANG_Machine
 {
+    // Object Pooling
+    KANG_ObjectPooling objectPooling;
+
     AudioSource source;
     public AudioClip attackSound;
     public AudioClip beamSound;
@@ -79,7 +82,6 @@ public class KANG_Turret : KANG_Machine
         // 치트키
         if (PhotonNetwork.IsMasterClient)
         {
-            // 치트키
             // idle
             if (Input.GetKeyDown(KeyCode.Alpha1))
             {
@@ -163,7 +165,6 @@ public class KANG_Turret : KANG_Machine
         rotDir = (worldZ >= 0f && worldZ < 90f) || (worldZ >= 270f && worldZ < 360f) ? -1 : 1;
     }
 
-    // 엔진 회전
     public override void ArrowKey()
     {
         photonView.RPC("RpcArrowKey", RpcTarget.All, Time.deltaTime);
@@ -200,10 +201,8 @@ public class KANG_Turret : KANG_Machine
     [PunRPC]
     void RpcSetMetalTargetPos(Vector3 position)
     {
-        //if (photonView.IsMine)
-        //{
-            metalTargetPos.localPosition = position;
-        //}
+        metalTargetPos.localPosition = position;
+
     }
 
     private void MetalUp()
@@ -211,12 +210,11 @@ public class KANG_Turret : KANG_Machine
         Vector3 dir = metalTargetPos.position - originMetalTargetPos;
         photonView.RPC("RPCMetalTurret", RpcTarget.All, true);
         Vector3 pos = originMetalTargetPos + new Vector3(0, metalMaxDis, 0);
-        //metalTargetPos.localPosition = Vector3.Lerp(metalTargetPos.localPosition, pos, Time.deltaTime * metalTargetMoveSpeed);
+        
         photonView.RPC("RpcSetMetalTargetPos", RpcTarget.All, Vector3.Lerp(metalTargetPos.localPosition, pos, Time.deltaTime * metalTargetMoveSpeed));
 
         if (Mathf.Abs(dir.magnitude - metalMaxDis) < 0.1f)
         {
-            //metalTargetPos.localPosition = pos;
             photonView.RPC("RpcSetMetalTargetPos", RpcTarget.All, pos);
         }
     }
@@ -240,12 +238,11 @@ public class KANG_Turret : KANG_Machine
     {
         Vector3 dir = metalTargetPos.position - originMetalTargetPos;
         photonView.RPC("RPCMetalTurret", RpcTarget.All, false);
-        //metalTargetPos.localPosition = Vector3.Lerp(metalTargetPos.localPosition, originMetalTargetPos, Time.deltaTime * metalTargetMoveSpeed);
+        
         photonView.RPC("RpcSetMetalTargetPos", RpcTarget.All, Vector3.Lerp(metalTargetPos.localPosition, originMetalTargetPos, Time.deltaTime * metalTargetMoveSpeed));
 
         if ((dir - originMetalTargetPos).magnitude < 0.1f)
         {
-            //metalTargetPos.localPosition = originMetalTargetPos;
             photonView.RPC("RpcSetMetalTargetPos", RpcTarget.All, originMetalTargetPos);
         }
     }
@@ -258,10 +255,11 @@ public class KANG_Turret : KANG_Machine
 
         if (currentTime > fireTime)
         {
-            //cannonStates[(int)mState].transform.GetChild(index).position
             Transform cannon = cannonStates[(int)mState].transform.GetChild(firePosIndex);
 
             PhotonNetwork.Instantiate("Bullet", cannon.position, cannon.rotation);
+            //photonView.RPC("RPCFire", RpcTarget.All, cannon.position, cannon.rotation);
+
             photonView.RPC("RPCAnim", RpcTarget.All, firePosIndex);
             photonView.RPC("RPCTurretEffect", RpcTarget.All, firePosIndex);
             currentTime = 0f;
@@ -272,8 +270,8 @@ public class KANG_Turret : KANG_Machine
 
         }
     }
-    bool isBeamFire = false;
 
+    bool isBeamFire = false;
     void BeamFire()
     {
         if (isBeamFire == false)
@@ -282,6 +280,11 @@ public class KANG_Turret : KANG_Machine
             photonView.RPC("RPCBeamSound", RpcTarget.All);
             isBeamFire = true;
         }
+    }
+
+    void RPCFire(Vector3 position, Quaternion rotation)
+    {
+        objectPooling.UseObject(position, rotation);
     }
 
 
@@ -302,12 +305,6 @@ public class KANG_Turret : KANG_Machine
     {
         Transform cannon = cannonStates[(int)mState].transform;
 
-        //source.PlayOneShot(attackSound);
-        //GameObject effect = Instantiate(turretEffect);
-        //effect.transform.position = idleFirePostions[idx].position + idleFirePostions[idx].up * 0.5f;
-        //effect.transform.up = idleFirePostions[idx].up;
-        //Destroy(effect, 1.0f);
-
         source.PlayOneShot(attackSound);
         GameObject effect = Instantiate(turretEffect);
         effect.transform.position = cannon.GetChild(idx).position + cannon.GetChild(idx).up * 0.5f;
@@ -318,11 +315,6 @@ public class KANG_Turret : KANG_Machine
     [PunRPC]
     void RPCAnim(int idx)
     {
-        //iTween.ScaleTo(idleFirePostions[idx].gameObject, iTween.Hash("y", 0.7f, "time", 0.05f, "easetype", iTween.EaseType.easeInOutBack));
-        //iTween.ScaleTo(idleFirePostions[idx].gameObject, iTween.Hash("y", 1f, "time", 0.05f, "delay", 0.06f, "easetype", iTween.EaseType.easeInOutBack));
-        //iTween.MoveTo(idleFirePostions[idx].gameObject, iTween.Hash("islocal", true, "y", 0.55f, "time", 0.05f, "easetype", iTween.EaseType.easeInOutBack));
-        //iTween.MoveTo(idleFirePostions[idx].gameObject, iTween.Hash("islocal", true, "y", 0.7f, "time", 0.05f, "delay", 0.06f, "easetype", iTween.EaseType.easeInOutBack));
-
         Transform cannon = cannonStates[(int)mState].transform;
 
         iTween.ScaleTo(cannon.GetChild(idx).gameObject, iTween.Hash("y", 0.7f, "time", 0.05f, "easetype", iTween.EaseType.easeInOutBack));
@@ -389,34 +381,30 @@ public class KANG_Turret : KANG_Machine
         }
     }
 
-    
-
-
     private void OnTriggerEnter(Collider other)
     {
-        
+        // 보석에 따른 Turret 모드 변경
         if (other.gameObject.name.Contains("Beam"))
         {
             photonView.RPC("RpcChangeMState", RpcTarget.All, MachineState.Beam);
             photonView.RPC("RpcChangeCannonTex", RpcTarget.All, true);
-            //rotSpeed = originRotSpeed;
         }
         if (other.gameObject.name.Contains("Power"))
         {
             photonView.RPC("RpcChangeMState", RpcTarget.All, MachineState.Power);
-            //rotSpeed = originRotSpeed;
         }
         if (other.gameObject.name.Contains("Metal"))
         {
             photonView.RPC("RpcChangeMState", RpcTarget.All, MachineState.Metal);
-            //rotSpeed = originRotSpeed * 6f; // 300
         }
+
         photonView.RPC("RpcChangeTurretTex", RpcTarget.All);
 
     }
 
     private void OnTriggerExit(Collider other)
     {
+        // 보석 제거할 경우 기본 모드로 변경
         if (other.gameObject.name.Contains("Crystal"))
         {
             photonView.RPC("RpcChangeMState", RpcTarget.All, MachineState.Idle);
