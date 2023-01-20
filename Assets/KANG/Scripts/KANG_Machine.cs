@@ -12,6 +12,7 @@ using Photon.Pun;
 
 public class KANG_Machine : MonoBehaviourPun
 {
+    #region º¯¼ö
     public Transform rotAxis;
     public Vector3 localAngle;
     public float worldZ;
@@ -32,51 +33,28 @@ public class KANG_Machine : MonoBehaviourPun
         Power,
         Metal
     }
-
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-
-    }
-
+    
 
     public virtual void UpKey()
     {
-        //worldZ = rotAxis.eulerAngles.z;
 
-        //rotDir = (worldZ > 0f && worldZ < 180f) ? -1 : 1;
-        ////photonView.RPC("RpcUpKey", RpcTarget.All, (worldZ > 0f && worldZ < 180f) ? -1 : 1);
     }
 
     public virtual void DownKey()
     {
-        //worldZ = rotAxis.eulerAngles.z;
 
-        //rotDir = (worldZ >= 0f && worldZ <= 180f) ? 1 : -1;
     }
 
     public virtual void LeftKey()
     {
-        //worldZ = rotAxis.eulerAngles.z;
-
-        //rotDir = (worldZ >= 0f && worldZ < 90f) || (worldZ >= 270f && worldZ < 360f) ? 1 : -1;
+        
     }
 
     public virtual void RightKey()
     {
-        //worldZ = rotAxis.eulerAngles.z;
-
-        //rotDir = (worldZ >= 0f && worldZ < 90f) || (worldZ >= 270f && worldZ < 360f) ? -1 : 1;
+ 
     }
-
+    
     public virtual void ArrowKey()
     {
 
@@ -86,7 +64,7 @@ public class KANG_Machine : MonoBehaviourPun
     {
 
     }
-
+    #endregion
     public virtual void ActionKey()
     {
 
@@ -99,9 +77,6 @@ public class KANG_Machine : MonoBehaviourPun
 
     public virtual void Rotate()
     {
-        //localAngle.z += rotDir * rotSpeed * deltaTime;
-        //localAngle.z = localAngle.z > 180 ? localAngle.z - 360 : localAngle.z;
-        //rotAxis.localRotation = Quaternion.Euler(0, 0, localAngle.z);
 
     }
 }

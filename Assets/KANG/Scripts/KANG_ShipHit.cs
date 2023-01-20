@@ -6,11 +6,10 @@ using Photon.Pun;
 public class KANG_ShipHit : MonoBehaviourPun
 {
     KANG_Engine engine;
-
     // Start is called before the first frame update
     void Start()
     {
-        engine = transform.Find("Engine").GetComponent<KANG_Engine>();    
+        engine = transform.Find("Engine").GetComponent<KANG_Engine>();
     }
 
     // Update is called once per frame
@@ -22,18 +21,19 @@ public class KANG_ShipHit : MonoBehaviourPun
 
     void OnHit()
     {
-        KANG_ShipHP.instance.HP--;
-        //if (photonView.IsMine)
-        //{
-        //    photonView.RPC("RpcOnHit", RpcTarget.MasterClient);
-        //}
-
+        //KANG_ShipHP.instance.HP--;
+        if (PhotonNetwork.IsMasterClient)
+        {
+            KANG_ShipHP.instance.HP--;
+            //print(KANG_ShipHP.instance.HP);
+            photonView.RPC("RpcOnHit", RpcTarget.MasterClient);
+        }
+        
     }
 
     [PunRPC]
     void RpcOnHit()
     {
-        KANG_ShipHP.instance.HP--;
         print(KANG_ShipHP.instance.HP);
     }
 

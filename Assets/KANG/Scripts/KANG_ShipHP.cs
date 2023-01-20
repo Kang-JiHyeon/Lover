@@ -41,10 +41,7 @@ public class KANG_ShipHP : MonoBehaviour
 
         set
         {
-
             hp = value;
-            print("HP : " + hp);
-
             HPBar.value--;
             hitColor.a = 0.1f;
             isDamage = true;

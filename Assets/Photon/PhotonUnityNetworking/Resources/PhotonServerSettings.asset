@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: PhotonServerSettings
   m_EditorClassIdentifier: 
   AppSettings:
-    AppIdRealtime: 01da506f-a29f-40b0-8ff7-60904fccc6d8
+    AppIdRealtime: 9922be5d-6a7f-4273-8dc2-d775d4117600
     AppIdFusion: 
     AppIdChat: 
-    AppIdVoice: 
+    AppIdVoice: cc1f35b8-253f-4302-a8e5-df1f0cf57540
     AppVersion: 1
     UseNameServer: 1
     FixedRegion: kr
@@ -111,6 +111,9 @@ MonoBehaviour:
   - RpcSetMetalTargetPos
   - RPCMYSound
   - RPCMetalTurret
+  - CantHearYou
+  - ChangeColour
+  - HeresWhy
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1
