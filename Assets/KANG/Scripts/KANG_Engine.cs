@@ -18,10 +18,7 @@ public class KANG_Engine : KANG_Machine
     float curBounceTime = 0f;
 
     public Transform firePos;
-
     public MachineState mState = MachineState.Idle;
-
-    //public List<GameObject> engineTextures;
     public List<Sprite> engineTextures;
     SpriteRenderer engineSprite;
 
@@ -40,12 +37,6 @@ public class KANG_Engine : KANG_Machine
         ke = GetComponent<KIM_Engine>();
 
         Transform engine = transform.GetChild(0);
-        //for (int i=1; i< engine.childCount; i++)
-        //{
-        //    engineTextures.Add(engine.GetChild(i).gameObject);
-        //    engineTextures[i - 1].SetActive(false);
-        //}
-        //engineTextures[0].SetActive(true);
     }
 
     // Update is called once per frame
@@ -85,7 +76,6 @@ public class KANG_Engine : KANG_Machine
             LerpMoveSpeed(0f);
             // 일정시간동안 튕기는 방향으로 이동하고 싶다.
             curBounceTime += Time.deltaTime;
-
 
             if (curBounceTime > bounceTime)
             {
@@ -159,8 +149,7 @@ public class KANG_Engine : KANG_Machine
         rotAxis.localRotation = Quaternion.Euler(0, 0, localAngle.z);
     }
     
-
-    // 우주선 이동
+    // 우주선 모드에 따라 다른 이동 방식
     public override void ActionKey()
     {
         switch (mState)
@@ -180,7 +169,6 @@ public class KANG_Engine : KANG_Machine
                 Metal();
                 break;
         }
-        
     }
 
     public GameObject engineBeamFactory;
@@ -225,10 +213,7 @@ public class KANG_Engine : KANG_Machine
             PhotonNetwork.Instantiate("Shuriken", pos, firePos.rotation);
             curTime = 0f;
         }
-        
     }
-
-
 
     void Move(float speed)
     {
@@ -243,16 +228,12 @@ public class KANG_Engine : KANG_Machine
             moveDir.Normalize();
         }
 
-        //cc.Move(moveDir * curMoveSpeed * Time.deltaTime);
         photonView.RPC("RPCMove", RpcTarget.All, moveDir * curMoveSpeed * Time.deltaTime);
         ke.CreateEffect();
     }
 
-
     float curActionKeyDownTime = 0f;
     float beamShootTime = 3f;
-
-       
 
     [PunRPC]
     void RPCMove(Vector3 dir)
@@ -305,7 +286,6 @@ public class KANG_Engine : KANG_Machine
 
     IEnumerator IeActionKeyUp(float targetSpeed, float changeSpeed = 1f)
     {
-        
         while(Mathf.Abs(targetSpeed - curMoveSpeed) > 0.1f)
         {
             curMoveSpeed = Mathf.Lerp(curMoveSpeed, targetSpeed, Time.deltaTime * changeSpeed);
@@ -314,7 +294,6 @@ public class KANG_Engine : KANG_Machine
             yield return null;
         }
         curMoveSpeed = targetSpeed;
-
     }
 
     void LerpMoveSpeed(float targetSpeed, float changeSpeed = 1f)

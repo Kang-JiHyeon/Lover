@@ -26,10 +26,6 @@ public class KANG_Shield : KANG_Machine
     // Start is called before the first frame update
     void Start()
     {
-        //rotAxis = transform.GetChild(0);
-        //engine = GameObject.Find("Engine").GetComponent<KANG_Engine>();
-        //shieldWave = rotAxis.Find("ShieldWave_Tex");
-
         upPos = shield.localPosition;
         downPos = shield.localPosition;
         downPos.y = shield.localPosition.y - upDownValue;
@@ -75,8 +71,6 @@ public class KANG_Shield : KANG_Machine
                 SetShield((int)mState, true);
             }
         }
-
-        
     }
 
     public override void UpKey()
@@ -127,7 +121,7 @@ public class KANG_Shield : KANG_Machine
         rotDir = (worldZ >= 0f && worldZ < 90f) || (worldZ >= 270f && worldZ < 360f) ? -1 : 1;
     }
 
-    // 엔진 회전
+    
     public override void ArrowKey()
     {
         StopCoroutine(IeArrowKeyUp());

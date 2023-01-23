@@ -19,7 +19,7 @@ public class KANG_GuidedMissile : MonoBehaviour
 
     public List<GameObject> enemys;
     Transform nearstEnemy;
-    float shortDistance;
+    float shortDistance = float.MaxValue;
 
     public GameObject smokeFactory;
 
@@ -41,42 +41,43 @@ public class KANG_GuidedMissile : MonoBehaviour
     {
         if (yamato == null) return;
 
-        // 일정 거리 내의 enemy 중에서 최단 거리에 있는 에너미를 찾고 싶다. 
+        // 일정 거리 안에 있는 적의 콜라이더를 담는 배열
         Collider[] enemyCols = Physics.OverlapSphere(transform.position, 50, 1 << 29);
 
-        // 유도미사일과 가장 가까이 있는 에너미를 찾음
-        for(int i = 0; i < enemyCols.Length; i++)
-        {
-            shortDistance = float.MaxValue;
+        shortDistance = float.MaxValue;
 
+        // 콜라이더 배열에서 미사일과 가장 가까이 있는 적의 위치를 찾는다.
+        for (int i = 0; i < enemyCols.Length; i++)
+        {
             float distance = Vector3.Distance(transform.position, enemyCols[i].transform.position);
 
             if(distance < shortDistance)
             {
+                shortDistance = distance;
                 nearstEnemy = enemyCols[i].transform;
             }
         }
 
+        // 가까운 적이 있을 때 
         if (nearstEnemy != null)
         {
             Vector3 enemyDir = nearstEnemy.position - transform.position;
 
+            // 적과의 거리가 일정 거리 안이면 적 방향을 이동 방향으로 지정
             if (enemyDir.magnitude < 5f)
-            {
                 targetDir = enemyDir;
-            }
+
+            // 적이 일정 거리 보다 멀다면 미사일 처음 생성 방향으로 이동 방향을 지정
             else
             {
                 Vector3 dir = originDir - transform.up;
 
                 if (dir.magnitude < 0.2f)
-                {
                     targetDir = originDir;
-                }
             }
         }
-
-        transform.up = Vector3.Lerp(transform.up, targetDir, Time.deltaTime * rotSpeed);
+        // 유도탄의 방향 변경 및 이동
+        transform.up = Vector3.Lerp(transform.up, targetDir, rotSpeed * Time.deltaTime);
         transform.position += transform.up * moveSpeed * Time.deltaTime;
     }
 

@@ -12,14 +12,13 @@ using Photon.Pun;
 
 public class KANG_Machine : MonoBehaviourPun
 {
-    #region º¯¼ö
-    public Transform rotAxis;
     public Vector3 localAngle;
-    public float worldZ;
+    public Transform rotAxis;
     public float rotDir = 0f;
     public float rotSpeed = 30f;
-
+    public float worldZ;
     protected bool isControl = false;
+
     public virtual bool IsControl
     {
         get { return isControl; }
@@ -33,43 +32,35 @@ public class KANG_Machine : MonoBehaviourPun
         Power,
         Metal
     }
-    
 
     public virtual void UpKey()
     {
 
     }
-
     public virtual void DownKey()
     {
 
     }
-
     public virtual void LeftKey()
     {
         
     }
-
     public virtual void RightKey()
     {
  
     }
-    
     public virtual void ArrowKey()
     {
 
     }
-
     public virtual void ArrowKeyUp()
     {
 
     }
-    #endregion
     public virtual void ActionKey()
     {
 
     }
-
     public virtual void ActionKeyUp()
     {
 

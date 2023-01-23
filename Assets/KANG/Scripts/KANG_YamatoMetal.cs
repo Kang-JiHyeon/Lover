@@ -82,7 +82,7 @@ public class KANG_YamatoMetal : MonoBehaviourPun
                 SetBladeScale(1.1f, 1);
                 break;
             case BladeState.Attack:
-                BladeRotate();
+                Attack();
                 break;
             case BladeState.Contract:
                 SetBladeScale(0, -1);
@@ -95,8 +95,6 @@ public class KANG_YamatoMetal : MonoBehaviourPun
                 break;
         }
     }
-
-
 
     private void Idle()
     {
@@ -124,6 +122,7 @@ public class KANG_YamatoMetal : MonoBehaviourPun
         }
     }
 
+    // 2. Blade를 올렸다 내렸다 하고 싶다.
     private void Move(float targetScaleY, float targetPosY, float op)
     {
         // 지지대 스케일 변경
@@ -167,7 +166,7 @@ public class KANG_YamatoMetal : MonoBehaviourPun
 
 
     // 4. 공격 중일 때 블레이드를 회전시키고 싶다.
-    private void BladeRotate()
+    private void Attack()
     {
         curTime += Time.deltaTime;
         photonView.RPC("RPCMYSound", RpcTarget.All, true);
