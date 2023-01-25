@@ -174,7 +174,9 @@ public class KANG_Shield : KANG_Machine
     // 머신 상태에 따른 쉴드 변경
     void SetShield(int index, bool isEnable)
     {
-        photonView.RPC("RpcSetShield", RpcTarget.All, index, isEnable);
+        //photonView.RPC("RpcSetShield", RpcTarget.All, index, isEnable);
+        shieldGenerators[index].SetActive(isEnable);
+        shieldTextures[index].SetActive(isEnable);
     }
 
     [PunRPC]
@@ -184,29 +186,31 @@ public class KANG_Shield : KANG_Machine
         shieldTextures[index].SetActive(isEnable);
     }
 
-    [PunRPC]
-    void RpcChangeMState(MachineState state)
-    {
-        mState = state;
-    }
+    //[PunRPC]
+    //void RpcChangeMState(MachineState state)
+    //{
+    //    mState = state;
+    //}
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.name.Contains("Crystal"))
         {
             SetShield((int)mState, false);
+
             if (other.gameObject.name.Contains("Beam"))
             {
-                photonView.RPC("RpcChangeMState", RpcTarget.All, MachineState.Beam);
+                mState = MachineState.Beam;
             }
             else if (other.gameObject.name.Contains("Power"))
             {
-                photonView.RPC("RpcChangeMState", RpcTarget.All, MachineState.Power);
+                mState = MachineState.Power;
             }
             else if (other.gameObject.name.Contains("Metal"))
             {
-                photonView.RPC("RpcChangeMState", RpcTarget.All, MachineState.Metal);
+                mState = MachineState.Metal;
             }
+
             SetShield((int)mState, true);
         }
     }

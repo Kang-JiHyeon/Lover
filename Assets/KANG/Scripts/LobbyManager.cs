@@ -13,7 +13,7 @@ public class LobbyManager : MonoBehaviourPunCallbacks
     public InputField inputRoomName;
     // 비밀번호
     public InputField inputPassword;
-    //// 최대인원
+    // 최대인원
     public InputField inputMaxPlayer;
 
     public Button btnJoin;
@@ -24,17 +24,11 @@ public class LobbyManager : MonoBehaviourPunCallbacks
     // 리스트 Content
     public Transform trListContent;
 
-    //// mapThumbnail
-    //public GameObject[] mapThumbs;
-
-
     // Start is called before the first frame update
     void Start()
     {
         // 방이름(InputField)이 변경될 때 호출되는 함수 등록
         inputRoomName.onValueChanged.AddListener(onRoomNameValueChanged);
-        //// 최대 인원(InputField)이 변경될 때 호출되는 함수 등록
-        //inputMaxPlayer.onValueChanged.AddListener(onMaxPlayerValueChanged);
         inputMaxPlayer.text = "4";
     }
 
@@ -46,29 +40,12 @@ public class LobbyManager : MonoBehaviourPunCallbacks
         // 방 생성 --> 방이름, 최대인원 두가지 조건 고려해야 함
         //btnCreate.interactable = s.Length > 0 && inputMaxPlayer.text.Length > 0;
         btnCreate.interactable = s.Length > 0;
-
-
-        //if (s.Length > 0)
-        //{
-        //    btnJoin.interactable = true;
-        //}
-        //else
-        //{
-        //    btnJoin.interactable = false;
-        //    btnCreate.interactable = false;
-        //}
     }
 
     public void onMaxPlayerValueChanged(string s)
     {
         // 방 생성 --> 방이름, 최대인원 두가지 조건 고려해야 함
         btnCreate.interactable = s.Length > 0 && inputRoomName.text.Length > 0;
-
-
-        //if (btnJoin.interactable && s.Length > 0)
-        //    btnCreate.interactable = true;
-        //else
-        //    btnCreate.interactable = false;
     }
 
 
@@ -87,7 +64,6 @@ public class LobbyManager : MonoBehaviourPunCallbacks
         // ExitGames.Client.Photon.Hashtable hash = new ExitGames.Client.Photon.Hashtable;
         Hashtable hash = new Hashtable();
         hash["desc"] = "#" + Random.Range(1, 1000);
-        hash["map_id"] = Random.Range(0, 10);    // 임시
         hash["room_name"] = inputRoomName.text;
         hash["password"] = inputPassword.text;
 
@@ -95,7 +71,7 @@ public class LobbyManager : MonoBehaviourPunCallbacks
 
         // * custom 정보를 공개하는 설정
         // 공개하고자 하는 key값들을 나열
-        roomOptions.CustomRoomPropertiesForLobby = new string[] { "desc", "map_id", "room_name", "password" };
+        roomOptions.CustomRoomPropertiesForLobby = new string[] { "desc", "room_name", "password" };
 
         // 방 생성 요청
         PhotonNetwork.CreateRoom(inputRoomName.text + inputPassword.text, roomOptions, TypedLobby.Default);
@@ -127,7 +103,6 @@ public class LobbyManager : MonoBehaviourPunCallbacks
         base.OnJoinedRoom();
         print("OnJoinedRoom");
         // 씬 전환 시 데이터 유실을 막기 위해 사용 --> 내부에서 SceneManager.LoadScene 을 함
-        //PhotonNetwork.LoadLevel("GameScene");
         PhotonNetwork.LoadLevel("KIM_Lobby");
     }
 
@@ -142,13 +117,11 @@ public class LobbyManager : MonoBehaviourPunCallbacks
     // roomList : 정보가 변경된 방 리스트
     public override void OnRoomListUpdate(List<RoomInfo> roomList)
     {
-        //base.OnRoomListUpdate
-
         // 룸리스트 UI를 전체 삭제
         DeleteRoomListUI();
         // 룸리스트 정보를 업데이트
-        UpdateRoomChach(roomList);
-        // 룸리스터 UI 전체 생성
+        UpdateRoomCache(roomList);
+        // 룸리스트 UI 전체 생성
         CreateRoomListUI();
     }
 
@@ -161,7 +134,7 @@ public class LobbyManager : MonoBehaviourPunCallbacks
         }
     }
 
-    void UpdateRoomChach(List<RoomInfo> roomList)
+    void UpdateRoomCache(List<RoomInfo> roomList)
     {
         for(int i = 0; i<roomList.Count; i++)
         {
@@ -223,38 +196,21 @@ public class LobbyManager : MonoBehaviourPunCallbacks
 
             // roomItem 버튼이 클릭되면 호출되는 함수 등록
             // 1) 함수로 구현
-            item.onClickAction = SetRoomName;
+            //item.onClickAction = SetRoomName;
 
-            //// 2) 람다식으로 구현
-            //item.onClickAction = (string room) => {
-            //    inputRoomName.text = room;
-            //};
+            // 2) 람다식으로 구현
+            item.onClickAction = (string room) =>
+            {
+                inputRoomName.text = room;
+            };
 
             // object 반환형을 사용할 자료형으로 형변환
             string desc = (string)info.CustomProperties["desc"];
-            int map_id = (int)info.CustomProperties["map_id"];
-            //print(desc + ", " + map_id);
         }
     }
-    // 이전 Thumbnail의 id
-    int preMapId = -1;
 
-    void SetRoomName(string room, int map_id)
-    {
-        inputRoomName.text = room;
-
-        // 만약 이전 맵 Thumbnail이 활성화 되어있다면
-        if(preMapId > -1)
-        {
-            // 이전 맵 Thumbnail을 비활성화한다.
-            //mapThumbs[preMapId].SetActive(false);
-        }
-        
-        // 맵 Thumbnail 설정
-        //mapThumbs[map_id].SetActive(true);
-
-        // 이전 맵 id 저장
-        preMapId = map_id;
-
-    }
+    //void SetRoomName(string room)
+    //{
+    //    inputRoomName.text = room;
+    //}
 }

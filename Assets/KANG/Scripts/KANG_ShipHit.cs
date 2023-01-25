@@ -21,14 +21,13 @@ public class KANG_ShipHit : MonoBehaviourPun
 
     void OnHit()
     {
-        //KANG_ShipHP.instance.HP--;
-        if (PhotonNetwork.IsMasterClient)
-        {
-            KANG_ShipHP.instance.HP--;
+        KANG_ShipHP.instance.HP--;
+        //if (PhotonNetwork.IsMasterClient)
+        //{
+            //KANG_ShipHP.instance.HP--;
             //print(KANG_ShipHP.instance.HP);
-            photonView.RPC("RpcOnHit", RpcTarget.MasterClient);
-        }
-        
+            //photonView.RPC("RpcOnHit", RpcTarget.MasterClient);
+        //}
     }
 
     [PunRPC]

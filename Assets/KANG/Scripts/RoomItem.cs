@@ -19,7 +19,7 @@ public class RoomItem : MonoBehaviour
 
     // 클릭이 되었을 때 호출되는 함수를 가지고 있는 변수 --> 액션 사용!
     // Action<string>에는 string, int을 매개변수로 가지는 함수들만 담을 수 있다.
-    public System.Action<string, int> onClickAction;
+    public System.Action<string> onClickAction;
 
 
     // Start is called before the first frame update
@@ -47,9 +47,6 @@ public class RoomItem : MonoBehaviour
 
         // desc 설정
         roomDesc.text = (string)info.CustomProperties["desc"];
-
-        // 맵id 설정
-        map_id = (int)info.CustomProperties["map_id"];
     }
 
     public void OnClick()
@@ -59,14 +56,7 @@ public class RoomItem : MonoBehaviour
         {
             // onClickAction을 실행한다.
             // 액션에 담긴 함수에 name을 전달한다.
-            onClickAction(name, map_id);
+            onClickAction(name);
         }
-
-        //// 1. InputRoomName 게임 오브젝트 찾는다.
-        //GameObject go = GameObject.Find("InputRoomName");
-        //// 2. InputField 컴포넌트 가져온다.
-        //InputField inputField = go.GetComponent<InputField>();
-        //// 3. text에 roomName을 넣는다.
-        //inputField.text = name;
     }
 }

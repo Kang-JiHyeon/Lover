@@ -6,9 +6,7 @@ using Photon.Pun;
 // targetPos를 따라 이동하고 싶다.
 // 맵에 부딪히면 바운스
 // 적에 부딪히면 아주 살짝 바운스
-
 // 총구에서 나까지 line을 그리고 싶다.
-
 
 public class KANG_TurretMetal : MonoBehaviourPun
 {
@@ -77,8 +75,6 @@ public class KANG_TurretMetal : MonoBehaviourPun
         Vector3 tPos = transform.position;
         cPos.z = 0;
         tPos.z = 0;
-        //line.SetPosition(0, cannonPos.position + offset);
-        //line.SetPosition(1, transform.position + offset);
 
         line.SetPosition(0, cPos + offset);
         line.SetPosition(1, tPos + offset);

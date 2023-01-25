@@ -42,7 +42,7 @@ public class KANG_ShipHP : MonoBehaviour
         set
         {
             hp = value;
-            HPBar.value--;
+            HPBar.value = hp;
             hitColor.a = 0.1f;
             isDamage = true;
 
