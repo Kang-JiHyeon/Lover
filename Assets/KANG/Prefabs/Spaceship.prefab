@@ -239,8 +239,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 662187737}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0.3, z: 0}
-  m_LocalScale: {x: 0.59999996, y: 0.6, z: 0.6}
+  m_LocalPosition: {x: -0, y: 0.29999998, z: 0}
+  m_LocalScale: {x: 0.59999996, y: 0.59999996, z: 0.6}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1793942376}
@@ -2204,11 +2204,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b6b212da856ccd4bbaa0c91d7fddc2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotAxis: {fileID: 0}
   localAngle: {x: 0, y: 0, z: 0}
-  worldZ: 0
+  rotAxis: {fileID: 0}
   rotDir: 0
   rotSpeed: 30
+  worldZ: 0
   mapTV: {fileID: 0}
 --- !u!114 &166413990
 MonoBehaviour:
@@ -2413,11 +2413,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5330730f45193424f827746effbcdf08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotAxis: {fileID: 2872528267316947638}
   localAngle: {x: 0, y: 0, z: 0}
-  worldZ: 0
+  rotAxis: {fileID: 2872528267316947638}
   rotDir: 0
   rotSpeed: 50
+  worldZ: 0
   moveDir: {x: 0, y: 0, z: 0}
   bounceDir: {x: 0, y: 0, z: 0}
   moveSpeed: 2
@@ -3016,11 +3016,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2b58094cf0098940bad3404c0cd227c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotAxis: {fileID: 2872528266975759976}
   localAngle: {x: 0, y: 0, z: 0}
-  worldZ: 0
+  rotAxis: {fileID: 2872528266975759976}
   rotDir: 0
   rotSpeed: 30
+  worldZ: 0
   upDownSpeed: 10
   upDownValue: 0.3
   engine: {fileID: 2872528266198184144}
@@ -3955,11 +3955,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07d422240d4ab0643827daff001d2bb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotAxis: {fileID: 0}
   localAngle: {x: 0, y: 0, z: 0}
-  worldZ: 0
+  rotAxis: {fileID: 0}
   rotDir: 0
   rotSpeed: 30
+  worldZ: 0
   attackSound: {fileID: 8300000, guid: 3ce45a441037c8f449ab44caaaf3c02f, type: 3}
   beamLoop: {fileID: 0}
   metalLoop: {fileID: 0}
@@ -6212,7 +6212,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 989612f5a95775c47a9b16c0cc7bcde5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxLength: 50
 --- !u!4 &4419998794840586 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4419999949185646, guid: fd915375aaf0fc84eb9c7494badb5054, type: 3}

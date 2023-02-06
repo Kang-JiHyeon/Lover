@@ -1,8 +1,5 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 using Photon.Pun;
+using UnityEngine;
 
 // 1. metal을 180도 회전하고 싶다.
 // 2. 지지대의 y Scale을 늘리고, Blade의 y 위치를 늘리고 싶다. 
@@ -31,22 +28,28 @@ public class KANG_YamatoMetal : MonoBehaviourPun
     public float attackTime = 3f;
     float curTime = 0f;
 
-
+    // target 변수
+    float targetRotZ;
+    float targetAxisScaleY, targetBladePosY;
+    float targetBladeScale;
+    float op;
 
     public enum BladeState
     {
         Idle,
-        UpRotate,
+        Rotate,
+        MoveY,
+        Scale,
+        Attack
+    }
+    public enum MoveState
+    {
         Up,
-        UpBlade,
-        Expand,
-        Attack,
-        Contract,
-        Down,
-        DownRotate
+        Down
     }
 
     public BladeState state = BladeState.Idle;
+    public MoveState moveState = MoveState.Up;
 
     // Start is called before the first frame update
     void Start()
@@ -62,6 +65,8 @@ public class KANG_YamatoMetal : MonoBehaviourPun
         curAxisScaleY = axis.localScale.y;
         curBladePosY = blade.localPosition.y;
         curBladeScale = bladeBack.localScale.x;
+
+        SetTarget();
     }
 
     // Update is called once per frame
@@ -70,39 +75,53 @@ public class KANG_YamatoMetal : MonoBehaviourPun
         switch (state)
         {
             case BladeState.Idle:
-                Idle();
                 break;
-            case BladeState.UpRotate:
-                Rotate(0, 1);
+            case BladeState.Rotate:
+                Rotate();
                 break;
-            case BladeState.Up:
-                Move(3.7f, 0.9f, 1);
+            case BladeState.MoveY:
+                Move();
                 break;
-            case BladeState.Expand:
-                SetBladeScale(1.1f, 1);
+            case BladeState.Scale:
+                Scale();
                 break;
             case BladeState.Attack:
                 Attack();
                 break;
-            case BladeState.Contract:
-                SetBladeScale(0, -1);
-                break;
-            case BladeState.Down:
-                Move(1.2f, 0.3f, -1);
-                break;
-            case BladeState.DownRotate:
-                Rotate(-180, -1);
-                break;
+        }
+
+        // 치트키
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            state = BladeState.Rotate;
+            moveState = MoveState.Up;
+            SetTarget();
         }
     }
 
-    private void Idle()
+    // target 변수 초기화
+    public void SetTarget()
     {
-
+        if(moveState == MoveState.Up)
+        {
+            targetRotZ = 0f;
+            targetAxisScaleY = 3.7f;
+            targetBladePosY = 0.9f;
+            targetBladeScale= 1.1f;
+            op = 1;
+        }
+        else
+        {
+            targetRotZ = -180f;
+            targetAxisScaleY = 1.2f;
+            targetBladePosY = 0.3f;
+            targetBladeScale = 0f;
+            op = -1;
+        }
     }
 
     // 1. metal을 180도 회전하고 싶다.
-    private void Rotate(float targetZ, float op)
+    private void Rotate()
     {
         currentRot.z += Time.deltaTime * rotSpeed * op;
         currentRot.z = currentRot.z > 180 ? currentRot.z - 360 : currentRot.z;
@@ -110,11 +129,11 @@ public class KANG_YamatoMetal : MonoBehaviourPun
         yamatoMetal.localRotation = Quaternion.Euler(0, 0, currentRot.z);
 
 
-        if (op > 0 && currentRot.z >= targetZ)
+        if (op > 0 && currentRot.z >= targetRotZ)
         {
-            state = BladeState.Up;
+            state = BladeState.MoveY;
         }
-        else if (op < 0 && currentRot.z <= targetZ)
+        else if (op < 0 && currentRot.z <= targetRotZ)
         {
             state = BladeState.Idle;
             yamato.ChangeYState(KANG_Yamato.YamatoState.Disable);
@@ -123,7 +142,7 @@ public class KANG_YamatoMetal : MonoBehaviourPun
     }
 
     // 2. Blade를 올렸다 내렸다 하고 싶다.
-    private void Move(float targetScaleY, float targetPosY, float op)
+    private void Move()
     {
         // 지지대 스케일 변경
         curAxisScaleY += Time.deltaTime * 10 * op;
@@ -136,34 +155,32 @@ public class KANG_YamatoMetal : MonoBehaviourPun
         blade.localPosition = new Vector3(blade.localPosition.x, curBladePosY, blade.localPosition.z);
 
 
-        if (op > 0 && curAxisScaleY >= targetScaleY && curBladePosY >= targetPosY)
+        if (op > 0 && curAxisScaleY >= targetAxisScaleY && curBladePosY >= targetBladePosY)
         {
-            state = BladeState.Expand;
+            state = BladeState.Scale;
         }
-        else if (op < 0 && curAxisScaleY <= targetScaleY && curBladePosY <= targetPosY)
+        else if (op < 0 && curAxisScaleY <= targetAxisScaleY && curBladePosY <= targetBladePosY)
         {
-            state = BladeState.DownRotate;
+            state = BladeState.Rotate;
         }
-
     }
 
-
     // 3. Blade의 크기를 늘리거나 줄이고 싶다.
-    private void SetBladeScale(float targetScale, float op)
+    private void Scale()
     {
         curBladeScale += Time.deltaTime * 8 * op;
         curBladeScale = Mathf.Clamp(curBladeScale, 0f, 1.1f);
         bladeBack.localScale = new Vector3(curBladeScale, curBladeScale, curBladeScale);
-        if (op > 0 && curBladeScale >= targetScale)
+
+        if (moveState == MoveState.Up && curBladeScale >= targetBladeScale)
         {
             state = BladeState.Attack;
         }
-        else if (op < 0 && curBladeScale <= targetScale)
+        else if (moveState == MoveState.Down && curBladeScale <= targetBladeScale)
         {
-            state = BladeState.Down;
+            state = BladeState.MoveY;
         }
     }
-
 
     // 4. 공격 중일 때 블레이드를 회전시키고 싶다.
     private void Attack()
@@ -172,9 +189,11 @@ public class KANG_YamatoMetal : MonoBehaviourPun
         photonView.RPC("RPCMYSound", RpcTarget.All, true);
         if (curTime > attackTime)
         {
-            state = BladeState.Contract;
-            photonView.RPC("RPCMYSound", RpcTarget.All, false);
             curTime = 0f;
+            state = BladeState.Scale;
+            moveState = MoveState.Down;
+            SetTarget();
+            photonView.RPC("RPCMYSound", RpcTarget.All, false);
         }
         blade.Rotate(-blade.forward, bladeRotSpeed);
     }

@@ -3128,6 +3128,14 @@ PrefabInstance:
       propertyPath: sceneViewId
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 1116315613, guid: 749d56a947a95634c8e62330be538ce1, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1116315614, guid: 749d56a947a95634c8e62330be538ce1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1384757782, guid: 749d56a947a95634c8e62330be538ce1, type: 3}
       propertyPath: sceneViewId
       value: 69

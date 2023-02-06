@@ -300,7 +300,9 @@ public class KANG_Yamato : KANG_Machine
     {
         if (metal.state == KANG_YamatoMetal.BladeState.Idle)
         {
-            metal.state = KANG_YamatoMetal.BladeState.UpRotate;
+            metal.state = KANG_YamatoMetal.BladeState.Rotate;
+            metal.moveState = KANG_YamatoMetal.MoveState.Up;
+            metal.SetTarget();
             photonView.RPC("RPCMetalSound", RpcTarget.All);
         }
     }
